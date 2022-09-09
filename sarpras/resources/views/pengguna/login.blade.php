@@ -7,8 +7,8 @@
 
 	<!-- Site favicon -->
 	<link rel="apple-touch-icon" sizes="180x180" href="{{ asset('login/vendors/images/apple-touch-icon.png')}}">
-	<link rel="icon" type="image/png" sizes="32x32" href="{{ asset('login/vendors/images/favicon-32x32.png')}}">
-	<link rel="icon" type="image/png" sizes="16x16" href="{{ asset('login/vendors/images/favicon-16x16.png')}}">
+	<link rel="icon" type="image/png" sizes="32x32" href="{{ asset('landing/assets/img/logo.png')}}">
+	<link rel="icon" type="image/png" sizes="16x16" href="{{ asset('landing/assets/img/logo.png')}}">
 
 	<!-- Mobile Specific Metas -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -38,11 +38,6 @@
                 <img src="{{ asset('login/vendors/images/deskapp-logo.svg')}}" alt="">
 				</a>
 			</div>
-			<!-- <div class="login-menu">
-				<ul>
-					<li><a href="register.html">Register</a></li>
-				</ul>
-			</div> -->
 		</div>
 	</div>
 	<div class="login-wrap d-flex align-items-center flex-wrap justify-content-center">
@@ -71,36 +66,30 @@
 										<span>Saya</span>
 										Pengguna
 									</label>
+
 								</div>
 							</div>
+                            <form action="/loginproses" method="post">
 							<div class="input-group custom">
-								<input type="text" class="form-control form-control-lg" placeholder="Nama Pengguna">
+								<input type="text" class="form-control form-control-lg" name="name" placeholder="Nama Pengguna">
 								<div class="input-group-append custom">
 									<span class="input-group-text"><i class="icon-copy dw dw-user1"></i></span>
 								</div>
 							</div>
 							<div class="input-group custom">
-								<input type="password" class="form-control form-control-lg" placeholder="Kata Sandi">
+								<input type="password" class="form-control form-control-lg" name="password" placeholder="Kata Sandi">
 								<div class="input-group-append custom">
 									<span class="input-group-text"><i class="dw dw-padlock1"></i></span>
 								</div>
 							</div>
 							<div class="row pb-30">
-								<!-- <div class="col-6">
-									<div class="custom-control custom-checkbox">
-										<input type="checkbox" class="custom-control-input" id="customCheck1">
-										<label class="custom-control-label" for="customCheck1">Remember</label>
-									</div>
-								</div> -->
-								<!-- <div class="col-6">
-									<div class="forgot-password"><a href="forgot-password.html">Forgot Password</a></div>
-								</div> -->
 							</div>
 							<div class="row">
 								<div class="col-sm-12">
-									<div class="input-group mb-0">
-										<a class="btn btn-primary btn-lg btn-block" href="/index">Masuk</a>
-									</div>
+                                <div class="input-group mb-0">
+                                    <input type="submit" class="btn btn-primary btn-lg btn-block">
+                                </div>
+                        </form>
 									<div class="font-16 weight-600 pt-10 pb-10 text-center" data-color="#707373" style="color: rgb(112, 115, 115);">Atau</div>
 									<div class="input-group mb-0">
 										<a class="btn btn-outline-primary btn-lg btn-block" href="/register">Buat Akun</a>

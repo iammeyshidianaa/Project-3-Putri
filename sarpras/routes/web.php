@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,10 +23,7 @@ Route::get('/index', function () {
     return view('index');
 });
 
-Route::get('/masuk', function () {
-    return view('pengguna.login');
-});
-
-Route::get('/register', function () {
-    return view('pengguna.register');
-});
+Route::get('/masuk',[LoginController::class,'login'])->name('masuk');
+Route::post('/loginproses', [LoginController::class, 'loginproses'])->name('loginproses');
+Route::get('/register', [LoginController::class, 'register'])->name('register');
+Route::post('/simpanregister', [LoginController::class, 'simpanregister' ])->name('simpanregister');
