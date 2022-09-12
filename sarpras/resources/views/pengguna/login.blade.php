@@ -51,7 +51,7 @@
 						<div class="login-title">
 							<h2 class="text-center text-primary">Masuk</h2>
 						</div>
-						<form>
+
 							<div class="select-role">
 								<div class="btn-group btn-group-toggle" data-toggle="buttons">
 									<label class="btn">
@@ -69,9 +69,10 @@
 
 								</div>
 							</div>
-                            <form action="/loginproses" method="post">
+                            <form action="/loginproses" method="post" enctype="multipart/form-data">
+                                @csrf
 							<div class="input-group custom">
-								<input type="text" class="form-control form-control-lg" name="name" placeholder="Nama Pengguna">
+								<input type="text" class="form-control form-control-lg" name="email" placeholder="Email">
 								<div class="input-group-append custom">
 									<span class="input-group-text"><i class="icon-copy dw dw-user1"></i></span>
 								</div>
@@ -85,10 +86,14 @@
 							<div class="row pb-30">
 							</div>
 							<div class="row">
-								<div class="col-sm-12">
+								<!-- <div class="col-sm-12">
                                 <div class="input-group mb-0">
                                     <input type="submit" class="btn btn-primary btn-lg btn-block">
-                                </div>
+                                </div> -->
+
+                                <div class="col-sm-12">
+                            <button type="submit" class="btn btn-primary btn-block">Masuk</button>
+                        </div>
                         </form>
 									<div class="font-16 weight-600 pt-10 pb-10 text-center" data-color="#707373" style="color: rgb(112, 115, 115);">Atau</div>
 									<div class="input-group mb-0">

@@ -14,7 +14,7 @@ class LoginController extends Controller
      }
 
      public function loginproses (Request $request){
-        if(Auth::attempt($request->only('name','password'))) {
+        if(Auth::attempt($request->only('email','password'))) {
             return redirect('/index');
         }
 
@@ -35,5 +35,10 @@ class LoginController extends Controller
     // dd($data);
     return redirect('/masuk');
         }
+
+    public function logout(){
+        Auth::logout();
+        return redirect('/');
+    }
 
     }

@@ -106,16 +106,16 @@
 									</div>
 
 								</section>
-                                <div class="input-group mb-0">
-                                    <input type="submit" class="btn btn-primary btn-lg btn-block">
-								</div>
-                             </form>
-
+                               
+                             <div class="input-group mb-0">
+                            <button type="submit" class="btn btn-primary btn-block">Masuk</button>
+                        </div>
 
 									<div class="font-16 weight-600 pt-10 pb-10 text-center" data-color="#707373" style="color: rgb(112, 115, 115);">Atau</div>
 									<div class="input-group mb-0">
 										<a class="btn btn-outline-primary btn-lg btn-block" href="/masuk">Kembali</a>
 									</div>
+
 
                             <!-- </ul>
                         </div> -->

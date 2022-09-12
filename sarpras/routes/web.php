@@ -27,3 +27,4 @@ Route::get('/masuk',[LoginController::class,'login'])->name('masuk');
 Route::post('/loginproses', [LoginController::class, 'loginproses'])->name('loginproses');
 Route::get('/register', [LoginController::class, 'register'])->name('register');
 Route::post('/simpanregister', [LoginController::class, 'simpanregister' ])->name('simpanregister');
+Route::get('/logout', [LoginController::class, 'logout' ])->name('logout');
