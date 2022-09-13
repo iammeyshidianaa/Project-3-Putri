@@ -27,14 +27,14 @@
       <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
       <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/soft-ui-dashboard/pages/dashboard.html " target="_blank">
         <img src="{{ asset('dash/assets/img/logo-ct.png')}}" class="navbar-brand-img h-100" alt="main_logo">
-        <span class="ms-1 font-weight-bold">Soft UI Dashboard</span>
+        <span class="ms-1 font-weight-bold">Sarpras</span>
       </a>
     </div>
     <hr class="horizontal dark mt-0">
     <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link  active" href="{{ asset('dash/pages/dashboard.html')}}">
+          <a class="nav-link  active" href="{{ asset('/index')}}">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 45 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>shop </title>
@@ -54,7 +54,8 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  " href="{{ asset('dash/pages/tables.html')}}">
+          <!-- <a class="nav-link  " href="{{ asset('dash/pages/tables.html')}}"> -->
+          <a class="nav-link  " href="{{ asset('/index')}}">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>office</title>
@@ -74,7 +75,8 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  " href="{{ asset('dash/pages/billing.html')}}">
+          <!-- <a class="nav-link  " href="{{ asset('dash/pages/billing.html')}}"> -->
+          <a class="nav-link  " href="{{ asset('/index')}}">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>credit-card</title>
@@ -94,7 +96,9 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  " href="{{ asset('dash/pages/virtual-reality.html')}}">
+          <!-- <a class="nav-link  " href="{{ asset('dash/pages/virtual-reality.html')}}"> -->
+          <a class="nav-link  " href="{{ asset('/index')}}">
+
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>box-3d-50</title>
@@ -115,7 +119,8 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  " href="{{ asset('dash/pages/rtl.html')}}">
+          <!-- <a class="nav-link  " href="{{ asset('dash/pages/rtl.html')}}"> -->
+          <a class="nav-link  " href="{{ asset('/index')}}">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>settings</title>
@@ -139,7 +144,8 @@
           <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account pages</h6>
         </li>
         <li class="nav-item">
-          <a class="nav-link  " href="{{ asset('dash/pages/profile.html')}}">
+          <!-- <a class="nav-link  " href="{{ asset('dash/pages/profile.html')}}"> -->
+          <a class="nav-link  " href="{{ asset('/index')}}">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 46 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>customer-support</title>
@@ -160,7 +166,9 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  " href="{{ asset('dash/pages/sign-in.html')}}">
+          <!-- <a class="nav-link  " href="{{ asset('dash/pages/sign-in.html')}}"> -->
+          <a class="nav-link  " href="{{ asset('/index')}}">
+
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 40 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>document</title>
@@ -180,7 +188,9 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  " href="{{ asset('dash/pages/sign-up.html')}}">
+          <!-- <a class="nav-link  " href="{{ asset('dash/pages/sign-up.html')}}"> -->
+          <a class="nav-link  " href="{{ asset('/index')}}">
+
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="20px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>spaceship</title>
@@ -203,7 +213,7 @@
         </li>
       </ul>
     </div>
-    <div class="sidenav-footer mx-3 ">
+    <!-- <div class="sidenav-footer mx-3 ">
       <div class="card card-background shadow-none card-background-mask-secondary" id="sidenavCard">
         <div class="full-background" style="background-image: url('../assets/img/curved-images/white-curved.jpg')"></div>
         <div class="card-body text-start p-3 w-100">
@@ -218,7 +228,7 @@
         </div>
       </div>
       <a class="btn bg-gradient-primary mt-3 w-100" href="https://www.creative-tim.com/product/soft-ui-dashboard-pro?ref=sidebarfree">Upgrade to pro</a>
-    </div>
+    </div> -->
   </aside>
   <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
     <!-- Navbar -->
@@ -238,17 +248,17 @@
               <input type="text" class="form-control" placeholder="Type here...">
             </div>
           </div>
-          <ul class="navbar-nav  justify-content-end">
+          <!-- <ul class="navbar-nav  justify-content-end">
             <li class="nav-item d-flex align-items-center">
               <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank" href="https://www.creative-tim.com/builder/soft-ui?ref=navbar-dashboard">Online Builder</a>
-            </li>
+            </li> -->
             <li class="nav-item d-flex align-items-center">
               <a href="/logout">
                 <i class="fas fa-sign-out-alt"></i>
                 <span class="d-sm-inline d-none">Keluar</span>
               </a>
             </li>
-            <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+            <!-- <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
               <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
                 <div class="sidenav-toggler-inner">
                   <i class="sidenav-toggler-line"></i>
@@ -261,8 +271,8 @@
               <a href="javascript:;" class="nav-link text-body p-0">
                 <i class="fa fa-cog fixed-plugin-button-nav cursor-pointer"></i>
               </a>
-            </li>
-            <li class="nav-item dropdown pe-2 d-flex align-items-center">
+            </li> -->
+            <!-- <li class="nav-item dropdown pe-2 d-flex align-items-center">
               <a href="javascript:;" class="nav-link text-body p-0" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="fa fa-bell cursor-pointer"></i>
               </a>
@@ -334,7 +344,7 @@
                   </a>
                 </li>
               </ul>
-            </li>
+            </li> -->
           </ul>
         </div>
       </div>
@@ -431,7 +441,7 @@
           </div>
         </div>
       </div>
-      <div class="row mt-4">
+      <!-- <div class="row mt-4">
         <div class="col-lg-7 mb-lg-0 mb-4">
           <div class="card">
             <div class="card-body p-3">
@@ -966,8 +976,8 @@
                 <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Creative Tim</a>
                 for a better web.
               </div>
-            </div>
-            <div class="col-lg-6">
+            </div> -->
+            <!-- <div class="col-lg-6">
               <ul class="nav nav-footer justify-content-center justify-content-lg-end">
                 <li class="nav-item">
                   <a href="https://www.creative-tim.com" class="nav-link text-muted" target="_blank">Creative Tim</a>
@@ -982,7 +992,7 @@
                   <a href="https://www.creative-tim.com/license" class="nav-link pe-0 text-muted" target="_blank">License</a>
                 </li>
               </ul>
-            </div>
+            </div> -->
           </div>
         </div>
       </footer>

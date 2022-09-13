@@ -50,7 +50,7 @@
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Beranda</a></li>
           <li><a class="nav-link scrollto" href="#about">Tentang</a></li>
-          <li><a class="nav-link scrollto" href="#team">Tim</a></li>
+          <!-- <li><a class="nav-link scrollto" href="#team">Tim</a></li> -->
           </li>
           <li><a class="nav-link scrollto" href="#contact">Lokasi</a></li>
           <li><a class="getstarted scrollto" href="/masuk">Masuk</a></li>
@@ -287,14 +287,14 @@
     <section id="team" class="team section-bg">
       <div class="container" data-aos="fade-up">
 
-        <div class="section-title">
+        <!-- <div class="section-title">
           <h2>Tim</h2>
           <p>Kerja tim adalah kemampuan untuk bekerja sama menuju visi bersama. Kemampuan untuk mengarahkan pencapaian individu ke arah tujuan organisasi. Ini adalah bahan bakar yang memungkinkan orang biasa untuk mencapai hasil yang tidak biasa.</p>
-        </div>
+        </div> -->
 
-        <div class="row">
+        <!-- <div class="row"> -->
 
-          <div class="col-lg-6">
+          <!-- <div class="col-lg-6">
             <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="100">
               <div class="pic"><img src="{{ asset('landing/assets/img/team/tim1.jpg')}}" class="img-fluid" alt=""></div>
               <div class="member-info">
@@ -334,7 +334,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
 
         </div>
         </div>
@@ -568,7 +568,7 @@
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="#hero">Beranda</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#about">Tentang</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#team">Tim</a></li>
+              <!-- <li><i class="bx bx-chevron-right"></i> <a href="#team">Tim</a></li> -->
               <li><i class="bx bx-chevron-right"></i> <a href="#contact">Kontak</a></li>
             </ul>
           </div>
@@ -602,7 +602,7 @@
 
     <div class="container footer-bottom clearfix">
       <div class="copyright">
-        &copy; Dibuat oleh<strong><span> Tim 3Putri</span></strong>
+        &copy; Dibuat oleh<strong><span> Tim Gantari</span></strong>
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->

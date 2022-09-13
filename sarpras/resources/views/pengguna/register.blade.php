@@ -63,7 +63,8 @@
 						</div>
                         <form action="/simpanregister" method="post" enctype="multipart/form-data">
                             @csrf
-                                <div class="select-role">
+
+                            <!-- <div class="select-role">
 								<div class="btn-group btn-group-toggle" data-toggle="buttons">
 									<label class="btn">
 										<input type="radio" name="options" id="admin">
@@ -79,6 +80,7 @@
 									</label>
 
 								</div>
+                            </div> -->
 
 
                                 <br>
@@ -106,7 +108,7 @@
 									</div>
 
 								</section>
-                               
+
                              <div class="input-group mb-0">
                             <button type="submit" class="btn btn-primary btn-block">Masuk</button>
                         </div>

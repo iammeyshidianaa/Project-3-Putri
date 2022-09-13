@@ -52,7 +52,7 @@
 							<h2 class="text-center text-primary">Masuk</h2>
 						</div>
 
-							<div class="select-role">
+							<!-- <div class="select-role">
 								<div class="btn-group btn-group-toggle" data-toggle="buttons">
 									<label class="btn">
 										<input type="radio" name="options" id="admin">
@@ -68,7 +68,7 @@
 									</label>
 
 								</div>
-							</div>
+							</div> -->
                             <form action="/loginproses" method="post" enctype="multipart/form-data">
                                 @csrf
 							<div class="input-group custom">
