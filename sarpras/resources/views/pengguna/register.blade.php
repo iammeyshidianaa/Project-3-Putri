@@ -64,43 +64,23 @@
                         <form action="/simpanregister" method="post" enctype="multipart/form-data">
                             @csrf
 
-                            <!-- <div class="select-role">
-								<div class="btn-group btn-group-toggle" data-toggle="buttons">
-									<label class="btn">
-										<input type="radio" name="options" id="admin">
-										<div class="icon"><img src="{{ asset('login/vendors/images/briefcase.svg')}}" class="svg" alt=""></div>
-										<span>Saya</span>
-										Admin
-									</label>
-									<label class="btn">
-										<input type="radio" name="options" id="user">
-										<div class="icon"><img src="{{ asset('login/vendors/images/person.svg')}}" class="svg" alt=""></div>
-										<span>Saya</span>
-										Pengguna
-									</label>
-
-								</div>
-                            </div> -->
-
-
-                                <br>
 								<section id="steps-uid-0-p-0" role="tabpanel" aria-labelledby="steps-uid-0-h-0" class="body current" aria-hidden="false">
 									<div class="form-wrap max-width-600 mx-auto">
 										<div class="form-group row">
 											<label class="col-sm-4 col-form-label">Email</label>
-											<div class="col-sm-8">
+											<div class="col-sm-7">
 												<input type="email" class="form-control" name="email">
 											</div>
 										</div>
 										<div class="form-group row">
-											<label class="col-sm-4 col-form-label">Nama Pengguna</label>
-											<div class="col-sm-8">
+											<label class="col-sm-4 col-form-label">Nama</label>
+											<div class="col-sm-7">
 												<input type="text" class="form-control" name="name">
 											</div>
 										</div>
 										<div class="form-group row">
 											<label class="col-sm-4 col-form-label">Kata Sandi</label>
-											<div class="col-sm-8">
+											<div class="col-sm-7">
 												<input type="password" class="form-control" name="password">
 											</div>
 										</div>
@@ -109,9 +89,11 @@
 
 								</section>
 
-                             <div class="input-group mb-0">
-                            <button type="submit" class="btn btn-primary btn-block">Masuk</button>
-                        </div>
+
+								<div class="col-sm-12">
+                                <div class="input-group mb-0">
+                                    <button type="submit" class="btn btn-primary btn-lg btn-block">Masuk</button>
+                                </div>
 
 									<div class="font-16 weight-600 pt-10 pb-10 text-center" data-color="#707373" style="color: rgb(112, 115, 115);">Atau</div>
 									<div class="input-group mb-0">
