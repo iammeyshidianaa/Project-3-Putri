@@ -23,6 +23,10 @@ Route::get('/index', function () {
     return view('index');
 });
 
+Route::get('/index2', function () {
+    return view('index2');
+});
+
 Route::get('/masuk',[LoginController::class,'login'])->name('masuk');
 Route::post('/loginproses', [LoginController::class, 'loginproses'])->name('loginproses');
 Route::get('/register', [LoginController::class, 'register'])->name('register');
