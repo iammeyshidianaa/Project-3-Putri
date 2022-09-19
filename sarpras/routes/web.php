@@ -28,10 +28,7 @@ Route::get('/logout', [LoginController::class, 'logout' ])->name('logout');
 Route::group(['middleware' => ['auth','ceklevel:admin']], function() {
 
     Route::get('/index',[IndexController::class,'index'])->name('index');
-    Route::get('/indexadmin',[IndexController::class,'indexadmin'])->name('indexadmin');
-    Route::get('/indexguru',[IndexController::class,'indexguru'])->name('indexguru');
-    Route::get('/indexsiswa',[IndexController::class,'indexsiswa'])->name('indexsiswa');
-
+  
 });
 
 

@@ -51,6 +51,12 @@
                             <div class="col-md-6 col-lg-5">
                                 <div class="register-box bg-white box-shadow border-radius-10">
                                     <div class="wizard-content">
+                                        <form class = "tab wizard-circle wizard clearfix" role="application" id="steps-uid-0">
+                                            <div class= "steps-clearfix">
+                                                <ul role="tablist">
+                                                </ul>
+                                            </div>
+
                                         <div class="content clearfix">
                                                 <h5 id="steps-uid-0-h-0" tabindex="-1" class="title current text-center"></h5>
                                             <div class="login-title">
@@ -61,16 +67,16 @@
                                                 <br>
                                                     <section id="steps-uid-0-p-0" role="tabpanel" aria-labelledby="steps-uid-0-h-0" class="body current" aria-hidden="false">
                                                         <div class="form-wrap max-width-600 mx-auto">
+                                                        <div class="form-group row">
+                                                                <label class="col-sm-4 col-form-label">Nama Lengkap</label>
+                                                                <div class="col-sm-7">
+                                                                    <input type="text" class="form-control" name="name">
+                                                                </div>
+                                                            </div>
                                                             <div class="form-group row">
                                                                 <label class="col-sm-4 col-form-label">Email</label>
                                                                 <div class="col-sm-7">
                                                                     <input type="email" class="form-control" name="email">
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group row">
-                                                                <label class="col-sm-4 col-form-label">Nama Pengguna</label>
-                                                                <div class="col-sm-7">
-                                                                    <input type="text" class="form-control" name="name">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group row">
@@ -81,14 +87,13 @@
                                                             </div>
                                                         </div>
                                                     </section>
-
                                                     <div class="col-sm-12">
                                                     <div class="input-group mb-0">
                                                         <button type="submit" class="btn btn-primary btn-lg btn-block">Masuk</button>
                                                     </div>
 
                                                 <div class="font-16 weight-600 pt-10 pb-10 text-center" data-color="#707373" style="color: rgb(112, 115, 115);">Atau</div>
-                                                    <div class="input-group mb-0">
+                                                    <div class="input-group mb-15">
                                                         <a class="btn btn-outline-primary btn-lg btn-block" href="/masuk">Kembali</a>
                                                     </div>
                                             </form>
