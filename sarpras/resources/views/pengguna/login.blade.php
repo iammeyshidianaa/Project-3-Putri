@@ -3,7 +3,7 @@
 <head>
 	<!-- Basic Page Info -->
 	<meta charset="utf-8">
-	<title>Sarpras Web | Masuk</title>
+	<title>SIN-SARPRAS | Masuk</title>
 
 	<!-- Site favicon -->
 	<link rel="apple-touch-icon" sizes="180x180" href="{{ asset('login/vendors/images/apple-touch-icon.png')}}">
@@ -51,25 +51,7 @@
 						<div class="login-title">
 							<h2 class="text-center text-primary">Masuk</h2>
 						</div>
-
-							<!-- <div class="select-role">
-								<div class="btn-group btn-group-toggle" data-toggle="buttons">
-									<label class="btn">
-										<input type="radio" name="options" id="admin">
-										<div class="icon"><img src="{{ asset('login/vendors/images/briefcase.svg')}}" class="svg" alt=""></div>
-										<span>Saya</span>
-										Admin
-									</label>
-									<label class="btn">
-										<input type="radio" name="options" id="user">
-										<div class="icon"><img src="{{ asset('login/vendors/images/person.svg')}}" class="svg" alt=""></div>
-										<span>Saya</span>
-										Pengguna
-									</label>
-
-								</div>
-							</div> -->
-                            <form action="/loginproses" method="post" enctype="multipart/form-data">
+                        <form action="/loginproses" method="post" enctype="multipart/form-data">
                                 @csrf
 							<div class="input-group custom">
 								<input type="text" class="form-control form-control-lg" name="email" placeholder="Email">
@@ -83,28 +65,18 @@
 									<span class="input-group-text"><i class="dw dw-padlock1"></i></span>
 								</div>
 							</div>
-							<div class="row pb-30">
-							</div>
-							<div class="row">
-								<!-- <div class="col-sm-12">
+                            <div class="col-sm-12">
                                 <div class="input-group mb-0">
-                                    <input type="submit" class="btn btn-primary btn-lg btn-block">
-                                </div> -->
-
-                                <div class="col-sm-12">
-                            <button type="submit" class="btn btn-primary btn-block">Masuk</button>
-                        </div>
+                                    <button type="submit" class="btn btn-primary btn-lg btn-block">Masuk</button>
+                                </div>
                         </form>
-									<div class="font-16 weight-600 pt-10 pb-10 text-center" data-color="#707373" style="color: rgb(112, 115, 115);">Atau</div>
-									<div class="input-group mb-0">
-										<a class="btn btn-outline-primary btn-lg btn-block" href="/register">Buat Akun</a>
-									</div>
+							<div class="font-16 weight-600 pt-10 pb-10 text-center" data-color="#707373" style="color: rgb(112, 115, 115);">Atau</div>
+								<div class="input-group mb-0">
+									<a class="btn btn-outline-primary btn-lg btn-block" href="/register">Buat Akun</a>
 								</div>
-							</div>
-						</form>
 					</div>
 				</div>
-			</div>
+            </div>
 		</div>
 	</div>
 	<!-- js -->

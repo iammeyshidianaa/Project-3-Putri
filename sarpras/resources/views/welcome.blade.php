@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>SIN SARPRAS GANTARI</title>
+  <title>SIN SARPRAS</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -48,7 +48,7 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto active" href="#hero">Beranda</a></li>
           <li><a class="nav-link scrollto" href="#about">Tentang</a></li>
           <li><a class="nav-link scrollto" href="#services">Layanan</a></li>
           <li><a class="nav-link   scrollto" href="#portfolio">Prototype</a></li>
@@ -689,7 +689,7 @@
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Tautan Bermanfaat</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#hero">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#hero">Beranda</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#about">Tentang</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#services">Layanan</a></li>
             </ul>

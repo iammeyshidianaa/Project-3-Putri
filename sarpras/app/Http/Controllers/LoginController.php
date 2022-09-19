@@ -29,7 +29,7 @@ class LoginController extends Controller
         'email' => $request->email,
         'name' => $request->name,
         'password' => bcrypt($request->password),
-        'role' => 'user',
+        'level' => 'guru',
         'remember_token' => Str::random(60),
     ]);
     // dd($data);
