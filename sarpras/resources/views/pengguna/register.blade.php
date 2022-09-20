@@ -36,7 +36,7 @@
                 <div class="login-header box-shadow">
                     <div class="container-fluid d-flex justify-content-between align-items-center">
                         <div class="brand-logo">
-                            <a href="login.html">
+                            <a href="/register">
                                 <img src="{{ asset('login/vendors/images/deskapp-logo.svg')}}" alt="">
                             </a>
                         </div>

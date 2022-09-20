@@ -34,7 +34,7 @@
 	<div class="login-header box-shadow">
 		<div class="container-fluid d-flex justify-content-between align-items-center">
 			<div class="brand-logo">
-				<a href="login.html">
+				<a href="/masuk">
                 <img src="{{ asset('login/vendors/images/deskapp-logo.svg')}}" alt="">
 				</a>
 			</div>
@@ -71,9 +71,12 @@
                                 </div>
                         </form>
 							<div class="font-16 weight-600 pt-10 pb-10 text-center" data-color="#707373" style="color: rgb(112, 115, 115);">Atau</div>
-								<div class="input-group mb-0">
+								<div class="input-group mb-10">
 									<a class="btn btn-outline-primary btn-lg btn-block" href="/register">Buat Akun</a>
 								</div>
+                                <div class="input-group mb-0">
+                                    <a class="btn btn-outline-primary btn-lg btn-block" href="/">Kembali</a>
+                                </div>
 					</div>
 				</div>
             </div>
