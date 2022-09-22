@@ -3,7 +3,7 @@
 <head>
 	<!-- Basic Page Info -->
 	<meta charset="utf-8">
-	<title>SIN-SARPRAS | Masuk</title>
+	<title>SIN SARPRAS | Masuk</title>
 
 	<!-- Site favicon -->
 	<link rel="apple-touch-icon" sizes="180x180" href="{{ asset('login/vendors/images/logo.jpeg')}}">

@@ -117,7 +117,7 @@
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="">Barang Tidak Habis</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/databarang">Barang Tidak Habis</a></li>
                 <li class="nav-item"> <a class="nav-link" href="">Barang Habis</a></li>
               </ul>
             </div>
@@ -136,8 +136,10 @@
           </li>
         </ul>
       </nav>
+      <!-- partial -->
+      @yield('content')
+      <!-- main-panel ends -->
     </div>
-    @yield('content')
     <!-- page-body-wrapper ends -->
   </div>
   <!-- container-scroller -->
@@ -164,6 +166,7 @@
   <script src="{{ asset('skydas/js/Chart.roundedBarCharts.js')}}"></script>
   <!-- End custom js for this page-->
 </body>
+
 
 </html>
 
