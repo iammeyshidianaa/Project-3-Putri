@@ -4,28 +4,24 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <title>SIN - SARPRAS</title>
+    <title>SIN SARPRAS | Data</title>
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-
      alpha/css/bootstrap.css" rel="stylesheet">
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-	<link rel="stylesheet" type="text/css"
+    <link rel="stylesheet" type="text/css"
      href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-    
+
   </head>
   <body>
     <h1 class="text-center mb-4">Data Barang</h1>
 
 <div class="container">
-<a href="/tambahdatabarang" class="btn btn-success">Tambah Stok</a>
+<a href="/tambahdatabarang"  class="btn btn-outline-success">Tambah Stok</a>
     <div class="row">
 
     <div class="row mt-3">
@@ -91,8 +87,8 @@
             var nama = $(this).attr('data-nama');
 
             swal({
-                    title: "Yakin ?",
-                    text: "Kamu akan menghapus data dapurkue dengan id " + nama + " ",
+                    title: "Yakin?",
+                    text: "Apa kamu ingin menghapus data ini? " + nama + " ",
                     icon: "warning",
                     buttons: true,
                     dangerMode: true,

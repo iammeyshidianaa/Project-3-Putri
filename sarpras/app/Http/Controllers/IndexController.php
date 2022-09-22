@@ -3,13 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class IndexController extends Controller
 {
-    public function index()
+    public function indexadmin()
     {
-        return view('index');
+        return view('admin.index');
     }
 
-    
+    public function indexguru()
+    {
+        return view('admin.index');
+    }
+
+    public function indexsiswa()
+    {
+        return view('admin.index');
+    }
 }

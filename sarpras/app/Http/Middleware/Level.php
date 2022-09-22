@@ -4,8 +4,10 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 
-class CekLevel
+class Level
 {
     /**
      * Handle an incoming request.
@@ -19,6 +21,13 @@ class CekLevel
         if(in_array($request->user()->level,$levels)){
             return $next($request);
         }
-        return redirect('/');
+
+        if (Auth::user()->level == 'admin') {
+            return Redirect::to('admin.index');
+        }elseif (Auth::user()->level == 'guru') {
+            return  Redirect::to('guru.index');
+        }elseif (Auth::user()->level == 'siswa') {
+            return  Redirect::to('siswa.index');
+        }
     }
 }

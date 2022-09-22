@@ -5,7 +5,7 @@
    <!-- Required meta tags -->
    <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Beranda | SIN SARPRAS</title>
+  <title>SIN SARPRAS | Beranda </title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="{{ asset('skydas/vendors/feather/feather.css')}}">
   <link rel="stylesheet" href="{{ asset('skydas/vendors/ti-icons/css/themify-icons.css')}}">
@@ -20,13 +20,14 @@
   <link rel="stylesheet" href="{{ asset('skydas/css/vertical-layout-light/style.css')}}">
   <!-- endinject -->
   <link rel="shortcut icon" href="{{ asset('landing/assets/img/logo.png')}}" />
+@stack('css')
 </head>
 <body>
   <div class="container-scroller">
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-      <a class="navbar-brand brand-logo mr-5" href="index.html"><img src="" class="mr-2" alt=""/><strong>SIN SARPRAS</strong></a>
+      <a class="navbar-brand brand-logo mr-5" href="index.html"><strong>SIN SARPRAS</strong></a>
         <a class="navbar-brand brand-logo-mini" href="index.html"><img src="{{ asset('skydas/images/logo-mini.svg')}}" alt="logo"/></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
@@ -65,7 +66,7 @@
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" href="/indexadmin">
               <i class="ti-world menu-icon"></i>
               <span class="menu-title">Beranda</span>
             </a>
@@ -116,20 +117,8 @@
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="/databarang">Barang Tidak Habis</a></li>
+                <li class="nav-item"> <a class="nav-link" href="">Barang Tidak Habis</a></li>
                 <li class="nav-item"> <a class="nav-link" href="">Barang Habis</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
-            <i class="ti-package menu-icon"></i>
-              <span class="menu-title">Data Stok</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="form-elements">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="">Barang Habis</a></li>
               </ul>
             </div>
           </li>
@@ -140,99 +129,15 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
+            <a class="nav-link" href="/pengajuan" >
               <i class="ti-stats-up menu-icon"></i>
               <span class="menu-title">Pengajuan</span>
             </a>
           </li>
         </ul>
       </nav>
-      <!-- partial -->
-      <div class="main-panel">
-        <div class="content-wrapper">
-          <div class="row">
-            <div class="col-md-12 grid-margin">
-              <div class="row">
-                <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                <h3 class="font-weight-bold">Selamat Datang Kembali</h3>
-                  <h6 class="font-weight-normal mb-0">Semoga harimu menyenangkan <span class="text-primary">^_^</span></h6>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6 grid-margin stretch-card">
-              <div class="card tale-bg">
-                <div class="card-people mt-auto">
-                  <img src="{{ asset('skydas/images/dashboard/people.svg')}}" alt="people">
-                  <div class="weather-info">
-                    <div class="d-flex">
-                      <div>
-                        <h2 class="mb-0 font-weight-normal"><i class="icon-sun mr-2"></i>31<sup>C</sup></h2>
-                      </div>
-                      <div class="ml-2">
-                        <h4 class="location font-weight-normal">Malang</h4>
-                        <h6 class="font-weight-normal">Jawa Timur</h6>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 grid-margin transparent">
-              <div class="row">
-                <div class="col-md-6 mb-4 stretch-card transparent">
-                  <div class="card card-tale">
-                    <div class="card-body">
-                      <p class="mb-4">Total Pengajuan</p>
-                      <p class="fs-30 mb-2">4006</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 mb-4 stretch-card transparent">
-                  <div class="card card-dark-blue">
-                    <div class="card-body">
-                      <p class="mb-4">Menunggu Persetujuan</p>
-                      <p class="fs-30 mb-2">61344</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6 mb-4 mb-lg-0 stretch-card transparent">
-                  <div class="card card-light-blue">
-                    <div class="card-body">
-                      <p class="mb-4">Disetujui</p>
-                      <p class="fs-30 mb-2">34040</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 stretch-card transparent">
-                  <div class="card card-light-danger">
-                    <div class="card-body">
-                      <p class="mb-4">Ditolak</p>
-                      <p class="fs-30 mb-2">47033</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- content-wrapper ends -->
-        <!-- partial:partials/_footer.html -->
-        <footer class="footer">
-          <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Dibuat oleh tim Gantari</span>
-          </div>
-          <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Template oleh <a href="https://www.themewagon.com/" target="_blank">Themewagon</a></span>
-          </div>
-        </footer>
-        <!-- partial -->
-      </div>
-      <!-- main-panel ends -->
     </div>
+    @yield('content')
     <!-- page-body-wrapper ends -->
   </div>
   <!-- container-scroller -->
@@ -262,3 +167,4 @@
 
 </html>
 
+@stack('scripts')
