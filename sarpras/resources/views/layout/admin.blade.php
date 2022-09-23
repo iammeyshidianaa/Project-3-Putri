@@ -118,12 +118,12 @@
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="/databarang">Barang Tidak Habis</a></li>
-                <li class="nav-item"> <a class="nav-link" href="">Barang Habis</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/baranghabis">Barang Habis</a></li>
               </ul>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="/barangmasuk" aria-expanded="false" aria-controls="charts">
+            <a class="nav-link" href="/barangmasuk" >
               <i class="ti-download menu-icon"></i>
               <span class="menu-title">Barang Masuk</span>
             </a>
