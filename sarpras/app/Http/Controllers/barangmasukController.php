@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\databarang;
+use App\Models\barangmasuk;
 use Illuminate\Http\Request;
 
-class databarangController extends Controller
+class barangmasukController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,18 +14,18 @@ class databarangController extends Controller
      */
     public function index()
     {
-        $data = databarang::all();
+        $data = barangmasuk::all();
 
-        return view('admin.databarang', compact('data'));
+        return view('admin.barangmasuk', compact('data'));
     }
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function tambahdatabarang()
+    public function tambahbarangmasuk()
     {
-        return view('admin.tambahdatabarang');
+        return view('admin.tambahbarangmasuk');
     }
 
     /**
@@ -34,7 +34,7 @@ class databarangController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function insertdatabarang(Request $request)
+    public function insertbarangmasuk(Request $request)
     {
         $pesan = [
             'required' => ':attribute wajib di isi!',
@@ -45,15 +45,17 @@ class databarangController extends Controller
 
         ];
         $this->validate($request, [
-            'kategori' => 'required|min:3|max:50',
-            'nama_barang' => 'required|min:1|max:12',
-            'merek' => 'required|min:1|max:10',
-            'stok' => 'numeric',
+            'kategori2' => 'required|min:3|max:50',
+            'namabarang' => 'required|min:3|max:50',
+            'merek_barang' => 'required|min:3|max:50',
+            'tanggal_pembelian' => 'required',
+            'jumlah' => 'numeric',
+            'asal_barang' => 'required',
         ], $pesan);
 
-        $data = databarang::create($request->all());
+        $data = barangmasuk::create($request->all());
 
-        return redirect()->route('databarang')->with('message','Data berhasil ditambahkan');
+        return redirect()->route('barangmasuk')->with('message','Data berhasil ditambahkan');
 
     }
 
@@ -63,13 +65,13 @@ class databarangController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function tampilkandatabarang($id)
+    public function tampilkanbarangmasuk($id)
     {
 
-        $data = databarang::findOrFail($id);
-        $data = databarang::find($id);
+        $data = barangmasuk::findOrFail($id);
+        $data = barangmasuk::find($id);
 
-        return view('admin.tampildatabarang', compact('data'));
+        return view('admin.tampilbarangmasuk', compact('data'));
     }
 
     /**
@@ -90,7 +92,7 @@ class databarangController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function updatedatabarang(Request $request, $id)
+    public function updatebarangmasuk(Request $request, $id)
     {
         $pesan = [
             'required' => ':attribute wajib di isi!',
@@ -101,24 +103,28 @@ class databarangController extends Controller
 
         ];
         $this->validate($request, [
-            'kategori' => 'required|min:3|max:50',
-            'nama_barang' => 'required|min:1|max:12',
-            'merek' => 'required|min:1|max:10',
-            'stok' => 'numeric',
+            'kategori2' => 'required|min:3|max:50',
+            'namabarang' => 'required|min:3|max:50',
+            'merek_barang' => 'required|min:3|max:50',
+            'tanggal_pembelian' => 'required',
+            'jumlah' => 'numeric',
+            'asal_barang' => 'required',
         ], $pesan);
 
-        $data = databarang::findOrFail($id);
-        $data = databarang::find($id);
+        $data = barangmasuk::findOrFail($id);
+        $data = barangmasuk::find($id);
 
         $data->update([
-            'kategori' => $request->kategori,
-            'nama_barang' => $request->nama_barang,
-            'merek' => $request->merek,
-            'stok' => $request->stok,
+            'kategori2' => $request->kategori2,
+            'namabarang' => $request->namabarang,
+            'merek_barang' => $request->merek_barang,
+            'tanggal_pembelian' => $request->tanggal_pembelian,
+            'jumlah' => $request->jumlah,
+            'asal_barang' => $request->asal_barang,
 
         ]);
 
-        return redirect()->route('databarang')->with('message', 'Data berhasil di edit');
+        return redirect()->route('barangmasuk')->with('message', 'Data berhasil di edit');
     }
 
     /**
@@ -129,8 +135,8 @@ class databarangController extends Controller
      */
     public function delete($id)
     {
-        $data = databarang::find($id);
+        $data = barangmasuk::find($id);
         $data->delete($id);
-        return redirect()->route('databarang')->with('message', 'data berhasil di hapus');
+        return redirect()->route('barangmasuk')->with('message', 'data berhasil di hapus');
     }
 }

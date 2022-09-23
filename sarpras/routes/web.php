@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PengajuanController;
-use App\Http\Controllers\databarangController;
+use App\Http\Controllers\barangmasukController;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,7 +57,7 @@ Route::group(['middleware' => ['auth','level:siswa']], function() {
 
 });
 
-// table data barang
+// table data barang(admin)
 
 Route::get('/databarang', [databarangController::class, 'index'])->name('databarang')->middleware('auth');
 Route::get('/tambahdatabarang', [databarangController::class, 'tambahdatabarang'])->name('tambahdatabarang');
@@ -67,3 +67,11 @@ Route::post('/updatedatabarang/{p}', [databarangController::class, 'updatedataba
 Route::get('/deletedatabarang/{p}', [databarangController::class, 'delete'])->name('deletedatabarang');
 
 
+// table barang masuk(admin)
+
+Route::get('/barangmasuk', [barangmasukController::class, 'index'])->name('barangmasuk')->middleware('auth');
+Route::get('/tambahbarangmasuk', [barangmasukController::class, 'tambahbarangmasuk'])->name('tambahbarangmasuk');
+Route::post('/insertbarangmasuk', [barangmasukController::class, 'insertbarangmasuk'])->name('insertbarangmasuk');
+Route::get('/tampilkanbarangmasuk/{p}', [barangmasukController::class, 'tampilkanbarangmasuk'])->name('tampilkanbarangmasuk');
+Route::post('/updatebarangmasuk/{p}', [barangmasukController::class, 'updatebarangmasuk'])->name('updatebarangmasuk');
+Route::get('/deletebarangmasuk/{p}', [barangmasukController::class, 'delete'])->name('deletebarangmasuk');

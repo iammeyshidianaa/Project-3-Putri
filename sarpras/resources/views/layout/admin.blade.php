@@ -123,7 +123,7 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
+            <a class="nav-link" data-toggle="collapse" href="/barangmasuk" aria-expanded="false" aria-controls="charts">
               <i class="ti-download menu-icon"></i>
               <span class="menu-title">Barang Masuk</span>
             </a>
