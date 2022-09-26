@@ -11,12 +11,12 @@ class BaranghabisController extends Controller
     {
         $data = Baranghabis::all();
 
-        return view('admin.baranghabis', compact('data'));
+        return view('admin.baranghabis.baranghabis', compact('data'));
     }
 
     public function tambahbaranghabis()
     {
-        return view('admin.tambahbaranghabis');
+        return view('admin.baranghabis.tambahbaranghabis');
     }
 
     public function insertbaranghabis(Request $request)
@@ -49,7 +49,7 @@ class BaranghabisController extends Controller
         $data = Baranghabis::findOrFail($id);
         $data = Baranghabis::find($id);
 
-        return view('admin.tampilbaranghabis', compact('data'));
+        return view('admin.baranghabis.tampilbaranghabis', compact('data'));
     }
 
     public function updatebaranghabis(Request $request, $id)

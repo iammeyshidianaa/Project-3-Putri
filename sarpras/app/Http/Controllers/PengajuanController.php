@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class PengajuanController extends Controller
 {
     public function pengajuan() {
-        return view('admin.pengajuan');
+        return view('admin.pengajuan.pengajuan');
     }
 }

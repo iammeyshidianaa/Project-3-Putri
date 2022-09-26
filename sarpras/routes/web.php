@@ -4,9 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PengajuanController;
+use App\Http\Controllers\barangmasukController;
 use App\Http\Controllers\databarangController;
 use App\Http\Controllers\BaranghabisController;
-use App\Http\Controllers\barangmasukController;
 
 /*
 |--------------------------------------------------------------------------
@@ -67,6 +67,7 @@ Route::post('/insertdatabarang', [databarangController::class, 'insertdatabarang
 Route::get('/tampilkandatabarang/{p}', [databarangController::class, 'tampilkandatabarang'])->name('tampilkandatabarang');
 Route::post('/updatedatabarang/{p}', [databarangController::class, 'updatedatabarang'])->name('updatedatabarang');
 Route::get('/deletedatabarang/{p}', [databarangController::class, 'delete'])->name('deletedatabarang');
+
 
 // baranghabis
 

@@ -16,7 +16,7 @@ class databarangController extends Controller
     {
         $data = databarang::all();
 
-        return view('admin.databarang', compact('data'));
+        return view('admin.barang.databarang', compact('data'));
     }
     /**
      * Show the form for creating a new resource.
@@ -25,7 +25,7 @@ class databarangController extends Controller
      */
     public function tambahdatabarang()
     {
-        return view('admin.tambahdatabarang');
+        return view('admin.barang.tambahdatabarang');
     }
 
     /**
@@ -69,7 +69,7 @@ class databarangController extends Controller
         $data = databarang::findOrFail($id);
         $data = databarang::find($id);
 
-        return view('admin.tampildatabarang', compact('data'));
+        return view('admin.barang.tampildatabarang', compact('data'));
     }
 
     /**

@@ -1,14 +1,7 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-    <title>SIN SARPRAS | Data</title>
-
+@extends('layout.admin')
+@section('content')
+@push('css')
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-
      alpha/css/bootstrap.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -16,23 +9,31 @@
      href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
-  </head>
-  <body>
-    <h1 class="text-center mb-4">Data Barang</h1>
 
-<div class="container">
-<a href="/tambahbarangmasuk"  class="btn btn-outline-success">Tambah Stok</a>
-    <div class="row">
 
-    <div class="row mt-3">
+
+<body>
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-3">
+          <div class="col-sm-6">
+          </div></div></div>
+
+<h2 class="text-center text-primary">Data Barang Masuk</h2>
+     <div class="container">
                 @if ($massage = Session::get('success'))
                     <div class="alert alert-success" role="alert">
                         {{ $massage }}
                     </div>
                 @endif
 
-    <table class="table">
-  <thead>
+<a href="/tambahbarangmasuk"  class="btn btn-outline-primary">Tambah Stok</a>
+<div class="row mt-3">
+                <div class="row">
+    <table class="table table-bordered" id="gas">
+  <thead class= table-success>
     <tr>
       <th scope="col">#</th>
       <th scope="col">Kategori</th>
@@ -60,9 +61,10 @@
 
                                 <td>
                                     <a href="/tampilkanbarangmasuk/{{ $row->id }}" type="button"
-                                        class="btn btn-outline-warning">Ubah</a>
-                                    <a href="#" class="btn btn-outline-danger delete" id="delete"
-                                        data-id="{{ $row->id }}" data-nama="{{ $row->nama }}">Hapus</a>
+                                    class="btn btn-sm btn-warning text-white"><i class="ti-eraser" title="Ubah"></i></a>
+
+                                    <a href="#" class="btn btn-sm btn-danger text-white delete" id="delete"
+                                    data-id="{{ $row->id }}" data-nama="{{ $row->nama }}"><i class="ti-trash" title="Hapus"></i></a></a>
                                 </td>
 
                             </tr>
@@ -83,6 +85,19 @@
         integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+    $('#gas').DataTable( {
+        language: {
+            url: "{{asset('skydas/js/bahasa.json')}}"
+        }
+    } );
+} );
+    </script>
     </body>
     <script>
         // var button = document.getElementById('id');
@@ -122,4 +137,5 @@
 
     </script>
     </div>
-</html>
+    @endsection
+@push('scripts')
