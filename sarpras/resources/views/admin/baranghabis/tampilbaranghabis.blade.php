@@ -38,11 +38,17 @@
                                         aria-describedby="emailHelp" value="{{ $data->stok1 }}">
                                 </div>
 
-                                <div class=" mb-3">
-                                    <label for="exampleInputEmail1"  class="form-label">Deskripsi</label>
-                                    <textarea class="form-control" name="deskripsi1" id="floatingTextarea2" aria-describedby="emailHelp"
-                                    style="height: 100px" value="{{ $data->deskripsi1 }}"></textarea>
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Deskripsi</label>
+                                    <input type="number" name="deskripsi1" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp" value="{{ $data->deskripsi1 }}">
                                 </div>
+
+                                <!-- <div class=" mb-3">
+                                    <label for="exampleInputEmail1"  class="form-label">Deskripsi</label>
+                                    <textarea class="form-control" name="deskripsi1" id="exampleInputEmail1" aria-describedby="emailHelp"
+                                    style="height: 100px" value="{{ $data->deskripsi1 }}"></textarea>
+                                </div> -->
 
                                 </div>
                                 <div class="mb-3">

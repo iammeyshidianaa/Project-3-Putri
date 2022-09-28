@@ -53,13 +53,14 @@
                                         <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
 
-                                    <div class="mb-3">
+                                <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label">Deskripsi</label>
-                                    <input type="number" name="deskripsi1" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp">
+                                    <textarea name="deskripsi1" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp"></textarea>
                                     @error('deskripsi1')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
+                                </div>
 
                                 </div>
                                 <button type="submit" class="btn btn-outline-primary">Simpan</button>

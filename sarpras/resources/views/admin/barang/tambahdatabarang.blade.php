@@ -15,7 +15,7 @@
 
           </div></div></div>
 
-      <h2 class="text-center text-primary">Tambah Data</h2>
+      <h2 class="text-center text-primary">Tambah Data </h2>
     <form action="/insertdatabarang" method="POST" enctype="multipart/form-data">
     @csrf
                                 <div class="mb-3">

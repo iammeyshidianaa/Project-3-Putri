@@ -39,15 +39,17 @@
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Stok</label>
-                                    <textarea name="deskripsi" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp" value="{{ $data->deskripsi }}"></textarea>
+                                    <label for="exampleInputEmail1" class="form-label">Deskripsi</label>
+                                    <input type="number" name="deskripsi" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp" value="{{ $data->deskripsi }}">
                                 </div>
 
-                                <!-- <div class=" mb-3">
-                                    <label for="exampleInputEmail1"  class="form-label">Deskripsi</label>
-                                    <textarea class="form-control" name="deskripsi" id="floatingTextarea2" style="height: 100px" value="{{ $data->deskripsi }}"></textarea>
+                                <!-- <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">deskripsi</label>
+                                    <textarea name="deskripsi" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp" value="{{ $data->deskripsi }}"></textarea>
                                 </div> -->
+
                                 </div>
                                 <button type="submit" class="btn btn-outline-warning">Ubah</button>
                             </form>

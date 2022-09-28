@@ -40,7 +40,6 @@ class BaranghabisController extends Controller
 
         $data = Baranghabis::create($request->all());
 
-        // return redirect()->route('databarang')->with('success', 'data berhasil di tambahkan');
         return redirect()->route('baranghabis')->with('message','Data berhasil ditambahkan');
 
     }

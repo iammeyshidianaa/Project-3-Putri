@@ -19,7 +19,7 @@
 
           </div></div></div>
 
-      <h2 class="text-center text-primary">Data Barang</h2>
+      <h2 class="text-center text-primary">Data Barang Tidak Habis</h2>
      <div class="container">
                 @if ($massage = Session::get('success'))
                     <div class="alert alert-success" role="alert">
@@ -27,7 +27,7 @@
                     </div>
                 @endif
 
-<a href="/tambahdatabarang"  class="btn btn-outline-primary">Tambah Stok</a>
+<a href="/tambahdatabarang"  class="btn btn-outline-primary">Tambah Barang</a>
 <div class="row mt-3">
                 <div class="row">
     <table class="table table-bordered" id="gas">

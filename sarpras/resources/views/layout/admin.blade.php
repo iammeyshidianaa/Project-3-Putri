@@ -122,12 +122,7 @@
               </ul>
             </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/barangmasuk" >
-              <i class="ti-download menu-icon"></i>
-              <span class="menu-title">Barang Masuk</span>
-            </a>
-          </li>
+
           <li class="nav-item">
             <a class="nav-link" href="/pengajuan" >
               <i class="ti-stats-up menu-icon"></i>
