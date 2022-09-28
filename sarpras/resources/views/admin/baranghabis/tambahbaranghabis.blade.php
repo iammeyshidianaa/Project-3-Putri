@@ -52,6 +52,15 @@
                                     @error('stok1')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
+
+                                    <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Deskripsi</label>
+                                    <input type="number" name="deskripsi1" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp">
+                                    @error('deskripsi1')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
+
                                 </div>
                                 <button type="submit" class="btn btn-outline-primary">Simpan</button>
                             </form>

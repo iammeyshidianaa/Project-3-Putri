@@ -49,6 +49,7 @@ class databarangController extends Controller
             'nama_barang' => 'required|min:1|max:12',
             'merek' => 'required|min:1|max:10',
             'stok' => 'numeric',
+            'deskripsi' => 'required',
         ], $pesan);
 
         $data = databarang::create($request->all());
@@ -105,6 +106,8 @@ class databarangController extends Controller
             'nama_barang' => 'required|min:1|max:12',
             'merek' => 'required|min:1|max:10',
             'stok' => 'numeric',
+            'deskripsi' => 'required',
+
         ], $pesan);
 
         $data = databarang::findOrFail($id);
@@ -115,6 +118,7 @@ class databarangController extends Controller
             'nama_barang' => $request->nama_barang,
             'merek' => $request->merek,
             'stok' => $request->stok,
+            'deskripsi' => $request->deskripsi,
 
         ]);
 

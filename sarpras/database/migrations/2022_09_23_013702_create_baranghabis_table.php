@@ -19,6 +19,7 @@ class CreateBaranghabisTable extends Migration
             $table->string('nama_barang1');
             $table->string('merek1');
             $table->integer('stok1');
+            $table->string('deskripsi1');
             $table->timestamps();
         });
     }

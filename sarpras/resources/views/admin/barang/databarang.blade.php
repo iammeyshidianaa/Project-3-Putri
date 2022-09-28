@@ -38,6 +38,7 @@
       <th scope="col">Nama Barang</th>
       <th scope="col">Merek</th>
       <th scope="col">Stok</th>
+      <th scope="col">Deskripsi</th>
       <th scope="col">Aksi</th>
     </tr>
   </thead>
@@ -52,6 +53,7 @@
                                 <td>{{ $row->nama_barang }}</td>
                                 <td>{{ $row->merek}}</td>
                                 <td>{{ $row->stok }}</td>
+                                <td>{{ $row->deskripsi }}</td>
 
                                 <td>
                                     <a href="/tampilkandatabarang/{{ $row->id }}" type="button"

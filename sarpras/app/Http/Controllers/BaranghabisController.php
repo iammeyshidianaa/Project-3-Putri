@@ -34,6 +34,8 @@ class BaranghabisController extends Controller
             'nama_barang1' => 'required|min:1|max:12',
             'merek1' => 'required|min:1|max:10',
             'stok1' => 'numeric',
+            'deskripsi1' => 'required',
+
         ], $pesan);
 
         $data = Baranghabis::create($request->all());
@@ -67,6 +69,8 @@ class BaranghabisController extends Controller
             'nama_barang1' => 'required|min:1|max:12',
             'merek1' => 'required|min:1|max:10',
             'stok1' => 'numeric',
+            'deskripsi1' => 'required',
+
         ], $pesan);
 
         $data = Baranghabis::findOrFail($id);
@@ -77,6 +81,7 @@ class BaranghabisController extends Controller
             'nama_barang1' => $request->nama_barang1,
             'merek1' => $request->merek1,
             'stok1' => $request->stok1,
+            'deskripsi1' => $request->deskripsi1,
 
         ]);
 

@@ -19,6 +19,7 @@ class CreateDatabarangsTable extends Migration
             $table->string('nama_barang');
             $table->string('merek');
             $table->integer('stok');
+            $table->string('deskripsi');
             $table->timestamps();
         });
     }

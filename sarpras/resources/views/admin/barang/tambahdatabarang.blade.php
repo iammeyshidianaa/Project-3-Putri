@@ -53,6 +53,23 @@
                                         <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
+
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Deskripsi</label>
+                                    <textarea name="deskripsi" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp"></textarea>
+                                    @error('deskripsi')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+
+                                <!-- <div class=" mb-3">
+                                    <label for="exampleInputEmail1"  class="form-label">Deskripsi</label>
+                                    <textarea class="form-control" name="deskripsi" id="floatingTextarea2" style="height: 100px"></textarea>
+                                    @error('deskripsi')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
+                                </div> -->
                                 <button type="submit" class="btn btn-outline-primary">Simpan</button>
                             </form>
                         </div>
