@@ -13,17 +13,37 @@ class LoginController extends Controller
         return view('pengguna.login');
      }
 
-     public function loginproses (Request $request){
+    public function loginproses (Request $request){
         if(Auth::attempt($request->only('email','password'))) {
-            return redirect('/indexadmin');
+            return redirect('/indexguru');
         }
 
         return redirect('/masuk')->with('salah','Nama Atau Password Salah');
      }
 
-     public function register(){
+    public function select(){
+        return view('pengguna.select');
+     }
+
+    public function register(){
         return view('pengguna.register');
     }
+
+    public function registersiswa(){
+        return view('pengguna.registersiswa');
+    }
+
+    public function simpansiswa(Request $request){
+        $data=User::Create([
+        'email' => $request->email,
+        'name' => $request->name,
+        'password' => bcrypt($request->password),
+        'level' => 'siswa',
+        'remember_token' => Str::random(60),
+    ]);
+    return redirect('/masuk');
+    }
+    
     public function simpanregister(Request $request){
         $data=User::Create([
         'email' => $request->email,
@@ -32,6 +52,7 @@ class LoginController extends Controller
         'level' => 'guru',
         'remember_token' => Str::random(60),
     ]);
+
     // dd($data);
     return redirect('/masuk');
         }

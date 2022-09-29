@@ -39,6 +39,7 @@
       <th scope="col">Nama Barang</th>
       <th scope="col">Merek</th>
       <th scope="col">Stok</th>
+      <th scope="col">Satuan</th>
       <th scope="col">Deskripsi</th>
       <th scope="col">Aksi</th>
     </tr>
@@ -54,6 +55,7 @@
                                 <td>{{ $row->nama_barang1 }}</td>
                                 <td>{{ $row->merek1 }}</td>
                                 <td>{{ $row->stok1 }}</td>
+                                <td>{{ $row->satuan1 }}</td>
                                 <td>{{ $row->deskripsi1 }}</td>
 
                                 <td>

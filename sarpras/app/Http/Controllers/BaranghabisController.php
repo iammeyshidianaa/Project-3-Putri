@@ -68,6 +68,7 @@ class BaranghabisController extends Controller
             'nama_barang1' => 'required|min:1|max:12',
             'merek1' => 'required|min:1|max:10',
             'stok1' => 'numeric',
+            'satuan1' => 'required',
             'deskripsi1' => 'required',
 
         ], $pesan);
@@ -80,6 +81,7 @@ class BaranghabisController extends Controller
             'nama_barang1' => $request->nama_barang1,
             'merek1' => $request->merek1,
             'stok1' => $request->stok1,
+            'satuan1' => $request->satuan1,
             'deskripsi1' => $request->deskripsi1,
 
         ]);

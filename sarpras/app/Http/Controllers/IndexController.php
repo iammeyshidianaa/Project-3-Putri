@@ -14,11 +14,11 @@ class IndexController extends Controller
 
     public function indexguru()
     {
-        return view('admin.index');
+        return view('');
     }
 
     public function indexsiswa()
     {
-        return view('admin.index');
+        return view('');
     }
 }

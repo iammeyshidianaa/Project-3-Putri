@@ -39,8 +39,23 @@
                                 </div>
 
                                 <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Satuan</label>
+                                    <select class="form-control" name="satuan1" aria-label="Default select example">
+                                        <option selected>{{ $data->satuan1 }}</option>
+                                        <option value="Buah">Buah</option>
+                                        <option value="Pasang">Pasang</option>
+                                        <option value="Lembar">Lembar</option>
+                                        <option value="Dus">Dus</option>
+                                        <option value="Set">Set</option>
+                                    </select>
+                                    @error('satuan1')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+
+                                <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label">Deskripsi</label>
-                                    <input type="number" name="deskripsi1" class="form-control" id="exampleInputEmail1"
+                                    <input type="text" name="deskripsi1" class="form-control" id="exampleInputEmail1"
                                         aria-describedby="emailHelp" value="{{ $data->deskripsi1 }}">
                                 </div>
 

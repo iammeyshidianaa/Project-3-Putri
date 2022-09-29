@@ -52,6 +52,22 @@
                                     @error('stok1')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Satuan</label>
+                                    <select class="form-control" name="satuan1" aria-label="Default select example">
+                                        <option value="0" selected>Pilih Satuan :</option>
+                                        <option value="Buah">Buah</option>
+                                        <option value="Pasang">Pasang</option>
+                                        <option value="Lembar">Lembar</option>
+                                        <option value="Dus">Dus</option>
+                                        <option value="Set">Set</option>
+                                    </select>
+                                    @error('satuan1')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
 
                                 <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label">Deskripsi</label>

@@ -106,6 +106,7 @@ class databarangController extends Controller
             'nama_barang' => 'required|min:1|max:12',
             'merek' => 'required|min:1|max:10',
             'stok' => 'numeric',
+            'satuan' => 'required',
             'deskripsi' => 'required',
 
         ], $pesan);
@@ -118,6 +119,7 @@ class databarangController extends Controller
             'nama_barang' => $request->nama_barang,
             'merek' => $request->merek,
             'stok' => $request->stok,
+            'satuan' => $request->satuan,
             'deskripsi' => $request->deskripsi,
 
         ]);

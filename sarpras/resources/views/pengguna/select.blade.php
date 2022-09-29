@@ -21,7 +21,7 @@
 	<link rel="stylesheet" type="text/css" href="{{ asset('login/vendors/styles/style.css')}}">
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-119386393-1"></script>
+	<script type="text/javascript" async="" src="{{ asset('login/https://www.google-analytics.com/analytics.js')}}"></script><script async="" src="{{ asset('login/https://www.googletagmanager.com/gtag/js?id=UA-119386393-1')}}"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
 		function gtag(){dataLayer.push(arguments);}
@@ -29,7 +29,7 @@
 
 		gtag('config', 'UA-119386393-1');
 	</script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script></head>
+<script src="{{ asset('login/http://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js') }}"></script></head>
 <body class="login-page">
 	<div class="login-header box-shadow">
 		<div class="container-fluid d-flex justify-content-between align-items-center">
@@ -46,39 +46,35 @@
 				<div class="col-md-6 col-lg-7">
 					<img src="{{ asset('login/vendors/images/login-page-img.png')}}" alt="">
 				</div>
-				<div class="col-md-6 col-lg-5">
-					<div class="login-box bg-white box-shadow border-radius-10">
-						<div class="login-title">
-							<h2 class="text-center text-primary">Masuk</h2>
-						</div>
-                        <form action="/loginproses" method="post" enctype="multipart/form-data">
-                                @csrf
-							<div class="input-group custom">
-								<input type="text" class="form-control form-control-lg" name="email" placeholder="Email">
-								<div class="input-group-append custom">
-									<span class="input-group-text"><i class="icon-copy dw dw-user1"></i></span>
+
+                <form>
+							<div class="select-role">
+								<div class="btn-group btn-group-toggle" data-toggle="buttons" a href="/register">
+									<label class="btn active">
+										<input type="radio" name="options" id="admin">
+										<div class="icon">
+                                        <a href="/register">
+                                             <img src="{{ asset('login/vendors/images/briefcase.svg')}}" class="svg" alt="">
+                                    </a></div>
+										<span>Saya</span>
+										Guru
+									</label><br><br><br>
+
+									<label class="btn">
+										<input type="radio" name="options" id="user">
+										<div class="icon">
+                                        <a href="/registersiswa">
+                                            <img src="{{ asset('login/vendors/images/person.svg')}}" class="svg" alt="">
+                                        </a></div>
+										<span>Saya</span>
+										Siswa
+									</label>
 								</div>
 							</div>
-							<div class="input-group custom">
-								<input type="password" class="form-control form-control-lg" name="password" placeholder="Kata Sandi">
-								<div class="input-group-append custom">
-									<span class="input-group-text"><i class="dw dw-padlock1"></i></span>
-								</div>
-							</div>
-                            <div class="col-sm-12">
-                                <div class="input-group mb-0">
-                                    <button type="submit" class="btn btn-primary btn-lg btn-block">Masuk</button>
-                                </div>
-                        </form>
-							<div class="font-16 weight-600 pt-10 pb-10 text-center" data-color="#707373" style="color: rgb(112, 115, 115);">Atau</div>
-								<div class="input-group mb-10">
-									<a class="btn btn-outline-primary btn-lg btn-block" href="/select">Buat Akun</a>
-								</div>
-                                <div class="input-group mb-0">
-                                    <a class="btn btn-outline-primary btn-lg btn-block" href="/">Kembali</a>
-                                </div>
-					</div>
-				</div>
+
+				</form>
+
+
             </div>
 		</div>
 	</div>
@@ -90,3 +86,7 @@
 
 </body>
 </html>
+
+
+
+

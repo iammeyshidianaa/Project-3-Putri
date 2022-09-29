@@ -60,9 +60,9 @@
                                         <div class="content clearfix">
                                                 <h5 id="steps-uid-0-h-0" tabindex="-1" class="title current text-center"></h5>
                                             <div class="login-title">
-                                                <h2 class="text-center text-primary">Daftar Guru</h2><br>
+                                                <h2 class="text-center text-primary">Daftar Siswa</h2><br>
                                             </div>
-                                            <form action="/simpanregister" method="post" enctype="multipart/form-data">
+                                            <form action="/simpansiswa" method="post" enctype="multipart/form-data">
                                                 @csrf
                                                 <br>
                                                     <section id="steps-uid-0-p-0" role="tabpanel" aria-labelledby="steps-uid-0-h-0" class="body current" aria-hidden="false">

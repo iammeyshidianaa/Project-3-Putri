@@ -27,19 +27,16 @@ Route::get('/', function () {
 
 Route::get('/masuk',[LoginController::class,'login'])->name('masuk');
 Route::post('/loginproses', [LoginController::class, 'loginproses'])->name('loginproses');
+Route::get('/select',[LoginController::class,'select'])->name('select');
 Route::get('/register', [LoginController::class, 'register'])->name('register');
+Route::get('/registersiswa', [LoginController::class, 'registersiswa'])->name('registersiswa');
+
 Route::post('/simpanregister', [LoginController::class, 'simpanregister' ])->name('simpanregister');
+Route::post('/simpansiswa', [LoginController::class, 'simpansiswa' ])->name('simpansiswa');
+
 Route::get('/logout', [LoginController::class,'logout'])->name('logout');
 
 //Admin
-
-Route::group(['middleware' => ['auth','level:admin']], function() {
-Route::get('/index',[IndexController::class,'index'])->name('index');
-
-});
-
-Route::group(['middleware' => ['auth','level:superadmin']], function() {
-});
 
 Route::group(['middleware' => ['auth','level:admin']], function() {
 
@@ -47,7 +44,7 @@ Route::group(['middleware' => ['auth','level:admin']], function() {
     Route::get('/pengajuan',[PengajuanController::class,'pengajuan'])->name('pengajuan');
 });
 
-Route::group(['middleware' => ['auth','level:admin,guru']], function() {
+Route::group(['middleware' => ['auth','level:guru']], function() {
 
     Route::get('/indexguru',[IndexController::class,'indexguru'])->name('indexguru');
 

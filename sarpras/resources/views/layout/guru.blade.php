@@ -66,7 +66,7 @@
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="/indexadmin">
+            <a class="nav-link" href="/indexguru">
               <i class="ti-world menu-icon"></i>
               <span class="menu-title">Beranda</span>
             </a>
@@ -84,24 +84,16 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
-              <i class="ti-comment-alt menu-icon"></i>
-              <span class="menu-title">Daftar Pengajuan</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="icons">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/icons/mdi.html">Menunggu<br>Persetujuan</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/icons/mdi.html">Di setujui</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/icons/mdi.html">Tidak di setujui</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/barangmasuk" >
+            <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
               <i class="ti-home menu-icon"></i>
               <span class="menu-title">Data Ruangan</span>
+              <i class="menu-arrow"></i>
             </a>
+            <div class="collapse" id="tables">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="#">-</a></li>
+              </ul>
+            </div>
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
@@ -111,14 +103,13 @@
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="/databarang">Barang Tidak Habis</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/baranghabis">Barang Habis</a></li>
+                <li class="nav-item"> <a class="nav-link" href="#">Barang Tidak Habis</a></li>
+                <li class="nav-item"> <a class="nav-link" href="#">Barang Habis</a></li>
               </ul>
             </div>
           </li>
-
           <li class="nav-item">
-            <a class="nav-link" href="/pengajuan" >
+            <a class="nav-link" href="#" >
               <i class="ti-stats-up menu-icon"></i>
               <span class="menu-title">Pengajuan</span>
             </a>

@@ -21,7 +21,7 @@
           <div class="col-sm-6">
           </div></div></div>
 
-<h2 class="text-center text-primary">Data Barang Masuk</h2>
+<h2 class="text-center text-primary">Data Ruangan</h2>
      <div class="container">
                 @if ($massage = Session::get('success'))
                     <div class="alert alert-success" role="alert">
