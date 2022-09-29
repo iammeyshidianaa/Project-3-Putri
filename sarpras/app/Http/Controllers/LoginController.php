@@ -12,14 +12,24 @@ class LoginController extends Controller
     public function login (){
         return view('pengguna.login');
      }
-
     public function loginproses (Request $request){
-        if(Auth::attempt($request->only('email','password'))) {
+        if(Auth::attempt(['email'=>$request->email,'password'=>$request->password,'level'=>'siswa'])) {
+            return redirect('/indexsiswa');
+        }
+        if(Auth::attempt(['email'=>$request->email,'password'=>$request->password,'level'=>'guru'])) {
             return redirect('/indexguru');
         }
+        if(Auth::attempt(['email'=>$request->email,'password'=>$request->password])) {
+            return redirect('/indexadmin');
+        }
+
+
 
         return redirect('/masuk')->with('salah','Nama Atau Password Salah');
      }
+
+
+
 
     public function select(){
         return view('pengguna.select');
@@ -43,7 +53,7 @@ class LoginController extends Controller
     ]);
     return redirect('/masuk');
     }
-    
+
     public function simpanregister(Request $request){
         $data=User::Create([
         'email' => $request->email,

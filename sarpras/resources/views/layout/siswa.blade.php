@@ -96,12 +96,6 @@
               </ul>
             </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" >
-              <i class="ti-stats-up menu-icon"></i>
-              <span class="menu-title">Pengajuan</span>
-            </a>
-          </li>
         </ul>
       </nav>
       <!-- partial -->
@@ -134,6 +128,7 @@
   <script src="{{ asset('skydas/js/Chart.roundedBarCharts.js')}}"></script>
   <!-- End custom js for this page-->
 </body>
+
 
 
 </html>
