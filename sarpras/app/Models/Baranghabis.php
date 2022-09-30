@@ -7,6 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Baranghabis extends Model
 {
-    protected $table = 'baranghabis';
+    protected $table = 'Baranghabis';
     protected $guarded = [];
+
+
+
+    public function kategori1()
+    {
+        return $this->hasMany(Baranghabis::class);
+    }
 }

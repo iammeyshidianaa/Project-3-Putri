@@ -18,13 +18,26 @@
       <h2 class="text-center text-primary">Tambah Data </h2>
     <form action="/insertdatabarang" method="POST" enctype="multipart/form-data">
     @csrf
-                                <div class="mb-3">
+                                <!-- <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Kategori</label>
                                     <input type="text" name="kategori" class="form-control" id="exampleInputEmail1"
                                         aria-describedby="emailHelp">
                                     @error('kategori')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
+                                </div> -->
+
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Kategori</label>
+                                    <select class="form-control" name="kategori" >
+                                    <option  value="" selected>Pilih Kategori</option>
+                                    @foreach($data as $row)
+                                        <option  value="{{$row->id}}">{{$row->kategorii}}</option>
+                                        @endforeach
+                                    </select>
+                                    @error('kategori')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                 @enderror
                                 </div>
 
                                 <div class="mb-3">

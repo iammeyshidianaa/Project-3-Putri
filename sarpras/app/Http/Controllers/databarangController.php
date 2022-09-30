@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\databarang;
+use App\Models\kategori;
 use Illuminate\Http\Request;
 
 class databarangController extends Controller
@@ -23,9 +24,11 @@ class databarangController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function tambahdatabarang()
     {
-        return view('admin.barang.tambahdatabarang');
+        $data = kategori::all();
+        return view('admin.barang.tambahdatabarang', compact('data'));
     }
 
     /**

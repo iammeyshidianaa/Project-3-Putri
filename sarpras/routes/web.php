@@ -86,3 +86,11 @@ Route::post('/insertbarangmasuk', [barangmasukController::class, 'insertbarangma
 Route::get('/tampilkanbarangmasuk/{p}', [barangmasukController::class, 'tampilkanbarangmasuk'])->name('tampilkanbarangmasuk');
 Route::post('/updatebarangmasuk/{p}', [barangmasukController::class, 'updatebarangmasuk'])->name('updatebarangmasuk');
 Route::get('/deletebarangmasuk/{p}', [barangmasukController::class, 'delete'])->name('deletebarangmasuk');
+
+//Kategori
+Route::get('/kategorii', [kategoriController::class, 'kategorii'])->name('kategorii');
+Route::get('/kategori_tambah', [kategoriController::class, 'kategori_tambah'])->name('kategori_tambah');
+Route::get('/kategori_edit/{id}', [kategoriController::class, 'kategori_edit'])->name('kategori_edit');
+Route::post('/insertkategori', [kategoriController::class, 'insertkategori'])->name('insertkategori');
+Route::post('/updatekategori/{id}', [kategoriController::class, 'updatekategori'])->name('updatekategori');
+Route::get('/deletekategori/{id}', [kategoriController::class, 'deletekategori'])->name('deletekategori');

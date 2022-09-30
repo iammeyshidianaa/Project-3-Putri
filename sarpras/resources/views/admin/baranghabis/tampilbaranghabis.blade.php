@@ -16,8 +16,9 @@
                                 @csrf
                                 <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label">Kategori</label>
-                                    <input type="text" name="kategori1" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp" value="{{ $data->kategori1 }}">
+                                    <select class="form-control" name="kategori1" aria-label="Default select example">
+                                        <option >{{ $data->kategori1 }}</option>
+                                    </select>
                                 </div>
 
                                 <div class="mb-3">

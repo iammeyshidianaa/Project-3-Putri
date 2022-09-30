@@ -20,12 +20,17 @@
                                 @csrf
                                 <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label">Kategori</label>
-                                    <input type="text" name="kategori1" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp">
+                                    <select class="form-control" name="kategori1" >
+                                    <option  value="" selected>Pilih Kategori</option>
+                                    @foreach($data as $row)
+                                        <option  value="{{$row->id}}">{{$row->kategorii}}</option>
+                                        @endforeach
+                                    </select>
                                     @error('kategori1')
-                                        <div class="alert alert-danger">{{ $message }}</div>
-                                    @enderror
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                 @enderror
                                 </div>
+
 
                                 <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label">Nama Barang</label>
