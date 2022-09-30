@@ -48,7 +48,7 @@ class databarangController extends Controller
 
         ];
         $this->validate($request, [
-            'kategori' => 'required|min:3|max:50',
+            'kategori' => 'required',
             'nama_barang' => 'required|min:1|max:12',
             'merek' => 'required|min:1|max:10',
             'stok' => 'numeric',
@@ -105,7 +105,7 @@ class databarangController extends Controller
 
         ];
         $this->validate($request, [
-            'kategori' => 'required|min:3|max:50',
+            'kategori' => 'required',
             'nama_barang' => 'required|min:1|max:12',
             'merek' => 'required|min:1|max:10',
             'stok' => 'numeric',

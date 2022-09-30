@@ -32,7 +32,7 @@ class BaranghabisController extends Controller
 
         ];
         $this->validate($request, [
-            'kategori1' => 'required|min:3|max:50',
+            'kategori1' => 'required',
             'nama_barang1' => 'required|min:1|max:12',
             'merek1' => 'required|min:1|max:10',
             'stok1' => 'numeric',
@@ -66,7 +66,7 @@ class BaranghabisController extends Controller
 
         ];
         $this->validate($request, [
-            'kategori1' => 'required|min:3|max:50',
+            'kategori1' => 'required',
             'nama_barang1' => 'required|min:1|max:12',
             'merek1' => 'required|min:1|max:10',
             'stok1' => 'numeric',
