@@ -45,7 +45,7 @@ class barangmasukController extends Controller
 
         ];
         $this->validate($request, [
-            'kategori2' => 'required|min:3|max:50',
+            'kategori2' => 'required',
             'namabarang' => 'required|min:3|max:50',
             'merek_barang' => 'required|min:3|max:50',
             'tanggal_pembelian' => 'required',

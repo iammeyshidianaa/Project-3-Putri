@@ -1,12 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\merkController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\nabarController;
+use App\Http\Controllers\kategoriController;
 use App\Http\Controllers\PengajuanController;
-use App\Http\Controllers\barangmasukController;
 use App\Http\Controllers\databarangController;
 use App\Http\Controllers\BaranghabisController;
+use App\Http\Controllers\barangmasukController;
 
 /*
 |--------------------------------------------------------------------------
@@ -94,3 +97,21 @@ Route::get('/kategori_edit/{id}', [kategoriController::class, 'kategori_edit'])-
 Route::post('/insertkategori', [kategoriController::class, 'insertkategori'])->name('insertkategori');
 Route::post('/updatekategori/{id}', [kategoriController::class, 'updatekategori'])->name('updatekategori');
 Route::get('/deletekategori/{id}', [kategoriController::class, 'deletekategori'])->name('deletekategori');
+
+
+//nabar
+Route::get('/nabarr', [nabarController::class, 'nabarr'])->name('nabarr');
+Route::get('/nabar_tambah', [nabarController::class, 'nabar_tambah'])->name('nabar_tambah');
+Route::get('/nabar_edit/{id}', [nabarController::class, 'nabar_edit'])->name('nabar_edit');
+Route::post('/insertnabar', [nabarController::class, 'insertnabar'])->name('insertnabar');
+Route::post('/updatenabar/{id}', [nabarController::class, 'updatenabar'])->name('updatenabar');
+Route::get('/deletenabar/{id}', [nabarController::class, 'deletenabar'])->name('deletenabar');
+
+
+//merk
+Route::get('/merkk', [merkController::class, 'merkk'])->name('merkk');
+Route::get('/merk_tambah', [merkController::class, 'merk_tambah'])->name('merk_tambah');
+Route::get('/merk_edit/{id}', [merkController::class, 'merk_edit'])->name('merk_edit');
+Route::post('/insertmerk', [merkController::class, 'insertmerk'])->name('insertmerk');
+Route::post('/updatemerk/{id}', [merkController::class, 'updatemerk'])->name('updatemerk');
+Route::get('/deletemerk/{id}', [merkController::class, 'deletemerk'])->name('deletemerk');

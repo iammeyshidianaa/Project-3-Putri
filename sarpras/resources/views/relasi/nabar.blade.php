@@ -19,7 +19,7 @@
 
           </div></div></div>
 
-      <h2 class="text-center text-primary">Data Barang Tidak Habis</h2>
+      <h2 class="text-center text-primary">Tambah Data</h2>
      <div class="container">
                 @if ($massage = Session::get('success'))
                     <div class="alert alert-success" role="alert">
@@ -27,14 +27,14 @@
                     </div>
                 @endif
 
-<a href="/kategori_tambah"  class="btn btn-outline-primary">Tambah Barang</a>
+<a href="/nabar_tambah"  class="btn btn-outline-primary">Tambah Barang</a>
 <div class="row mt-3">
                 <div class="row">
     <table class="table table-bordered" id="gas">
     <thead class= table-success>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Kategori</th>
+      <th scope="col">Nama Barang</th>
       <th scope="col">Aksi</th>
     </tr>
   </thead>
@@ -43,10 +43,10 @@
                                 @php
                             $no = 1;
                         @endphp
-                        @foreach($data as $row)
+                        @foreach($data as $k)
                             <tr>
                                 <th scope="row">{{ $no++ }}</th>
-                                <td>{{ $row->kategorii }}</td>
+                                <td>{{ $row->nabarr}}</td>
                                 <td>
                                     <a href="#" class="btn btn-sm btn-danger text-white delete" id="delete"
                                         data-id="{{ $row->id }}" data-nama="{{ $row->nama }}"><i class="ti-trash" title="Hapus"></i></a></a>
@@ -87,7 +87,7 @@
     </script>
    <script>
         $('.delete').click(function() {
-            var kategori = $(this).attr('data-id');
+            var nabar = $(this).attr('data-id');
 
             swal({
                     title: "Yakin ?",
@@ -98,7 +98,7 @@
                 })
                 .then((willDelete) => {
                     if (willDelete) {
-                        window.location = "/deletekategori/" + kategori + ""
+                        window.location = "/deletenabar/" + nabar + ""
                         swal("Data berhasil dihapus", {
                             icon: "success",
                         });

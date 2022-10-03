@@ -5,26 +5,24 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class kategori extends Model
+class merk extends Model
 {
-    protected $table = 'kategoris';
+    protected $table = 'merks';
     protected $primaryKey = 'id';
     protected $fillable = [
-    'id',
-    'kategorii',
-    ];
+        'id',
+        'merkk' ,
+        ];
 
-    public function kategori()
+    public function merek()
     {
         return $this->belongsTo(databarang::class);
     }
 
-    public function kategori1()
+    public function merek1()
     {
         return $this->belongsTo(Baranghabis::class);
     }
-
-
 
 
 }
