@@ -19,7 +19,7 @@
 
           </div></div></div>
 
-      <h2 class="text-center text-primary">Tambah Data</h2>
+          <h2 class="text-center text-primary">Merk</h2>
      <div class="container">
                 @if ($massage = Session::get('success'))
                     <div class="alert alert-success" role="alert">

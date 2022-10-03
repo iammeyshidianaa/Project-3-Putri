@@ -36,8 +36,8 @@
                                     <label for="exampleInputEmail1" class="form-label">Nama Barang</label>
                                     <select class="form-control" name="nama_barang1" >
                                     <option  value="" selected>Pilih Kategori</option>
-                                    @foreach($data as $k)
-                                        <option  value="{{$k->id}}">{{$k->nabarr}}</option>
+                                    @foreach($data as $row)
+                                        <option  value="{{$row->id}}">{{$row->nabarr}}</option>
                                         @endforeach
                                     </select>
                                     @error('nama_barang1')

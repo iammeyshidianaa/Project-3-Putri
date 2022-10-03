@@ -1,4 +1,4 @@
-@extends('layout.admin')
+@extends('layout.guru')
 
 @section('content')
 @push('css')
@@ -26,7 +26,7 @@
 						</div>
                         <br><br>
             <div class=" mb-3">
-                <label for="exampleInputEmail1"  class="form-label">Nama Pengaju</label>
+                <label for="exampleInputEmail1"  class="form-label">Nama Yang Mengajukan</label>
                 <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">

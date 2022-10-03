@@ -96,6 +96,12 @@
               </ul>
             </div>
           </li>
+           <li class="nav-item">
+            <a class="nav-link" href="">
+              <i class="ti-share-alt menu-icon"></i>
+              <span class="menu-title">Ajukan Peminjaman</span>
+            </a>
+          </li>
         </ul>
       </nav>
       <!-- partial -->

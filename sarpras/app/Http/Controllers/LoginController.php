@@ -67,6 +67,11 @@ class LoginController extends Controller
     return redirect('/masuk');
         }
 
+    public function user(){
+        return redirect('admin.loguser.user');
+    }
+
+
     public function logout(){
         Auth::logout();
         return redirect('/');

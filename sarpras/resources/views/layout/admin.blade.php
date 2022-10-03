@@ -117,16 +117,16 @@
             </div>
           </li>
 
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" href="/pengajuan" >
               <i class="ti-stats-up menu-icon"></i>
               <span class="menu-title">Pengajuan</span>
             </a>
-          </li>
+          </li> -->
 
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-            <i class="icon-paper menu-icon"></i>
+            <i class="ti-link menu-icon"></i>
               <span class="menu-title">Relasi</span>
               <i class="menu-arrow"></i>
             </a>

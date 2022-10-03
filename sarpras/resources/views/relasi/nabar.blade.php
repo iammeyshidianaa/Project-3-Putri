@@ -19,7 +19,7 @@
 
           </div></div></div>
 
-      <h2 class="text-center text-primary">Tambah Data</h2>
+          <h2 class="text-center text-primary">Nama Barang</h2>
      <div class="container">
                 @if ($massage = Session::get('success'))
                     <div class="alert alert-success" role="alert">
@@ -43,7 +43,7 @@
                                 @php
                             $no = 1;
                         @endphp
-                        @foreach($data as $k)
+                        @foreach($data as $row)
                             <tr>
                                 <th scope="row">{{ $no++ }}</th>
                                 <td>{{ $row->nabarr}}</td>

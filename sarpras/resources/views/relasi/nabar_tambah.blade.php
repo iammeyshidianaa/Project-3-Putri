@@ -6,12 +6,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />@endpush
 
     <body>
-        <h1 class="text-center mb-4">Tambah Data Nama Barang</h1>
+    <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-3">
+          <div class="col-sm-6">
+
+          </div></div></div>
+          <h2 class="text-center text-primary">Tambah Nama Barang</h2>
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-8">
-                    <div class="card">
-                        <div class="card-body">
+
                             <form action="/insertnabar" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="mb-3">
@@ -23,10 +30,10 @@
                                     @enderror
                                 </div>
 
-                                <button type="submit" class="btn btn-primary">Simpan</button>
+                                <button type="submit" class="btn btn-outline-primary">Simpan</button>
                             </form>
                         </div>
-                    </div>
+                  
                 </div>
             </div>
         </div>

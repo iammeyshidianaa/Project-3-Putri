@@ -1,6 +1,8 @@
 @extends('layout.admin')
 
 @section('content')
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <body>
     <body>
     <div class="content-wrapper">
@@ -34,7 +36,7 @@
 
                                 <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label">Tanggal Pembelian</label>
-                                    <input type="date" name="tanggal_pembelian" class="form-control" id="exampleInputEmail1"
+                                    <input type="date" name="tanggal_pembelian" class="form-control" id="tanggal"
                                         aria-describedby="emailHelp" value="{{ $data->tanggal_pembelian }}">
                                 </div>
 
@@ -65,6 +67,12 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
         </script>
+           <script>
+    config={
+        minDate:"today",
+    }
+    flatpickr("input[type=date]",config);
+</script>
    </body >
 
 @endsection
