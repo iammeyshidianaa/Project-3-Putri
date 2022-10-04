@@ -1,17 +1,18 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\guruController;
 use App\Http\Controllers\merkController;
+use App\Http\Controllers\userController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\nabarController;
+use App\Http\Controllers\SatuanController;
 use App\Http\Controllers\kategoriController;
 use App\Http\Controllers\PengajuanController;
 use App\Http\Controllers\databarangController;
 use App\Http\Controllers\BaranghabisController;
 use App\Http\Controllers\barangmasukController;
-use App\Http\Controllers\userController;
-use App\Http\Controllers\guruController;
 
 /*
 |--------------------------------------------------------------------------
@@ -117,6 +118,14 @@ Route::get('/merk_edit/{id}', [merkController::class, 'merk_edit'])->name('merk_
 Route::post('/insertmerk', [merkController::class, 'insertmerk'])->name('insertmerk');
 Route::post('/updatemerk/{id}', [merkController::class, 'updatemerk'])->name('updatemerk');
 Route::get('/deletemerk/{id}', [merkController::class, 'deletemerk'])->name('deletemerk');
+
+//Satuan
+Route::get('/satuan', [SatuanController::class, 'satuan'])->name('satuan');
+Route::get('/tambahsatuan', [SatuanController::class, 'tambahsatuan'])->name('tambahsatuan');
+Route::get('/satuan_edit/{id}', [SatuanController::class, 'satuan_edit'])->name('satuan_edit');
+Route::post('/insertsatuan', [SatuanController::class, 'insertsatuan'])->name('insertsatuan');
+Route::post('/updatesatuan/{id}', [SatuanController::class, 'updatesatuan'])->name('updatesatuan');
+Route::get('/deletesatuan/{id}', [SatuanController::class, 'deletesatuan'])->name('deletesatuan');
 
 //user
 Route::get('/user', [userController::class, 'user'])->name('user');

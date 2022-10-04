@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\databarang;
-use App\Models\{kategori, nabar,  merk};
 use Illuminate\Http\Request;
+use App\Models\{kategori, nabar,  merk, Satuan};
 
 class databarangController extends Controller
 {
@@ -30,8 +30,9 @@ class databarangController extends Controller
         $data = kategori::all();
         $nabar = nabar::all();
         $merk = merk::all();
-      
-        return view('admin.barang.tambahdatabarang', compact('data', 'nabar', 'merk'));
+        $satuan = Satuan::all();
+
+        return view('admin.barang.tambahdatabarang', compact('data', 'nabar', 'merk', 'satuan'));
     }
 
     /**

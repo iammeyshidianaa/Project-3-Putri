@@ -127,18 +127,21 @@
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="/kategorii">Kategori</a></li>
-
               </ul>
             </div>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="/nabarr">Nama Barang</a></li>
-
               </ul>
-            </div><div class="collapse" id="ui-basic">
+            </div>
+            <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="/merkk">Merek</a></li>
-
+              </ul>
+            </div>
+            <div class="collapse" id="ui-basic">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/satuan">Satuan</a></li>
               </ul>
             </div>
           </li>

@@ -19,7 +19,7 @@
 
           </div></div></div>
 
-      <h2 class="text-center text-primary">Data Barang Tidak Habis</h2>
+          <h2 class="text-center text-primary">Satuan</h2>
      <div class="container">
                 @if ($massage = Session::get('success'))
                     <div class="alert alert-success" role="alert">
@@ -27,50 +27,34 @@
                     </div>
                 @endif
 
-<a href="/tambahdatabarang"  class="btn btn-outline-primary">Tambah Barang</a>
+<a href="/tambahsatuan"  class="btn btn-outline-primary">Tambah Barang</a>
 <div class="row mt-3">
                 <div class="row">
     <table class="table table-bordered" id="gas">
     <thead class= table-success>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Kategori</th>
-      <th scope="col">Nama Barang</th>
-      <th scope="col">Merek</th>
-      <th scope="col">Stok</th>
       <th scope="col">Satuan</th>
-      <th scope="col">Deskripsi</th>
       <th scope="col">Aksi</th>
     </tr>
   </thead>
   <tbody>
-                 @php
-                $no = 1;
-               @endphp
-             @foreach ($data as $row)
-                 <tr>
-                                <th scope="row">{{ $no++ }}</th>
+
                                 @php
-                                    $kategori = \App\Models\kategori::where('id', $row->kategori)->first();
-                                    $satuan = \App\Models\Satuan::where('id', $row->satuan)->first();
-                                @endphp
-                                <td>{{ $kategori->kategorii }}</td>
-                                <td>{{ $row->nama_barang }}</td>
-                                <td>{{ $row->merek}}</td>
-                                <td>{{ $row->stok }}</td>
-                                <td>{{ $satuan->satuan }}</td>
-                                <td>{{ $row->deskripsi }}</td>
-
+                            $no = 1;
+                        @endphp
+                        @foreach($data as $row)
+                            <tr>
+                                <th scope="row">{{ $no++ }}</th>
+                                <td>{{ $row->satuan }}</td>
                                 <td>
-                                    <a href="/tampilkandatabarang/{{ $row->id }}" type="button"
-                                    class="btn btn-sm btn-warning text-white"><i class="ti-eraser" title="Ubah"></i></a>
-
                                     <a href="#" class="btn btn-sm btn-danger text-white delete" id="delete"
                                         data-id="{{ $row->id }}" data-nama="{{ $row->nama }}"><i class="ti-trash" title="Hapus"></i></a></a>
                                 </td>
-
                             </tr>
                         @endforeach
+
+
 
     </tr>
 
@@ -101,22 +85,20 @@
     } );
 } );
     </script>
-    <script>
-        // var button = document.getElementById('id');
+   <script>
         $('.delete').click(function() {
-            var databarangid = $(this).attr('data-id');
-            var nama = $(this).attr('data-nama');
+            var kategori = $(this).attr('data-id');
 
             swal({
-                    title: "Yakin?",
-                    text: "Apa kamu ingin menghapus data ini? " + nama + " ",
+                    title: "Yakin ?",
+                    text: "Kamu akan menghapus data dapurkue dengan id " +  + " ",
                     icon: "warning",
                     buttons: true,
                     dangerMode: true,
                 })
                 .then((willDelete) => {
                     if (willDelete) {
-                        window.location = "/deletedatabarang/" + databarangid + ""
+                        window.location = "/deletesatuan/" + kategori + ""
                         swal("Data berhasil dihapus", {
                             icon: "success",
                         });
@@ -137,7 +119,7 @@
                     toastr.success("{{ session('message') }}");
             @endif
 
-    </script>
+            </script>
     </div>
 
     @endsection

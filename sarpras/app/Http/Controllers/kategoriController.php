@@ -47,6 +47,6 @@ class KategoriController extends Controller
         $data = kategori::find($id);
         $data->delete();
 
-        return redirect()->route('kategori')->with('success',' Data Berhasil Di Hapus');
+        return redirect()->route('kategorii')->with('success',' Data Berhasil Di Hapus');
 }
 }

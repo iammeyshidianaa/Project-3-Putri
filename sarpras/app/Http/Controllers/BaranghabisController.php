@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Baranghabis;
-use App\Models\{kategori, nabar,  merk};
+use App\Models\{kategori, nabar,  merk, Satuan};
 use Illuminate\Http\Request;
 
 class BaranghabisController extends Controller
@@ -20,8 +20,10 @@ class BaranghabisController extends Controller
         $data = kategori::all();
         $nabar = nabar::all();
         $merk = merk::all();
+        $satuan = Satuan::all();
 
-        return view('admin.baranghabis.tambahbaranghabis', compact('data', 'nabar', 'merk'));
+
+        return view('admin.baranghabis.tambahbaranghabis', compact('data', 'nabar', 'merk' , 'satuan'));
     }
 
     public function insertbaranghabis(Request $request)

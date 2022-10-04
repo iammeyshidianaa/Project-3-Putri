@@ -44,7 +44,7 @@
                                     <label for="exampleInputEmail1" class="form-label">Nama Barang</label>
                                     <input type="text" name="nama_barang" class="form-control" id="exampleInputEmail1"
                                         aria-describedby="emailHelp">
-                                        
+
                                     @error('nama_barang')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
@@ -70,17 +70,15 @@
 
                                 <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label">Satuan</label>
-                                    <select class="form-control" name="satuan" aria-label="Default select example">
-                                        <option value="0" selected>Pilih Satuan :</option>
-                                        <option value="Buah">Buah</option>
-                                        <option value="Pasang">Pasang</option>
-                                        <option value="Lembar">Lembar</option>
-                                        <option value="Dus">Dus</option>
-                                        <option value="Set">Set</option>
+                                    <select class="form-control" name="satuan" >
+                                    <option  value="" selected>Pilih Kategori</option>
+                                    @foreach($satuan as $row)
+                                        <option  value="{{$row->id}}">{{$row->satuan}}</option>
+                                        @endforeach
                                     </select>
                                     @error('satuan')
-                                        <div class="alert alert-danger">{{ $message }}</div>
-                                    @enderror
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                 @enderror
                                 </div>
 
                                 <div class="mb-3">
