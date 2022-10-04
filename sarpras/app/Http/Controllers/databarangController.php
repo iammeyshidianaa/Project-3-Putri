@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\databarang;
-use App\Models\kategori;
+use App\Models\{kategori, nabar,  merk};
 use Illuminate\Http\Request;
 
 class databarangController extends Controller
@@ -28,7 +28,10 @@ class databarangController extends Controller
     public function tambahdatabarang()
     {
         $data = kategori::all();
-        return view('admin.barang.tambahdatabarang', compact('data'));
+        $nabar = nabar::all();
+        $merk = merk::all();
+      
+        return view('admin.barang.tambahdatabarang', compact('data', 'nabar', 'merk'));
     }
 
     /**

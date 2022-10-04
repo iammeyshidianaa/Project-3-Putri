@@ -16,6 +16,7 @@ class merkController extends Controller
 
     public function merk_tambah()
     {
+        
         return view('relasi.merk_tambah');
     }
 

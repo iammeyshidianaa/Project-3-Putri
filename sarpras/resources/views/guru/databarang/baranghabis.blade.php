@@ -1,4 +1,4 @@
-@extends('layout.admin')
+@extends('layout.guru')
 @section('content')
 @push('css')
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -28,7 +28,7 @@
                     </div>
                 @endif
 
-<a href="/tambahbaranghabis"  class="btn btn-outline-primary">Tambah Barang</a>
+
 <div class="row mt-3">
                 <div class="row">
     <table class="table table-bordered" id="gas">
@@ -41,7 +41,6 @@
       <th scope="col">Stok</th>
       <th scope="col">Satuan</th>
       <th scope="col">Deskripsi</th>
-      <th scope="col">Aksi</th>
     </tr>
   </thead>
   <tbody>
@@ -56,20 +55,13 @@
                                     $nabar = \App\Models\nabar::where('id', $row->nama_barang1)->first();
                                     $merk = \App\Models\merk::where('id', $row->merek1)->first();
                                 @endphp
-                                <td>{{ $kategorii->kategorii  }}</td>
+                                <td>{{ $kategorii->kategorii }}</td>
                                 <td>{{ $nabar->nabarr }}</td>
                                 <td>{{ $merk->merkk }}</td>
                                 <td>{{ $row->stok1 }}</td>
                                 <td>{{ $row->satuan1 }}</td>
                                 <td>{{ $row->deskripsi1 }}</td>
 
-                                <td>
-                                    <a href="/tampilkanbaranghabis/{{ $row->id }}" type="button"
-                                    class="btn btn-sm btn-warning text-white"><i class="ti-eraser" title="Ubah"></i></a>
-
-                                        <a href="#" class="btn btn-sm btn-danger text-white delete" id="delete"
-                                        data-id="{{ $row->id }}" data-nama="{{ $row->nama }}"><i class="ti-trash" title="Hapus"></i></a></a>
-                                </td>
 
                             </tr>
                         @endforeach
@@ -104,43 +96,8 @@
 } );
     </script>
     </body>
-    <script>
-        // var button = document.getElementById('id');
-        $('.delete').click(function() {
-            var databarangid = $(this).attr('data-id');
-            var nama = $(this).attr('data-nama');
 
-            swal({
-                    title: "Yakin?",
-                    text: "Apa kamu ingin menghapus data ini? " + nama + " ",
-                    icon: "warning",
-                    buttons: true,
-                    dangerMode: true,
-                })
-                .then((willDelete) => {
-                    if (willDelete) {
-                        window.location = "/deletebaranghabis/" + databarangid + ""
-                        swal("Data berhasil dihapus", {
-                            icon: "success",
-                        });
-                    } else {
-                        swal("Data tidak jadi dihapus");
-                    }
-                });
-        });
-    </script>
 
-            <script>
-            @if(Session::has('message'))
-            toastr.options =
-            {
-                "closeButton" : true,
-                "progressBar" : true
-            }
-                    toastr.success("{{ session('message') }}");
-            @endif
-
-    </script>
     </div>
         @endsection
 @push('scripts')

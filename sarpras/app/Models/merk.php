@@ -14,9 +14,10 @@ class merk extends Model
         'merkk' ,
         ];
 
-    public function merek()
+
+    public function databarang()
     {
-        return $this->belongsTo(databarang::class);
+        return $this->hasMany(databarang::class);
     }
 
     public function merek1()

@@ -36,7 +36,7 @@
                                     <label for="exampleInputEmail1" class="form-label">Nama Barang</label>
                                     <select class="form-control" name="nama_barang1" >
                                     <option  value="" selected>Pilih Kategori</option>
-                                    @foreach($data as $row)
+                                    @foreach($nabar as $row)
                                         <option  value="{{$row->id}}">{{$row->nabarr}}</option>
                                         @endforeach
                                     </select>
@@ -50,7 +50,7 @@
                                     <label for="exampleInputEmail1" class="form-label">Merek</label>
                                     <select class="form-control" name="merek1" >
                                     <option  value="" selected>Pilih Kategori</option>
-                                    @foreach($data as $row)
+                                    @foreach($merk as $row)
                                         <option  value="{{$row->id}}">{{$row->merkk}}</option>
                                         @endforeach
                                     </select>

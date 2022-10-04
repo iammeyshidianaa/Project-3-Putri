@@ -90,7 +90,7 @@
                                                     </section>
                                                     <div class="col-sm-12">
                                                     <div class="input-group mb-0">
-                                                        <button type="submit" class="btn btn-primary btn-lg btn-block">Masuk</button>
+                                                        <button type="submit" class="btn btn-primary btn-lg btn-block">Daftar</button>
                                                     </div>
 
                                                 <div class="font-16 weight-600 pt-10 pb-10 text-center" data-color="#707373" style="color: rgb(112, 115, 115);">Atau</div>

@@ -13,8 +13,8 @@ class databarang extends Model
 
     public function kategori()
     {
-        return $this->hasMany(databarang::class);
+        return $this->belongsTo(kategori::class);
     }
 
-    
+
 }

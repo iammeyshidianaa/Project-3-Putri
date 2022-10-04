@@ -1,4 +1,4 @@
-@extends('layout.admin')
+@extends('layout.guru')
 @section('content')
 @push('css')
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -27,7 +27,6 @@
                     </div>
                 @endif
 
-<a href="/tambahdatabarang"  class="btn btn-outline-primary">Tambah Barang</a>
 <div class="row mt-3">
                 <div class="row">
     <table class="table table-bordered" id="gas">
@@ -40,7 +39,6 @@
       <th scope="col">Stok</th>
       <th scope="col">Satuan</th>
       <th scope="col">Deskripsi</th>
-      <th scope="col">Aksi</th>
     </tr>
   </thead>
   <tbody>
@@ -60,13 +58,6 @@
                                 <td>{{ $row->satuan }}</td>
                                 <td>{{ $row->deskripsi }}</td>
 
-                                <td>
-                                    <a href="/tampilkandatabarang/{{ $row->id }}" type="button"
-                                    class="btn btn-sm btn-warning text-white"><i class="ti-eraser" title="Ubah"></i></a>
-
-                                    <a href="#" class="btn btn-sm btn-danger text-white delete" id="delete"
-                                        data-id="{{ $row->id }}" data-nama="{{ $row->nama }}"><i class="ti-trash" title="Hapus"></i></a></a>
-                                </td>
 
                             </tr>
                         @endforeach
@@ -100,44 +91,7 @@
     } );
 } );
     </script>
-    <script>
-        // var button = document.getElementById('id');
-        $('.delete').click(function() {
-            var databarangid = $(this).attr('data-id');
-            var nama = $(this).attr('data-nama');
-
-            swal({
-                    title: "Yakin?",
-                    text: "Apa kamu ingin menghapus data ini? " + nama + " ",
-                    icon: "warning",
-                    buttons: true,
-                    dangerMode: true,
-                })
-                .then((willDelete) => {
-                    if (willDelete) {
-                        window.location = "/deletedatabarang/" + databarangid + ""
-                        swal("Data berhasil dihapus", {
-                            icon: "success",
-                        });
-                    } else {
-                        swal("Data tidak jadi dihapus");
-                    }
-                });
-        });
-    </script>
-
-            <script>
-            @if(Session::has('message'))
-            toastr.options =
-            {
-                "closeButton" : true,
-                "progressBar" : true
-            }
-                    toastr.success("{{ session('message') }}");
-            @endif
-
-    </script>
-    </div>
+   
 
     @endsection
 @push('scripts')

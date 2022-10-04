@@ -10,6 +10,8 @@ use App\Http\Controllers\PengajuanController;
 use App\Http\Controllers\databarangController;
 use App\Http\Controllers\BaranghabisController;
 use App\Http\Controllers\barangmasukController;
+use App\Http\Controllers\userController;
+use App\Http\Controllers\guruController;
 
 /*
 |--------------------------------------------------------------------------
@@ -115,3 +117,14 @@ Route::get('/merk_edit/{id}', [merkController::class, 'merk_edit'])->name('merk_
 Route::post('/insertmerk', [merkController::class, 'insertmerk'])->name('insertmerk');
 Route::post('/updatemerk/{id}', [merkController::class, 'updatemerk'])->name('updatemerk');
 Route::get('/deletemerk/{id}', [merkController::class, 'deletemerk'])->name('deletemerk');
+
+//user
+Route::get('/user', [userController::class, 'user'])->name('user');
+Route::get('/deleteuser/{p}', [userController::class, 'deleteuser'])->name('deleteuser');
+
+//guru tapilan stok
+Route::get('/data1', [guruController::class, 'data1'])->name('data1');
+Route::get('/data2', [guruController::class, 'data2'])->name('data2');
+
+
+

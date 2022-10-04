@@ -14,9 +14,9 @@ class kategori extends Model
     'kategorii',
     ];
 
-    public function kategori()
+    public function databarang()
     {
-        return $this->belongsTo(databarang::class);
+        return $this->hasMany(databarang::class);
     }
 
     public function kategori1()
