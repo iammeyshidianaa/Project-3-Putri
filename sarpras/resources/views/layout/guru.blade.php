@@ -72,34 +72,33 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
+            <a class="nav-link" href="#" >
               <i class="ti-home menu-icon"></i>
               <span class="menu-title">Data Ruangan</span>
-              <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="tables">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="#">-</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-            <i class="icon-paper menu-icon"></i>
-              <span class="menu-title">Data Barang</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="ui-basic">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="/data1">Barang Tidak Habis</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/data2">Barang Habis</a></li>
-              </ul>
-            </div>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/pengajuan" >
               <i class="ti-stats-up menu-icon"></i>
               <span class="menu-title">Pengajuan</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" >
+              <i class="ti-clipboard menu-icon"></i>
+              <span class="menu-title">Peminjaman</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/barangpinjamguru">
+              <i class="ti-harddrives menu-icon"></i>
+              <span class="menu-title">Barang Dipinjam</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/riwayatguru">
+              <i class="ti-time menu-icon"></i>
+              <span class="menu-title">Riwayat Peminjaman</span>
             </a>
           </li>
         </ul>

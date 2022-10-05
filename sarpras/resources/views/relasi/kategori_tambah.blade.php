@@ -14,11 +14,12 @@
           <div class="col-sm-6">
 
           </div></div></div>
-          <h2 class="text-center text-primary">Tambah Kategori</h2>
+        <h1 class="text-center text-primary">Tambah Data Kategori</h1><br>
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-8">
-
+            <div class="row">
+                <div class="col-15">
+                    <div class="card">
+                        <div class="card-body">
                             <form action="/insertkategori" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="mb-3">
@@ -30,12 +31,15 @@
                                     @enderror
                                 </div>
 
-                                <button type="submit" class="btn btn-outline-primary">Simpan</button>
+                                <button type="submit" class="btn btn-primary">Simpan</button>
                             </form>
                         </div>
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
+</div>
 
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"

@@ -7,12 +7,15 @@ use App\Http\Controllers\userController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\nabarController;
-use App\Http\Controllers\SatuanController;
+use App\Http\Controllers\RiwayatController;
 use App\Http\Controllers\kategoriController;
 use App\Http\Controllers\PengajuanController;
 use App\Http\Controllers\databarangController;
 use App\Http\Controllers\BaranghabisController;
 use App\Http\Controllers\barangmasukController;
+use App\Http\Controllers\BarangdipinjamController;
+use App\Http\Controllers\RiwayatpeminjamController;
+use App\Http\Controllers\BarangPinjamGuruController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,18 +52,28 @@ Route::get('/logout', [LoginController::class,'logout'])->name('logout');
 Route::group(['middleware' => ['auth','level:admin']], function() {
 
     Route::get('/indexadmin',[IndexController::class,'indexadmin'])->name('indexadmin');
-    Route::get('/pengajuan',[PengajuanController::class,'pengajuan'])->name('pengajuan');
+
 });
+
+//Guru
 
 Route::group(['middleware' => ['auth','level:guru']], function() {
 
     Route::get('/indexguru',[IndexController::class,'indexguru'])->name('indexguru');
+    Route::get('/pengajuan',[PengajuanController::class,'pengajuan'])->name('pengajuan');
+    Route::get('/barangpinjamguru',[BarangPinjamGuruController::class,'barangpinjamguru'])->name('barangpinjamguru');
+    Route::get('/riwayatguru',[RiwayatController::class,'riwayatguru'])->name('riwayatguru');
 
 });
+
+//Siswa
 
 Route::group(['middleware' => ['auth','level:siswa']], function() {
 
     Route::get('/indexsiswa',[IndexController::class,'indexsiswa'])->name('indexsiswa');
+    Route::get('/editprofile',[IndexController::class,'editprofile'])->name('editprofile');
+    Route::get('/barangdipinjam',[BarangdipinjamController::class,'barangdipinjam'])->name('barangdipinjam');
+    Route::get('/riwayatpeminjaman',[RiwayatpeminjamController::class,'riwayatpeminjaman'])->name('riwayatpeminjaman');
 
 });
 
@@ -134,6 +147,4 @@ Route::get('/deleteuser/{p}', [userController::class, 'deleteuser'])->name('dele
 //guru tapilan stok
 Route::get('/data1', [guruController::class, 'data1'])->name('data1');
 Route::get('/data2', [guruController::class, 'data2'])->name('data2');
-
-
 

@@ -1,4 +1,4 @@
-@extends('layout.guru')
+@extends('layout.siswa')
 
 @section('content')
 @push('css')
@@ -20,35 +20,31 @@
           <div class="col-sm-6"></div><!-- /.row -->
         </div><!-- /.container-fluid -->
       </div>
-	    <h2 class="text-center text-primary">Ajukan Permintaan</h2>
+	    <h2 class="text-center text-primary">Edit Profile</h2>
 	</div>
                         <br><br>
             <div class=" mb-3">
-                <label for="exampleInputEmail1"  class="form-label">Nama Yang Mengajukan</label>
+                <label for="exampleInputEmail1"  class="form-label">Nama Lengkap</label>
                 <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Nama Barang</label>
-                <input type="text" class="form-control" id="exampleInputPassword1">
+                <label for="exampleInputPassword1" class="form-label">Email</label>
+                <input type="email" class="form-control" id="exampleInputPassword1">
             </div>
-            <div class=" mb-3">
-                <label for="exampleInputEmail1"  class="form-label">Alasan Pengajuan</label>
-                <textarea class="form-control" placeholder="" id="floatingTextarea2" style="height: 100px"></textarea>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Kata Sandi Lama</label>
+                <input type="password" class="form-control" id="exampleInputPassword1">
             </div>
-            <div class=" mb-3">
-                <label for="exampleInputEmail1"  class="form-label">Harga</label>
-                <input type-currency="IDR" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                onkeydown="javascript: return ['Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) ? true : !isNaN(Number(event.key)) && event.code!=='Space'">
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Kata Sandi Baru</label>
+                <input type="password" class="form-control" id="exampleInputPassword1">
             </div>
-            <div class=" mb-3">
-                <label for="exampleInputEmail1"  class="form-label">Jumlah</label>
-                <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Konfirmasi Kata Sandi</label>
+                <input type="password" class="form-control" id="exampleInputPassword1">
             </div>
-            <div class=" mb-3">
-                <label for="exampleInputEmail1"  class="form-label">Total</label>
-                <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            </div>
-            <button type="submit" class="btn btn-outline-primary">Ajukan</button>
+            <button type="submit" class="btn btn-outline-primary">Simpan</button>
+            <a class="btn btn-outline-success" href="/indexsiswa" role="button">Kembali</a>
         </div>
                 </div>
             </div>

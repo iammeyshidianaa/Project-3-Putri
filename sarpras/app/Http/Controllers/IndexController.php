@@ -21,4 +21,11 @@ class IndexController extends Controller
     {
         return view('siswa.index');
     }
+
+    //siswa//
+
+    public function editprofile()
+    {
+        return view ('siswa.profile.edit_profile');
+    }
 }
