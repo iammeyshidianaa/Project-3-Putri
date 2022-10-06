@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Satuan;
 use Illuminate\Http\Request;
+use App\Models\Satuan;
 
 class SatuanController extends Controller
 {
@@ -16,16 +16,15 @@ class SatuanController extends Controller
 
     public function tambahsatuan()
     {
-
-        return view('relasi.satuan_tambah');
+         return view('relasi.satuan_tambah');
     }
 
-    // public function satuan_edit($id)
-    // {
-    //     $data = Satuan::findOrFail($id);
-    //     return view('relasi.satuan_edit', compact('data'));
-    // }
-    
+    public function satuan_edit($id)
+    {
+        $data = Satuan::findOrFail($id);
+        return view('relasi.satuan_edit', compact('data'));
+    }
+
     public function insertsatuan(request $request){
 
 

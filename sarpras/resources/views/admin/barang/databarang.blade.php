@@ -52,7 +52,7 @@
                                 <th scope="row">{{ $no++ }}</th>
                                 @php
                                     $kategori = \App\Models\kategori::where('id', $row->kategori)->first();
-                                    $satuan = \App\Models\Satuan::where('id', $row->satuan)->first();
+                                    $satuan = \App\Models\satuan::where('id', $row->satuan)->first();
                                 @endphp
                                 <td>{{ $kategori->kategorii }}</td>
                                 <td>{{ $row->nama_barang }}</td>

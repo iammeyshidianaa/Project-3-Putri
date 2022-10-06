@@ -9,25 +9,49 @@
      href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
-<body>
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-3">
-          <div class="col-sm-6">
+    <body>
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-3">
+                    <div class="col-sm-6">
 
-          </div></div></div>
-
-          <h2 class="text-center text-primary">Satuan</h2>
-     <div class="container">
-                @if ($massage = Session::get('success'))
-                    <div class="alert alert-success" role="alert">
-                        {{ $massage }}
                     </div>
-                @endif
+                </div>
+            </div>
 
-<a href="/tambahsatuan"  class="btn btn-outline-primary">Tambah Barang</a>
+                <h2 class="text-center text-primary">Satuan</h2>
+            <div class="container">
+            <!-- <a href="/tambahsatuan"  class="btn btn-outline-primary">Tambah Barang</a> -->
+                <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal">
+                    Tambah Data
+                </button>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Nama Satuan</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="/insertsatuan" method="POST" enctype="multipart/form-data">
+                                    @csrf
+
+                                    <input type="text" name="nabarr" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Tutup</button>
+                                <button type="submit" class="btn btn-outline-primary">Simpan</button>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
 <div class="row mt-3">
                 <div class="row">
     <table class="table table-bordered" id="gas">
@@ -54,74 +78,76 @@
                             </tr>
                         @endforeach
 
+                        </tr>
 
-
-    </tr>
-
-  </tbody>
+</tbody>
 </table>
-     </div>
-    </div>
 </div>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
-    </script>
-    <script src="https://code.jquery.com/jquery-3.6.0.slim.js"
-        integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    </body>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+        </script>
+        <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
 
-    <script>
-        $(document).ready(function() {
-    $('#gas').DataTable( {
-        language: {
-            url: "{{asset('skydas/js/bahasa.json')}}"
-        }
-    } );
-} );
-    </script>
-   <script>
-        $('.delete').click(function() {
-            var kategori = $(this).attr('data-id');
-
-            swal({
-                    title: "Yakin ?",
-                    text: "Kamu akan menghapus data dapurkue dengan id " +  + " ",
-                    icon: "warning",
-                    buttons: true,
-                    dangerMode: true,
-                })
-                .then((willDelete) => {
-                    if (willDelete) {
-                        window.location = "/deletesatuan/" + kategori + ""
-                        swal("Data berhasil dihapus", {
-                            icon: "success",
-                        });
-                    } else {
-                        swal("Data tidak jadi dihapus");
-                    }
-                });
-        });
-    </script>
-
-            <script>
-            @if(Session::has('message'))
-            toastr.options =
-            {
-                "closeButton" : true,
-                "progressBar" : true
+<script>
+    $(document).ready(function() {
+        $('#gas').DataTable({
+            language: {
+                url: "{{asset('skydas/js/bahasa.json')}}"
             }
-                    toastr.success("{{ session('message') }}");
-            @endif
+        });
+    });
+</script>
+<script>
+    $('.delete').click(function() {
+        var nabar = $(this).attr('data-id');
 
-            </script>
-    </div>
+        swal({
+                title: "Yakin ?",
+                text: "Apa kamu ingin menghapus data ini?",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+            .then((willDelete) => {
+                if (willDelete) {
+                    window.location = "/deletesatuan/" + nabar + ""
+                    swal("Data berhasil dihapus", {
+                        icon: "success",
+                    });
+                } else {
+                    swal("Data tidak jadi dihapus");
+                }
+            });
+    });
+</script>
 
-    @endsection
+<script>
+    @if(Session::has('message'))
+    toastr.options = {
+        "closeButton": true,
+        "progressBar": true
+    }
+    toastr.success("{{ session('message') }}");
+    @endif
+</script>
+<script>
+    @if($massage = Session::get('success'))
+    toastr.options = {
+        "closeButton": true,
+        "progressBar": true
+    }
+    toastr.success("{{ $massage }}");
+    @endif
+</script>
+</div>
+
+@endsection
 @push('scripts')
-

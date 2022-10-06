@@ -14,6 +14,15 @@ class Satuan extends Model
         'satuan' ,
         ];
 
+            // public function satuan()
+    // {
+    //     return $this->belongsTo(databarang::class);
+    // }
+
+    // public function satuan1()
+    // {
+    //     return $this->belongsTo(Baranghabis::class);
+    // }
 
     public function databarang()
         {

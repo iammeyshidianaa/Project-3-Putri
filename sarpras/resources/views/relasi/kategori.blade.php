@@ -21,13 +21,42 @@
 
           <h2 class="text-center text-primary">Kategori</h2>
      <div class="container">
-                @if ($massage = Session::get('success'))
-                    <div class="alert alert-success" role="alert">
-                        {{ $massage }}
-                    </div>
-                @endif
 
-<a href="/kategori_tambah"  class="btn btn-outline-primary">Tambah Barang</a>
+
+<!-- <a href="/kategori_tambah"  class="btn btn-outline-primary">Tambah Barang</a> -->
+<button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal">
+ Tambah Data
+</button>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Nama Kategori</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <form action="/insertkategori" method="POST" enctype="multipart/form-data">
+      @csrf
+
+<input type="text" name="kategorii" class="form-control" id="exampleInputEmail1"
+    aria-describedby="emailHelp">
+@error('kategorii')
+    <div class="alert alert-danger">{{ $message }}</div>
+@enderror
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Tutup</button>
+        <button type="submit" class="btn btn-outline-primary">Simpan</button>
+    </div>
+    </form>
+    </div>
+  </div>
+</div>
+
+
 <div class="row mt-3">
                 <div class="row">
     <table class="table table-bordered" id="gas">
@@ -64,6 +93,9 @@
     </div>
 </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
+        </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
     </script>
@@ -85,20 +117,22 @@
     } );
 } );
     </script>
-   <script>
+     <script>
+        // var button = document.getElementById('id');
         $('.delete').click(function() {
-            var kategori = $(this).attr('data-id');
+            var databarangid = $(this).attr('data-id');
+            var nama = $(this).attr('data-nama');
 
             swal({
-                    title: "Yakin ?",
-                    text: "Kamu akan menghapus data dapurkue dengan id " +  + " ",
+                    title: "Yakin?",
+                    text: "Apa kamu ingin menghapus data ini? " + nama + " ",
                     icon: "warning",
                     buttons: true,
                     dangerMode: true,
                 })
                 .then((willDelete) => {
                     if (willDelete) {
-                        window.location = "/deletekategori/" + kategori + ""
+                        window.location = "/deletekategori/" + databarangid + ""
                         swal("Data berhasil dihapus", {
                             icon: "success",
                         });
@@ -118,6 +152,17 @@
             }
                     toastr.success("{{ session('message') }}");
             @endif
+
+            </script>
+            <script>
+                @if ($massage = Session::get('success'))
+                toastr.options =
+                {
+                    "closeButton" : true,
+                    "progressBar" : true
+                }
+                        toastr.success("{{ $massage }}");
+                @endif
 
             </script>
     </div>

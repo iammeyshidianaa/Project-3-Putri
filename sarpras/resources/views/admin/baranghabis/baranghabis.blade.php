@@ -55,7 +55,7 @@
                                     $kategorii = \App\Models\kategori::where('id', $row->kategori1)->first();
                                     $nabar = \App\Models\nabar::where('id', $row->nama_barang1)->first();
                                     $merk = \App\Models\merk::where('id', $row->merek1)->first();
-                                    $satuan = \App\Models\Satuan::where('id', $row->satuan1)->first();
+                                    $satuan = \App\Models\satuan::where('id', $row->satuan1)->first();
                                 @endphp
                                 <td>{{ $kategorii->kategorii  }}</td>
                                 <td>{{ $nabar->nabarr }}</td>
