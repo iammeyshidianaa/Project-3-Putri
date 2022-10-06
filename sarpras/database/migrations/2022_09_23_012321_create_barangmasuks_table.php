@@ -15,12 +15,14 @@ class CreateBarangmasuksTable extends Migration
     {
         Schema::create('barangmasuks', function (Blueprint $table) {
             $table->id();
-            $table->string('kategori2');
+            $table->string('kode');
+            $table->string('kategori');
             $table->string('namabarang');
             $table->string('merek_barang');
             $table->string('tanggal_pembelian');
-            $table->integer('jumlah');
-            $table->enum('asal_barang', ['Sekolah', 'Pemasok']);
+            $table->integer('stok');
+            $table->string('satuans');
+            $table->string('deskripiis');
             $table->timestamps();
         });
     }

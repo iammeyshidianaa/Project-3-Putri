@@ -65,28 +65,40 @@
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
+
+          <!-- Beranda -->
+
           <li class="nav-item">
             <a class="nav-link" href="/indexadmin">
               <i class="ti-world menu-icon"></i>
               <span class="menu-title">Beranda</span>
             </a>
           </li>
+
+          <!-- Data Pengguna -->
+
           <li class="nav-item">
             <a class="nav-link" href="{{url('/user')}}" >
               <i class="icon-head menu-icon"></i>
               <span class="menu-title">Data Pengguna</span>
             </a>
           </li>
+
+        <!-- Data Ruangan -->
+
           <li class="nav-item">
             <a class="nav-link" href="{{url('/ruangan')}}" >
               <i class="ti-home menu-icon"></i>
               <span class="menu-title">Data Ruangan</span>
             </a>
           </li>
+
+          <!-- Stok Opname/Barang Masuk -->
+
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-            <i class="icon-paper menu-icon"></i>
-              <span class="menu-title">Barang Masuk</span>
+            <i class="ti-import menu-icon"></i>
+              <span class="menu-title">Stok Opname</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="ui-basic">
@@ -96,6 +108,9 @@
               </ul>
             </div>
           </li>
+
+          <!-- Data Barang -->
+
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
             <i class="icon-paper menu-icon"></i>
@@ -109,43 +124,53 @@
               </ul>
             </div>
           </li>
+
+          <!-- Permintaan Pengajuan -->
+
           <li class="nav-item">
             <a class="nav-link" href="/daftarguru" >
               <i class="ti-thought menu-icon"></i>
               <span class="menu-title">Permintaan</br>Pengajuan</span>
             </a>
           </li>
+
+          <!-- Permintaan Peminjaman Barang -->
+
           <li class="nav-item">
             <a class="nav-link" href="/peminjamanadmin" >
-              <i class="ti-new-window menu-icon"></i>
+              <i class="ti-location-arrow menu-icon"></i>
               <span class="menu-title">Permintaan</br>Peminjaman</span>
             </a>
           </li>
+
+          <!-- Pengembalian Barang -->
+
           <li class="nav-item">
             <a class="nav-link" href="/pengembalianadmin" >
-              <i class="ti-import menu-icon"></i>
+              <i class="ti-reload menu-icon"></i>
               <span class="menu-title">Permintaan</br>Pengembalian</span>
            </a>
           </li>
+
+          <!-- Riwayat -->
+
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
               <i class="ti-time menu-icon"></i>
-              <span class="menu-title">Laporan</span>
+              <span class="menu-title">Riwayat</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="icons">
               <ul class="nav flex-column sub-menu">
-              <li class="nav-item"> <a class="nav-link" href="#">Sedang Dipinjam</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/dikembalikan">Dikembalikan</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/icons/mdi.html">Diminta</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/icons/mdi.html">Ditolak</a></li>
-
+                <li class="nav-item"> <a class="nav-link" href="/sedangdipinjam">Sedang Dipinjam</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/dikembalikan">Peminjaman Barang</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/riwayatpengajuan">Pengajuan</a></li>
               </ul>
             </div>
           </li>
 
+        <!-- Relasi -->
 
-<!--
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
             <i class="ti-link menu-icon"></i>
@@ -172,7 +197,7 @@
                 <li class="nav-item"> <a class="nav-link" href="/satuan">Satuan</a></li>
               </ul>
             </div>
-          </li> -->
+          </li>
         </ul>
       </nav>
       <!-- partial -->

@@ -20,7 +20,7 @@
                 </div>
             </div>
 
-            <h2 class="text-center text-primary">Stok Opname Barang Tidak Habis</h2>
+            <h2 class="text-center text-primary">Barang Yang Sedang Dipinjam</h2>
             <div class="container">
                     @if ($massage = Session::get('success'))
                         <div class="alert alert-success" role="alert">
@@ -31,31 +31,23 @@
 
                 <div class="row mt-3">
                     <div class="row">
-                    <table class="table table-bordered" id="gas">
+                        <table class="table table-bordered" id="gas">
                             <thead class= table-success>
                                 <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">Kode Barang</th>
-                                    <th scope="col">Kategori</th>
+                                    <th scope="col">Nama Peminjam</th>
                                     <th scope="col">Nama Barang</th>
-                                    <th scope="col">Merk</th>
-                                    <th scope="col">Tanggal</th>
-                                    <th scope="col">Stok</th>
-                                    <th scope="col">Satuan</th>
-                                    <th scope="col">Deskripsi</th>
+                                    <th scope="col">Jumlah </th>
+                                    <th scope="col">Tanggal Pinjam</th>
                                 </tr>
                             </thead>
                             <tbody>
                                     <tr>
-                                        <th scope="row">1</th>
-                                        <td>STN-666</td>
-                                        <td>Elektronik</td>
-                                        <td>Laptop</td>
-                                        <td>Lenovo</td>
-                                        <td>16-6-2026</td>
-                                        <td>7</td>
-                                        <td>Pcs</td>
-                                        <td>Nice</td>
+                                    <th scope="row">1</th>
+                                    <td>Sindi</td>
+                                    <td>LCD</td>
+                                    <td>2</td>
+                                    <td>21-02-2022</td>
                                     </tr>
 
                             </tbody>

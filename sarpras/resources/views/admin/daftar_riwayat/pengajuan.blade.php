@@ -21,7 +21,7 @@
                 </div>
             </div>
 
-            <h2 class="text-center text-primary">Daftar Pengajuan</h2>
+            <h2 class="text-center text-primary">Riwayat Pengajuan</h2>
             <div class="container">
                 @if ($massage = Session::get('success'))
                 <div class="alert alert-success" role="alert">
@@ -38,7 +38,6 @@
                                     <th scope="col">#</th>
                                     <th scope="col">Nama</th>
                                     <th scope="col">Nama Barang</th>
-                                    <th scope="col">Alasan</th>
                                     <th scope="col">Harga</th>
                                     <th scope="col">Jumlah</th>
                                     <th scope="col">Total Harga</th>
@@ -50,16 +49,24 @@
                                     <th scope="row">1</th>
                                     <td>Sindi</td>
                                     <td>Proyektor</td>
-                                    <td>Demi Kelanjaran Belajar Mengajar</td>
                                     <td>Rp.1.000.000</td>
                                     <td>2</td>
                                     <td>Rp.2.000.000</td>
                                     <td>
-                                        <button type="button" class="btn btn-outline-primary">Setujui</button>
-                                    <button type="button" class="btn btn-outline-danger">Tolak</button>
-                                </td>
+                                        <p class="text-danger"><strong>Ditolak</strong></p>
+                                    </td>
                                 </tr>
-
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Hasan</td>
+                                    <td>LCD</td>
+                                    <td>Rp.2.000.000</td>
+                                    <td>2</td>
+                                    <td>Rp.4.000.000</td>
+                                    <td>
+                                        <p class="text-success"><strong>Disetujui</strong></p>
+                                    </td>
+                                </tr>
                             </tbody>
 
                         </table>

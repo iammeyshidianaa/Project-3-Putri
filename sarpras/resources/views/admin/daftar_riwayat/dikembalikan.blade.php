@@ -20,7 +20,7 @@
                 </div>
             </div>
 
-            <h2 class="text-center text-primary">Barang Dipinjam</h2>
+            <h2 class="text-center text-primary">Riwayat Peminjaman</h2>
             <div class="container">
                     @if ($massage = Session::get('success'))
                         <div class="alert alert-success" role="alert">
@@ -51,7 +51,23 @@
                                     <td>2</td>
                                     <td>20-02-2022</td>
                                     <td>21-02-2022</td>
-                                    <td>Dikembalikan</td>
+                                    <td>
+                                        <p class="text-success"><strong>Dikembalikan</strong></p>
+                                    </td>
+                                    </tr>
+
+                            </tbody>
+                            <tbody>
+                                    <tr>
+                                    <th scope="row">2</th>
+                                    <td>Rehan</td>
+                                    <td>LCD</td>
+                                    <td>2</td>
+                                    <td>20-02-2022</td>
+                                    <td>N/A</td>
+                                    <td>
+                                        <p class="text-danger"><strong>Ditolak</strong></p>
+                                    </td>
                                     </tr>
 
                             </tbody>

@@ -2,6 +2,8 @@
 
 @section('content')
 @push('css')
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-
      alpha/css/bootstrap.css" rel="stylesheet">
@@ -20,31 +22,22 @@
           <div class="col-sm-6"></div><!-- /.row -->
         </div><!-- /.container-fluid -->
       </div>
-	    <h2 class="text-center text-primary">Ubah Profil Siswa</h2>
+	    <h2 class="text-center text-primary">Ajukan Peminjaman Barang</h2>
 	</div>
                         <br><br>
-            <div class=" mb-3">
-                <label for="exampleInputEmail1"  class="form-label">Nama Lengkap</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Nama Barang</label>
+                <input type="text" class="form-control" id="exampleInputPassword1">
             </div>
             <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Email</label>
-                <input type="email" class="form-control" id="exampleInputPassword1">
+                <label for="exampleInputPassword1" class="form-label">Jumlah</label>
+                <input type="text" class="form-control" id="exampleInputPassword1">
             </div>
             <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Kata Sandi Lama</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
+                <label for="exampleInputPassword1" class="form-label">Tanggal Peminjaman</label>
+                <input type="date" class="form-control"id="tanggal">
             </div>
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Kata Sandi Baru</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Konfirmasi Kata Sandi</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
-            </div>
-            <button type="submit" class="btn btn-outline-primary">Simpan</button>
-            <a class="btn btn-outline-success" href="/indexsiswa" role="button">Kembali</a>
+            <button type="submit" class="btn btn-outline-primary">Ajukan</button>
         </div>
                 </div>
             </div>
@@ -83,5 +76,11 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
+<script>
+    config={
+        minDate:"today",
+    }
+    flatpickr("input[type=date]",config);
+</script>
 @endsection
    @push('scripts')

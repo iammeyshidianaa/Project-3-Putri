@@ -32,9 +32,9 @@
                 <div class="row mt-3">
                     <div class="row">
                         <table class="table table-bordered" id="gas">
-                            <thead class= table-success>
+                        <thead class= table-success>
                                 <tr>
-                                    <th scope="col">#</th>
+                                <th scope="col">#</th>
                                     <th scope="col">Nama Peminjam</th>
                                     <th scope="col">Nama Barang</th>
                                     <th scope="col">Jumlah Pinjam</th>
@@ -44,6 +44,19 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Diana</td>
+                                    <td>Proyektor</td>
+                                    <td>3</td>
+                                    <td>17/10/2022 14.53</td>
+                                    <td>17/10/2022 16.30</td>
+                                    <td>
+                                        <button type="button" class="btn btn-outline-danger" disabled>Dikembalikan</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <!-- <tbody>
                                     @php
                                     $no = 1;
                                 @endphp
@@ -58,7 +71,7 @@
                                             <td>{{ $row->status }}</td>
                                         </tr>
                                 @endforeach
-                            </tbody>
+                            </tbody> -->
                         </table>
                     </div>
                 </div>

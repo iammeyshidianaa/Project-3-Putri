@@ -34,21 +34,21 @@
                 </div>
               </div>
             </div>
-            <!-- <div class="col-md-6 grid-margin transparent">
+            <div class="col-md-6 grid-margin transparent">
               <div class="row">
                 <div class="col-md-6 mb-4 stretch-card transparent">
                   <div class="card card-tale">
                     <div class="card-body">
-                      <p class="mb-4">Total Pengajuan</p>
-                      <p class="fs-30 mb-2">4006</p>
+                      <p class="mb-4">Barang Tersedia</p>
+                      <p class="fs-30 mb-2">666</p>
                     </div>
                   </div>
                 </div>
                 <div class="col-md-6 mb-4 stretch-card transparent">
                   <div class="card card-dark-blue">
                     <div class="card-body">
-                      <p class="mb-4">Menunggu Persetujuan</p>
-                      <p class="fs-30 mb-2">61344</p>
+                      <p class="mb-4">Total Peminjam</p>
+                      <p class="fs-30 mb-2">666</p>
                     </div>
                   </div>
                 </div>
@@ -71,7 +71,7 @@
                   </div>
                 </div>
               </div>
-            </div> -->
+            </div>
           </div>
         </div>
         <!-- content-wrapper ends -->

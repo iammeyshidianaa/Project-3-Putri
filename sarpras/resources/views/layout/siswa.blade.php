@@ -40,26 +40,23 @@
               <div class="input-group-prepend hover-cursor" id="navbar-search-icon">
           </li>
         </ul>
-        <ul class="navbar-nav navbar-nav-right">
-            <li class="nav-item nav-profile dropdown">
-                <li class="nav-item nav-profile dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown" aria-expanded="false">
-                        <img src="https://tunasmadyaperkasa.com/wp-content/uploads/2021/08/user.png" alt="profile">
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-                        <a class="dropdown-item"  href="/editprofile">
-                            <i class="ti-id-badge text-primary"></i>
-                            Ubah Profil
-                        </a>
-                        <a class="dropdown-item" href="/logout">
-                            <i class="ti-power-off text-primary"></i>
-                            Keluar
-                        </a>
-                    </div>
-                </li>
-            </li>
-
-        </ul>
+                    <ul class="navbar-nav navbar-nav-right">
+                        <li class="nav-item nav-profile dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
+                            <i class="ti-settings"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+                                <a class="dropdown-item"  href="/editprofile">
+                                    <i class="ti-id-badge text-primary"></i>
+                                    Ubah Profil
+                                </a>
+                                <a class="dropdown-item" href="/logout">
+                                    <i class="ti-power-off text-primary"></i>
+                                    Keluar
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
         <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
           <span class="icon-menu"></span>
         </button>
@@ -77,7 +74,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="/pinjambarang">
               <i class="ti-clipboard menu-icon"></i>
               <span class="menu-title">Peminjaman</span>
             </a>

@@ -20,7 +20,7 @@
                 </div>
             </div>
 
-            <h2 class="text-center text-primary">Barang Dipinjam</h2>
+            <h2 class="text-center text-primary">Permintaan Pengembalian Barang</h2>
             <div class="container">
                     @if ($massage = Session::get('success'))
                         <div class="alert alert-success" role="alert">

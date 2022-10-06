@@ -1,4 +1,4 @@
-@extends('layout.siswa')
+@extends('layout.guru')
 
 @section('content')
 @push('css')
@@ -20,7 +20,7 @@
           <div class="col-sm-6"></div><!-- /.row -->
         </div><!-- /.container-fluid -->
       </div>
-	    <h2 class="text-center text-primary">Ubah Profil Siswa</h2>
+	    <h2 class="text-center text-primary">Ubah Profil Guru</h2>
 	</div>
                         <br><br>
             <div class=" mb-3">

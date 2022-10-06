@@ -20,7 +20,7 @@
                 </div>
             </div>
 
-            <h2 class="text-center text-primary">Barang Dipinjam</h2>
+            <h2 class="text-center text-primary">Stok Opname Barang Habis</h2>
             <div class="container">
                     @if ($massage = Session::get('success'))
                         <div class="alert alert-success" role="alert">
@@ -35,23 +35,27 @@
                             <thead class= table-success>
                                 <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">Nama Peminjam</th>
+                                    <th scope="col">Kode Barang</th>
+                                    <th scope="col">Kategori</th>
                                     <th scope="col">Nama Barang</th>
-                                    <th scope="col">Jumlah </th>
-                                    <th scope="col">Tanggal Pinjam</th>
-                                    <th scope="col">Tanggal Kembali</th>
-                                    <th scope="col">Setujui</th>
+                                    <th scope="col">Merk</th>
+                                    <th scope="col">Tanggal</th>
+                                    <th scope="col">Stok</th>
+                                    <th scope="col">Satuan</th>
+                                    <th scope="col">Deskripsi</th>
                                 </tr>
                             </thead>
                             <tbody>
                                     <tr>
-                                    <th scope="row">1</th>
-                                    <td>Sindi</td>
-                                    <td>LCD</td>
-                                    <td>2</td>
-                                    <td>20-02-2022</td>
-                                    <td>21-02-2022</td>
-                                    <td><button type="button" class="btn btn-success">Setujui</button></td>
+                                        <th scope="row">1</th>
+                                        <td>PK-4208</td>
+                                        <td>Bahan Pengajar</td>
+                                        <td>Tinta</td>
+                                        <td>-</td>
+                                        <td>20-02-2022</td>
+                                        <td>10</td>
+                                        <td>Liter</td>
+                                        <td>Aman</td>
                                     </tr>
 
                             </tbody>

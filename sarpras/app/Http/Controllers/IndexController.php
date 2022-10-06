@@ -29,5 +29,10 @@ class IndexController extends Controller
         return view ('siswa.profile.edit_profile');
     }
 
+    //guru//
 
+    public function editprofileguru()
+    {
+        return view ('guru.editprofile.edit');
+    }
 }

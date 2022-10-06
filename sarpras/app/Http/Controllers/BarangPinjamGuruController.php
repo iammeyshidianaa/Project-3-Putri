@@ -16,7 +16,7 @@ class BarangPinjamGuruController extends Controller
     {
         $pinjam = BarangPinjamGuru::all();
 
-        return view('guru.pinjam.barangpinjam', compact('pinjam'));
+        return view('guru.barangpinjam.barangpinjam', compact('pinjam'));
     }
 
     /**

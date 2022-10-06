@@ -21,31 +21,31 @@
           <div class="col-sm-6">
           </div></div></div>
 
-<h2 class="text-center text-primary">Data Ruangan</h2>
-     <div class="container">
-                @if ($massage = Session::get('success'))
-                    <div class="alert alert-success" role="alert">
-                        {{ $massage }}
-                    </div>
-                @endif
+            <h2 class="text-center text-primary">Stok Opname Barang Tidak Habis</h2>
+                <div class="container">
+                            @if ($massage = Session::get('success'))
+                                <div class="alert alert-success" role="alert">
+                                    {{ $massage }}
+                                </div>
+                            @endif
 
-<a href="/tambahbarangmasuk"  class="btn btn-outline-primary">Tambah Stok</a>
-<div class="row mt-3">
-                <div class="row">
-    <table class="table table-bordered" id="gas">
-  <thead class= table-success>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Kategori</th>
-      <th scope="col">Nama Barang</th>
-      <th scope="col">Merek</th>
-      <th scope="col">Tanggal Pembelian</th>
-      <th scope="col">Jumlah</th>
-      <th scope="col">Asal Barang</th>
-      <th scope="col">Aksi</th>
-    </tr>
-  </thead>
-  <tbody>
+            <a href="#"  class="btn btn-outline-primary">Tambah Data</a>
+            <div class="row mt-3">
+                            <div class="row">
+                <table class="table table-bordered" id="gas">
+            <thead class= table-success>
+                <tr>
+                <th scope="col">#</th>
+                <th scope="col">Kategori</th>
+                <th scope="col">Nama Barang</th>
+                <th scope="col">Merek</th>
+                <th scope="col">Tanggal Pembelian</th>
+                <th scope="col">Jumlah</th>
+                <th scope="col">Deskripsi</th>
+                <th scope="col">Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
                  @php
                 $no = 1;
                @endphp

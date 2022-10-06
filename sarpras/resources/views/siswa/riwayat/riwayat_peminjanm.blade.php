@@ -1,4 +1,4 @@
-@extends('layout.admin')
+@extends('layout.siswa')
 
 @section('content')
 @push('css')
@@ -20,7 +20,7 @@
                 </div>
             </div>
 
-            <h2 class="text-center text-primary">Stok Opname Barang Tidak Habis</h2>
+            <h2 class="text-center text-primary">Riwayat Peminjaman</h2>
             <div class="container">
                     @if ($massage = Session::get('success'))
                         <div class="alert alert-success" role="alert">
@@ -31,35 +31,61 @@
 
                 <div class="row mt-3">
                     <div class="row">
-                    <table class="table table-bordered" id="gas">
-                            <thead class= table-success>
+                        <table class="table table-bordered" id="gas">
+                        <thead class= table-success>
                                 <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Kode Barang</th>
-                                    <th scope="col">Kategori</th>
+                                <th scope="col">#</th>
+                                    <th scope="col">Nama Peminjam</th>
                                     <th scope="col">Nama Barang</th>
-                                    <th scope="col">Merk</th>
-                                    <th scope="col">Tanggal</th>
-                                    <th scope="col">Stok</th>
-                                    <th scope="col">Satuan</th>
-                                    <th scope="col">Deskripsi</th>
+                                    <th scope="col">Jumlah Pinjam</th>
+                                    <th scope="col">Tanggal Pinjam</th>
+                                    <th scope="col">Tanggal Kembali</th>
+                                    <th scope="col">Status</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>STN-666</td>
-                                        <td>Elektronik</td>
-                                        <td>Laptop</td>
-                                        <td>Lenovo</td>
-                                        <td>16-6-2026</td>
-                                        <td>7</td>
-                                        <td>Pcs</td>
-                                        <td>Nice</td>
-                                    </tr>
-
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Diana</td>
+                                    <td>Proyektor</td>
+                                    <td>3</td>
+                                    <td>17/10/2022 14.53</td>
+                                    <td>17/10/2022 16.30</td>
+                                    <td>
+                                        <button type="button" class="btn btn-outline-" disabled>Menunggu Persetujuan</button>
+                                    </td>
+                                </tr>
                             </tbody>
 
+
+
+                            <thead class= table-success>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Nama Peminjam</th>
+                                    <th scope="col">Nama Barang</th>
+                                    <th scope="col">Jumlah Pinjam</th>
+                                    <th scope="col">Tanggal Pinjam</th>
+                                    <th scope="col">Tanggal Kembali</th>
+                                    <th scope="col">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                    @php
+                                    $no = 1;
+                                @endphp
+                                @foreach ($riwayatpeminjam as $row)
+                                        <tr>
+                                            <th scope="row">{{ $no++ }}</th>
+                                            <td>{{ $row->namapeminjam }}</td>
+                                            <td>{{ $row->namabarang }}</td>
+                                            <td>{{ $row->jumlahpinjam }}</td>
+                                            <td>{{ $row->tglpinjam}}</td>
+                                            <td>{{ $row->tglpengembalian }}</td>
+                                            <td>{{ $row->status }}</td>
+                                        </tr>
+                                @endforeach
+                            </tbody>
                         </table>
                     </div>
                 </div>
@@ -112,17 +138,15 @@
                 });
             </script>
 
-            <script>
-                    @if(Session::has('message'))
-                    toastr.options =
-                    {
-                        "closeButton" : true,
-                        "progressBar" : true
-                    }
-                            toastr.success("{{ session('message') }}");
-                    @endif
-
-            </script>
+<script>
+    @if($massage = Session::get('success'))
+    toastr.options = {
+        "closeButton": true,
+        "progressBar": true
+    }
+    toastr.success("{{ $massage }}");
+    @endif
+</script>
     @endsection
 @push('scripts')
 
