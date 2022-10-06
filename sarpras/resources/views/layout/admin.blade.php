@@ -85,7 +85,7 @@
             </a>
             <div class="collapse" id="icons">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/icons/mdi.html">Menunggu<br>Persetujuan</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/daftarguru">Menunggu<br>Persetujuan</a></li>
                 <li class="nav-item"> <a class="nav-link" href="pages/icons/mdi.html">Di setujui</a></li>
                 <li class="nav-item"> <a class="nav-link" href="pages/icons/mdi.html">Tidak di setujui</a></li>
               </ul>

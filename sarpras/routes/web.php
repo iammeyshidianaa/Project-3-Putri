@@ -16,6 +16,7 @@ use App\Http\Controllers\barangmasukController;
 use App\Http\Controllers\BarangdipinjamController;
 use App\Http\Controllers\RiwayatpeminjamController;
 use App\Http\Controllers\BarangPinjamGuruController;
+use App\Http\Controllers\DaftarguruController;
 
 /*
 |--------------------------------------------------------------------------
@@ -63,6 +64,7 @@ Route::group(['middleware' => ['auth','level:guru']], function() {
     Route::get('/pengajuan',[PengajuanController::class,'pengajuan'])->name('pengajuan');
     Route::get('/barangpinjamguru',[BarangPinjamGuruController::class,'barangpinjamguru'])->name('barangpinjamguru');
     Route::get('/riwayatguru',[RiwayatController::class,'riwayatguru'])->name('riwayatguru');
+
 
 });
 
@@ -148,3 +150,5 @@ Route::get('/deleteuser/{p}', [userController::class, 'deleteuser'])->name('dele
 Route::get('/data1', [guruController::class, 'data1'])->name('data1');
 Route::get('/data2', [guruController::class, 'data2'])->name('data2');
 
+//pengajuan guru
+Route::get('/daftarguru', [DaftarguruController::class, 'daftarguru'])->name('daftarguru');

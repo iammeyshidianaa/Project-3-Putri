@@ -62,6 +62,33 @@
                                             <div class="login-title">
                                                 <h2 class="text-center text-primary">Daftar Siswa</h2><br>
                                             </div>
+                                            <form>
+							<div class="select-role">
+								<div class="btn-group btn-group-toggle" data-toggle="buttons" a href="/register">
+									<label class="btn active">
+										<input type="radio" name="options" id="admin">
+										<div class="icon">
+                                        <a href="/register">
+                                             <img src="{{ asset('login/vendors/images/briefcase.svg')}}" class="svg" alt="">
+                                    </a></div>
+										<span>Sebagai</span>
+										Guru
+									</label><br><br><br>
+
+									<label class="btn">
+										<input type="radio" name="options" id="user">
+										<div class="icon">
+                                        <a href="/registersiswa">
+                                            <img src="{{ asset('login/vendors/images/person.svg')}}" class="svg" alt="">
+                                        </a></div>
+										<span>Sebagai</span>
+										Siswa
+									</label>
+								</div>
+							</div>
+
+				</form>
+
                                             <form action="/simpansiswa" method="post" enctype="multipart/form-data">
                                                 @csrf
                                                 <br>

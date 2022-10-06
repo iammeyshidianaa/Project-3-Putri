@@ -111,17 +111,15 @@
                 });
             </script>
 
-            <script>
-                    @if(Session::has('message'))
-                    toastr.options =
-                    {
-                        "closeButton" : true,
-                        "progressBar" : true
-                    }
-                            toastr.success("{{ session('message') }}");
-                    @endif
-
-            </script>
+<script>
+    @if($massage = Session::get('success'))
+    toastr.options = {
+        "closeButton": true,
+        "progressBar": true
+    }
+    toastr.success("{{ $massage }}");
+    @endif
+</script>
     @endsection
 @push('scripts')
 
