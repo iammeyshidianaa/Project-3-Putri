@@ -28,4 +28,6 @@ class IndexController extends Controller
     {
         return view ('siswa.profile.edit_profile');
     }
+
+
 }

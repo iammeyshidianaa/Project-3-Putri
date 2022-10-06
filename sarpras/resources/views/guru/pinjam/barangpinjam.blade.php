@@ -44,6 +44,28 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                    <tr>
+                                    <th scope="row">1</th>
+                                    <td>elektronik</td>
+                                    <td>2</td>
+                                    <td>20-02-2022</td>
+                                    <td>21-02-2022</td>
+                                    <td>Menunggu Peminjaman..</td>
+                                    <!-- <td><button type="button" class="btn btn-warning">dipinjam</button></td> -->
+                                    <td><button type="button" class="btn btn-warning">Batal</button></td>
+                                    </tr>
+
+                                    <tr>
+                                    <th scope="row">1</th>
+                                    <td>elektronik</td>
+                                    <td>2</td>
+                                    <td>20-02-2022</td>
+                                    <td>21-02-2022</td>
+                                    <td>Sedang dipinjam..</td>
+                                    <td><button type="button" class="btn btn-danger">Kembalikan</button></td>
+                                    </tr>
+                            </tbody>
+                            <!-- <tbody>
                                     @php
                                     $no = 1;
                                 @endphp
@@ -58,7 +80,7 @@
                                             <td>{{ $row->kembalikan1 }}</td>
                                         </tr>
                                 @endforeach
-                            </tbody>
+                            </tbody> -->
                         </table>
                     </div>
                 </div>

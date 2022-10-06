@@ -2,21 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ruangan;
+use App\Models\peminjamanadmin;
 use Illuminate\Http\Request;
 
-class RuanganController extends Controller
+class PeminjamanadminController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
-    public function ruangan()
+    public function peminjamanadmin()
     {
-        return view('admin.coba.lab');
+        $peminjaman = peminjamanadmin::all();
+
+        return view('admin.permintaan_peminjaman.peminjaman', compact('peminjaman'));
     }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -41,10 +43,10 @@ class RuanganController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\ruangan  $ruangan
+     * @param  \App\Models\peminjamanadmin  $peminjamanadmin
      * @return \Illuminate\Http\Response
      */
-    public function show(ruangan $ruangan)
+    public function show(peminjamanadmin $peminjamanadmin)
     {
         //
     }
@@ -52,10 +54,10 @@ class RuanganController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\ruangan  $ruangan
+     * @param  \App\Models\peminjamanadmin  $peminjamanadmin
      * @return \Illuminate\Http\Response
      */
-    public function edit(ruangan $ruangan)
+    public function edit(peminjamanadmin $peminjamanadmin)
     {
         //
     }
@@ -64,10 +66,10 @@ class RuanganController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\ruangan  $ruangan
+     * @param  \App\Models\peminjamanadmin  $peminjamanadmin
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ruangan $ruangan)
+    public function update(Request $request, peminjamanadmin $peminjamanadmin)
     {
         //
     }
@@ -75,10 +77,10 @@ class RuanganController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\ruangan  $ruangan
+     * @param  \App\Models\peminjamanadmin  $peminjamanadmin
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ruangan $ruangan)
+    public function destroy(peminjamanadmin $peminjamanadmin)
     {
         //
     }

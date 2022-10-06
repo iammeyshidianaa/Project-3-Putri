@@ -222,17 +222,7 @@
         });
     </script>
 
-            <script>
-            @if(Session::has('message'))
-            toastr.options =
-            {
-                "closeButton" : true,
-                "progressBar" : true
-            }
-                    toastr.success("{{ session('message') }}");
-            @endif
-
-    </script>
+           
     </div>
     @endsection
 @push('scripts')

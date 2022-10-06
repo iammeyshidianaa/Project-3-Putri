@@ -2,21 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ruangan;
+use App\Models\masukadmin;
 use Illuminate\Http\Request;
 
-class RuanganController extends Controller
+class MasukadminController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
-    public function ruangan()
+    public function masukadmin()
     {
-        return view('admin.coba.lab');
+        $masukadmin = masukadmin::all();
+
+        return view('admin.barangmasuk.habis', compact('masukadmin'));
     }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -41,10 +43,10 @@ class RuanganController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\ruangan  $ruangan
+     * @param  \App\Models\masukadmin  $masukadmin
      * @return \Illuminate\Http\Response
      */
-    public function show(ruangan $ruangan)
+    public function show(masukadmin $masukadmin)
     {
         //
     }
@@ -52,10 +54,10 @@ class RuanganController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\ruangan  $ruangan
+     * @param  \App\Models\masukadmin  $masukadmin
      * @return \Illuminate\Http\Response
      */
-    public function edit(ruangan $ruangan)
+    public function edit(masukadmin $masukadmin)
     {
         //
     }
@@ -64,10 +66,10 @@ class RuanganController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\ruangan  $ruangan
+     * @param  \App\Models\masukadmin  $masukadmin
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ruangan $ruangan)
+    public function update(Request $request, masukadmin $masukadmin)
     {
         //
     }
@@ -75,10 +77,10 @@ class RuanganController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\ruangan  $ruangan
+     * @param  \App\Models\masukadmin  $masukadmin
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ruangan $ruangan)
+    public function destroy(masukadmin $masukadmin)
     {
         //
     }

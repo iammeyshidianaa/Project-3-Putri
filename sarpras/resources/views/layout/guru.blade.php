@@ -72,7 +72,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" >
+            <a class="nav-link" href="" >
               <i class="ti-home menu-icon"></i>
               <span class="menu-title">Data Ruangan</span>
             </a>
@@ -83,12 +83,14 @@
               <span class="menu-title">Pengajuan</span>
             </a>
           </li>
+
           <li class="nav-item">
-            <a class="nav-link" href="#" >
+            <a class="nav-link" href="/pinjamguru" >
               <i class="ti-clipboard menu-icon"></i>
               <span class="menu-title">Peminjaman</span>
             </a>
           </li>
+
           <li class="nav-item">
             <a class="nav-link" href="/barangpinjamguru">
               <i class="ti-harddrives menu-icon"></i>

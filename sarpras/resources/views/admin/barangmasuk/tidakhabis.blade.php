@@ -1,4 +1,4 @@
-@extends('layout.guru')
+@extends('layout.admin')
 
 @section('content')
 @push('css')
@@ -20,7 +20,7 @@
                 </div>
             </div>
 
-            <h2 class="text-center text-primary">Riwayat Peminjaman</h2>
+            <h2 class="text-center text-primary">Barang Dipinjam</h2>
             <div class="container">
                     @if ($massage = Session::get('success'))
                         <div class="alert alert-success" role="alert">
@@ -37,51 +37,25 @@
                                     <th scope="col">#</th>
                                     <th scope="col">Nama Peminjam</th>
                                     <th scope="col">Nama Barang</th>
-                                    <th scope="col">Jumlah Pinjam</th>
+                                    <th scope="col">Jumlah </th>
                                     <th scope="col">Tanggal Pinjam</th>
                                     <th scope="col">Tanggal Kembali</th>
-                                    <th scope="col">Status</th>
+                                    <th scope="col">Setujui</th>
                                 </tr>
                             </thead>
                             <tbody>
                                     <tr>
                                     <th scope="row">1</th>
-                                    <td>Sinta</td>
-                                    <td>elektronik</td>
-                                    <td>1</td>
+                                    <td>Sindi</td>
+                                    <td>LCD</td>
+                                    <td>2</td>
                                     <td>20-02-2022</td>
                                     <td>21-02-2022</td>
-                                    <td><button type="button" class="btn btn-success">Dikembalikan</button></td>
-
-                                    </tr>
-
-                                    <tr>
-                                    <th scope="row">1</th>
-                                    <td>Sinta</td>
-                                    <td>elektronik</td>
-                                    <td>1</td>
-                                    <td>20-02-2022</td>
-                                    <td>21-02-2022</td>
-                                    <td><button type="button" class="btn btn-danger">Ditolak</button></td>
+                                    <td><button type="button" class="btn btn-success">Setujui</button></td>
                                     </tr>
 
                             </tbody>
-                            <!-- <tbody>
-                                    @php
-                                    $no = 1;
-                                @endphp
-                                @foreach ($riwayatguru as $row)
-                                        <tr>
-                                            <th scope="row">{{ $no++ }}</th>
-                                            <td>{{ $row->namapeminjam1 }}</td>
-                                            <td>{{ $row->namabarang1 }}</td>
-                                            <td>{{ $row->jumlahpinjam1 }}</td>
-                                            <td>{{ $row->tglpinjam1 }}</td>
-                                            <td>{{ $row->tglpengembalian1 }}</td>
-                                            <td>{{ $row->status1 }}</td>
-                                        </tr>
-                                @endforeach
-                            </tbody> -->
+
                         </table>
                     </div>
                 </div>

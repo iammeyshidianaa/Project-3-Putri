@@ -14,9 +14,9 @@ class DaftarguruController extends Controller
      */
     public function daftarguru()
     {
-        $pinjam = Daftarguru::all();
+        $daftarguru = Daftarguru::all();
 
-        return view('admin.pengajuan.pengajuanguru', compact('data'));
+        return view('admin.pengajuan.pengajuanguru', compact('daftarguru'));
     }
 
     /**
