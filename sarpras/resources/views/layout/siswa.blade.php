@@ -50,6 +50,10 @@
                                     <i class="ti-id-badge text-primary"></i>
                                     Ubah Profil
                                 </a>
+                                <a class="dropdown-item"  href="/changePassword">
+                                    <i class="ti-lock text-primary"></i>
+                                    Ubah Kata Sandi
+                                </a>
                                 <a class="dropdown-item" href="/logout">
                                     <i class="ti-power-off text-primary"></i>
                                     Keluar

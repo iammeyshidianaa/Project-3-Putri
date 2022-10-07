@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\{Baranghabis, User};
 use Illuminate\Http\Request;
+use Hash;
+use Auth;
 
 class userController extends Controller
 {
@@ -18,4 +20,6 @@ class userController extends Controller
         $data->delete($id);
         return redirect()->route('user')->with('message', 'Data berhasil di hapus');
     }
+
+
 }

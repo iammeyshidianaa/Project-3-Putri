@@ -11,6 +11,7 @@ use App\Http\Controllers\RiwayatController;
 use App\Http\Controllers\RuanganController;
 use App\Http\Controllers\kategoriController;
 use App\Http\Controllers\PengajuanController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DaftarguruController;
 use App\Http\Controllers\databarangController;
 use App\Http\Controllers\MasukadminController;
@@ -158,6 +159,7 @@ Route::group(['middleware' => ['auth','level:admin']], function() {
 
 
 
+
 });
 
 //Guru
@@ -183,7 +185,10 @@ Route::group(['middleware' => ['auth','level:siswa']], function() {
     Route::get('/barangdipinjam',[BarangdipinjamController::class,'barangdipinjam'])->name('barangdipinjam');
     Route::get('/riwayatpeminjaman',[RiwayatpeminjamController::class,'riwayatpeminjaman'])->name('riwayatpeminjaman');
     Route::get('/pinjambarang',[PinjambarangController::class,'pinjambarang'])->name('pinjambarang');
-
+    Route::group(['middleware' => 'auth'], function() {
+    Route::get('/changePassword',[HomeController::class, 'showChangePasswordGet'])->name('changePasswordGet');
+    Route::post('/changePassword',[HomeController::class, 'changePasswordPost'])->name('changePasswordPost');
+});
 });
 
 //user
@@ -193,6 +198,12 @@ Route::get('/deleteuser/{p}', [userController::class, 'deleteuser'])->name('dele
 //guru tapilan stok
 Route::get('/data1', [guruController::class, 'data1'])->name('data1');
 Route::get('/data2', [guruController::class, 'data2'])->name('data2');
+
+
+
+// Route::group(['middleware' => 'auth'], function() {
+//     Route::get('/changePassword',[HomeController::class, 'showChangePasswordGet'])->name('changePasswordGet');
+//     Route::post('/changePassword',[HomeController::class, 'changePasswordPost'])->name('changePasswordPost');
 
 
 

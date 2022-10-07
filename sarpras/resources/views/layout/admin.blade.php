@@ -96,12 +96,12 @@
           <!-- Stok Opname/Barang Masuk -->
 
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+            <a class="nav-link" data-toggle="collapse" href="#oke" aria-expanded="false" aria-controls="oke">
             <i class="ti-import menu-icon"></i>
               <span class="menu-title">Stok Opname</span>
               <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="ui-basic">
+            <div class="collapse" id="oke">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="/masukadmin">Barang Habis</a></li>
                 <li class="nav-item"> <a class="nav-link" href="/barangmasukadmin">Barang Tidak Habis</a></li>
@@ -112,12 +112,12 @@
           <!-- Data Barang -->
 
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+            <a class="nav-link" data-toggle="collapse" href="#aman" aria-expanded="false" aria-controls="aman">
             <i class="icon-paper menu-icon"></i>
               <span class="menu-title">Data Barang</span>
               <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="ui-basic">
+            <div class="collapse" id="aman">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="/baranghabis">Barang Habis</a></li>
                 <li class="nav-item"> <a class="nav-link" href="/databarang">Barang Tidak Habis</a></li>
