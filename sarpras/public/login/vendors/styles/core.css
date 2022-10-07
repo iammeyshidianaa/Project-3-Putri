@@ -5,7 +5,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 :root {
-  --blue:#1b00ff;
+  --blue:#4B49AC;
   --indigo:#6610f2;
   --purple:#6f42c1;
   --pink:#e83e8c;
@@ -18,7 +18,7 @@
   --white:#fff;
   --gray:#6c757d;
   --gray-dark:#343a40;
-  --primary:#1b00ff;
+  --primary:#4B49AC;
   --secondary:#6c757d;
   --success:#28a745;
   --info:#17a2b8;
@@ -124,7 +124,7 @@ sup {
   top: -.5em; }
 
 a {
-  color: #1b00ff;
+  color: #4B49AC;
   text-decoration: none;
   background-color: transparent; }
 
@@ -2153,8 +2153,8 @@ a.btn.disabled, fieldset:disabled a.btn {
 
 .btn-primary {
   color: #fff;
-  background-color: #1b00ff;
-  border-color: #1b00ff; }
+  background-color: #4B49AC;
+  border-color: #4B49AC; }
 
 .btn-primary:hover {
   color: #fff;
@@ -2170,8 +2170,8 @@ a.btn.disabled, fieldset:disabled a.btn {
 
 .btn-primary.disabled, .btn-primary:disabled {
   color: #fff;
-  background-color: #1b00ff;
-  border-color: #1b00ff; }
+  background-color: #4B49AC;
+  border-color: #4B49AC; }
 
 .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show > .btn-primary.dropdown-toggle {
   color: #fff;
@@ -2400,26 +2400,26 @@ a.btn.disabled, fieldset:disabled a.btn {
   box-shadow: 0 0 0 0.2rem rgba(82, 88, 93, 0.5); }
 
 .btn-outline-primary {
-  color: #1b00ff;
-  border-color: #1b00ff; }
+  color: #4B49AC;
+  border-color: #4B49AC; }
 
 .btn-outline-primary:hover {
   color: #fff;
-  background-color: #1b00ff;
-  border-color: #1b00ff; }
+  background-color: #4B49AC;
+  border-color: #4B49AC; }
 
 .btn-outline-primary.focus, .btn-outline-primary:focus {
   -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5); }
 
 .btn-outline-primary.disabled, .btn-outline-primary:disabled {
-  color: #1b00ff;
+  color: #4B49AC;
   background-color: transparent; }
 
 .btn-outline-primary:not(:disabled):not(.disabled).active, .btn-outline-primary:not(:disabled):not(.disabled):active, .show > .btn-outline-primary.dropdown-toggle {
   color: #fff;
-  background-color: #1b00ff;
-  border-color: #1b00ff; }
+  background-color: #4B49AC;
+  border-color: #4B49AC; }
 
 .btn-outline-primary:not(:disabled):not(.disabled).active:focus, .btn-outline-primary:not(:disabled):not(.disabled):active:focus, .show > .btn-outline-primary.dropdown-toggle:focus {
   -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
@@ -2609,7 +2609,7 @@ a.btn.disabled, fieldset:disabled a.btn {
 
 .btn-link {
   font-weight: 400;
-  color: #1b00ff;
+  color: #4B49AC;
   text-decoration: none; }
 
 .btn-link:hover {
@@ -2855,7 +2855,7 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 .dropdown-item.active, .dropdown-item:active {
   color: #fff;
   text-decoration: none;
-  background-color: #1b00ff; }
+  background-color: #4B49AC; }
 
 .dropdown-item.disabled, .dropdown-item:disabled {
   color: #6c757d;
@@ -3120,8 +3120,8 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 
 .custom-control-input:checked ~ .custom-control-label::before {
   color: #fff;
-  border-color: #1b00ff;
-  background-color: #1b00ff; }
+  border-color: #4B49AC;
+  background-color: #4B49AC; }
 
 .custom-control-input:focus ~ .custom-control-label::before {
   -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
@@ -3175,8 +3175,8 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26l2.974 2.99L8 2.193z'/%3e%3c/svg%3e"); }
 
 .custom-checkbox .custom-control-input:indeterminate ~ .custom-control-label::before {
-  border-color: #1b00ff;
-  background-color: #1b00ff; }
+  border-color: #4B49AC;
+  background-color: #4B49AC; }
 
 .custom-checkbox .custom-control-input:indeterminate ~ .custom-control-label::after {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3e%3cpath stroke='%23fff' d='M0 2h4'/%3e%3c/svg%3e"); }
@@ -3378,7 +3378,7 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
   width: 1rem;
   height: 1rem;
   margin-top: -.25rem;
-  background-color: #1b00ff;
+  background-color: #4B49AC;
   border: 0;
   border-radius: 1rem;
   -webkit-transition: background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
@@ -3409,7 +3409,7 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 .custom-range::-moz-range-thumb {
   width: 1rem;
   height: 1rem;
-  background-color: #1b00ff;
+  background-color: #4B49AC;
   border: 0;
   border-radius: 1rem;
   -webkit-transition: background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
@@ -3442,7 +3442,7 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
   margin-top: 0;
   margin-right: .2rem;
   margin-left: .2rem;
-  background-color: #1b00ff;
+  background-color: #4B49AC;
   border: 0;
   border-radius: 1rem;
   -webkit-transition: background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
@@ -3559,7 +3559,7 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
   color: #fff;
-  background-color: #1b00ff; }
+  background-color: #4B49AC; }
 
 .nav-fill .nav-item {
   -ms-flex: 1 1 auto;
@@ -4164,7 +4164,7 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
   padding: .5rem .75rem;
   margin-left: -1px;
   line-height: 1.25;
-  color: #1b00ff;
+  color: #4B49AC;
   background-color: #fff;
   border: 1px solid #dee2e6; }
 
@@ -4193,8 +4193,8 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 .page-item.active .page-link {
   z-index: 3;
   color: #fff;
-  background-color: #1b00ff;
-  border-color: #1b00ff; }
+  background-color: #4B49AC;
+  border-color: #4B49AC; }
 
 .page-item.disabled .page-link {
   color: #6c757d;
@@ -4266,7 +4266,7 @@ a.badge:focus, a.badge:hover {
 
 .badge-primary {
   color: #fff;
-  background-color: #1b00ff; }
+  background-color: #4B49AC; }
 
 a.badge-primary:focus, a.badge-primary:hover {
   color: #fff;
@@ -4531,7 +4531,7 @@ a.badge-dark.focus, a.badge-dark:focus {
   color: #fff;
   text-align: center;
   white-space: nowrap;
-  background-color: #1b00ff;
+  background-color: #4B49AC;
   -webkit-transition: width .6s ease;
   transition: width .6s ease; }
 
@@ -4615,8 +4615,8 @@ a.badge-dark.focus, a.badge-dark:focus {
 .list-group-item.active {
   z-index: 2;
   color: #fff;
-  background-color: #1b00ff;
-  border-color: #1b00ff; }
+  background-color: #4B49AC;
+  border-color: #4B49AC; }
 
 .list-group-item + .list-group-item {
   border-top-width: 0; }
@@ -5605,7 +5605,7 @@ a.close.disabled {
   vertical-align: text-top !important; }
 
 .bg-primary {
-  background-color: #1b00ff !important; }
+  background-color: #4B49AC !important; }
 
 a.bg-primary:focus, a.bg-primary:hover, button.bg-primary:focus, button.bg-primary:hover {
   background-color: #0062cc !important; }
@@ -5689,7 +5689,7 @@ a.bg-dark:focus, a.bg-dark:hover, button.bg-dark:focus, button.bg-dark:hover {
   border-left: 0 !important; }
 
 .border-primary {
-  border-color: #1b00ff !important; }
+  border-color: #4B49AC !important; }
 
 .border-secondary {
   border-color: #6c757d !important; }
@@ -7854,7 +7854,7 @@ a.bg-dark:focus, a.bg-dark:hover, button.bg-dark:focus, button.bg-dark:hover {
   color: #fff !important; }
 
 .text-primary {
-  color: #1b00ff !important; }
+  color: #4B49AC !important; }
 
 a.text-primary:focus, a.text-primary:hover {
   color: #0056b3 !important; }
@@ -7988,18 +7988,18 @@ a.text-dark:focus, a.text-dark:hover {
 Plugin URI: http://manos.malihu.gr/jquery-custom-content-scroller
 */
 /*
-CONTENTS: 
-	1. BASIC STYLE - Plugin's basic/essential CSS properties (normally, should not be edited). 
-	2. VERTICAL SCROLLBAR - Positioning and dimensions of vertical scrollbar. 
+CONTENTS:
+	1. BASIC STYLE - Plugin's basic/essential CSS properties (normally, should not be edited).
+	2. VERTICAL SCROLLBAR - Positioning and dimensions of vertical scrollbar.
 	3. HORIZONTAL SCROLLBAR - Positioning and dimensions of horizontal scrollbar.
-	4. VERTICAL AND HORIZONTAL SCROLLBARS - Positioning and dimensions of 2-axis scrollbars. 
-	5. TRANSITIONS - CSS3 transitions for hover events, auto-expanded and auto-hidden scrollbars. 
-	6. SCROLLBAR COLORS, OPACITY AND BACKGROUNDS 
+	4. VERTICAL AND HORIZONTAL SCROLLBARS - Positioning and dimensions of 2-axis scrollbars.
+	5. TRANSITIONS - CSS3 transitions for hover events, auto-expanded and auto-hidden scrollbars.
+	6. SCROLLBAR COLORS, OPACITY AND BACKGROUNDS
 		6.1 THEMES - Scrollbar colors, opacity, dimensions, backgrounds etc. via ready-to-use themes.
 */
-/* 
+/*
 ------------------------------------------------------------------------------------------------------------------------
-1. BASIC STYLE  
+1. BASIC STYLE
 ------------------------------------------------------------------------------------------------------------------------
 */
 .mCustomScrollbar {
@@ -8026,9 +8026,9 @@ CONTENTS:
   width: auto;
   height: auto; }
 
-/* 
+/*
 ------------------------------------------------------------------------------------------------------------------------
-2. VERTICAL SCROLLBAR 
+2. VERTICAL SCROLLBAR
 y-axis
 ------------------------------------------------------------------------------------------------------------------------
 */
@@ -8130,9 +8130,9 @@ y-axis
 .mCSB_scrollTools .mCSB_buttonDown {
   bottom: 0; }
 
-/* 
+/*
 ------------------------------------------------------------------------------------------------------------------------
-3. HORIZONTAL SCROLLBAR 
+3. HORIZONTAL SCROLLBAR
 x-axis
 ------------------------------------------------------------------------------------------------------------------------
 */
@@ -8207,10 +8207,10 @@ x-axis
 .mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_buttonRight {
   right: 0; }
 
-/* 
+/*
 ------------------------------------------------------------------------------------------------------------------------
-4. VERTICAL AND HORIZONTAL SCROLLBARS 
-yx-axis 
+4. VERTICAL AND HORIZONTAL SCROLLBARS
+yx-axis
 ------------------------------------------------------------------------------------------------------------------------
 */
 .mCSB_container_wrapper {
@@ -8274,9 +8274,9 @@ yx-axis
 .mCustomScrollBox.mCSB_vertical_horizontal.mCSB_inside > .mCSB_container_wrapper.mCS_no_scrollbar_x.mCS_x_hidden {
   margin-bottom: 0; }
 
-/* 
+/*
 ------------------------------------------------------------------------------------------------------------------------
-5. TRANSITIONS  
+5. TRANSITIONS
 ------------------------------------------------------------------------------------------------------------------------
 */
 .mCSB_scrollTools,
@@ -8292,17 +8292,23 @@ yx-axis
 .mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand .mCSB_draggerRail,
 .mCSB_scrollTools_horizontal.mCSB_scrollTools_onDrag_expand .mCSB_dragger_bar,
 .mCSB_scrollTools_horizontal.mCSB_scrollTools_onDrag_expand .mCSB_draggerRail {
-  -webkit-transition: width .2s ease-out .2s, height .2s ease-out .2s,  margin-left .2s ease-out .2s, margin-right .2s ease-out .2s,  margin-top .2s ease-out .2s, margin-bottom .2s ease-out .2s, opacity .2s ease-in-out, background-color .2s ease-in-out;
-  transition: width .2s ease-out .2s, height .2s ease-out .2s,  margin-left .2s ease-out .2s, margin-right .2s ease-out .2s,  margin-top .2s ease-out .2s, margin-bottom .2s ease-out .2s, opacity .2s ease-in-out, background-color .2s ease-in-out; }
+  -webkit-transition: width .2s ease-out .2s, height .2s ease-out .2s,
+ margin-left .2s ease-out .2s, margin-right .2s ease-out .2s,
+ margin-top .2s ease-out .2s, margin-bottom .2s ease-out .2s,
+ opacity .2s ease-in-out, background-color .2s ease-in-out;
+  transition: width .2s ease-out .2s, height .2s ease-out .2s,
+ margin-left .2s ease-out .2s, margin-right .2s ease-out .2s,
+ margin-top .2s ease-out .2s, margin-bottom .2s ease-out .2s,
+ opacity .2s ease-in-out, background-color .2s ease-in-out; }
 
-/* 
+/*
 ------------------------------------------------------------------------------------------------------------------------
-6. SCROLLBAR COLORS, OPACITY AND BACKGROUNDS  
+6. SCROLLBAR COLORS, OPACITY AND BACKGROUNDS
 ------------------------------------------------------------------------------------------------------------------------
 */
-/* 
+/*
 	----------------------------------------
-	6.1 THEMES 
+	6.1 THEMES
 	----------------------------------------
 	*/
 /* default theme ("light") */
@@ -8365,15 +8371,15 @@ yx-axis
 
 .mCSB_scrollTools .mCSB_buttonUp {
   background-position: 0 0;
-  /* 
-		sprites locations 
+  /*
+		sprites locations
 		light: 0 0, -16px 0, -32px 0, -48px 0, 0 -72px, -16px -72px, -32px -72px
 		dark: -80px 0, -96px 0, -112px 0, -128px 0, -80px -72px, -96px -72px, -112px -72px
 		*/ }
 
 .mCSB_scrollTools .mCSB_buttonDown {
   background-position: 0 -20px;
-  /* 
+  /*
 		sprites locations
 		light: 0 -20px, -16px -20px, -32px -20px, -48px -20px, 0 -92px, -16px -92px, -32px -92px
 		dark: -80px -20px, -96px -20px, -112px -20px, -128px -20px, -80px -92px, -96px -92px, -112 -92px
@@ -8381,16 +8387,16 @@ yx-axis
 
 .mCSB_scrollTools .mCSB_buttonLeft {
   background-position: 0 -40px;
-  /* 
-		sprites locations 
+  /*
+		sprites locations
 		light: 0 -40px, -20px -40px, -40px -40px, -60px -40px, 0 -112px, -20px -112px, -40px -112px
 		dark: -80px -40px, -100px -40px, -120px -40px, -140px -40px, -80px -112px, -100px -112px, -120px -112px
 		*/ }
 
 .mCSB_scrollTools .mCSB_buttonRight {
   background-position: 0 -56px;
-  /* 
-		sprites locations 
+  /*
+		sprites locations
 		light: 0 -56px, -20px -56px, -40px -56px, -60px -56px, 0 -128px, -20px -128px, -40px -128px
 		dark: -80px -56px, -100px -56px, -120px -56px, -140px -56px, -80px -128px, -100px -128px, -120px -128px
 		*/ }

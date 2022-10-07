@@ -51,7 +51,7 @@
                                     <td>1</td>
                                     <td>20-02-2022</td>
                                     <td>21-02-2022</td>
-                                    <td><button type="button" class="btn btn-success">Dikembalikan</button></td>
+                                    <td> <p class="text-success"><strong>Dikembalikan</strong></p></td>
 
                                     </tr>
 
@@ -62,7 +62,7 @@
                                     <td>1</td>
                                     <td>20-02-2022</td>
                                     <td>21-02-2022</td>
-                                    <td><button type="button" class="btn btn-danger">Ditolak</button></td>
+                                    <td> <p class="text-danger"><strong>Ditolak</strong></p></td>
                                     </tr>
 
                             </tbody>

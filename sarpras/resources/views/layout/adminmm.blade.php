@@ -41,21 +41,19 @@
           </li>
         </ul>
         <ul class="navbar-nav navbar-nav-right">
-            <li class="nav-item nav-profile dropdown">
-                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-                <i class="ti-settings"></i>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-                    <a class="dropdown-item"  href="/editprofileguru">
-                        <i class="ti-id-badge text-primary"></i>
-                            Ubah Profil
-                    </a>
-                    <a class="dropdown-item" href="/logout">
-                        <i class="ti-power-off text-primary"></i>
-                            Keluar
-                    </a>
-                </div>
-            </li>
+          <li class="nav-item nav-profile dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
+            <i class="ti-settings"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+              <a class="dropdown-item" href="/logout">
+                <i class="ti-power-off text-primary"></i>
+                Keluar
+              </a>
+              </a>
+            </div>
+          </li>
+
         </ul>
         <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
           <span class="icon-menu"></span>
@@ -67,39 +65,94 @@
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
+
+          <!-- Beranda -->
+
           <li class="nav-item">
-            <a class="nav-link" href="/indexguru">
+            <a class="nav-link" href="/indexadmin">
               <i class="ti-world menu-icon"></i>
               <span class="menu-title">Beranda</span>
             </a>
           </li>
-          <!-- <li class="nav-item">
-            <a class="nav-link" href="" >
+
+          <!-- Data Pengguna -->
+
+          <li class="nav-item">
+            <a class="nav-link" href="{{url('/user')}}" >
+              <i class="icon-head menu-icon"></i>
+              <span class="menu-title">Data Pengguna</span>
+            </a>
+          </li>
+
+        <!-- Data Ruangan -->
+
+          <li class="nav-item">
+            <a class="nav-link" href="{{url('/ruangan')}}" >
               <i class="ti-home menu-icon"></i>
               <span class="menu-title">Data Ruangan</span>
             </a>
-          </li> -->
+          </li>
+
+          <!-- Stok Opname/Barang Masuk -->
 
           <li class="nav-item">
-            <a class="nav-link" href="/pengajuan" >
-              <i class="ti-stats-up menu-icon"></i>
-              <span class="menu-title">Pengajuan</span>
+            <a class="nav-link" data-toggle="collapse" href="#stokopnam" aria-expanded="false" aria-controls="stokopnam">
+            <i class="ti-import menu-icon"></i>
+              <span class="menu-title">Stok Opname</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="stokopnam">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/masukadmin">Barang Habis</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/barangmasukadmin">Barang Tidak Habis</a></li>
+              </ul>
+            </div>
+          </li>
+
+          <!-- Data Barang -->
+
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#databarang" aria-expanded="false" aria-controls="databarang">
+            <i class="icon-paper menu-icon"></i>
+              <span class="menu-title">Data Barang</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="databarang">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/baranghabis">Barang Habis</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/databarang">Barang Tidak Habis</a></li>
+              </ul>
+            </div>
+          </li>
+
+          <!-- Permintaan Pengajuan -->
+
+          <li class="nav-item">
+            <a class="nav-link" href="/daftarguru" >
+              <i class="ti-thought menu-icon"></i>
+              <span class="menu-title">Permintaan</br>Pengajuan</span>
             </a>
           </li>
 
+          <!-- Permintaan Peminjaman Barang -->
+
           <li class="nav-item">
-            <a class="nav-link" href="/pinjamguru" >
-              <i class="ti-clipboard menu-icon"></i>
-              <span class="menu-title">Peminjaman</span>
+            <a class="nav-link" href="/peminjamanadmin" >
+              <i class="ti-location-arrow menu-icon"></i>
+              <span class="menu-title">Permintaan</br>Peminjaman</span>
             </a>
           </li>
 
+          <!-- Pengembalian Barang -->
+
           <li class="nav-item">
-            <a class="nav-link" href="/barangpinjamguru">
-              <i class="ti-harddrives menu-icon"></i>
-              <span class="menu-title">Barang Dipinjam</span>
-            </a>
+            <a class="nav-link" href="/pengembalianadmin" >
+              <i class="ti-reload menu-icon"></i>
+              <span class="menu-title">Permintaan</br>Pengembalian</span>
+           </a>
           </li>
+
+          <!-- Riwayat -->
 
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#riwayat" aria-expanded="false" aria-controls="riwayat">
@@ -109,25 +162,42 @@
             </a>
             <div class="collapse" id="riwayat">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="/riwayat_pengajuan_guru">Pengajuan</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/riwayatguru">Peminjaman Barang</a></li>
-
+                <li class="nav-item"> <a class="nav-link" href="/sedangdipinjam">Sedang Dipinjam</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/dikembalikan">Peminjaman Barang</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/riwayatpengajuan">Pengajuan</a></li>
               </ul>
             </div>
           </li>
-          <!-- <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
-              <i class="ti-time menu-icon"></i>
-              <span class="menu-title">Riwayat</span>
+
+        <!-- Relasi -->
+
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#relasi" aria-expanded="false" aria-controls="relasi">
+            <i class="ti-link menu-icon"></i>
+              <span class="menu-title">Relasi</span>
               <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="icons">
+            <div class="collapse" id="relasi">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="/riwayat_pengajuan_guru">Pengajuan</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/riwayatguru">Peminjaman Barang</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/kategorii">Kategori</a></li>
               </ul>
             </div>
-          </li> -->
+            <div class="collapse" id="ui-basic">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/nabarr">Nama Barang</a></li>
+              </ul>
+            </div>
+            <div class="collapse" id="ui-basic">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/merkk">Merek</a></li>
+              </ul>
+            </div>
+            <div class="collapse" id="ui-basic">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/satuan">Satuan</a></li>
+              </ul>
+            </div>
+          </li>
         </ul>
       </nav>
       <!-- partial -->

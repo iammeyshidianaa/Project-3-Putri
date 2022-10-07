@@ -37,6 +37,7 @@
                 <label for="exampleInputPassword1" class="form-label">Tanggal Peminjaman</label>
                 <input type="date" class="form-control"id="tanggal">
             </div>
+
             <button type="submit" class="btn btn-outline-primary">Ajukan</button>
         </div>
                 </div>
