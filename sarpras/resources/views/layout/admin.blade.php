@@ -46,10 +46,14 @@
             <i class="ti-settings"></i>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-              <a class="dropdown-item" href="/logout">
-                <i class="ti-power-off text-primary"></i>
-                Keluar
-              </a>
+                <a class="dropdown-item"  href="/profileadmin">
+                    <i class="ti-id-badge text-primary"></i>
+                        Profil
+                </a>
+                <a class="dropdown-item" href="/logout">
+                    <i class="ti-power-off text-primary"></i>
+                        Keluar
+                </a>
               </a>
             </div>
           </li>
@@ -149,6 +153,15 @@
             <a class="nav-link" href="/pengembalianadmin" >
               <i class="ti-reload menu-icon"></i>
               <span class="menu-title">Permintaan</br>Pengembalian</span>
+           </a>
+          </li>
+
+          <!-- Denda -->
+
+          <li class="nav-item">
+            <a class="nav-link" href="#" >
+              <i class="ti-money menu-icon"></i>
+              <span class="menu-title">Denda</span>
            </a>
           </li>
 

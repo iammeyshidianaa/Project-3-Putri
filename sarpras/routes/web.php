@@ -66,7 +66,10 @@ Route::group(['middleware' => ['auth','level:admin']], function() {
 
     Route::get('/indexadmin',[IndexController::class,'indexadmin'])->name('indexadmin');
     Route::get('/ruangan',[RuanganController::class,'ruangan'])->name('ruangan');
-
+    Route::get('/editprofileadmin',[IndexController::class,'editprofileadmin'])->name('editprofileadmin');
+    Route::get('/profileadmin',[IndexController::class,'profileadmin'])->name('profileadmin');
+    Route::get('/passwordadmin',[HomeController::class, 'passwordadmin'])->name('passwordadmin');
+    // Route::post('/changePassword',[HomeController::class, 'changePasswordPost'])->name('changePasswordPost');
 
     // table data barang(admin)
 
@@ -168,11 +171,14 @@ Route::group(['middleware' => ['auth','level:guru']], function() {
 
     Route::get('/indexguru',[IndexController::class,'indexguru'])->name('indexguru');
     Route::get('/editprofileguru',[IndexController::class,'editprofileguru'])->name('editprofileguru');
+    Route::get('/profileguru',[IndexController::class,'profileguru'])->name('profileguru');
     Route::get('/pengajuan',[PengajuanController::class,'pengajuan'])->name('pengajuan');
     Route::get('/barangpinjamguru',[BarangPinjamGuruController::class,'barangpinjamguru'])->name('barangpinjamguru');
     Route::get('/riwayatguru',[RiwayatController::class,'riwayatguru'])->name('riwayatguru');
     Route::get('/pinjamguru',[PeminjamanguruController::class,'pinjamguru'])->name('pinjamguru');
     Route::get('/riwayat_pengajuan_guru',[PengajuanController::class,'riwayat_pengajuan_guru'])->name('riwayat_pengajuan_guru');
+    Route::get('/passwordguru',[HomeController::class, 'passwordguru'])->name('passwordguru');
+    // Route::post('/changePassword',[HomeController::class, 'changePasswordPost'])->name('changePasswordPost');
 
 });
 
@@ -182,6 +188,7 @@ Route::group(['middleware' => ['auth','level:siswa']], function() {
 
     Route::get('/indexsiswa',[IndexController::class,'indexsiswa'])->name('indexsiswa');
     Route::get('/editprofile',[IndexController::class,'editprofile'])->name('editprofile');
+    Route::get('/profile',[IndexController::class,'profile'])->name('profile');
     Route::get('/barangdipinjam',[BarangdipinjamController::class,'barangdipinjam'])->name('barangdipinjam');
     Route::get('/riwayatpeminjaman',[RiwayatpeminjamController::class,'riwayatpeminjaman'])->name('riwayatpeminjaman');
     Route::get('/pinjambarang',[PinjambarangController::class,'pinjambarang'])->name('pinjambarang');
@@ -200,10 +207,6 @@ Route::get('/data1', [guruController::class, 'data1'])->name('data1');
 Route::get('/data2', [guruController::class, 'data2'])->name('data2');
 
 
-
-// Route::group(['middleware' => 'auth'], function() {
-//     Route::get('/changePassword',[HomeController::class, 'showChangePasswordGet'])->name('changePasswordGet');
-//     Route::post('/changePassword',[HomeController::class, 'changePasswordPost'])->name('changePasswordPost');
 
 
 

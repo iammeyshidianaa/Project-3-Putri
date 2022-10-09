@@ -3,11 +3,11 @@
 #app\Http\Controllers\HomeController.php
 
 namespace App\Http\Controllers;
-use App\Models\show_change_password_form;
-use Illuminate\Http\Request;
 use App\Models\User;
-use Hash;
-use Auth;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use App\Models\show_change_password_form;
 
 class HomeController extends Controller
 {
@@ -37,5 +37,22 @@ class HomeController extends Controller
         $user->save();
 
         return redirect()->back()->with("success","Password successfully changed!");
+    }
+
+
+
+
+    //guru
+
+    public function passwordguru() {
+        return view('guru.password.ubahpass');
+    }
+
+
+
+     //admin
+
+     public function passwordadmin() {
+        return view('admin.password.edit');
     }
 }

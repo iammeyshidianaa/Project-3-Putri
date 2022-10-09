@@ -46,13 +46,9 @@
                             <i class="ti-settings"></i>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-                                <a class="dropdown-item"  href="/editprofile">
+                                <a class="dropdown-item"  href="/profile">
                                     <i class="ti-id-badge text-primary"></i>
-                                    Ubah Profil
-                                </a>
-                                <a class="dropdown-item"  href="/changePassword">
-                                    <i class="ti-lock text-primary"></i>
-                                    Ubah Kata Sandi
+                                    Profil
                                 </a>
                                 <a class="dropdown-item" href="/logout">
                                     <i class="ti-power-off text-primary"></i>

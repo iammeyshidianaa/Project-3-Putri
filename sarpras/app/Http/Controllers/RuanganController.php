@@ -13,4 +13,5 @@ class RuanganController extends Controller
         return view('admin.coba.lab');
     }
 
+
 }

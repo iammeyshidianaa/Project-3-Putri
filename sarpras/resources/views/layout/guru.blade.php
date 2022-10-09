@@ -40,15 +40,17 @@
               <div class="input-group-prepend hover-cursor" id="navbar-search-icon">
           </li>
         </ul>
+
+        <!-- Setting Navbar Guru -->
         <ul class="navbar-nav navbar-nav-right">
             <li class="nav-item nav-profile dropdown">
                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
                 <i class="ti-settings"></i>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-                    <a class="dropdown-item"  href="/editprofileguru">
+                    <a class="dropdown-item"  href="/profileguru">
                         <i class="ti-id-badge text-primary"></i>
-                            Ubah Profil
+                            Profil
                     </a>
                     <a class="dropdown-item" href="/logout">
                         <i class="ti-power-off text-primary"></i>
@@ -67,25 +69,30 @@
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
+
+        <!-- Beranda Guru -->
           <li class="nav-item">
             <a class="nav-link" href="/indexguru">
               <i class="ti-world menu-icon"></i>
               <span class="menu-title">Beranda</span>
             </a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" href="" >
               <i class="ti-home menu-icon"></i>
               <span class="menu-title">Data Ruangan</span>
             </a>
-          </li>
+          </li> -->
+
+        <!-- Pengajuan Guru -->
           <li class="nav-item">
-            <a class="nav-link" href="/pengajuan" >
+            <a class="nav-link" href="/pengajuan">
               <i class="ti-stats-up menu-icon"></i>
               <span class="menu-title">Pengajuan</span>
             </a>
           </li>
 
+          <!-- Peminjaman Barang Guru -->
           <li class="nav-item">
             <a class="nav-link" href="/pinjamguru" >
               <i class="ti-clipboard menu-icon"></i>
@@ -93,19 +100,22 @@
             </a>
           </li>
 
+          <!-- Status Barang Yang Ingin Dipinjam Guru -->
           <li class="nav-item">
             <a class="nav-link" href="/barangpinjamguru">
               <i class="ti-harddrives menu-icon"></i>
               <span class="menu-title">Barang Dipinjam</span>
             </a>
           </li>
+
+           <!-- Riwayat Guru -->
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
+            <a class="nav-link" data-toggle="collapse" href="#riwayat" aria-expanded="false" aria-controls="riwayat">
               <i class="ti-time menu-icon"></i>
               <span class="menu-title">Riwayat</span>
               <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="icons">
+            <div class="collapse" id="riwayat">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="/riwayat_pengajuan_guru">Pengajuan</a></li>
                 <li class="nav-item"> <a class="nav-link" href="/riwayatguru">Peminjaman Barang</a></li>
