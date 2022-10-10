@@ -13,6 +13,7 @@ use App\Http\Controllers\kategoriController;
 use App\Http\Controllers\PengajuanController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DaftarguruController;
+use App\Http\Controllers\SatuanController;
 use App\Http\Controllers\databarangController;
 use App\Http\Controllers\MasukadminController;
 use App\Http\Controllers\BaranghabisController;
@@ -68,8 +69,7 @@ Route::group(['middleware' => ['auth','level:admin']], function() {
     Route::get('/ruangan',[RuanganController::class,'ruangan'])->name('ruangan');
     Route::get('/editprofileadmin',[IndexController::class,'editprofileadmin'])->name('editprofileadmin');
     Route::get('/profileadmin',[IndexController::class,'profileadmin'])->name('profileadmin');
-    Route::get('/passwordadmin',[HomeController::class, 'passwordadmin'])->name('passwordadmin');
-    // Route::post('/changePassword',[HomeController::class, 'changePasswordPost'])->name('changePasswordPost');
+
 
     // table data barang(admin)
 
@@ -159,10 +159,10 @@ Route::group(['middleware' => ['auth','level:admin']], function() {
     //user
     Route::get('/user', [userController::class, 'user'])->name('user');
     Route::get('/deleteuser/{p}', [userController::class, 'deleteuser'])->name('deleteuser');
-
-
-
-
+    Route::group(['middleware' => 'auth'], function() {
+        Route::get('/changePassworda',[guruController::class, 'showChangePasswordGeta'])->name('changePasswordGeta');
+        Route::post('/changePassworda',[guruController::class, 'changePasswordPosta'])->name('changePasswordPosta');
+    });
 });
 
 //Guru
@@ -177,8 +177,10 @@ Route::group(['middleware' => ['auth','level:guru']], function() {
     Route::get('/riwayatguru',[RiwayatController::class,'riwayatguru'])->name('riwayatguru');
     Route::get('/pinjamguru',[PeminjamanguruController::class,'pinjamguru'])->name('pinjamguru');
     Route::get('/riwayat_pengajuan_guru',[PengajuanController::class,'riwayat_pengajuan_guru'])->name('riwayat_pengajuan_guru');
-    Route::get('/passwordguru',[HomeController::class, 'passwordguru'])->name('passwordguru');
-    // Route::post('/changePassword',[HomeController::class, 'changePasswordPost'])->name('changePasswordPost');
+    Route::group(['middleware' => 'auth'], function() {
+        Route::get('/changePasswordg',[IndexController::class, 'showChangePasswordGetg'])->name('changePasswordGetg');
+        Route::post('/changePasswordg',[IndexController::class, 'changePasswordPostg'])->name('changePasswordPostg');
+    });
 
 });
 

@@ -107,19 +107,19 @@
               <span class="menu-title">Barang Dipinjam</span>
             </a>
           </li>
-
-
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
               <i class="ti-time menu-icon"></i>
               <span class="menu-title">Riwayat</span>
               <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="riwayat">
+            <div class="collapse" id="icons">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="/riwayat_pengajuan_guru">Pengajuan</a></li>
                 <li class="nav-item"> <a class="nav-link" href="/riwayatguru">Peminjaman Barang</a></li>
               </ul>
             </div>
-          </li> 
+          </li>
         </ul>
       </nav>
       <!-- partial -->

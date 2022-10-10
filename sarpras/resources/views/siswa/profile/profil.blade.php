@@ -58,7 +58,7 @@
                                         <table class="table table-sm table-borderless mt-md-0 mt-3">
                                             <tbody>
                                                 <tr>
-                                                    <th>Nama Panjang :</th>
+                                                    <th>Nama Lengkap :</th>
                                                     <td>{{ Auth::user()->name }}
                                                     </td>
                                                 </tr>

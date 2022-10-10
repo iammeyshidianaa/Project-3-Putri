@@ -58,7 +58,7 @@
                                         <table class="table table-sm table-borderless mt-md-0 mt-3">
                                             <tbody>
                                                 <tr>
-                                                    <th>Nama Panjang :</th>
+                                                    <th>Nama Lengkap :</th>
                                                     <td>{{ Auth::user()->name }}
                                                     </td>
                                                 </tr>
@@ -75,7 +75,7 @@
                                 <!--end row-->
                                 <ul class="nav nav-pills">
                                     <a href="/editprofileadmin" class="btn btn-outline-primary mr-2">Ubah</a>
-                                    <a href="/passwordadmin" class="btn btn-outline-primary mr-2">Ganti Password</a>
+                                    <a href="/changePassworda" class="btn btn-outline-primary mr-2">Ganti Password</a>
                                 </ul>
 
                             </div>

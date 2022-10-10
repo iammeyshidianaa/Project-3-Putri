@@ -1,4 +1,4 @@
-@extends('layout.admin')
+@extends('layout.guru')
 
 @section('content')
 <div class="container">
@@ -32,7 +32,7 @@
                             <div class="alert alert-danger">{{ $error }}</div>
                         @endforeach
                     @endif
-                    <form class="form-horizontal" method="POST" action="{{ route('changePasswordPost') }}">
+                    <form class="form-horizontal" method="POST" action="{{ route('changePasswordPostg') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('current-password') ? ' has-error' : '' }}">
