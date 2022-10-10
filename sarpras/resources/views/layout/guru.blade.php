@@ -84,7 +84,7 @@
             </a>
           </li> -->
 
-        <!-- Pengajuan Guru -->
+
           <li class="nav-item">
             <a class="nav-link" href="/pengajuan">
               <i class="ti-stats-up menu-icon"></i>
@@ -108,9 +108,7 @@
             </a>
           </li>
 
-           <!-- Riwayat Guru -->
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#riwayat" aria-expanded="false" aria-controls="riwayat">
+
               <i class="ti-time menu-icon"></i>
               <span class="menu-title">Riwayat</span>
               <i class="menu-arrow"></i>
@@ -121,7 +119,7 @@
                 <li class="nav-item"> <a class="nav-link" href="/riwayatguru">Peminjaman Barang</a></li>
               </ul>
             </div>
-          </li>
+          </li> 
         </ul>
       </nav>
       <!-- partial -->
