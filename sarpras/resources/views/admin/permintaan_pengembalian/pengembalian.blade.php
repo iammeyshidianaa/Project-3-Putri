@@ -40,6 +40,7 @@
                                     <th scope="col">Jumlah </th>
                                     <th scope="col">Tanggal Pinjam</th>
                                     <th scope="col">Tanggal Kembali</th>
+                                    <th scope="col">Denda </th>
                                     <th scope="col">Setujui</th>
                                 </tr>
                             </thead>
@@ -51,6 +52,17 @@
                                     <td>2</td>
                                     <td>20-02-2022</td>
                                     <td>21-02-2022</td>
+                                    <td>Rp. 0</td>
+                                    <td><button type="button" class="btn btn-success">Setujui</button></td>
+                                    </tr>
+                                    <tr>
+                                    <th scope="row">1</th>
+                                    <td>Sindi</td>
+                                    <td>LCD</td>
+                                    <td>2</td>
+                                    <td>20-02-2022</td>
+                                    <td>25-02-2022</td>
+                                    <td>Rp. 20.000</td>
                                     <td><button type="button" class="btn btn-success">Setujui</button></td>
                                     </tr>
 

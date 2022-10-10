@@ -158,12 +158,12 @@
 
           <!-- Denda -->
 
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" href="#" >
               <i class="ti-money menu-icon"></i>
               <span class="menu-title">Denda</span>
            </a>
-          </li>
+          </li> -->
 
           <!-- Riwayat -->
 
