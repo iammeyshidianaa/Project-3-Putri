@@ -8,7 +8,7 @@
             <div class="col-md-12 grid-margin">
               <div class="row">
                 <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                <h3 class="font-weight-bold">Selamat Datang Kembali</h3>
+                <h3 class="font-weight-bold">Selamat Datang Guru</h3>
                 <h3 class="font-weight-bold">{{ Auth::user()->name }}  <a class="ti-hand-open"></a></h3>
                   <h6 class="font-weight-normal mb-0">Semoga harimu menyenangkan <span class="text-primary">^_^</span></h6>
                 </div>
