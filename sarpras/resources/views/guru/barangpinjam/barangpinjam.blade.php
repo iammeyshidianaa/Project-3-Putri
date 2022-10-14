@@ -44,25 +44,25 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                                <!-- <tr>
                                     <th scope="row">#</th>
                                     <td>Proyektor</td>
                                     <td>3</td>
                                     <td>17/10/2022 14.53</td>
                                     <td>N/A</td>
                                     <td>
-                                        <button type="button" class="btn btn-outline-info" disabled>Menunggu Persetujuan</button>
+                                        <p class="text-warning"><strong>Menunggu Persetujuan</strong></p>
                                     </td>
                                     <td>N/A</td>
-                                </tr>
+                                </tr> -->
                                 <tr>
                                     <th scope="row">#</th>
                                     <td>Proyektor</td>
                                     <td>3</td>
                                     <td>17/10/2022 14.53</td>
-                                    <td>17/10/2022 16.30</td>
+                                    <td>N/A</td>
                                     <td>
-                                        <button type="button" class="btn btn-outline-success" disabled>Disetujui</button>
+                                    <p class="text-success"><strong>Disetujui</strong></p>
                                     </td>
                                     <td>
                                        <button type="button" class="btn btn-danger">Kembalikan</button>

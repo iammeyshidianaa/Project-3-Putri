@@ -16,38 +16,40 @@
     <body>
     <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-3">
-          <div class="col-sm-6"></div><!-- /.row -->
-        </div><!-- /.container-fluid -->
-      </div>
-	    <h2 class="text-center text-primary">Ajukan Permintaan</h2>
-	</div>
+            <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-3">
+                <div class="col-sm-6"></div><!-- /.row -->
+                </div><!-- /.container-fluid -->
+            </div>
+                    <h2 class="text-center text-primary">Ajukan Peminjaman Barang</h2>
+            </div>
+                <form action="/insertpinjamsiswa" method="POST" enctype="multipart/form-data">
+                @csrf
                         <br><br>
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Nama Barang</label>
-                <input type="text" class="form-control" id="exampleInputPassword1">
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Jumlah</label>
-                <input type="text" class="form-control" id="exampleInputPassword1">
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Tanggal Peminjaman</label>
-                <input type="date" class="form-control"id="tanggal">
-            </div>
-
-            <button type="submit" class="btn btn-outline-primary">Ajukan</button>
-        </div>
-                </div>
-            </div>
-        </div>
-        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Nama Lengkap</label>
+                            <input type="text" name="namapeminjam" class="form-control" id="exampleInputPassword1"  value="{{ Auth::user()->name }}">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Kelas</label>
+                            <input type="text" name="kelas" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Nama Barang</label>
+                            <input type="text" name="namabarang3" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Jumlah</label>
+                            <input type="number" name="jumlah" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Tanggal Peminjaman</label>
+                            <input type="date" name="tanggalpinjam" class="form-control"id="tanggal">
+                        </div>
+                        <button type="submit" class="btn btn-outline-primary">Ajukan</button>
+                </form>
     </div>
-    </div>
-
-    </form>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
 
@@ -83,5 +85,16 @@
     }
     flatpickr("input[type=date]",config);
 </script>
+    <script>
+            @if(Session::has('message'))
+            toastr.options =
+            {
+                "closeButton" : true,
+                "progressBar" : true
+            }
+                    toastr.success("{{ session('message') }}");
+            @endif
+
+    </script>
 @endsection
    @push('scripts')

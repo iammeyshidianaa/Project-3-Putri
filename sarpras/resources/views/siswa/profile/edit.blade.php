@@ -21,7 +21,9 @@
                     <div class="card-body">
                     <h4 class="card-title"></h4>
                     <p class="card-description"></p>
-                    <form class="forms-sample">
+                    <div class="card-body">
+                        <form action="/updatesiswa" method="POST" enctype="multipart/form-data">
+                                @csrf
                         <div class="form-group row">
                         <label for="exampleInputUsername2" class="col-sm-3 col-form-label">Nama Lengkap</label>
                         <div class="col-sm-9">

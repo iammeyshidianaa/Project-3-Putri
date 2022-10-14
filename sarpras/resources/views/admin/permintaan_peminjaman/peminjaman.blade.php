@@ -34,26 +34,37 @@
                         <table class="table table-bordered" id="gas">
                             <thead class= table-success>
                                 <tr>
-                                    <th scope="col">#</th>
+                                    <th scope="col">No</th>
                                     <th scope="col">Nama</th>
+                                    <th scope="col">Kelas</th>
                                     <th scope="col">Nama Barang</th>
                                     <th scope="col">Jumlah </th>
                                     <th scope="col">Tanggal Pinjam</th>
-                                    <th scope="col">Setujui</th>
-                                    <th scope="col">Tolak</th>
+                                    <th scope="col">Status</th>
+
                                 </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                    <th scope="row">1</th>
-                                    <td>Sindi</td>
-                                    <td>LCD</td>
-                                    <td>2</td>
-                                    <td>20-02-2022</td>
-                                    <td><button type="button" class="btn btn-success">Setujui</button></td>
-                                    <td><button type="button" class="btn btn-danger">Tolak</button></td>
-                                    </tr>
+                                @php
+                                $no = 1;
+                            @endphp
+                            @foreach ($peminjaman as $row)
+                                <tr>
+                                                <th scope="row">{{ $no++ }}</th>
+                                                <td>{{ $row->namapeminjam }}</td>
+                                                <td>{{ $row->kelas }}</td>
+                                                <td>{{ $row->namabarang3 }}</td>
+                                                <td>{{ $row->jumlah}}</td>
+                                                <td>{{ $row->tanggalpinjam}}</td>
+                                                <td>
+                                                    <a href="#" type="button"
+                                                    class="btn btn-sm btn-success text-white">Setujui</a>
 
+                                                    <a href="#" type="button"
+                                                    class="btn btn-sm btn-danger text-white">Tolak</a>
+                                                </td>
+                                            </tr>
+                                        @endforeach
                             </tbody>
 
                         </table>

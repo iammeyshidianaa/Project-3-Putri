@@ -16,11 +16,10 @@ class CreatePeminjamanadminsTable extends Migration
         Schema::create('peminjamanadmins', function (Blueprint $table) {
             $table->id();
             $table->string('namapeminjam');
+            $table->string('kelas');
             $table->string('namabarang3');
             $table->integer('jumlah');
-            $table->string('tanggalpinjam');
-            $table->string('setujui');
-            $table->string('tolak');
+            $table->date('tanggalpinjam');
             $table->timestamps();
         });
     }

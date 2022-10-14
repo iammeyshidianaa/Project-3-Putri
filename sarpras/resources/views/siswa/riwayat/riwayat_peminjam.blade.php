@@ -52,7 +52,18 @@
                                     <td>17/10/2022 14.53</td>
                                     <td>17/10/2022 16.30</td>
                                     <td>
-                                        <button type="button" class="btn btn-outline-danger" disabled>Dikembalikan</button>
+                                        <p class="text-success"><strong>Dikembalikan</strong></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Diana</td>
+                                    <td>Proyektor</td>
+                                    <td>3</td>
+                                    <td>17/10/2022 14.53</td>
+                                    <td>17/10/2022 16.30</td>
+                                    <td>
+                                        <p class="text-danger"><strong>Ditolak</strong></p>
                                     </td>
                                 </tr>
                             </tbody>

@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pinjambarang extends Model
 {
-    use HasFactory;
+    protected $table = 'peminjamanadmins';
+    protected $guarded = [];
 }

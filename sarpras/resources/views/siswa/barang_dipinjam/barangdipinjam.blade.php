@@ -39,6 +39,7 @@
                                     <th scope="col">Jumlah Dipinjam</th>
                                     <th scope="col">Tanggal Pinjam</th>
                                     <th scope="col">Tanggal Kembali</th>
+                                    <th scope="col">Denda</th>
                                     <th scope="col">Status</th>
                                     <th scope="col">Kembalikan</th>
                                 </tr>
@@ -50,19 +51,23 @@
                                     <td>3</td>
                                     <td>17/10/2022 14.53</td>
                                     <td>N/A</td>
+                                    <td>Rp.0</td></td>
                                     <td>
-                                        <button type="button" class="btn btn-outline-info" disabled>Menunggu Persetujuan</button>
+                                         <p class="text-success"><strong>Disetujui</strong></p>
                                     </td>
-                                    <td>N/A</td>
+                                    <td>
+                                        <button type="button" class="btn btn-danger">Kembalikan</button>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th scope="row">#</th>
                                     <td>Proyektor</td>
                                     <td>3</td>
                                     <td>17/10/2022 14.53</td>
-                                    <td>17/10/2022 16.30</td>
+                                    <td>18/10/2022 16.30</td>
+                                    <td>Rp. 5000</td>
                                     <td>
-                                        <button type="button" class="btn btn-outline-success" disabled>Disetujui</button>
+                                        <p class="text-success"><strong>Disetujui</strong></p>
                                     </td>
                                     <td>
                                        <button type="button" class="btn btn-danger">Kembalikan</button>
