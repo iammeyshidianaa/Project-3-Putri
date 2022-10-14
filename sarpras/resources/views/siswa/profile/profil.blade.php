@@ -41,7 +41,7 @@
                                     <div class="col-12 col-lg-4 border-right mb-4">
                                         <div class="d-md-flex align-items-center">
                                             <div class="mb-md-0 mb-3">
-                                                <img src="{{ Auth::User()->foto }}"
+                                                <img src="{{ $profile->foto }}"
                                                     class="rounded-circle shadow" width="130" height="130"
                                                     alt="" />
                                             </div>

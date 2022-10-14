@@ -21,19 +21,18 @@
                     <div class="card-body">
                     <h4 class="card-title"></h4>
                     <p class="card-description"></p>
-                    <div class="card-body">
-                        <form action="/updatesiswa" method="POST" enctype="multipart/form-data">
-                                @csrf
+                    <form action="{{ url('/editsiswa') }}" class="forms-sample" method= "post" enctype="multipart/form-data">
+                        @csrf
                         <div class="form-group row">
                         <label for="exampleInputUsername2" class="col-sm-3 col-form-label">Nama Lengkap</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" name="namalengkap" id="exampleInputUsername2" placeholder="{{ Auth::user()->name }}">
+                            <input type="text" class="form-control" name="namalengkap" id="exampleInputUsername2" value="{{ Auth::user()->name }}">
                         </div>
                         </div>
                         <div class="form-group row">
                         <label for="exampleInputConfirmPassword2" name="foto" class="col-sm-3 col-form-label">Foto</label>
                         <div class="col-sm-9">
-                            <input type="file" class="form-control" name="foto" id="exampleInputConfirmPassword2" placeholder="">
+                            <input type="file" class="form-control" name="foto"  id="exampleInputConfirmPassword2" placeholder="">
                         </div>
                         </div>
                         <button type="submit" class="btn btn-primary mr-2">Simpan</button>

@@ -44,34 +44,38 @@ Route::get('/', function () {
     return view('welcome');
 });
 
- //login
+// Route::get('/indexadmin', function () {
+//     $jumlahpengajuan = Pengajuan::count();
 
-Route::get('/masuk',[LoginController::class,'login'])->name('masuk');
+//     return view('admin.index', compact('jumlahpengajuan'));
+// });
+
+//login
+
+Route::get('/masuk', [LoginController::class, 'login'])->name('masuk');
 Route::post('/loginproses', [LoginController::class, 'loginproses'])->name('loginproses');
 
-Route::get('/select',[LoginController::class,'select'])->name('select');
+Route::get('/select', [LoginController::class, 'select'])->name('select');
 
 Route::get('/register', [LoginController::class, 'register'])->name('register');
 Route::get('/registersiswa', [LoginController::class, 'registersiswa'])->name('registersiswa');
 
-Route::post('/simpanregister', [LoginController::class, 'simpanregister' ])->name('simpanregister');
-Route::post('/simpansiswa', [LoginController::class, 'simpansiswa' ])->name('simpansiswa');
+Route::post('/simpanregister', [LoginController::class, 'simpanregister'])->name('simpanregister');
+Route::post('/simpansiswa', [LoginController::class, 'simpansiswa'])->name('simpansiswa');
 
-Route::get('/logout', [LoginController::class,'logout'])->name('logout');
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 
 
 //Admin
 
-Route::group(['middleware' => ['auth','level:admin']], function() {
+Route::group(['middleware' => ['auth', 'level:admin']], function () {
 
-    Route::get('/indexadmin',[IndexController::class,'indexadmin'])->name('indexadmin');
-    Route::get('/ruangan',[RuanganController::class,'ruangan'])->name('ruangan');
-    Route::get('/profileadmin',[IndexController::class,'profileadmin'])->name('profileadmin');
-    Route::get('/editprofileadmin',[IndexController::class,'editprofileadmin'])->name('editprofileadmin');
-    Route::post('/updateadmin',[IndexController::class,'updateadmin'])->name('updateadmin');
-
-
+    Route::get('/indexadmin', [IndexController::class, 'indexadmin'])->name('indexadmin');
+    Route::get('/ruangan', [RuanganController::class, 'ruangan'])->name('ruangan');
+    Route::get('/editprofileadmin', [IndexController::class, 'editprofileadmin'])->name('editprofileadmin');
+    Route::get('/profileadmin', [IndexController::class, 'profileadmin'])->name('profileadmin');
+    Route::post('/insertadmin', [IndexController::class, 'insertadmin'])->name('insertadmin');
     // table data barang(admin)
 
     Route::get('/databarang', [databarangController::class, 'index'])->name('databarang')->middleware('auth');
@@ -135,75 +139,78 @@ Route::group(['middleware' => ['auth','level:admin']], function() {
     Route::post('/updatesatuan/{id}', [SatuanController::class, 'updatesatuan'])->name('updatesatuan');
     Route::get('/deletesatuan/{id}', [SatuanController::class, 'deletesatuan'])->name('deletesatuan');
 
-
+    //permintaan peminjaman
+    Route::get('/peminjamanadmin', [PeminjamanadminController::class, 'peminjamanadmin'])->name('peminjamanadmin');
 
     //permintaan pengembalian
-    Route::get('/pengembalianadmin',[PengembalianadminController::class,'pengembalianadmin'])->name('pengembalianadmin');
+    Route::get('/pengembalianadmin', [PengembalianadminController::class, 'pengembalianadmin'])->name('pengembalianadmin');
 
     //daftar riwayat
-    Route::get('/dikembalikan',[DikembalikanController::class,'dikembalikan'])->name('dikembalikan');
-    Route::get('/sedangdipinjam',[SedangdipinjamController::class,'sedangdipinjam'])->name('sedangdipinjam');
-    Route::get('/riwayatpengajuan',[PengajuanController::class,'riwayatpengajuan'])->name('riwayatpengajuan');
+    Route::get('/dikembalikan', [DikembalikanController::class, 'dikembalikan'])->name('dikembalikan');
+    Route::get('/sedangdipinjam', [SedangdipinjamController::class, 'sedangdipinjam'])->name('sedangdipinjam');
+    Route::get('/riwayatpengajuan', [PengajuanController::class, 'riwayatpengajuan'])->name('riwayatpengajuan');
 
 
     //pengajuan guru
     Route::get('/daftarguru', [DaftarguruController::class, 'daftarguru'])->name('daftarguru');
 
     //barang masuk (stock opname)
-        //barang habis
-        Route::get('/masukadmin',[MasukadminController::class,'masukadmin'])->name('masukadmin');
-        //barang tidak habis
-        Route::get('/barangmasukadmin',[BarangmasukadminController::class,'barangmasukadmin'])->name('barangmasukadmin');
+    //barang habis
+    Route::get('/masukadmin', [MasukadminController::class, 'masukadmin'])->name('masukadmin');
+    //barang tidak habis
+    Route::get('/barangmasukadmin', [BarangmasukadminController::class, 'barangmasukadmin'])->name('barangmasukadmin');
 
 
     //user
     Route::get('/user', [userController::class, 'user'])->name('user');
     Route::get('/deleteuser/{p}', [userController::class, 'deleteuser'])->name('deleteuser');
-    Route::group(['middleware' => 'auth'], function() {
-        Route::get('/changePassworda',[guruController::class, 'showChangePasswordGeta'])->name('changePasswordGeta');
-        Route::post('/changePassworda',[guruController::class, 'changePasswordPosta'])->name('changePasswordPosta');
+    Route::group(['middleware' => 'auth'], function () {
+        Route::get('/changePassworda', [guruController::class, 'showChangePasswordGeta'])->name('changePasswordGeta');
+        Route::post('/changePassworda', [guruController::class, 'changePasswordPosta'])->name('changePasswordPosta');
     });
 });
 
+
+//pengajuanguru
+Route::get('/pengajuanguru', [PengajuanController::class, 'index'])->name('pengajuanguru')->middleware('auth');
+Route::get('/tambahp', [PengajuanController::class, 'tambahp'])->name('tambahp');
+Route::post('/insertp', [PengajuanController::class, 'insertp'])->name('insertp');
+
+
 //Guru
 
-Route::group(['middleware' => ['auth','level:guru']], function() {
+Route::group(['middleware' => ['auth', 'level:guru']], function () {
 
-    Route::get('/indexguru',[IndexController::class,'indexguru'])->name('indexguru');
-    Route::get('/profileguru',[IndexController::class,'profileguru'])->name('profileguru');
-    Route::get('/editprofileguru',[IndexController::class,'editprofileguru'])->name('editprofileguru');
-    Route::post('/updateguru',[IndexController::class,'updateguru'])->name('updateguru');
-    Route::get('/pengajuan',[PengajuanController::class,'pengajuan'])->name('pengajuan');
-    Route::get('/barangpinjamguru',[BarangPinjamGuruController::class,'barangpinjamguru'])->name('barangpinjamguru');
-    Route::get('/denda',[BarangPinjamGuruController::class,'denda'])->name('denda');
-    Route::get('/riwayatguru',[RiwayatController::class,'riwayatguru'])->name('riwayatguru');
-    Route::get('/pinjamguru',[PeminjamanguruController::class,'pinjamguru'])->name('pinjamguru');
-    Route::get('/riwayat_pengajuan_guru',[PengajuanController::class,'riwayat_pengajuan_guru'])->name('riwayat_pengajuan_guru');
-    Route::get('/dendaguru',[IndexController::class,'dendaguru'])->name('dendaguru');
-
-    Route::group(['middleware' => 'auth'], function() {
-        Route::get('/changePasswordg',[IndexController::class, 'showChangePasswordGetg'])->name('changePasswordGetg');
-        Route::post('/changePasswordg',[IndexController::class, 'changePasswordPostg'])->name('changePasswordPostg');
+    Route::get('/indexguru', [IndexController::class, 'indexguru'])->name('indexguru');
+    Route::get('/editprofileguru', [IndexController::class, 'editprofileguru'])->name('editprofileguru');
+    Route::get('/profileguru', [IndexController::class, 'profileguru'])->name('profileguru');
+    Route::get('/pengajuan', [PengajuanController::class, 'pengajuan'])->name('pengajuan');
+    Route::get('/barangpinjamguru', [BarangPinjamGuruController::class, 'barangpinjamguru'])->name('barangpinjamguru');
+    Route::get('/riwayatguru', [RiwayatController::class, 'riwayatguru'])->name('riwayatguru');
+    Route::get('/pinjamguru', [PeminjamanguruController::class, 'pinjamguru'])->name('pinjamguru');
+    Route::get('/riwayat_pengajuan_guru', [PengajuanController::class, 'riwayat_pengajuan_guru'])->name('riwayat_pengajuan_guru');
+    Route::post('/editguru', [IndexController::class, 'insertguru'])->name('editguru');
+    Route::group(['middleware' => 'auth'], function () {
+        Route::get('/changePasswordg', [IndexController::class, 'showChangePasswordGetg'])->name('changePasswordGetg');
+        Route::post('/changePasswordg', [IndexController::class, 'changePasswordPostg'])->name('changePasswordPostg');
     });
-
 });
 
 //Siswa
 
-Route::group(['middleware' => ['auth','level:siswa']], function() {
+Route::group(['middleware' => ['auth', 'level:siswa']], function () {
 
-    Route::get('/indexsiswa',[IndexController::class,'indexsiswa'])->name('indexsiswa');
-    Route::get('/profile',[IndexController::class,'profile'])->name('profile');
-    Route::post('/editprofile',[IndexController::class,'editprofile'])->name('editprofile');
-    Route::post('/updatesiswa',[IndexController::class,'updatesiswa'])->name('updatesiswa');
-    Route::get('/barangdipinjam',[BarangdipinjamController::class,'barangdipinjam'])->name('barangdipinjam');
-    Route::get('/riwayatpeminjaman',[RiwayatpeminjamController::class,'riwayatpeminjaman'])->name('riwayatpeminjaman');
-
-    //password
-    Route::group(['middleware' => 'auth'], function() {
-    Route::get('/changePassword',[HomeController::class, 'showChangePasswordGet'])->name('changePasswordGet');
-    Route::post('/changePassword',[HomeController::class, 'changePasswordPost'])->name('changePasswordPost');
-});
+    Route::get('/indexsiswa', [IndexController::class, 'indexsiswa'])->name('indexsiswa');
+    Route::get('/editprofile', [IndexController::class, 'editprofile'])->name('editprofile');
+    Route::get('/profile', [IndexController::class, 'profile'])->name('profile');
+    Route::get('/barangdipinjam', [BarangdipinjamController::class, 'barangdipinjam'])->name('barangdipinjam');
+    Route::get('/riwayatpeminjaman', [RiwayatpeminjamController::class, 'riwayatpeminjaman'])->name('riwayatpeminjaman');
+    Route::get('/pinjambarang', [PinjambarangController::class, 'pinjambarang'])->name('pinjambarang');
+    Route::post('/editsiswa', [IndexController::class, 'insert'])->name('editsiswa');
+    Route::group(['middleware' => 'auth'], function () {
+        Route::get('/changePassword', [HomeController::class, 'showChangePasswordGet'])->name('changePasswordGet');
+        Route::post('/changePassword', [HomeController::class, 'changePasswordPost'])->name('changePasswordPost');
+    });
 });
 
 //user
@@ -219,10 +226,3 @@ Route::get('/pinjambarang',[PinjambarangController::class,'pinjambarang'])->name
 Route::post('/insertpinjamsiswa',[PinjambarangController::class,'insertpinjamsiswa'])->name('insertpinjamsiswa');
 //permintaan peminjaman
 Route::get('/peminjamanadmin',[PinjambarangController::class,'peminjamanadmin'])->name('peminjamanadmin');
-
-
-
-
-
-
-

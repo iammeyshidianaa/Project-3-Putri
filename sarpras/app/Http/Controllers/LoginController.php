@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
@@ -51,6 +52,11 @@ class LoginController extends Controller
         'level' => 'siswa',
         'remember_token' => Str::random(60),
     ]);
+
+    DB::table('profile')->insert([
+        'namalengkap' => $data->name,
+        'foto' => 'img/usr.jpeg'
+    ]);
     return redirect('/masuk');
     }
 
@@ -63,7 +69,10 @@ class LoginController extends Controller
         'remember_token' => Str::random(60),
     ]);
 
-    // dd($data);
+    DB::table('profile_guru')->insert([
+        'namalengkap1' => $data->name,
+        'foto1' => 'img/usr.jpeg'
+    ]);
     return redirect('/masuk');
         }
 

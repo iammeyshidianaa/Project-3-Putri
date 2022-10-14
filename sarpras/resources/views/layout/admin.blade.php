@@ -46,9 +46,9 @@
             <i class="ti-settings"></i>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-                <a class="dropdown-item"  href="/profileadmin">
-                    <i class="ti-id-badge text-primary"></i>
-                        Profil
+                <a class="dropdown-item"  href="/changePassworda">
+                    <i class="ti-lock text-primary"></i>
+                        Ubah Kata Sandi
                 </a>
                 <a class="dropdown-item" href="/logout">
                     <i class="ti-power-off text-primary"></i>
@@ -132,7 +132,7 @@
           <!-- Permintaan Pengajuan -->
 
           <li class="nav-item">
-            <a class="nav-link" href="/daftarguru" >
+            <a class="nav-link" href="/pengajuanguru" >
               <i class="ti-thought menu-icon"></i>
               <span class="menu-title">Permintaan</br>Pengajuan</span>
             </a>
@@ -184,7 +184,7 @@
 
         <!-- Relasi -->
 
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
             <i class="ti-link menu-icon"></i>
               <span class="menu-title">Relasi</span>
@@ -210,7 +210,7 @@
                 <li class="nav-item"> <a class="nav-link" href="/satuan">Satuan</a></li>
               </ul>
             </div>
-          </li>
+          </li> -->
         </ul>
       </nav>
       <!-- partial -->

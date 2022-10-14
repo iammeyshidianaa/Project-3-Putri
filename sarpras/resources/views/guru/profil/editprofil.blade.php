@@ -21,11 +21,13 @@
                     <div class="card-body">
                     <h4 class="card-title"></h4>
                     <p class="card-description"></p>
+                    <form action="{{ url('/editguru') }}" class="forms-sample" method= "post" enctype="multipart/form-data">
+                        @csrf
                     <form class="forms-sample">
                         <div class="form-group row">
                         <label for="exampleInputUsername2" class="col-sm-3 col-form-label">Nama Lengkap</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" name="namalengkap1" id="exampleInputUsername2" placeholder="{{ Auth::user()->name }}">
+                            <input type="text" class="form-control" name="namalengkap1" id="exampleInputUsername2" placeholder="" value="{{ Auth::user()->name }}">
                         </div>
                         </div>
                         <div class="form-group row">

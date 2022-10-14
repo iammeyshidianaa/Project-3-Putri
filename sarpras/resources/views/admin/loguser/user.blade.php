@@ -38,7 +38,7 @@
       <th scope="col">Nama</th>
       <th scope="col">Sebagai</th>
       <th scope="col">Email</th>
-      <th scope="col">Aksi</th>
+      <th scope="col">Blokir Pengguna</th>
     </tr>
   </thead>
   <tbody>
@@ -104,7 +104,7 @@
 
             swal({
                     title: "Yakin?",
-                    text: "Apa kamu ingin menghapus data ini? " + nama + " ",
+                    text: "Kamu akan menghapus akses dari user ini? " + nama + " ",
                     icon: "warning",
                     buttons: true,
                     dangerMode: true,
@@ -116,7 +116,7 @@
                             icon: "success",
                         });
                     } else {
-                        swal("Data tidak jadi dihapus");
+                        swal("User tidak jadi dihapus");
                     }
                 });
         });

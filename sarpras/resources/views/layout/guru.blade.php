@@ -86,7 +86,7 @@
 
 
           <li class="nav-item">
-            <a class="nav-link" href="/pengajuan">
+            <a href="/tambahp" class="nav-link">
               <i class="ti-stats-up menu-icon"></i>
               <span class="menu-title">Pengajuan</span>
             </a>

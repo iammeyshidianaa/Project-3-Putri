@@ -8,8 +8,7 @@
             <div class="col-md-12 grid-margin">
               <div class="row">
                 <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                <h3 class="font-weight-bold">Selamat Datang Admin</h3>
-                <h3 class="font-weight-bold">{{ Auth::user()->name }}  <a class="ti-hand-open"></a></h3>
+                <h3 class="font-weight-bold">Selamat Datang Admin<a class="ti-hand-open"></a></h3>
                   <h6 class="font-weight-normal mb-0">Semoga harimu menyenangkan <span class="text-primary">^_^</span></h6>
                 </div>
               </div>
@@ -40,7 +39,7 @@
                   <div class="card card-tale">
                     <div class="card-body">
                       <p class="mb-4">Total Pengajuan</p>
-                      <p class="fs-30 mb-2">4006</p>
+                      <p class="fs-30 mb-2">  </p>
                     </div>
                   </div>
                 </div>

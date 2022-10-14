@@ -8,11 +8,26 @@ use Illuminate\Http\Request;
 
 class PengajuanController extends Controller
 {
-    public function pengajuan()
-    {
-        $pengajuan = Pengajuan::all();
+    // public function jumlahpengajuan(){
 
-        return view('guru.pengajuan.pengajuan', compact('pengajuan'));
+    //     $data = Pengajuan::all();
+    //     return view ('pengajuanguru',compact('data'));
+    //     }
+
+    public function index()
+    {
+        $data = Pengajuan::all();
+        return view('admin.pengajuan.pengajuanguru', compact('data'));
+    }
+    public function tambahp()
+    {
+        return view('guru.pengajuan.pengajuan');
+    }
+    public function insertp(Request $request)
+    {
+        $data = Pengajuan::create($request->all());
+        return redirect('tambahp')->with('message','Data berhasil ditambahkan');
+
     }
 
     //Riwayat Pengajuan Admin

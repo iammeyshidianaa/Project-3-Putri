@@ -16,6 +16,8 @@
             <div class="panel panel-default">
                 <h2 class="text-primary text-center">Ubah Profile</h2>
 <br>
+<form action="/insertadmin" method="POST" enctype="multipart/form-data">
+   @csrf
             <div class="col-md-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
@@ -31,7 +33,8 @@
                         <div class="form-group row">
                         <label for="exampleInputConfirmPassword2" name="foto2" class="col-sm-3 col-form-label">Foto</label>
                         <div class="col-sm-9">
-                            <input type="file" class="form-control" name="foto2" id="exampleInputConfirmPassword2" placeholder="">
+                        <img class="img mb-3" src="{{ asset('img/') }}" alt="" style="width: 60px;">
+                        <input type="file" name="foto2" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                         </div>
                         </div>
                         <button type="submit" class="btn btn-primary mr-2">Simpan</button>
