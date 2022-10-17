@@ -94,7 +94,7 @@
 
           <!-- Peminjaman Barang Guru -->
           <li class="nav-item">
-            <a class="nav-link" href="/pinjamguru" >
+            <a class="nav-link" href="/pinjambarang_guru" >
               <i class="ti-clipboard menu-icon"></i>
               <span class="menu-title">Peminjaman</span>
             </a>

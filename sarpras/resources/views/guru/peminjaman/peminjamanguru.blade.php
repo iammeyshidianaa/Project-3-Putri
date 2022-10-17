@@ -24,7 +24,7 @@
             </div>
                     <h2 class="text-center text-primary">Ajukan Peminjaman Barang</h2>
             </div>
-                <form action="/insertpinjamsiswa" method="POST" enctype="multipart/form-data">
+                <form action="/insertpinjam_guru" method="POST" enctype="multipart/form-data">
                 @csrf
                         <br><br>
                         <div class="mb-3">
@@ -33,7 +33,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Kelas</label>
-                            <input type="text" name="kelas" class="form-control" id="exampleInputPassword1">
+                            <input type="text" name="kelas" class="form-control" id="exampleInputPassword1" value="{{ Auth::user()->level }}">
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Nama Barang</label>

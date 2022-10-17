@@ -45,6 +45,18 @@
                                 </tr>
                             </thead>
                             <tbody>
+                            <tr>
+                                    <th scope="row">#</th>
+                                    <td>Proyektor</td>
+                                    <td>3</td>
+                                    <td>17/10/2022 14.53</td>
+                                    <td>N/A</td>
+                                    <td>Rp.0</td></td>
+                                    <td>
+                                         <p class="text-warning"><strong>Menunggu Persetujuan</strong></p>
+                                    </td>
+                                    <td>N/A</td>
+                                </tr>
                                 <tr>
                                     <th scope="row">#</th>
                                     <td>Proyektor</td>

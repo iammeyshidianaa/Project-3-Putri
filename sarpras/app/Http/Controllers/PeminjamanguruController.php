@@ -12,12 +12,7 @@ class PeminjamanguruController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function pinjamguru()
-    {
-        $pinjamguru = Peminjamanguru::all();
-
-        return view('guru.peminjaman.peminjamanguru', compact('pinjamguru'));
-    }
+    
 
 
     /**

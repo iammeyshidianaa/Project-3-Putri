@@ -39,7 +39,7 @@
                                     <th scope="col">Kategori</th>
                                     <th scope="col">Nama Barang</th>
                                     <th scope="col">Merk</th>
-                                    <th scope="col">Tanggal</th>
+                                    <th scope="col">Tanggal Masuk</th>
                                     <th scope="col">Stok</th>
                                     <th scope="col">Satuan</th>
                                     <th scope="col">Deskripsi</th>

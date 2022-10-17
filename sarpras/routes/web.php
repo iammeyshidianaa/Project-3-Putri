@@ -187,7 +187,7 @@ Route::group(['middleware' => ['auth', 'level:guru']], function () {
     Route::get('/pengajuan', [PengajuanController::class, 'pengajuan'])->name('pengajuan');
     Route::get('/barangpinjamguru', [BarangPinjamGuruController::class, 'barangpinjamguru'])->name('barangpinjamguru');
     Route::get('/riwayatguru', [RiwayatController::class, 'riwayatguru'])->name('riwayatguru');
-    Route::get('/pinjamguru', [PeminjamanguruController::class, 'pinjamguru'])->name('pinjamguru');
+    // Route::get('/pinjamguru', [PeminjamanguruController::class, 'pinjamguru'])->name('pinjamguru');
     Route::get('/riwayat_pengajuan_guru', [PengajuanController::class, 'riwayat_pengajuan_guru'])->name('riwayat_pengajuan_guru');
     Route::post('/editguru', [IndexController::class, 'insertguru'])->name('editguru');
     Route::group(['middleware' => 'auth'], function () {
@@ -221,7 +221,11 @@ Route::get('/deleteuser/{p}', [userController::class, 'deleteuser'])->name('dele
 Route::get('/data1', [guruController::class, 'data1'])->name('data1');
 Route::get('/data2', [guruController::class, 'data2'])->name('data2');
 
-//peminjaman barang
+//peminjaman barang guru
+Route::get('/pinjambarang_guru',[PinjambarangController::class,'pinjambarang_guru'])->name('pinjambarang_guru');
+Route::post('/insertpinjam_guru',[PinjambarangController::class,'insertpinjam_guru'])->name('insertpinjam_guru');
+
+//peminjaman barang siswa
 Route::get('/pinjambarang',[PinjambarangController::class,'pinjambarang'])->name('pinjambarang');
 Route::post('/insertpinjamsiswa',[PinjambarangController::class,'insertpinjamsiswa'])->name('insertpinjamsiswa');
 //permintaan peminjaman
