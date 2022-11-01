@@ -11,80 +11,64 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
 <body>
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-3">
-          <div class="col-sm-6">
-
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
-      </div>
-      <h2 class="text-center text-primary">Data Barang Habis</h2>
-     <div class="container">
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-3">
+                    <div class="col-sm-6"></div><!-- /.row -->
+                </div><!-- /.container-fluid -->
+            </div>
+            <h2 class="text-center text-primary">Data Barang Habis</h2>
+            <div class="container">
                 @if ($massage = Session::get('success'))
                     <div class="alert alert-success" role="alert">
                         {{ $massage }}
                     </div>
                 @endif
-
-<a href="/tambahbaranghabis"  class="btn btn-outline-primary">Tambah Barang</a>
-<div class="row mt-3">
+            <a href="/tambahbaranghabis"  class="btn btn-outline-primary">Tambah Barang</a>
+            <div class="row mt-3">
                 <div class="row">
-    <table class="table table-bordered" id="gas">
-    <thead class= table-success>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Kategori</th>
-      <th scope="col">Nama Barang</th>
-      <th scope="col">Merek</th>
-      <th scope="col">Stok</th>
-      <th scope="col">Satuan</th>
-      <th scope="col">Deskripsi</th>
-      <th scope="col">Aksi</th>
-    </tr>
-  </thead>
-  <tbody>
-                 @php
-                $no = 1;
-               @endphp
-             @foreach ($data as $row)
-                 <tr>
-                                <th scope="row">{{ $no++ }}</th>
+                    <table class="table table-bordered" id="gas">
+                        <thead class= table-success>
+                            <tr>
+                                <th scope="col">No.</th>
+                                <th scope="col">Nama Barang / Merek</th>
+                                <th scope="col">Stok</th>
+                                <th scope="col">Satuan</th>
+                                <th scope="col">Deskripsi</th>
+                                <th scope="col">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
                                 @php
-                                    $kategorii = \App\Models\kategori::where('id', $row->kategori1)->first();
-                                    $nabar = \App\Models\nabar::where('id', $row->nama_barang1)->first();
-                                    $merk = \App\Models\merk::where('id', $row->merek1)->first();
-                                    $satuan = \App\Models\satuan::where('id', $row->satuan1)->first();
-                                @endphp
-                                <td>{{ $kategorii->kategorii  }}</td>
-                                <td>{{ $nabar->nabarr }}</td>
-                                <td>{{ $merk->merkk }}</td>
-                                <td>{{ $row->stok1 }}</td>
-                                <td>{{ $satuan->satuan }}</td>
-                                <td>{{ $row->deskripsi1 }}</td>
-
-                                <td>
-                                    <a href="/tampilkanbaranghabis/{{ $row->id }}" type="button"
-                                    class="btn btn-sm btn-warning text-white"><i class="ti-eraser" title="Ubah"></i></a>
+                                $no = 1;
+                            @endphp
+                            @foreach ($data as $row)
+                                <tr>
+                                    <th scope="row">{{ $no++ }}</th>
+                                    <td>{{ $row->nama_barang1 }}</td>
+                                    <td>{{ $row->stok1 }}</td>
+                                    <td>{{ $row->satuan1 }}</td>
+                                    <td>{{ $row->deskripsi1 }}</td>
+                                    <td>
+                                        <a href="/tampilkanbaranghabis/{{ $row->id }}" type="button"
+                                        class="btn btn-sm btn-warning text-white"><i class="ti-eraser" title="Ubah"></i></a>
 
                                         <a href="#" class="btn btn-sm btn-danger text-white delete" id="delete"
                                         data-id="{{ $row->id }}" data-nama="{{ $row->nama }}"><i class="ti-trash" title="Hapus"></i></a></a>
-                                </td>
-
-                            </tr>
-                        @endforeach
-
-    </tr>
-
-  </tbody>
-</table>
-
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            </div>
+        </div>
     </div>
-</div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
     </script>
     <script src="https://code.jquery.com/jquery-3.6.0.slim.js"
@@ -97,15 +81,15 @@
     <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
 
     <script>
-        $(document).ready(function() {
-    $('#gas').DataTable( {
-        language: {
-            url: "{{asset('skydas/js/bahasa.json')}}"
-        }
+            $(document).ready(function() {
+        $('#gas').DataTable( {
+            language: {
+                url: "{{asset('skydas/js/bahasa.json')}}"
+            }
+        } );
     } );
-} );
     </script>
-    </body>
+</body>
     <script>
         // var button = document.getElementById('id');
         $('.delete').click(function() {
@@ -132,7 +116,7 @@
         });
     </script>
 
-            <script>
+    <script>
             @if(Session::has('message'))
             toastr.options =
             {
@@ -143,6 +127,5 @@
             @endif
 
     </script>
-    </div>
-        @endsection
+@endsection
 @push('scripts')

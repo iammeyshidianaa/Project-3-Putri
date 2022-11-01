@@ -17,13 +17,8 @@ class BaranghabisController extends Controller
 
     public function tambahbaranghabis()
     {
-        $data = kategori::all();
-        $nabar = nabar::all();
-        $merk = merk::all();
-        $satuan = Satuan::all();
 
-
-        return view('admin.baranghabis.tambahbaranghabis', compact('data', 'nabar', 'merk' , 'satuan'));
+        return view('admin.baranghabis.tambahbaranghabis');
     }
 
     public function insertbaranghabis(Request $request)
@@ -36,14 +31,14 @@ class BaranghabisController extends Controller
 
 
         ];
+        // dd($request->all());
         $this->validate($request, [
-            'kategori1' => 'required',
-            'nama_barang1' => 'required|min:1|max:12',
-            'merek1' => 'required|min:1|max:10',
+            'nama_barang1' => 'required|min:1|max:50',
             'stok1' => 'numeric',
             'deskripsi1' => 'required',
 
         ], $pesan);
+        // dd('d');
 
         $data = Baranghabis::create($request->all());
 
@@ -70,23 +65,21 @@ class BaranghabisController extends Controller
 
 
         ];
+        // dd($request->all());
         $this->validate($request, [
-            'kategori1' => 'required',
-            'nama_barang1' => 'required|min:1|max:12',
-            'merek1' => 'required|min:1|max:10',
+            'nama_barang1' => 'required|min:1|max:100',
             'stok1' => 'numeric',
             'satuan1' => 'required',
             'deskripsi1' => 'required',
 
         ], $pesan);
+         // dd('d');
 
         $data = Baranghabis::findOrFail($id);
         $data = Baranghabis::find($id);
 
         $data->update([
-            'kategori1' => $request->kategori1,
             'nama_barang1' => $request->nama_barang1,
-            'merek1' => $request->merek1,
             'stok1' => $request->stok1,
             'satuan1' => $request->satuan1,
             'deskripsi1' => $request->deskripsi1,

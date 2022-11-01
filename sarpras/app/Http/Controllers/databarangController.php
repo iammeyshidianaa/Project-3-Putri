@@ -8,39 +8,19 @@ use App\Models\{kategori, nabar,  merk, Satuan};
 
 class databarangController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         $data = databarang::all();
 
-        return view('admin.barang.databarang', compact('data'));
+        return view('admin.barang_tidakhabis.databarang', compact('data'));
     }
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
 
     public function tambahdatabarang()
     {
-        $data = kategori::all();
-        $nabar = nabar::all();
-        $merk = merk::all();
-        $satuan = Satuan::all();
-
-        return view('admin.barang.tambahdatabarang', compact('data', 'nabar', 'merk', 'satuan'));
+        return view('admin.barang_tidakhabis.tambahdatabarang');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function insertdatabarang(Request $request)
     {
         $pesan = [
@@ -52,10 +32,9 @@ class databarangController extends Controller
 
         ];
         $this->validate($request, [
-            'kategori' => 'required',
-            'nama_barang' => 'required|min:1|max:12',
-            'merek' => 'required|min:1|max:10',
-            'stok' => 'numeric',
+            'nama_barang' => 'required|min:3|max:100',
+            'jumlah_stok' => 'numeric',
+            'satuan' => 'required',
             'deskripsi' => 'required',
         ], $pesan);
 
@@ -65,39 +44,15 @@ class databarangController extends Controller
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function tampilkandatabarang($id)
     {
 
         $data = databarang::findOrFail($id);
         $data = databarang::find($id);
 
-        return view('admin.barang.tampildatabarang', compact('data'));
+        return view('admin.barang_tidakhabis.tampildatabarang', compact('data'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function updatedatabarang(Request $request, $id)
     {
         $pesan = [
@@ -108,21 +63,23 @@ class databarangController extends Controller
 
 
         ];
+        // dd($request->all());
         $this->validate($request, [
-            'kategori' => 'required',
-            'nama_barang' => 'required|min:1|max:12',
-            'merek' => 'required|min:1|max:10',
+            'nama_barang' => 'required|min:3|max:100',
             'stok' => 'numeric',
             'satuan' => 'required',
             'deskripsi' => 'required',
 
         ], $pesan);
+        // dd('d');
 
         $data = databarang::findOrFail($id);
         $data = databarang::find($id);
 
         $data->update([
-            'kategori' => $request->kategori,
+            'id_barang' => $request->id_barang,
+            'id_databarang' => $request->id_databarang,
+            'id_kategori' => $request->id_kategori,
             'nama_barang' => $request->nama_barang,
             'merek' => $request->merek,
             'stok' => $request->stok,
@@ -134,12 +91,6 @@ class databarangController extends Controller
         return redirect()->route('databarang')->with('message', 'Data berhasil di edit');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function delete($id)
     {
         $data = databarang::find($id);

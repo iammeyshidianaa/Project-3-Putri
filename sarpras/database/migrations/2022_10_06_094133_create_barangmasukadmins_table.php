@@ -15,14 +15,9 @@ class CreateBarangmasukadminsTable extends Migration
     {
         Schema::create('barangmasukadmins', function (Blueprint $table) {
             $table->id();
-            $table->string('kode');
-            $table->string('kategori');
-            $table->string('namabarang');
-            $table->string('merek_barang');
-            $table->string('tanggal_pembelian');
+            $table->string('nama2');
+            $table->date('tanggal_pembelian');
             $table->integer('stok');
-            $table->string('satuans');
-            $table->string('deskripsis');
             $table->timestamps();
         });
     }

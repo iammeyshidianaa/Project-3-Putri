@@ -15,88 +15,83 @@
 
           </div></div></div>
 
-      <h2 class="text-center text-primary">Tambah Data </h2>
-    <form action="/insertdatabarang" method="POST" enctype="multipart/form-data">
-    @csrf
-                                <!-- <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Kategori</label>
-                                    <input type="text" name="kategori" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp">
-                                    @error('kategori')
-                                        <div class="alert alert-danger">{{ $message }}</div>
-                                    @enderror
-                                </div> -->
-
+      <h2 class="text-center text-primary"> Tambah Data</h2>
+                            <form action="/insertbaranghabis" method="POST" enctype="multipart/form-data">
+                                @csrf
                                 <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label">Kategori</label>
-                                    <select class="form-control" name="kategori" >
+                                    <select class="form-control" name="kategori1" >
                                     <option  value="" selected>Pilih Kategori</option>
                                     @foreach($data as $row)
                                         <option  value="{{$row->id}}">{{$row->kategorii}}</option>
                                         @endforeach
                                     </select>
-                                    @error('kategori')
+                                    @error('kategori1')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                 @enderror
+                                </div>
+
+
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Nama Barang</label>
+                                    <select class="form-control" name="nama_barang1" >
+                                    <option  value="" selected>Pilih Kategori</option>
+                                    @foreach($nabar as $row)
+                                        <option  value="{{$row->id}}">{{$row->nabarr}}</option>
+                                        @endforeach
+                                    </select>
+                                    @error('nama_barang1')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                 @enderror
+                                </div>
+
+
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Merek</label>
+                                    <select class="form-control" name="merek1" >
+                                    <option  value="" selected>Pilih Kategori</option>
+                                    @foreach($merk as $row)
+                                        <option  value="{{$row->id}}">{{$row->merkk}}</option>
+                                        @endforeach
+                                    </select>
+                                    @error('merek1')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                  @enderror
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Nama Barang</label>
-                                    <input type="text" name="nama_barang" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp">
-
-                                    @error('nama_barang')
-                                        <div class="alert alert-danger">{{ $message }}</div>
-                                    @enderror
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Merek</label>
-                                    <input type="text" name="merek" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp">
-                                    @error('merek')
-                                        <div class="alert alert-danger">{{ $message }}</div>
-                                    @enderror
-                                </div>
-
-                                <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label">Stok</label>
-                                    <input type="number" name="stok" class="form-control" id="exampleInputEmail1"
+                                    <input type="number" name="stok1" class="form-control" id="exampleInputEmail1"
                                         aria-describedby="emailHelp">
-                                    @error('stok')
+                                    @error('stok1')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
 
                                 <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label">Satuan</label>
-                                    <select class="form-control" name="satuan" >
-                                    <option  value="" selected>Pilih Kategori</option>
+                                    <select class="form-control" name="satuan1" >
+                                    <option  value="" selected>Pilih Satuan</option>
                                     @foreach($satuan as $row)
                                         <option  value="{{$row->id}}">{{$row->satuan}}</option>
                                         @endforeach
                                     </select>
-                                    @error('satuan')
+                                    @error('satuan1')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                  @enderror
                                 </div>
 
+
                                 <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label">Deskripsi</label>
-                                    <textarea name="deskripsi" class="form-control" id="exampleInputEmail1"
+                                    <textarea name="deskripsi1" class="form-control" id="exampleInputEmail1"
                                         aria-describedby="emailHelp"></textarea>
-                                    @error('deskripsi')
+                                    @error('deskripsi1')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
 
-                                <!-- <div class=" mb-3">
-                                    <label for="exampleInputEmail1"  class="form-label">Deskripsi</label>
-                                    <textarea class="form-control" name="deskripsi" id="floatingTextarea2" style="height: 100px"></textarea>
-                                    @error('deskripsi')
-                                        <div class="alert alert-danger">{{ $message }}</div>
-                                    @enderror
-                                </div> -->
+                                </div>
                                 <button type="submit" class="btn btn-outline-primary">Simpan</button>
                             </form>
                         </div>
@@ -113,5 +108,4 @@
    </body>
    @endsection
    @push('scripts')
-
 

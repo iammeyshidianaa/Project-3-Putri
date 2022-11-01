@@ -15,10 +15,8 @@ class CreateDatabarangsTable extends Migration
     {
         Schema::create('databarangs', function (Blueprint $table) {
             $table->id();
-            $table->string('kategori');
             $table->string('nama_barang');
-            $table->string('merek');
-            $table->integer('stok');
+            $table->integer('jumlah_stok');
             $table->string('satuan');
             $table->text('deskripsi');
             $table->timestamps();

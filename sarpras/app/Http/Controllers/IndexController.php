@@ -146,7 +146,10 @@ class IndexController extends Controller
     ]);
     return redirect()->route('profileadmin')->with('success','Data Berhasil Di Tambahkan');
     }
-    }};
+    }
+
+
+};
 
 
 

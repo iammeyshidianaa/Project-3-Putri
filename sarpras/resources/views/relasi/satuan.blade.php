@@ -20,7 +20,6 @@
                     </div>
                 </div>
             </div>
-
                 <h2 class="text-center text-primary">Satuan</h2>
             <div class="container">
             <!-- <a href="/tambahsatuan"  class="btn btn-outline-primary">Tambah Barang</a> -->
@@ -41,7 +40,7 @@
                                 <form action="/insertsatuan" method="POST" enctype="multipart/form-data">
                                     @csrf
 
-                                    <input type="text" name="nabarr" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                    <input type="text" name="satuan" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Tutup</button>
@@ -52,38 +51,36 @@
                     </div>
                 </div>
 
-<div class="row mt-3">
-                <div class="row">
-    <table class="table table-bordered" id="gas">
-    <thead class= table-success>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Satuan</th>
-      <th scope="col">Aksi</th>
-    </tr>
-  </thead>
-  <tbody>
-
-                                @php
-                            $no = 1;
-                        @endphp
-                        @foreach($data as $row)
-                            <tr>
-                                <th scope="row">{{ $no++ }}</th>
-                                <td>{{ $row->satuan }}</td>
-                                <td>
-                                    <a href="#" class="btn btn-sm btn-danger text-white delete" id="delete"
-                                        data-id="{{ $row->id }}" data-nama="{{ $row->nama }}"><i class="ti-trash" title="Hapus"></i></a></a>
-                                </td>
-                            </tr>
-                        @endforeach
-
-                        </tr>
-
-</tbody>
-</table>
-</div>
-</div>
+                <div class="row mt-3">
+                    <div class="row">
+                        <table class="table table-bordered" id="gas">
+                            <thead class= table-success>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Satuan</th>
+                                    <th scope="col">Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                    @php
+                                    $no = 1;
+                                @endphp
+                                @foreach($data as $row)
+                                    <tr>
+                                        <th scope="row">{{ $no++ }}</th>
+                                        <td>{{ $row->satuan }}</td>
+                                        <td>
+                                            <a href="#" class="btn btn-sm btn-danger text-white delete" id="delete"
+                                                data-id="{{ $row->id }}" data-nama="{{ $row->nama }}"><i class="ti-trash" title="Hapus"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        </div>
 </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">

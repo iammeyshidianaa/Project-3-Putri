@@ -22,47 +22,46 @@
 
             <h2 class="text-center text-primary">Stok Opname Barang Habis</h2>
             <div class="container">
+
                     @if ($massage = Session::get('success'))
                         <div class="alert alert-success" role="alert">
                             {{ $massage }}
                         </div>
                     @endif
-
-
+                <br>
+                <a href="/tambah_stok"  class="btn btn-outline-primary">Tambah Stok</a>
                 <div class="row mt-3">
-                    <div class="row">
-                        <table class="table table-bordered" id="gas">
-                            <thead class= table-success>
+                <div class="row">
+                    <table class="table table-bordered" id="gas">
+                        <thead class= table-success>
+                            <tr>
+                                <th scope="col">No.</th>
+                                <th scope="col">Nama Barang / Merek</th>
+                                <th scope="col">Tanggal Masuk</th>
+                                <th scope="col">Stok</th>
+                                <th scope="col">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                @php
+                                $no = 1;
+                            @endphp
+                            @foreach ($masukadmin as $row)
                                 <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Kode Barang</th>
-                                    <th scope="col">Kategori</th>
-                                    <th scope="col">Nama Barang</th>
-                                    <th scope="col">Merk</th>
-                                    <th scope="col">Tanggal Masuk</th>
-                                    <th scope="col">Stok</th>
-                                    <th scope="col">Satuan</th>
-                                    <th scope="col">Deskripsi</th>
+                                    <th scope="row">{{ $no++ }}</th>
+                                    <td>{{ $row->nama }}</td>
+                                    <td>{{ $row->tanggal_pembelian }}</td>
+                                    <td>{{ $row->stok }}</td>
+                                    <td>
+                                       <a href="#" class="btn btn-sm btn-danger text-white delete" id="delete"
+                                          data-id="{{ $row->id }}" data-nama="{{ $row->nama }}"><i class="ti-trash" title="Hapus"></i></a>
+                                    </td>
                                 </tr>
-                            </thead>
-                            <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>PK-4208</td>
-                                        <td>Bahan Pengajar</td>
-                                        <td>Tinta</td>
-                                        <td>-</td>
-                                        <td>20-02-2022</td>
-                                        <td>10</td>
-                                        <td>Liter</td>
-                                        <td>Aman</td>
-                                    </tr>
-
-                            </tbody>
-
-                        </table>
-                    </div>
+                            @endforeach
+                        </tbody>
+                    </table>
                 </div>
+</div>
             </div>
         </div>
     </div>
@@ -101,7 +100,7 @@
                         })
                         .then((willDelete) => {
                             if (willDelete) {
-                                window.location = "/deletedatabarang/" + databarangid + ""
+                                window.location = "/deletestok_baranghabis/" + databarangid + ""
                                 swal("Data berhasil dihapus", {
                                     icon: "success",
                                 });

@@ -2,16 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\barangmasukadmin;
+use App\Models\databarang;
 use Illuminate\Http\Request;
+use App\Models\barangmasukadmin;
 
 class BarangmasukadminController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function barangmasukadmin()
     {
         $barangmasukadmin =  barangmasukadmin::all();
@@ -19,69 +16,41 @@ class BarangmasukadminController extends Controller
         return view('admin.barangmasuk.tidakhabis', compact('barangmasukadmin'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function tambahstok()
     {
-        //
+        $barangtdkhabis =  databarang::all();
+
+        return view('admin.barangmasuk.tambah_tidakhabis', compact('barangtdkhabis'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function insert(Request $request)
     {
-        //
+        $pesan = [
+            'required' => ':attribute wajib di isi!',
+            'min' => ':attribute harus diisi minimal :3 min karakter',
+            'max' => ':attribute harus diisi maksimal :12 max karakter',
+            'numeric' => 'harus di isi angka!',
+
+        ];
+        // dd($request->all());
+        $this->validate($request, [
+            'nama2' => 'required',
+            'tanggal_pembelian' => 'required',
+            'stok' => 'numeric',
+
+        ], $pesan);
+        //  dd('d');
+
+        $data = barangmasukadmin::create($request->all());
+
+        return redirect()->route('barangmasukadmin')->with('message','Stok berhasil ditambahkan');
+
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\barangmasukadmin  $barangmasukadmin
-     * @return \Illuminate\Http\Response
-     */
-    public function show(barangmasukadmin $barangmasukadmin)
+    public function delete($id)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\barangmasukadmin  $barangmasukadmin
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(barangmasukadmin $barangmasukadmin)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\barangmasukadmin  $barangmasukadmin
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, barangmasukadmin $barangmasukadmin)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\barangmasukadmin  $barangmasukadmin
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(barangmasukadmin $barangmasukadmin)
-    {
-        //
+        $data = barangmasukadmin::find($id);
+        $data->delete($id);
+        return redirect()->route('barangmasukadmin')->with('message', 'Data berhasil di hapus');
     }
 }

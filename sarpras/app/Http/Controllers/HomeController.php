@@ -3,11 +3,12 @@
 #app\Http\Controllers\HomeController.php
 
 namespace App\Http\Controllers;
-use App\Models\show_change_password_form;
-use Illuminate\Http\Request;
-use App\Models\User;
-use Hash;
 use Auth;
+use Hash;
+use App\Models\User;
+use App\Models\barangmasuk;
+use Illuminate\Http\Request;
+use App\Models\show_change_password_form;
 
 class HomeController extends Controller
 {
@@ -38,6 +39,22 @@ class HomeController extends Controller
 
         return redirect()->back()->with("success","Password Berhasil Diubah!");
     }
+
+    // // Ajax Stok Opname
+    // public function index()
+    // {
+    //     $model = new barangmasuk();
+    //     $data = $model->findAll();
+
+    //     return view('admin.barangmasuk.tambah_habis', [
+    //         'barangmasuks'
+    //     ]);
+    // }
+
+    // public function save()
+    // {
+    //     dd($this->request->getPost());
+    // }
 }
 
 

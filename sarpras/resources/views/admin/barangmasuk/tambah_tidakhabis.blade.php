@@ -1,8 +1,7 @@
 @extends('layout.admin')
-
 @section('content')
 <body>
-    <div class="content-wrapper">
+<div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <div class="content-header">
             <div class="container-fluid">
@@ -13,40 +12,37 @@
             <div class="col-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title text-center">Tambah Data Barang Habis </h4>
-                  <form action="/insertbaranghabis" method="POST" enctype="multipart/form-data">
+                  <h4 class="card-title text-center">Tambah Stock Barang Tidak Habis</h4>
+                  <form action="/insert" method="POST" enctype="multipart/form-data">
                     <br>
                         @csrf
                         <div class="form-group">
-                            <label for="exampleInputName1">Nama Barang / Merek</label>
-                            <input type="text"  name="nama_barang1" class="form-control" id="id_barang" placeholder="">
-                                @error('nama_barang1')
+                            <label for="exampleInputPassword4">Nama Barang / Merek</label>
+                            <select name="nama2" class="form-control">
+                                @foreach($barangtdkhabis as $d)
+                                <option value="{{ $d->nama_barang }}">{{ $d->nama_barang }}</option>
+                                @endforeach
+                            </select>
+                                @error('nama2')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputCity1">Tanggal Masuk</label>
+                            <input type="date"  name="tanggal_pembelian"  class="form-control" id="exampleInputCity1" placeholder="">
+                                @error('tanggal_pembelian')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                         </div>
                         <div class="form-group">
                             <label for="exampleInputCity1">Stok</label>
-                            <input type="number"  name="stok1"  class="form-control" id="exampleInputCity1" placeholder="">
-                                @error('stok1')
+                            <input type="number"  name="stok"  class="form-control" id="exampleInputCity1" placeholder="">
+                                @error('stok')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputCity1">Satuan</label>
-                            <input type="text"  name="satuan1"  class="form-control" id="exampleInputCity1" placeholder="">
-                                @error('satuan1')
-                                    <div class="alert alert-danger">{{ $message }}</div>
-                                @enderror
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleTextarea1">Deskripsi</label>
-                            <textarea name="deskripsi1" class="form-control" id="exampleTextarea1" rows="4"></textarea>
-                            @error('deskripsi1')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
                         </div>
                         <button type="submit" class="btn btn-primary">Simpan</button>
-                        <button class="btn btn-light" href="/baranghabis">Cancel</button>
+                        <button class="btn btn-light" href="/masukadmin">Cancel</button>
                   </form>
                 </div>
               </div>
@@ -58,7 +54,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
         </script>
+
 </body>
 @endsection
 @push('scripts')
-

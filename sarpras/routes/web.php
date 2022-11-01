@@ -15,7 +15,6 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DaftarguruController;
 use App\Http\Controllers\SatuanController;
 use App\Http\Controllers\databarangController;
-use App\Http\Controllers\MasukadminController;
 use App\Http\Controllers\BaranghabisController;
 use App\Http\Controllers\barangmasukController;
 use App\Http\Controllers\DikembalikanController;
@@ -76,8 +75,10 @@ Route::group(['middleware' => ['auth', 'level:admin']], function () {
     Route::get('/editprofileadmin', [IndexController::class, 'editprofileadmin'])->name('editprofileadmin');
     Route::get('/profileadmin', [IndexController::class, 'profileadmin'])->name('profileadmin');
     Route::post('/insertadmin', [IndexController::class, 'insertadmin'])->name('insertadmin');
-    // table data barang(admin)
 
+// Data Barang
+
+    // Barang Tidak Habis
     Route::get('/databarang', [databarangController::class, 'index'])->name('databarang')->middleware('auth');
     Route::get('/tambahdatabarang', [databarangController::class, 'tambahdatabarang'])->name('tambahdatabarang');
     Route::post('/insertdatabarang', [databarangController::class, 'insertdatabarang'])->name('insertdatabarang');
@@ -85,9 +86,7 @@ Route::group(['middleware' => ['auth', 'level:admin']], function () {
     Route::post('/updatedatabarang/{p}', [databarangController::class, 'updatedatabarang'])->name('updatedatabarang');
     Route::get('/deletedatabarang/{p}', [databarangController::class, 'delete'])->name('deletedatabarang');
 
-
-    // baranghabis
-
+    // Barang Habis
     Route::get('/baranghabis', [BaranghabisController::class, 'index'])->name('baranghabis')->middleware('auth');
     Route::get('/tambahbaranghabis', [BaranghabisController::class, 'tambahbaranghabis'])->name('tambahbaranghabis');
     Route::post('/insertbaranghabis', [BaranghabisController::class, 'insertbaranghabis'])->name('insertbaranghabis');
@@ -156,9 +155,15 @@ Route::group(['middleware' => ['auth', 'level:admin']], function () {
 
     //barang masuk (stock opname)
     //barang habis
-    Route::get('/masukadmin', [MasukadminController::class, 'masukadmin'])->name('masukadmin');
+    Route::get('/masukadmin', [barangmasukController::class, 'masukadmin'])->name('masukadmin');
+    Route::get('/tambah_stok', [barangmasukController::class, 'tambah_stok'])->name('tambah_stok');
+    Route::post('/insert_stok_baranghabis', [barangmasukController::class, 'insert_stok_baranghabis'])->name('insert_stok_baranghabis');
+    Route::get('/deletestok_baranghabis/{id}', [barangmasukController::class, 'deletestok_baranghabis'])->name('deletestok_baranghabis');
     //barang tidak habis
     Route::get('/barangmasukadmin', [BarangmasukadminController::class, 'barangmasukadmin'])->name('barangmasukadmin');
+    Route::get('/tambahstok', [BarangmasukadminController::class, 'tambahstok'])->name('tambahstok');
+    Route::post('/insert', [BarangmasukadminController::class, 'insert'])->name('insert');
+    Route::get('/delete/{id}', [BarangmasukadminController::class, 'delete'])->name('delete');
 
 
     //user
