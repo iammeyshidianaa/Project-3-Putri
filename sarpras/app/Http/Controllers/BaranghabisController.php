@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Baranghabis;
-use App\Models\{kategori, nabar,  merk, Satuan};
+use App\Models\ruang;
 use Illuminate\Http\Request;
 
 class BaranghabisController extends Controller
@@ -17,8 +17,8 @@ class BaranghabisController extends Controller
 
     public function tambahbaranghabis()
     {
-
-        return view('admin.baranghabis.tambahbaranghabis');
+        $data=ruang::all();
+        return view('admin.baranghabis.tambahbaranghabis',compact('data'));
     }
 
     public function insertbaranghabis(Request $request)
@@ -29,16 +29,15 @@ class BaranghabisController extends Controller
             'max' => ':attribute harus diisi maksimal : max karakter',
             'numeric' => 'harus di isi angka!',
 
-
         ];
         // dd($request->all());
         $this->validate($request, [
             'nama_barang1' => 'required|min:1|max:50',
             'stok1' => 'numeric',
+            'satuan1' => 'required',
             'deskripsi1' => 'required',
 
         ], $pesan);
-        // dd('d');
 
         $data = Baranghabis::create($request->all());
 

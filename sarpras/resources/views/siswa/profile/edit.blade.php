@@ -15,7 +15,7 @@
         <div class="col-md-10 offset-1">
             <div class="panel panel-default">
                 <h2 class="text-primary text-center">Ubah Profile</h2>
-<br>
+        <br>
             <div class="col-md-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">

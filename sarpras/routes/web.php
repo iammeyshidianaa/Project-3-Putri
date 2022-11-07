@@ -2,18 +2,18 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\guruController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\merkController;
 use App\Http\Controllers\userController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\nabarController;
+use App\Http\Controllers\RuangController;
+use App\Http\Controllers\SatuanController;
 use App\Http\Controllers\RiwayatController;
-use App\Http\Controllers\RuanganController;
 use App\Http\Controllers\kategoriController;
 use App\Http\Controllers\PengajuanController;
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DaftarguruController;
-use App\Http\Controllers\SatuanController;
 use App\Http\Controllers\databarangController;
 use App\Http\Controllers\BaranghabisController;
 use App\Http\Controllers\barangmasukController;
@@ -71,10 +71,25 @@ Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::group(['middleware' => ['auth', 'level:admin']], function () {
 
     Route::get('/indexadmin', [IndexController::class, 'indexadmin'])->name('indexadmin');
-    Route::get('/ruangan', [RuanganController::class, 'ruangan'])->name('ruangan');
     Route::get('/editprofileadmin', [IndexController::class, 'editprofileadmin'])->name('editprofileadmin');
     Route::get('/profileadmin', [IndexController::class, 'profileadmin'])->name('profileadmin');
     Route::post('/insertadmin', [IndexController::class, 'insertadmin'])->name('insertadmin');
+
+
+    //ruangan
+
+    Route::get('/ruang', [RuangController::class, 'ruang'])->name('ruang');
+    Route::get('/ruangan', [RuangController::class, 'ruangan'])->name('ruangan');
+    Route::get('/tambahruang', [RuangController::class, 'tambahruang'])->name('tambahruang');
+    Route::post('/insertruang', [RuangController::class, 'insertruang'])->name('insertruang');
+    Route::get('/tampilkanruang/{p}', [RuangController::class, 'tampilkanruang'])->name('tampilkanruang');
+    Route::post('/updateruang/{p}', [RuangController::class, 'updateruang'])->name('updateruang');
+    Route::get('/deleteruang/{p}', [RuangController::class, 'delete'])->name('deleteruang');
+
+    //detail ruangan
+
+    Route::get('/detailruangan/{id}', [RuangController::class, 'detailruangan'])->name('detailruangan');
+
 
 // Data Barang
 

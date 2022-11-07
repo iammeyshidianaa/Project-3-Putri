@@ -101,6 +101,12 @@
                                                                 </div>
                                                             </div>
                                                             <div class="form-group row">
+                                                                <label class="col-sm-4 col-form-label">Kelas</label>
+                                                                <div class="col-sm-7">
+                                                                    <input type="text" class="form-control" name="kelas">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
                                                                 <label class="col-sm-4 col-form-label">Email</label>
                                                                 <div class="col-sm-7">
                                                                     <input type="email" class="form-control" name="email">

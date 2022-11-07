@@ -41,7 +41,7 @@
                                     <div class="col-12 col-lg-4 border-right mb-4">
                                         <div class="d-md-flex align-items-center">
                                             <div class="mb-md-0 mb-3">
-                                                <img src="{{ asset('img/admin/'.Auth::User()->foto2) }}"
+                                                <img src="{{ asset('img/admin/'.Auth::User()->foto2) }} "
                                                     class="rounded-circle shadow" width="130" height="130"
                                                     alt="" />
                                             </div>
@@ -76,7 +76,7 @@
                                 <!--end row-->
                                 <ul class="nav nav-pills">
                                     <a href="/editprofileadmin" class="btn btn-outline-primary mr-2">Ubah</a>
-                                    <a href="/changePassworda" class="btn btn-outline-primary mr-2">Ganti Password</a>
+                                    <a href="/changePassworda" class="btn btn-outline-primary mr-2 ">Ganti Password</a>
                                 </ul>
 
                             </div>

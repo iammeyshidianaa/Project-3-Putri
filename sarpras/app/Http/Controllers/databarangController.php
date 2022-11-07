@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\databarang;
 use Illuminate\Http\Request;
-use App\Models\{kategori, nabar,  merk, Satuan};
+use App\Models\ruang;
 
 class databarangController extends Controller
 {
@@ -18,7 +18,8 @@ class databarangController extends Controller
 
     public function tambahdatabarang()
     {
-        return view('admin.barang_tidakhabis.tambahdatabarang');
+        $data=ruang::all();
+        return view('admin.barang_tidakhabis.tambahdatabarang', compact('data'));
     }
 
     public function insertdatabarang(Request $request)

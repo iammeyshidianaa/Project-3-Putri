@@ -641,7 +641,7 @@
                 <h4>Telepon:</h4>
                 <p>+62 875-4657-43219</p>
               </div>
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126438.3380642143!2d112.56174168030651!3d-7.978469457028433!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd62822063dc2fb%3A0x78879446481a4da2!2sMalang%2C%20Kota%20Malang%2C%20Jawa%20Timur!5e0!3m2!1sid!2sid!4v1662520747233!5m2!1sid!2sid"  width="1060" height="350"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.9521455536988!2d112.60469731432761!3d-7.900068680795311!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7881c2c4637501%3A0x10433eaf1fb2fb4c!2sHummasoft%20Technology!5e0!3m2!1sid!2sid!4v1667464107678!5m2!1sid!2sid" width="1060" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> 
             </div>
 
           </div>

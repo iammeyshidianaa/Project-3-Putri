@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDatabarangsTable extends Migration
+class CreateRuangsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateDatabarangsTable extends Migration
      */
     public function up()
     {
-        Schema::create('databarangs', function (Blueprint $table) {
+        Schema::create('ruangs', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_barang');
-            $table->integer('jumlah_stok');
-            $table->string('satuan');
-            $table->integer('ruang_id');
-            $table->text('deskripsi');
+            $table->string('gambar');
+            $table->string('ruang');
+            $table->string('jurusan');
+            $table->integer('rombel');
+            $table->string('deskripsi');
             $table->timestamps();
         });
     }
@@ -31,6 +31,6 @@ class CreateDatabarangsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('databarangs');
+        Schema::dropIfExists('ruangs');
     }
 }

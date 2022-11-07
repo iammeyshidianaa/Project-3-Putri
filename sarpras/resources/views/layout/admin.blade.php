@@ -88,13 +88,20 @@
             </a>
           </li>
 
-        <!-- Data Ruangan -->
+         <!-- Data Ruangan -->
 
-          <li class="nav-item">
-            <a class="nav-link" href="{{url('/ruangan')}}" >
-              <i class="ti-home menu-icon"></i>
+         <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ruang" aria-expanded="false" aria-controls="ruang">
+            <i class="icon-paper menu-icon"></i>
               <span class="menu-title">Data Ruangan</span>
+              <i class="menu-arrow"></i>
             </a>
+            <div class="collapse" id="ruang">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/ruang">Ruangan</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/ruangan">Tambah Ruangan</a></li>
+              </ul>
+            </div>
           </li>
 
           <!-- Stok Opname/Barang Masuk -->

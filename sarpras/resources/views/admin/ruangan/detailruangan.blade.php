@@ -1,4 +1,5 @@
 @extends('layout.admin')
+
 @section('content')
 @push('css')
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -20,7 +21,7 @@
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
       </div>
-      <h2 class="text-center text-primary">Semua Pengguna</h2>
+      <h2 class="text-center text-primary">Data Ruangan {{$judul->ruang}} {{$judul->jurusan}} {{$judul->rombel}}</h2>
      <div class="container">
                 @if ($massage = Session::get('success'))
                     <div class="alert alert-success" role="alert">
@@ -28,52 +29,35 @@
                     </div>
                 @endif
 
+                <!-- <a href="/tambahruangan"  class="btn btn-outline-primary">Tambah Ruangan</a> -->
 
-<div class="row mt-3">
-                <div class="row">
-    <table class="table table-bordered" id="gas">
-    <thead class= table-success>
+<div class="row mt-6">
+<div class="row">
+<table class="table table-bordered" id="gas">
+<thead class= table-success>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">Nama</th>
-      <th scope="col">Sebagai</th>
-      <th scope="col">Kelas</th>
-      <th scope="col">Email</th>
-      <th scope="col">Blokir Pengguna</th>
+    <th scope="col">#</th>
+    <th scope="col">Nama Barang</th>
+    <th scope="col">Stok</th>
     </tr>
-  </thead>
-  <tbody>
-                 @php
-                $no = 1;
-               @endphp
-             @foreach ($data as $row)
-                 <tr>
-                                <th scope="row">{{ $no++ }}</th>
-                                <!-- @php
-                                    $kategorii = \App\Models\kategori::where('id', $row->kategori1)->first();
-                                    $nabar = \App\Models\nabar::where('id', $row->nama_barang1)->first();
-                                    $merk = \App\Models\merk::where('id', $row->merek1)->first();
-                                @endphp -->
-                                <td>{{ $row->name }}</td>
-                                <td>{{ $row->level }}</td>
-                                <td>{{ $row->kelas }}</td>
-                                <td>{{ $row->email }}</td>
+</thead>
+<tbody>
+    @php
+    $no = 1;
+    @endphp
+    @foreach ($barang as $row)
 
-                                <td>
-
-                                        <a href="#" class="btn btn-sm btn-danger text-white delete" id="delete"
-                                        data-id="{{ $row->id }}" data-nama="{{ $row->nama }}"><i class="ti-trash" title="Hapus"></i></a></a>
-                                </td>
-
-                            </tr>
-                        @endforeach
-
+    <tr>
+        <th scope="row">{{ $no++ }}</th>
+        <td>{{$row->nama_barang1}}</td>
+        <td>{{$row->stok1}}</td>
     </tr>
-
-  </tbody>
+    @endforeach
+</tbody>
 </table>
 
-    </div>
+</div>
+</div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
@@ -101,28 +85,29 @@
     <script>
         // var button = document.getElementById('id');
         $('.delete').click(function() {
-            var databarangid = $(this).attr('data-id');
+            var detailruanganid = $(this).attr('data-id');
             var nama = $(this).attr('data-nama');
 
             swal({
                     title: "Yakin?",
-                    text: "Kamu akan menghapus akses dari user ini? " + nama + " ",
+                    text: "Apa kamu ingin menghapus data ini? " + nama + " ",
                     icon: "warning",
                     buttons: true,
                     dangerMode: true,
                 })
                 .then((willDelete) => {
                     if (willDelete) {
-                        window.location = "/deleteuser/" + databarangid + ""
+                        window.location = "/deletedetailruangan/" + databarangid + ""
                         swal("Data berhasil dihapus", {
                             icon: "success",
                         });
                     } else {
-                        swal("User tidak jadi dihapus");
+                        swal("Data tidak jadi dihapus");
                     }
                 });
         });
     </script>
+
 
             <script>
             @if(Session::has('message'))
@@ -133,8 +118,40 @@
             }
                     toastr.success("{{ session('message') }}");
             @endif
-                
-    </script>
+
+            </script>
+
+              <!-- jquery  -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+        <!-- js untuk bootstrap5  -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+        </script>
+        <!-- js untuk select2  -->
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js" defer></script>
+
+        <script>
+            $(document).ready(function () {
+                $("#ruang_id").select2({
+                    placeholder: "Pilih Ruang"
+                });
+            });
+        </script>
+
     </div>
+
         @endsection
 @push('scripts')
+
+
+
+
+
+
+
+
+
+
+
+
