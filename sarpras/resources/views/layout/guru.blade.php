@@ -94,10 +94,17 @@
 
           <!-- Peminjaman Barang Guru -->
           <li class="nav-item">
-            <a class="nav-link" href="/pinjambarang_guru" >
+            <a class="nav-link" data-toggle="collapse" href="#p" aria-expanded="false" aria-controls="p">
               <i class="ti-clipboard menu-icon"></i>
               <span class="menu-title">Peminjaman</span>
+              <i class="menu-arrow"></i>
             </a>
+            <div class="collapse" id="p">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/barang_habis">Barang Habis</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/pinjambarang_guru">Barang Tidak Habis</a></li>
+              </ul>
+            </div>
           </li>
 
           <!-- Status Barang Yang Ingin Dipinjam Guru -->

@@ -66,7 +66,7 @@ class databarangController extends Controller
         // dd($request->all());
         $this->validate($request, [
             'nama_barang' => 'required|min:3|max:100',
-            'stok' => 'numeric',
+            'jumlah_stok' => 'numeric',
             'satuan' => 'required',
             'deskripsi' => 'required',
 
@@ -77,12 +77,8 @@ class databarangController extends Controller
         $data = databarang::find($id);
 
         $data->update([
-            'id_barang' => $request->id_barang,
-            'id_databarang' => $request->id_databarang,
-            'id_kategori' => $request->id_kategori,
             'nama_barang' => $request->nama_barang,
-            'merek' => $request->merek,
-            'stok' => $request->stok,
+            'jumlah_stok' => $request->jumlah_stok,
             'satuan' => $request->satuan,
             'deskripsi' => $request->deskripsi,
 

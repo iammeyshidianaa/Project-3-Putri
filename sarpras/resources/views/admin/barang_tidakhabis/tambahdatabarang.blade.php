@@ -8,49 +8,50 @@
         <div class="content-header">
             <div class="container-fluid">
                 <div class="row mb-3">
-                <div class="col-sm-6"></div>
+                    <div class="col-sm-6"></div>
                 </div>
             </div>
+        </div>
             <div class="col-12 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title text-center">Tambah Data Barang Tidak Habis </h4>
-                  <form action="/insertdatabarang" method="POST" enctype="multipart/form-data">
-                    <br>
-                        @csrf
-                        <div class="form-group">
-                            <label for="exampleInputName1">Nama Barang / Merek</label>
-                            <input type="text"  name="nama_barang" class="form-control" id="exampleInputName1" placeholder="">
-                                @error('nama_barang')
-                                    <div class="alert alert-danger">{{ $message }}</div>
-                                @enderror
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputCity1">Stok</label>
-                            <input type="number"  name="jumlah_stok"  class="form-control" id="exampleInputCity1" placeholder="">
-                                @error('stok')
-                                    <div class="alert alert-danger">{{ $message }}</div>
-                                @enderror
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputCity1">Satuan</label>
-                            <input type="text"  name="satuan"  class="form-control" id="exampleInputCity1" placeholder="">
-                                @error('satuan')
-                                    <div class="alert alert-danger">{{ $message }}</div>
-                                @enderror
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleTextarea1">Deskripsi</label>
-                            <textarea name="deskripsi" class="form-control" id="exampleTextarea1" rows="4"></textarea>
-                            @error('deskripsi')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
-                        <button type="submit" class="btn btn-primary">Simpan</button>
-                        <button class="btn btn-light" href="/databarang">Cancel</button>
-                  </form>
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title text-center">Tambah Data Barang Tidak Habis </h4>
+                        <form action="/insertdatabarang" method="POST" enctype="multipart/form-data">
+                            <br>
+                                @csrf
+                                <div class="form-group">
+                                    <label for="exampleInputName1">Nama Barang / Merek</label>
+                                    <input type="text"  name="nama_barang" class="form-control" id="exampleInputName1" placeholder="">
+                                    @error('nama_barang')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputCity1">Stok</label>
+                                    <input type="number"  name="jumlah_stok"  class="form-control" id="exampleInputCity1" placeholder="">
+                                    @error('stok')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputCity1">Satuan</label>
+                                    <input type="text"  name="satuan"  class="form-control" id="exampleInputCity1" placeholder="">
+                                    @error('satuan')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleTextarea1">Deskripsi</label>
+                                    <textarea name="deskripsi" class="form-control" id="exampleTextarea1" rows="4"></textarea>
+                                    @error('deskripsi')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                                <button type="submit" class="btn btn-primary">Simpan</button>
+                                <button class="btn btn-light" href="/databarang">Cancel</button>
+                        </form>
+                    </div>
                 </div>
-              </div>
             </div>
         </div>
     </div>

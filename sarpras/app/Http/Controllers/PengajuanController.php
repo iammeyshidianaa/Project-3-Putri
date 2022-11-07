@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pengajuan;
-
 use Illuminate\Http\Request;
 
 class PengajuanController extends Controller
@@ -21,6 +20,7 @@ class PengajuanController extends Controller
     }
     public function tambahp()
     {
+
         return view('guru.pengajuan.pengajuan');
     }
     public function insertp(Request $request)

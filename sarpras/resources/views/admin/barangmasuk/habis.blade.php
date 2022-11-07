@@ -70,6 +70,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.slim.js"
                 integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 </body>
 
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>

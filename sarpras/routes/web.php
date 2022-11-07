@@ -2,18 +2,18 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\guruController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\merkController;
 use App\Http\Controllers\userController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\nabarController;
+use App\Http\Controllers\RuangController;
+use App\Http\Controllers\SatuanController;
 use App\Http\Controllers\RiwayatController;
-use App\Http\Controllers\RuanganController;
 use App\Http\Controllers\kategoriController;
 use App\Http\Controllers\PengajuanController;
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DaftarguruController;
-use App\Http\Controllers\SatuanController;
 use App\Http\Controllers\databarangController;
 use App\Http\Controllers\BaranghabisController;
 use App\Http\Controllers\barangmasukController;
@@ -75,6 +75,20 @@ Route::group(['middleware' => ['auth', 'level:admin']], function () {
     Route::get('/editprofileadmin', [IndexController::class, 'editprofileadmin'])->name('editprofileadmin');
     Route::get('/profileadmin', [IndexController::class, 'profileadmin'])->name('profileadmin');
     Route::post('/insertadmin', [IndexController::class, 'insertadmin'])->name('insertadmin');
+
+    //ruangan
+
+    Route::get('/ruang', [RuangController::class, 'ruang'])->name('ruang');
+    Route::get('/ruangan', [RuangController::class, 'ruangan'])->name('ruangan');
+    Route::get('/tambahruang', [RuangController::class, 'tambahruang'])->name('tambahruang');
+    Route::post('/insertruang', [RuangController::class, 'insertruang'])->name('insertruang');
+    Route::get('/tampilkanruang/{p}', [RuangController::class, 'tampilkanruang'])->name('tampilkanruang');
+    Route::post('/updateruang/{p}', [RuangController::class, 'updateruang'])->name('updateruang');
+    Route::get('/deleteruang/{p}', [RuangController::class, 'delete'])->name('deleteruang');
+
+    //detail ruangan
+
+    Route::get('/detailruangan', [RuangController::class, 'detailruangan'])->name('detailruangan');
 
 // Data Barang
 
@@ -227,8 +241,12 @@ Route::get('/data1', [guruController::class, 'data1'])->name('data1');
 Route::get('/data2', [guruController::class, 'data2'])->name('data2');
 
 //peminjaman barang guru
+  //brg tdk habis
 Route::get('/pinjambarang_guru',[PinjambarangController::class,'pinjambarang_guru'])->name('pinjambarang_guru');
 Route::post('/insertpinjam_guru',[PinjambarangController::class,'insertpinjam_guru'])->name('insertpinjam_guru');
+  //brg habis
+Route::get('/barang_habis',[PinjambarangController::class,'barang_habis'])->name('barang_habis');
+Route::post('/insertpinjam_guru2',[PinjambarangController::class,'insertpinjam_guru2'])->name('insertpinjam_guru2');
 
 //peminjaman barang siswa
 Route::get('/pinjambarang',[PinjambarangController::class,'pinjambarang'])->name('pinjambarang');

@@ -11,57 +11,49 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <body>
+<body>
     <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-3">
-          <div class="col-sm-6"></div><!-- /.row -->
-        </div><!-- /.container-fluid -->
-      </div>
-	    <h2 class="text-center text-primary">Ajukan Permintaan</h2>
-	</div>
-                        <br><br>
-
-                        <form action="/insertp" method="POST" enctype="multipart/form-data">
-                                @csrf
-            <div class=" mb-3">
-                <label for="exampleInputEmail1"  class="form-label">Nama Lengkap</label>
-                <input type="text" name="namap" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ Auth::user()->name }}">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-3">
+                    <div class="col-sm-6"></div><!-- /.row -->
+                </div><!-- /.container-fluid -->
             </div>
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Nama Barang</label>
-                <input type="text" name="barangp" class="form-control" id="exampleInputPassword1">
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Alasan Pengajuan</label>
-                <input type="text" name="alasanp" class="form-control" id="exampleInputPassword1">
-            </div>
-            <div class=" mb-3">
-                <label for="exampleInputEmail1"  class="form-label">Harga</label>
-                <input type-currency="IDR" name="hargap" class="form-control" id="harga" aria-describedby="emailHelp"
-                onkeydown="javascript: return ['Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) ? true : !isNaN(Number(event.key)) && event.code!=='Space'">
-            </div>
-            <div class=" mb-3">
-                <label for="exampleInputEmail1"  class="form-label">Jumlah</label>
-                <input type="number" name="jumlahp" class="form-control" id="jumlah" aria-describedby="emailHelp">
-            </div>
-            <div class=" mb-3">
-                <label for="exampleInputEmail1"  class="form-label">Total</label>
-                <input type-currency="IDR"  name="totalp" class="form-control" id="total" aria-describedby="emailHelp"
-                onkeydown="javascript: return ['Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) ? true : !isNaN(Number(event.key)) && event.code!=='Space'">
-            </div>
-            <button type="submit" class="btn btn-outline-primary">Ajukan</button>
+            <h2 class="text-center text-primary">Ajukan Permintaan</h2>
         </div>
+        <br><br>
+        <form action="/insertp" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class=" mb-3">
+                    <label for="exampleInputEmail1"  class="form-label">Nama Lengkap</label>
+                    <input type="text" name="namap" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ Auth::user()->name }}">
                 </div>
-            </div>
-        </div>
-        </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Nama Barang</label>
+                    <input type="text" name="barangp" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Alasan Pengajuan</label>
+                    <input type="text" name="alasanp" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class=" mb-3">
+                    <label for="exampleInputEmail1"  class="form-label">Harga</label>
+                    <input type-currency="IDR" name="hargap" class="form-control" id="harga" aria-describedby="emailHelp"
+                    onkeydown="javascript: return ['Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) ? true : !isNaN(Number(event.key)) && event.code!=='Space'">
+                </div>
+                <div class=" mb-3">
+                    <label for="exampleInputEmail1"  class="form-label">Jumlah</label>
+                    <input type="number" name="jumlahp" class="form-control" id="jumlah" aria-describedby="emailHelp">
+                </div>
+                <div class=" mb-3">
+                    <label for="exampleInputEmail1"  class="form-label">Total</label>
+                    <input type-currency="IDR"  name="totalp" class="form-control" id="total" aria-describedby="emailHelp"
+                    onkeydown="javascript: return ['Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) ? true : !isNaN(Number(event.key)) && event.code!=='Space'">
+                </div>
+                <button type="submit" class="btn btn-outline-primary">Ajukan</button>
+        </form>
     </div>
-    </div>
-
-    </form>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
 

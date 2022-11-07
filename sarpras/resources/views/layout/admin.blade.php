@@ -20,7 +20,8 @@
   <link rel="stylesheet" href="{{ asset('skydas/css/vertical-layout-light/style.css')}}">
   <!-- endinject -->
   <link rel="shortcut icon" href="{{ asset('landing/assets/img/logo.png')}}" />
-@stack('css')
+
+    @stack('css')
 </head>
 <body>
   <div class="container-scroller">
@@ -57,7 +58,6 @@
               </a>
             </div>
           </li>
-
         </ul>
         <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
           <span class="icon-menu"></span>
@@ -71,7 +71,6 @@
         <ul class="nav">
 
           <!-- Beranda -->
-
           <li class="nav-item">
             <a class="nav-link" href="/indexadmin">
               <i class="ti-world menu-icon"></i>
@@ -80,7 +79,6 @@
           </li>
 
           <!-- Data Pengguna -->
-
           <li class="nav-item">
             <a class="nav-link" href="{{url('/user')}}" >
               <i class="icon-head menu-icon"></i>
@@ -88,17 +86,23 @@
             </a>
           </li>
 
-        <!-- Data Ruangan -->
+       <!-- Data Ruangan -->
 
-          <li class="nav-item">
-            <a class="nav-link" href="{{url('/ruangan')}}" >
-              <i class="ti-home menu-icon"></i>
+       <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ruang" aria-expanded="false" aria-controls="ruang">
+            <i class="icon-paper menu-icon"></i>
               <span class="menu-title">Data Ruangan</span>
+              <i class="menu-arrow"></i>
             </a>
+            <div class="collapse" id="ruang">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/ruang">Ruangan</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/ruangan">Tambah Ruangan</a></li>
+              </ul>
+            </div>
           </li>
 
           <!-- Stok Opname/Barang Masuk -->
-
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#oke" aria-expanded="false" aria-controls="oke">
             <i class="ti-import menu-icon"></i>
@@ -114,7 +118,6 @@
           </li>
 
           <!-- Data Barang -->
-
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#aman" aria-expanded="false" aria-controls="aman">
             <i class="icon-paper menu-icon"></i>
@@ -130,7 +133,6 @@
           </li>
 
           <!-- Permintaan Pengajuan -->
-
           <li class="nav-item">
             <a class="nav-link" href="/pengajuanguru" >
               <i class="ti-thought menu-icon"></i>
@@ -139,7 +141,6 @@
           </li>
 
           <!-- Permintaan Peminjaman Barang -->
-
           <li class="nav-item">
             <a class="nav-link" href="/peminjamanadmin" >
               <i class="ti-location-arrow menu-icon"></i>
@@ -148,7 +149,6 @@
           </li>
 
           <!-- Pengembalian Barang -->
-
           <li class="nav-item">
             <a class="nav-link" href="/pengembalianadmin" >
               <i class="ti-reload menu-icon"></i>
@@ -166,7 +166,6 @@
           </li> -->
 
           <!-- Riwayat -->
-
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
               <i class="ti-time menu-icon"></i>
