@@ -66,8 +66,7 @@ return [
     | ahead and set this to a sensible default for you out of the box.
     |
     */
-
-    'timezone' => 'UTC',
+    'timezone' => env('APP_TIMEZONE', 'Asia/Jakarta'),
 
     /*
     |--------------------------------------------------------------------------
@@ -80,8 +79,8 @@ return [
     |
     */
 
-    'locale' => 'en',
-
+    'locale' => 'id_ID',
+    
     /*
     |--------------------------------------------------------------------------
     | Application Fallback Locale
@@ -106,7 +105,7 @@ return [
     |
     */
 
-    'faker_locale' => 'en_US',
+    'faker_locale' => 'id_ID',
 
     /*
     |--------------------------------------------------------------------------
