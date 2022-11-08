@@ -20,7 +20,7 @@
                 </div>
             </div>
 
-            <h2 class="text-center text-primary">Barang Yang Sedang Dipinjam</h2>
+            <h2 class="text-center text-primary">Riwayat Peminjaman</h2>
             <div class="container">
                     @if ($massage = Session::get('success'))
                         <div class="alert alert-success" role="alert">
@@ -34,22 +34,38 @@
                         <table class="table table-bordered" id="gas">
                             <thead class= table-success>
                                 <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Nama Peminjam</th>
+                                    <th scope="col">No</th>
+                                    <th scope="col">Nama</th>
+                                    <th scope="col">Kelas</th>
                                     <th scope="col">Nama Barang</th>
                                     <th scope="col">Jumlah </th>
                                     <th scope="col">Tanggal Pinjam</th>
+                                    <th scope="col">Status</th>
+
                                 </tr>
                             </thead>
                             <tbody>
-                                    <tr>
-                                    <th scope="row">1</th>
-                                    <td>Sindi</td>
-                                    <td>LCD</td>
-                                    <td>2</td>
-                                    <td>21-02-2022</td>
-                                    </tr>
+                                @php
+                                $no = 1;
+                            @endphp
+                            @foreach ($peminjaman as $row)
+                                <tr>
+                                                <th scope="row">{{ $no++ }}</th>
+                                                <td>{{ $row->namapeminjam }}</td>
+                                                <td>{{ $row->kelas }}</td>
+                                                <td>{{ $row->namabarang3 }}</td>
+                                                <td>{{ $row->jumlah}}</td>
+                                                <td>{{ $row->tanggalpinjam}}</td>
 
+                                    @if($row->status3 == null)
+                                   
+                                </td>
+                                    @else
+                                    <td class="text-primary">{{ $row->status3 }}</td>
+                                    @endif
+                                </tr>
+
+                                @endforeach
                             </tbody>
 
                         </table>
@@ -104,17 +120,15 @@
                 });
             </script>
 
-            <script>
-                    @if(Session::has('message'))
-                    toastr.options =
-                    {
-                        "closeButton" : true,
-                        "progressBar" : true
-                    }
-                            toastr.success("{{ session('message') }}");
-                    @endif
-
-            </script>
+<script>
+    @if(Session::has('message'))
+    toastr.options = {
+        "closeButton": true,
+        "progressBar": true
+    }
+    toastr.success("{{ session('message') }}");
+    @endif
+</script>
     @endsection
 @push('scripts')
 

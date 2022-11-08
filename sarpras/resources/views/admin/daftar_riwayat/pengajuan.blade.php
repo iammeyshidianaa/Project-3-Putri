@@ -45,28 +45,28 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @php
+                                $no = 1;
+                                @endphp
+                                @foreach ($data as $row)
                                 <tr>
-                                    <th scope="row">1</th>
-                                    <td>Sindi</td>
-                                    <td>Proyektor</td>
-                                    <td>Rp.1.000.000</td>
-                                    <td>2</td>
-                                    <td>Rp.2.000.000</td>
-                                    <td>
-                                        <p class="text-danger"><strong>Ditolak</strong></p>
-                                    </td>
+                                    <th scope="row">{{ $no++ }}</th>
+                                    <td>{{ $row->namap }}</td>
+                                    <td>{{ $row->barangp }}</td>
+                                    <td>{{ $row->hargap }}</td>
+                                    <td>{{ $row->jumlahp }}</td>
+                                    <td>{{ $row->totalp }}</td>
+                                    @if($row->statusp == 'Disetujui')
+                                    <td class="text-success">{{ $row->statusp }}</td>
+                                    @else
+                                    <td class="text-danger">{{ $row->statusp }}</td>
+                                    @endif
+
                                 </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Hasan</td>
-                                    <td>LCD</td>
-                                    <td>Rp.2.000.000</td>
-                                    <td>2</td>
-                                    <td>Rp.4.000.000</td>
-                                    <td>
-                                        <p class="text-success"><strong>Disetujui</strong></p>
-                                    </td>
+                                @endforeach
+
                                 </tr>
+
                             </tbody>
 
                         </table>
@@ -117,7 +117,7 @@
                 }
             });
     });
-//
+    //
 </script>
 
 <script>

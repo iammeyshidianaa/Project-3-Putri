@@ -20,8 +20,7 @@
   <link rel="stylesheet" href="{{ asset('skydas/css/vertical-layout-light/style.css')}}">
   <!-- endinject -->
   <link rel="shortcut icon" href="{{ asset('landing/assets/img/logo.png')}}" />
-
-    @stack('css')
+@stack('css')
 </head>
 <body>
   <div class="container-scroller">
@@ -58,6 +57,7 @@
               </a>
             </div>
           </li>
+
         </ul>
         <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
           <span class="icon-menu"></span>
@@ -71,6 +71,7 @@
         <ul class="nav">
 
           <!-- Beranda -->
+
           <li class="nav-item">
             <a class="nav-link" href="/indexadmin">
               <i class="ti-world menu-icon"></i>
@@ -79,15 +80,17 @@
           </li>
 
           <!-- Data Pengguna -->
+
           <li class="nav-item">
             <a class="nav-link" href="{{url('/user')}}" >
               <i class="icon-head menu-icon"></i>
               <span class="menu-title">Data Pengguna</span>
             </a>
           </li>
-         <!-- Data Ruangan -->
 
-         <li class="nav-item">
+        <!-- Data Ruangan -->
+
+        <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ruang" aria-expanded="false" aria-controls="ruang">
             <i class="icon-paper menu-icon"></i>
               <span class="menu-title">Data Ruangan</span>
@@ -101,7 +104,7 @@
             </div>
           </li>
 
-          <!-- Stok Opname/Barang Masuk -->
+              <!-- Stok Opname/Barang Masuk -->
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#oke" aria-expanded="false" aria-controls="oke">
             <i class="ti-import menu-icon"></i>
@@ -130,8 +133,41 @@
               </ul>
             </div>
           </li>
+          <!-- Stok Opname/Barang Masuk
 
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#oke" aria-expanded="false" aria-controls="oke">
+            <i class="ti-import menu-icon"></i>
+              <span class="menu-title">Stok Opname</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="oke">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/masukadmin">Barang Habis</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/barangmasukadmin">Barang Tidak Habis</a></li>
+              </ul>
+            </div>
+          </li>
+
+
+
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#aman" aria-expanded="false" aria-controls="aman">
+            <i class="icon-paper menu-icon"></i>
+              <span class="menu-title">Data Barang</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="aman">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/baranghabis">Barang Habis</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/databarang">Barang Tidak Habis</a></li>
+              </ul>
+            </div>
+          </li> -->
+
+          
           <!-- Permintaan Pengajuan -->
+
           <li class="nav-item">
             <a class="nav-link" href="/pengajuanguru" >
               <i class="ti-thought menu-icon"></i>
@@ -139,21 +175,57 @@
             </a>
           </li>
 
+          <li class="nav-item">
+            <a class="nav-link" href="/peminjamanadmin" >
+              <i class="ti-thought menu-icon"></i>
+              <span class="menu-title">Permintaan</br>Peminjaman Siswa</span>
+            </a>
+          </li>
+
           <!-- Permintaan Peminjaman Barang -->
+
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#y" aria-expanded="false" aria-controls="y">
+            <i class="ti-location-arrow menu-icon"></i>
+            <span class="menu-title">Peminjaman</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="y">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/pinjamgr">Guru</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/daftars">Siswa</a></li>
+              </ul>
+            </div>
+          </li>
+<!--
           <li class="nav-item">
             <a class="nav-link" href="/peminjamanadmin" >
               <i class="ti-location-arrow menu-icon"></i>
               <span class="menu-title">Permintaan</br>Peminjaman</span>
             </a>
-          </li>
+          </li> -->
 
           <!-- Pengembalian Barang -->
+
           <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#l" aria-expanded="false" aria-controls="l">
+            <i class="ti-reload menu-icon"></i>
+              <span class="menu-title">Permintaan</br>Pengembalian</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="l">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/kembalig">Guru</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/kembalisis">Siswa</a></li>
+              </ul>
+            </div>
+          </li>
+          <!-- <li class="nav-item">
             <a class="nav-link" href="/pengembalianadmin" >
               <i class="ti-reload menu-icon"></i>
               <span class="menu-title">Permintaan</br>Pengembalian</span>
            </a>
-          </li>
+          </li> -->
 
           <!-- Denda -->
 
@@ -165,17 +237,18 @@
           </li> -->
 
           <!-- Riwayat -->
+
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
+            <a class="nav-link" data-toggle="collapse" href="#ic" aria-expanded="false" aria-controls="ic">
               <i class="ti-time menu-icon"></i>
               <span class="menu-title">Riwayat</span>
               <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="icons">
+            <div class="collapse" id="ic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="/sedangdipinjam">Sedang Dipinjam</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/dikembalikan">Peminjaman Barang</a></li>
                 <li class="nav-item"> <a class="nav-link" href="/riwayatpengajuan">Pengajuan</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/riwayatpinjam">Peminjaman Guru</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/riwayatsw">Peminjaman siswa</a></li>
               </ul>
             </div>
           </li>
@@ -188,6 +261,11 @@
               <span class="menu-title">Relasi</span>
               <i class="menu-arrow"></i>
             </a>
+            <div class="collapse" id="ui-basic">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/kategorii">Kategori</a></li>
+              </ul>
+            </div>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="/nabarr">Nama Barang</a></li>

@@ -2,19 +2,20 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\guruController;
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\merkController;
 use App\Http\Controllers\userController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\nabarController;
-use App\Http\Controllers\RuangController;
-use App\Http\Controllers\SatuanController;
 use App\Http\Controllers\RiwayatController;
+use App\Http\Controllers\RuanganController;
 use App\Http\Controllers\kategoriController;
 use App\Http\Controllers\PengajuanController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DaftarguruController;
+use App\Http\Controllers\SatuanController;
 use App\Http\Controllers\databarangController;
+use App\Http\Controllers\MasukadminController;
 use App\Http\Controllers\BaranghabisController;
 use App\Http\Controllers\barangmasukController;
 use App\Http\Controllers\DikembalikanController;
@@ -26,6 +27,7 @@ use App\Http\Controllers\PeminjamanadminController;
 use App\Http\Controllers\RiwayatpeminjamController;
 use App\Http\Controllers\BarangmasukadminController;
 use App\Http\Controllers\BarangPinjamGuruController;
+use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\PengembalianadminController;
 
 /*
@@ -71,23 +73,30 @@ Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::group(['middleware' => ['auth', 'level:admin']], function () {
 
     Route::get('/indexadmin', [IndexController::class, 'indexadmin'])->name('indexadmin');
+    Route::get('/ruangan', [RuanganController::class, 'ruangan'])->name('ruangan');
     Route::get('/editprofileadmin', [IndexController::class, 'editprofileadmin'])->name('editprofileadmin');
     Route::get('/profileadmin', [IndexController::class, 'profileadmin'])->name('profileadmin');
     Route::post('/insertadmin', [IndexController::class, 'insertadmin'])->name('insertadmin');
 
-    //ruangan
-
-    Route::get('/ruang', [RuangController::class, 'ruang'])->name('ruang');
-    Route::get('/ruangan', [RuangController::class, 'ruangan'])->name('ruangan');
-    Route::get('/tambahruang', [RuangController::class, 'tambahruang'])->name('tambahruang');
-    Route::post('/insertruang', [RuangController::class, 'insertruang'])->name('insertruang');
-    Route::get('/tampilkanruang/{p}', [RuangController::class, 'tampilkanruang'])->name('tampilkanruang');
-    Route::post('/updateruang/{p}', [RuangController::class, 'updateruang'])->name('updateruang');
-    Route::get('/deleteruang/{p}', [RuangController::class, 'delete'])->name('deleteruang');
-
-    //detail ruangan
 
 
+    // table data barang(admin)
+    Route::get('/databarang', [databarangController::class, 'index'])->name('databarang')->middleware('auth');
+    Route::get('/tambahdatabarang', [databarangController::class, 'tambahdatabarang'])->name('tambahdatabarang');
+    Route::post('/insertdatabarang', [databarangController::class, 'insertdatabarang'])->name('insertdatabarang');
+    Route::get('/tampilkandatabarang/{p}', [databarangController::class, 'tampilkandatabarang'])->name('tampilkandatabarang');
+    Route::post('/updatedatabarang/{p}', [databarangController::class, 'updatedatabarang'])->name('updatedatabarang');
+    Route::get('/deletedatabarang/{p}', [databarangController::class, 'delete'])->name('deletedatabarang');
+
+
+    // baranghabis
+
+    Route::get('/baranghabis', [BaranghabisController::class, 'index'])->name('baranghabis')->middleware('auth');
+    Route::get('/tambahbaranghabis', [BaranghabisController::class, 'tambahbaranghabis'])->name('tambahbaranghabis');
+    Route::post('/insertbaranghabis', [BaranghabisController::class, 'insertbaranghabis'])->name('insertbaranghabis');
+    Route::get('/tampilkanbaranghabis/{p}', [BaranghabisController::class, 'tampilkanbaranghabis'])->name('tampilkanbaranghabis');
+    Route::post('/updatebaranghabis/{p}', [BaranghabisController::class, 'updatebaranghabis'])->name('updatebaranghabis');
+    Route::get('/deletebaranghabis/{p}', [BaranghabisController::class, 'delete'])->name('deletebaranghabis');
 // Data Barang
 
     // Barang Tidak Habis
@@ -153,8 +162,6 @@ Route::group(['middleware' => ['auth', 'level:admin']], function () {
     //permintaan peminjaman
     Route::get('/peminjamanadmin', [PeminjamanadminController::class, 'peminjamanadmin'])->name('peminjamanadmin');
 
-    //permintaan pengembalian
-    Route::get('/pengembalianadmin', [PengembalianadminController::class, 'pengembalianadmin'])->name('pengembalianadmin');
 
     //daftar riwayat
     Route::get('/dikembalikan', [DikembalikanController::class, 'dikembalikan'])->name('dikembalikan');
@@ -164,6 +171,7 @@ Route::group(['middleware' => ['auth', 'level:admin']], function () {
 
     //pengajuan guru
     Route::get('/daftarguru', [DaftarguruController::class, 'daftarguru'])->name('daftarguru');
+
 
     //barang masuk (stock opname)
     //barang habis
@@ -188,11 +196,29 @@ Route::group(['middleware' => ['auth', 'level:admin']], function () {
 });
 
 
+    //ruangan
+
+    Route::get('/ruang', [RuangController::class, 'ruang'])->name('ruang');
+    Route::get('/ruangan', [RuangController::class, 'ruangan'])->name('ruangan');
+    Route::get('/tambahruang', [RuangController::class, 'tambahruang'])->name('tambahruang');
+    Route::post('/insertruang', [RuangController::class, 'insertruang'])->name('insertruang');
+    Route::get('/tampilkanruang/{p}', [RuangController::class, 'tampilkanruang'])->name('tampilkanruang');
+    Route::post('/updateruang/{p}', [RuangController::class, 'updateruang'])->name('updateruang');
+    Route::get('/deleteruang/{p}', [RuangController::class, 'delete'])->name('deleteruang');
+
+    //detail ruangan
+
+    Route::get('/detailruangan/{id}', [RuangController::class, 'detailruangan'])->name('detailruangan');
+
+
 //pengajuanguru
 Route::get('/pengajuanguru', [PengajuanController::class, 'index'])->name('pengajuanguru')->middleware('auth');
+Route::get('/pengajuanguru/{status}/{id}', [PengajuanController::class, 'updateStatus'])->middleware('auth');
+// Route::get('/pengajuanguru/{status}/{id}', [PengajuanController::class, 'updateStatus'])->middleware('auth');
+Route::get('/riwayat_pengajuan_guru', [PengajuanController::class, 'riwayat_pengajuan_guru'])->name('riwayat_pengajuan_guru');
 Route::get('/tambahp', [PengajuanController::class, 'tambahp'])->name('tambahp');
 Route::post('/insertp', [PengajuanController::class, 'insertp'])->name('insertp');
-
+Route::get('/daftarp', [PengajuanController::class, 'daftarp']);
 
 //Guru
 
@@ -204,8 +230,7 @@ Route::group(['middleware' => ['auth', 'level:guru']], function () {
     Route::get('/pengajuan', [PengajuanController::class, 'pengajuan'])->name('pengajuan');
     Route::get('/barangpinjamguru', [BarangPinjamGuruController::class, 'barangpinjamguru'])->name('barangpinjamguru');
     Route::get('/riwayatguru', [RiwayatController::class, 'riwayatguru'])->name('riwayatguru');
-    // Route::get('/pinjamguru', [PeminjamanguruController::class, 'pinjamguru'])->name('pinjamguru');
-    Route::get('/riwayat_pengajuan_guru', [PengajuanController::class, 'riwayat_pengajuan_guru'])->name('riwayat_pengajuan_guru');
+    Route::get('/pinjamguru', [PeminjamanguruController::class, 'pinjamguru'])->name('pinjamguru');
     Route::post('/editguru', [IndexController::class, 'insertguru'])->name('editguru');
     Route::group(['middleware' => 'auth'], function () {
         Route::get('/changePasswordg', [IndexController::class, 'showChangePasswordGetg'])->name('changePasswordGetg');
@@ -239,15 +264,34 @@ Route::get('/data1', [guruController::class, 'data1'])->name('data1');
 Route::get('/data2', [guruController::class, 'data2'])->name('data2');
 
 //peminjaman barang guru
-  //brg tdk habis
-Route::get('/pinjambarang_guru',[PinjambarangController::class,'pinjambarang_guru'])->name('pinjambarang_guru');
-Route::post('/insertpinjam_guru',[PinjambarangController::class,'insertpinjam_guru'])->name('insertpinjam_guru');
-  //brg habis
-Route::get('/barang_habis',[PinjambarangController::class,'barang_habis'])->name('barang_habis');
-Route::post('/insertpinjam_guru2',[PinjambarangController::class,'insertpinjam_guru2'])->name('insertpinjam_guru2');
+Route::get('/pinjamguruh',[PengajuanController::class,'pinjamguruh'])->name('pinjamguruh');
+Route::get('/tambahg', [PengajuanController::class, 'tambahg'])->name('tambahg');
+Route::post('/insertgurua',[PengajuanController::class,'insertgurua'])->name('insertgurua');
+Route::get('/balik/{id}', [PengajuanController::class, 'balik']);
+Route::get('/pinjamgr', [PengajuanController::class, 'pinjamgr']);
+Route::get('/kembalig', [PengajuanController::class, 'kembalig']);
+Route::get('/pinjamgru/{status}/{id}', [PengajuanController::class, 'updateStatusk'])->middleware('auth');
+Route::get('/riwayatpinjam', [PengajuanController::class, 'riwayatpinjam'])->name('riwayatpinjam');
+Route::get('/riwayatpinjamgr', [PengajuanController::class, 'riwayatpinjamgr']);
+
 
 //peminjaman barang siswa
 Route::get('/pinjambarang',[PinjambarangController::class,'pinjambarang'])->name('pinjambarang');
 Route::post('/insertpinjamsiswa',[PinjambarangController::class,'insertpinjamsiswa'])->name('insertpinjamsiswa');
-//permintaan peminjaman
 Route::get('/peminjamanadmin',[PinjambarangController::class,'peminjamanadmin'])->name('peminjamanadmin');
+Route::get('/datapinjam',[PinjambarangController::class,'peminjamansiswa']);
+Route::get('/pinjamsiswa/{status}/{id}', [PinjambarangController::class, 'updateStatus3'])->middleware('auth');
+Route::get('/daftars', [PinjambarangController::class, 'dafsis']);
+Route::get('/tolaks', [PinjambarangController::class, 'tolaks']);
+Route::get('/riwayatsw', [PinjambarangController::class, 'riwayatsw']);
+Route::get('/peminjamans/{id}', [PinjambarangController::class, 'pensis']);
+Route::get('/pengembalianadmin', [PinjambarangController::class, 'pengembalianadmin']);
+Route::get('/kembalis/{status}/{id}', [PinjambarangController::class, 'updateStatus2'])->middleware('auth');
+Route::get('/kembalisis', [PinjambarangController::class, 'kembalisis']);
+
+
+//reset password
+Route::get('forget-password', [ForgotPasswordController::class, 'ForgetPassword'])->name('ForgetPasswordGet');
+Route::post('forget-password', [ForgotPasswordController::class, 'ForgetPasswordStore'])->name('ForgetPasswordPost');
+Route::get('reset-password/{token}', [ForgotPasswordController::class, 'ResetPassword'])->name('ResetPasswordGet');
+Route::post('reset-password', [ForgotPasswordController::class, 'ResetPasswordStore'])->name('ResetPasswordPost');
