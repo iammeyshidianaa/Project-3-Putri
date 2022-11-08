@@ -11,9 +11,10 @@ class Baranghabis extends Model
     protected $guarded = [];
 
 
-
-    public function kategori1()
+    public function ruang()
     {
-        return $this->hasMany(Baranghabis::class);
+        return $this->belongsTo(ruang::class);
     }
+
+
 }

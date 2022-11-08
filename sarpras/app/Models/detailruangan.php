@@ -5,8 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ruang extends Model
+class detailruangan extends Model
 {
-    protected $table = 'ruangs';
-    protected $guarded = [];
+    use HasFactory;
 }

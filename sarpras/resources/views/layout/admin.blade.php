@@ -85,10 +85,9 @@
               <span class="menu-title">Data Pengguna</span>
             </a>
           </li>
+         <!-- Data Ruangan -->
 
-       <!-- Data Ruangan -->
-
-       <li class="nav-item">
+         <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ruang" aria-expanded="false" aria-controls="ruang">
             <i class="icon-paper menu-icon"></i>
               <span class="menu-title">Data Ruangan</span>

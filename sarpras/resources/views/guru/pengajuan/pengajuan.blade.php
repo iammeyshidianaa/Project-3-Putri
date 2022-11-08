@@ -13,14 +13,75 @@
 
 <body>
     <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <div class="content-header">
-            <div class="container-fluid">
-                <div class="row mb-3">
-                    <div class="col-sm-6"></div><!-- /.row -->
-                </div><!-- /.container-fluid -->
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-3">
+          <div class="col-sm-6"></div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+      </div>
+	    <h2 class="text-center text-primary">Ajukan Permintaan</h2>
+	</div>
+                        <br><br>
+
+                        <form action="/insertp" method="POST" enctype="multipart/form-data">
+                                @csrf
+            <div class=" mb-3">
+                <label for="exampleInputEmail1"  class="form-label">Nama Lengkap</label>
+                <input type="text" name="namap" class="form-control" id="exampleInputEmail1" readonly aria-describedby="emailHelp" value="{{ Auth::user()->name }}">
             </div>
-            <h2 class="text-center text-primary">Ajukan Permintaan</h2>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Nama Barang</label>
+                <input type="text" name="barangp" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Alasan Pengajuan</label>
+                <input type="text" name="alasanp" class="form-control" id="exampleInputPassword1">
+            </div>
+            <!-- <div class=" mb-3">
+                <label for="exampleInputEmail1"  class="form-label">Harga</label>
+                <input type-currency="IDR" name="hargap" class="form-control" id="harga" aria-describedby="emailHelp"
+                onkeydown="javascript: return ['Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) ? true : !isNaN(Number(event.key)) && event.code!=='Space'">
+            </div>
+            <div class=" mb-3">
+                <label for="exampleInputEmail1"  class="form-label">Jumlah</label>
+                <input type="number" name="jumlahp" class="form-control" id="jumlah" aria-describedby="emailHelp">
+            </div>
+            <div class=" mb-3">
+                <label for="exampleInputEmail1"  class="form-label">Total</label>
+                <input type-currency="IDR"  name="totalp" class="form-control" id="total" aria-describedby="emailHelp" readonly="">
+            </div> -->
+
+
+                        <div class="row mb-3">
+                            <label for="inputEmail3" class="form-label">Harga</label>
+                            <div class="col-sm-10">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="basic-addon1">Rp.</span>
+                                    <input type="text" name="hargap" id="hargap" class="form-control"
+                                        id="inputEmail3">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="inputEmail3" class="form-label">Jumlah Beli</label>
+                            <div class="col-sm-10">
+                                <input type="number" name="jumlahp" id="jumlahp" class="form-control" id="inputEmail3">
+                            </div>
+                        </div>
+
+
+                        <div class="row mb-3">
+                            <label for="inputEmail3" class="form-label">Total</label>
+                            <div class="col-sm-10">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="basic-addon1">Rp.</span>
+                                    <input type="text" name="totalp"  id="totalp" readonly class="form-control"
+                                        id="inputEmail3">
+                                </div>
+                            </div>
+                        </div>
+            <button type="submit" class="btn btn-outline-primary">Ajukan</button>
         </div>
         <br><br>
         <form action="/insertp" method="POST" enctype="multipart/form-data">
@@ -77,6 +138,32 @@
             });
         });
     </script>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+        </script>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"
+        integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function() {
+            $("#jumlahp").change(function() {
+                var jumlah = $("#jumlahp").val();
+                var harga = $("#hargap").val();
+                var total = jumlah * harga
+                $("#totalp").val(total);
+            });
+        });
+        $("#jumlahp").keyup(function() {
+            var jumlah = $("#jumlahp").val();
+            var harga = $("#hargap").val();
+            var total = jumlah * harga
+            $("#totalp").val(total);
+        });
+    </script>
+
 
     <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->

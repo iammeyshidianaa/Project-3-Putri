@@ -18,6 +18,7 @@ class CreateDatabarangsTable extends Migration
             $table->string('nama_barang');
             $table->integer('jumlah_stok');
             $table->string('satuan');
+            $table->integer('ruang_id');
             $table->text('deskripsi');
             $table->timestamps();
         });

@@ -71,7 +71,6 @@ Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::group(['middleware' => ['auth', 'level:admin']], function () {
 
     Route::get('/indexadmin', [IndexController::class, 'indexadmin'])->name('indexadmin');
-    Route::get('/ruangan', [RuanganController::class, 'ruangan'])->name('ruangan');
     Route::get('/editprofileadmin', [IndexController::class, 'editprofileadmin'])->name('editprofileadmin');
     Route::get('/profileadmin', [IndexController::class, 'profileadmin'])->name('profileadmin');
     Route::post('/insertadmin', [IndexController::class, 'insertadmin'])->name('insertadmin');
@@ -88,7 +87,6 @@ Route::group(['middleware' => ['auth', 'level:admin']], function () {
 
     //detail ruangan
 
-    Route::get('/detailruangan', [RuangController::class, 'detailruangan'])->name('detailruangan');
 
 // Data Barang
 

@@ -1,4 +1,5 @@
 @extends('layout.admin')
+
 @section('content')
 @push('css')
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -20,7 +21,7 @@
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
       </div>
-      <h2 class="text-center text-primary">Semua Pengguna</h2>
+      <h2 class="text-center text-primary">Data Ruangan</h2>
      <div class="container">
                 @if ($massage = Session::get('success'))
                     <div class="alert alert-success" role="alert">
@@ -28,49 +29,53 @@
                     </div>
                 @endif
 
+                <a href="/tambahruang"  class="btn btn-outline-primary">Tambah Ruangan</a>
 
-<div class="row mt-3">
-                <div class="row">
-    <table class="table table-bordered" id="gas">
-    <thead class= table-success>
+<div class="row mt-6">
+<div class="row">
+<table class="table table-bordered" id="gas">
+<thead class= table-success>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">Nama</th>
-      <th scope="col">Sebagai</th>
-      <th scope="col">Kelas</th>
-      <th scope="col">Email</th>
-      <th scope="col">Blokir Pengguna</th>
+    <th scope="col">#</th>
+    <th scope="col">Gambar</th>
+    <th scope="col">Ruang</th>
+    <th scope="col">Jurusan</th>
+    <th scope="col">Ruang</th>
+    <th scope="col">Deskripsi</th>
+    <th scope="col">Aksi</th>
     </tr>
-  </thead>
-  <tbody>
-                 @php
-                $no = 1;
-               @endphp
-             @foreach ($data as $row)
-                 <tr>
-                                <th scope="row">{{ $no++ }}</th>
-                             
-                                <td>{{ $row->name }}</td>
-                                <td>{{ $row->level }}</td>
-                                <td>{{ $row->kelas }}</td>
-                                <td>{{ $row->email }}</td>
+</thead>
+<tbody>
+    @php
+    $no = 1;
+    @endphp
+    @foreach ($ruang as $row)
+    <tr>
+        <th scope="row">{{ $no++ }}</th>
+        <td>
+            <img alt="" src="gambar/{{ $row->gambar }}"width="100px">
+        </td>
+        <td>{{ $row->ruang }}</td>
+        <td>{{ $row->jurusan }}</td>
+        <td>{{ $row->rombel }}</td>
+        <td>{{ $row->deskripsi }}</td>
 
-                                <td>
-
-                                        <a href="#" class="btn btn-sm btn-danger text-white delete" id="delete"
-                                        data-id="{{ $row->id }}" data-nama="{{ $row->nama }}"><i class="ti-trash" title="Hapus"></i></a></a>
-                                </td>
-
-                            </tr>
-                        @endforeach
+        <td>
+            <a href="/tampilkanruang/{{ $row->id }}" type="button" class="btn btn-outline-warning">Ubah</a>
+            <a href="#" class="btn btn-outline-danger delete" id="delete" data-id="{{ $row->id }}" data-nama="{{ $row->nama }}">Hapus</a>
+        </td>
 
     </tr>
-
-  </tbody>
+    @endforeach
+</tbody>
 </table>
 
-    </div>
 </div>
+</div>
+</div>
+
+
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
@@ -97,24 +102,24 @@
     <script>
         // var button = document.getElementById('id');
         $('.delete').click(function() {
-            var databarangid = $(this).attr('data-id');
+            var ruanganid = $(this).attr('data-id');
             var nama = $(this).attr('data-nama');
 
             swal({
                     title: "Yakin?",
-                    text: "Kamu akan menghapus akses dari user ini? " + nama + " ",
+                    text: "Apa kamu ingin menghapus data ini? " + nama + " ",
                     icon: "warning",
                     buttons: true,
                     dangerMode: true,
                 })
                 .then((willDelete) => {
                     if (willDelete) {
-                        window.location = "/deleteuser/" + databarangid + ""
+                        window.location = "/deleteruang/" + ruanganid + ""
                         swal("Data berhasil dihapus", {
                             icon: "success",
                         });
                     } else {
-                        swal("User tidak jadi dihapus");
+                        swal("Data tidak jadi dihapus");
                     }
                 });
         });
@@ -129,8 +134,22 @@
             }
                     toastr.success("{{ session('message') }}");
             @endif
-                
+
     </script>
     </div>
+
+
         @endsection
 @push('scripts')
+
+
+
+
+
+
+
+
+
+
+
+

@@ -10,11 +10,9 @@ class databarang extends Model
     protected $table = 'databarangs';
     protected $guarded = [];
 
-
-    public function kategori()
+    public function ruang()
     {
-        return $this->belongsTo(kategori::class);
+        return $this->belongsTo(ruang::class);
     }
-
 
 }
