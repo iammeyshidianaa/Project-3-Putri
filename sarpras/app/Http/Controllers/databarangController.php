@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ruang;
 use App\Models\databarang;
 use Illuminate\Http\Request;
-use App\Models\ruang;
+use Barryvdh\DomPDF\Facade\Pdf;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\BarangtdkhabisExport;
 
 class databarangController extends Controller
 {
@@ -93,5 +96,19 @@ class databarangController extends Controller
         $data = databarang::find($id);
         $data->delete($id);
         return redirect()->route('databarang')->with('message', 'data berhasil di hapus');
+    }
+
+    public function exportpdf2()
+    {
+        $data = databarang::all();
+
+        view()->share('data', $data);
+        $pdf = Pdf::loadview('admin.barang_tidakhabis.databarang-pdf');
+        return $pdf->download('data_barang_tidakhabis.pdf');
+    }
+
+    public function exportexcel2()
+    {
+        return Excel::download(new BarangtdkhabisExport, 'data_barang_tdkhabis.xlsx');
     }
 }

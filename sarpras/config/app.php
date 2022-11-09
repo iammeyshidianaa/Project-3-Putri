@@ -66,6 +66,7 @@ return [
     | ahead and set this to a sensible default for you out of the box.
     |
     */
+
     'timezone' => env('APP_TIMEZONE', 'Asia/Jakarta'),
 
     /*
@@ -80,7 +81,7 @@ return [
     */
 
     'locale' => 'id_ID',
-    
+
     /*
     |--------------------------------------------------------------------------
     | Application Fallback Locale
@@ -106,7 +107,7 @@ return [
     */
 
     'faker_locale' => 'id_ID',
-
+    
     /*
     |--------------------------------------------------------------------------
     | Encryption Key
@@ -160,11 +161,12 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        Barryvdh\DomPDF\ServiceProvider::class,
 
         /*
          * Package Service Providers...
          */
-
+        Maatwebsite\Excel\ExcelServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -228,6 +230,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'PDF' => Barryvdh\DomPDF\Facade::class,
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
 
     ],
 

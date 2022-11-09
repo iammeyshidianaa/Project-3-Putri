@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Baranghabis;
 use App\Models\ruang;
+use App\Models\Baranghabis;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
+use App\Exports\BaranghabisExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class BaranghabisController extends Controller
 {
@@ -93,5 +96,19 @@ class BaranghabisController extends Controller
         $data = Baranghabis::find($id);
         $data->delete($id);
         return redirect()->route('baranghabis')->with('message', 'Data berhasil di hapus');
+    }
+
+    public function exportpdf()
+    {
+        $data = Baranghabis::all();
+
+        view()->share('data', $data);
+        $pdf = Pdf::loadview('admin.baranghabis.baranghabis-pdf');
+        return $pdf->download('databaranghabis.pdf');
+    }
+
+    public function exportexcel()
+    {
+        return Excel::download(new BaranghabisExport, 'data_baranghabis.xlsx');
     }
 }
