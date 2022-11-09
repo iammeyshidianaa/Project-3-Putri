@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Pengajuan;
 use App\Models\pinjamguru;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Facades\Redirect;
 
 class PengajuanController extends Controller
@@ -29,7 +30,7 @@ class PengajuanController extends Controller
         return redirect('daftarp')->with('message','Data berhasil ditambahkan');
     }
 
-    //Riwayat Pengajuan Admin
+//Riwayat Pengajuan Admin
 
     public function riwayatpengajuan()
     {
@@ -120,6 +121,14 @@ class PengajuanController extends Controller
         return redirect('riwayatpinjam');
     }
 
+    // pdf pengembalian guru
+    public function pdfguru()
+    {
+        $data = pinjamguru::all();
 
+        view()->share('data', $data);
+        $pdf = Pdf::loadview('admin.daftar_riwayat.pengembalianguru-pdf');
+        return $pdf->download('pengembalianguru.pdf');
+    }
 
 }
