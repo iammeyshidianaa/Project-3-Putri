@@ -8,6 +8,8 @@
          <!-- css untuk select2 -->
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
+    <select class="js-example-basic-multiple js-states form-control" id="id_label_multiple" multiple="multiple"></select>
+
 <body>
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
