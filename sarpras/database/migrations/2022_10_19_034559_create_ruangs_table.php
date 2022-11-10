@@ -18,6 +18,7 @@ class CreateRuangsTable extends Migration
             $table->string('gambar');
             $table->string('ruang');
             $table->string('jurusan');
+            $table->string('rombel');
             $table->string('deskripsi');
             $table->timestamps();
         });

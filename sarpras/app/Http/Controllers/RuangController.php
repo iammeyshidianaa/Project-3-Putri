@@ -17,13 +17,15 @@ class RuangController extends Controller
     public function ruang(Request $request)
 
     {
-        if($request->has('search')){
-            $data = ruang::where('ruang','jurusan', 'rombel' ,'LIKE','%' .$request->search.'%')->paginate(5);
+        // $search = $request->search;
+        // $ruang = ruang::table('ruang')->where('pegawai_nama','like',"%".$cari."%")
+		// ->paginate();
+         if($request->has('search')){
+            $ruang = ruang::where('ruang','jurusan','rombel','LIKE','%' .$request->search.'%');
         }else{
-            $data = ruang::paginate(5);
+            $ruang = ruang::all();
         }
-
-        $ruang = ruang::all();
+            $ruang = ruang::all();
     return view('admin.ruangan.ruang', compact('ruang'));
 
     }
@@ -124,15 +126,16 @@ class RuangController extends Controller
 
         $ruang = ruang::findOrFail($id);
         $ruang = ruang::find($id);
+        $ruang->update($request->all());
 
-        $ruang->update([
-            'gambar' => $request->gambar,
-            'ruang' => $request->ruang,
-            'jurusan' => $request->jurusan,
-            'rombel' => $request->rombel,
-            'deskripsi' => $request->deskripsi,
+        // $ruang->update([
+        //     'gambar' => $request->gambar,
+        //     'ruang' => $request->ruang,
+        //     'jurusan' => $request->jurusan,
+        //     'rombel' => $request->rombel,
+        //     'deskripsi' => $request->deskripsi,
 
-        ]);
+        // ]);
 
         return redirect()->route('ruangan')->with('message', 'Data berhasil di edit');
     }
