@@ -15,16 +15,26 @@
     <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
-        <div class="row mb-3">
-          <div class="col-sm-6">
-          </div></div></div>
+        <div class="row ">
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="row">
 
+                    <div class="input-group">
+                      <input type="text" class="form-control" placeholder="Cari kelas " aria-label="Cari kelas ">
+                      <div class="input-group-append">
+                        <button class="btn btn-sm btn-primary" type="button">Cari</button>
+                      </div>
+                    </div>
 
-        <div class="row mt-3">
-
-<section class="content">
-    <div class="container-fluid">
-    <div class="row">
+                    <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row ">
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="row">
 
     @foreach ( $ruang as $k )
 
@@ -42,9 +52,18 @@
     @endforeach
 
 </section>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
