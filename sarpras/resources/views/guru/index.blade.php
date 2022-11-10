@@ -33,7 +33,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-6 grid-margin transparent">
+            <!-- <div class="col-md-6 grid-margin transparent">
               <div class="row">
                 <div class="col-md-6 mb-4 stretch-card transparent">
                   <div class="card card-tale">
@@ -70,7 +70,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
         <!-- content-wrapper ends -->

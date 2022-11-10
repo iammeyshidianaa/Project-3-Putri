@@ -29,114 +29,107 @@
                 @endif
 
 
-                    <div class="row mt-3">
-                        <div class="row">
-                            <table class="table table-bordered" id="gas">
-                                <thead class=table-success>
-                                    <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">Nama</th>
-                                        <th scope="col">Nama Barang</th>
-                                        <th scope="col">Alasan</th>
-                                        <th scope="col">Harga</th>
-                                        <th scope="col">Jumlah</th>
-                                        <th scope="col">Total Harga</th>
-                                        <th scope="col">Status</th>
-                                        </tr>
-  </thead>
-  <tbody>
-                 @php
-                $no = 1;
-               @endphp
-             @foreach ($data as $row)
-                 <tr>
-                                <th scope="row">{{ $no++ }}</th>
-                                <td>{{ $row->namap }}</td>
-                                <td>{{ $row->barangp }}</td>
-                                <td>{{ $row->alasanp }}</td>
-                                <td>{{ $row->hargap }}</td>
-                                <td>{{ $row->jumlahp }}</td>
-                                <td>{{ $row->totalp }}</td>
+                <div class="row mt-3">
+                    <div class="row">
+                        <table class="table table-bordered" id="gas">
+                            <thead class=table-success>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Nama</th>
+                                    <th scope="col">Nama Barang</th>
+                                    <th scope="col">Alasan</th>
+                                    <th scope="col">Harga</th>
+                                    <th scope="col">Jumlah</th>
+                                    <th scope="col">Total Harga</th>
+                                    <th scope="col">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @php
+                                $no = 1;
+                                @endphp
+                                @foreach ($data as $row)
+                                <tr>
+                                    <th scope="row">{{ $no++ }}</th>
+                                    <td>{{ $row->namap }}</td>
+                                    <td>{{ $row->barangp }}</td>
+                                    <td>{{ $row->alasanp }}</td>
+                                    <td>{{ $row->hargap }}</td>
+                                    <td>{{ $row->jumlahp }}</td>
+                                    <td>{{ $row->totalp }}</td>
 
-                                <td>
-                                    <a href="" type="button"
-                                    class="btn btn-sm btn-warning text-white"><i class="ti-check" title="Terima"></i></a>
-                                    <a href="" type="button"
-                                    class="btn btn-sm btn-danger text-white"><i class="ti-close" title="Tolak"></i></a>
-                                </td>
+                                    <td>
+                                        <a href="{{ url('pengajuanguru/terima/'.$row->id) }}" type="button" class="btn btn-sm btn-outline-primary">Setujui</a>
 
-                            </tr>
-                        @endforeach
+                                        <a href="{{ url('pengajuanguru/tolak/'.$row->id) }}" type="button" class="btn btn-sm btn-outline-danger">Tolak</a>
+                                    </td>
 
-    </tr>
+                                </tr>
+                                @endforeach
 
-  </tbody>
-</table>
-     </div>
-    </div>
-</div>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
-    </script>
-    <script src="https://code.jquery.com/jquery-3.6.0.slim.js"
-        integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    </body>
+                                </tr>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+        </script>
+        <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
 
-    <script>
-        $(document).ready(function() {
-    $('#gas').DataTable( {
-        language: {
-            url: "{{asset('skydas/js/bahasa.json')}}"
-        }
-    } );
-} );
-    </script>
-    <script>
-        // var button = document.getElementById('id');
-        $('.delete').click(function() {
-            var databarangid = $(this).attr('data-id');
-            var nama = $(this).attr('data-nama');
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
 
-            swal({
-                    title: "Yakin?",
-                    text: "Apa kamu ingin menghapus data ini? " + nama + " ",
-                    icon: "warning",
-                    buttons: true,
-                    dangerMode: true,
-                })
-                .then((willDelete) => {
-                    if (willDelete) {
-                        window.location = "/deletedatabarang/" + databarangid + ""
-                        swal("Data berhasil dihapus", {
-                            icon: "success",
-                        });
-                    } else {
-                        swal("Data tidak jadi dihapus");
-                    }
-                });
-        });
-    </script>
-
-            <script>
-            @if(Session::has('message'))
-            toastr.options =
-            {
-                "closeButton" : true,
-                "progressBar" : true
+<script>
+    $(document).ready(function() {
+        $('#gas').DataTable({
+            language: {
+                url: "{{asset('skydas/js/bahasa.json')}}"
             }
-                    toastr.success("{{ session('message') }}");
-            @endif
+        });
+    });
+</script>
+<script>
+    // var button = document.getElementById('id');
+    $('.delete').click(function() {
+        var databarangid = $(this).attr('data-id');
+        var nama = $(this).attr('data-nama');
 
-    </script>
-    </div>
+        swal({
+                title: "Yakin?",
+                text: "Apa kamu ingin menghapus data ini? " + nama + " ",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+            .then((willDelete) => {
+                if (willDelete) {
+                    window.location = "/deletedatabarang/" + databarangid + ""
+                    swal("Data berhasil dihapus", {
+                        icon: "success",
+                    });
+                } else {
+                    swal("Data tidak jadi dihapus");
+                }
+            });
+    });
+</script>
 
-    @endsection
+<script>
+    @if(Session::has('message'))
+    toastr.options = {
+        "closeButton": true,
+        "progressBar": true
+    }
+    toastr.success("{{ session('message') }}");
+    @endif
+</script>
+</div>
+
+@endsection
 @push('scripts')
-
-

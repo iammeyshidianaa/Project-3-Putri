@@ -1,5 +1,4 @@
 @extends('layout.guru')
-
 @section('content')
 @push('css')
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -7,7 +6,7 @@
      alpha/css/bootstrap.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/liAbs/toastr.js/latest/js/toastr.min.js"></script>
 
 <body>
     <div class="content-wrapper">
@@ -29,13 +28,13 @@
                 </div>
                 @endif
 
-
                 <div class="row mt-3">
                     <div class="row">
                         <table class="table table-bordered" id="gas">
                             <thead class=table-success>
                                 <tr>
                                     <th scope="col">#</th>
+                                    <th scope="col">Nama</th>
                                     <th scope="col">Nama Barang</th>
                                     <th scope="col">Harga</th>
                                     <th scope="col">Jumlah</th>
@@ -44,16 +43,28 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @php
+                                $no = 1;
+                                @endphp
+                                @foreach ($data as $row)
                                 <tr>
-                                    <th scope="row">1</th>
-                                    <td>Proyektor</td>
-                                    <td>Rp.1.000.000</td>
-                                    <td>2</td>
-                                    <td>Rp.2.000.000</td>
-                                    <td>
-                                        <p class="text-danger"><strong>Ditolak</strong></p>
-                                    </td>
+                                    <th scope="row">{{ $no++ }}</th>
+                                    <td>{{ $row->namap }}</td>
+                                    <td>{{ $row->barangp }}</td>
+                                    <td>{{ $row->hargap }}</td>
+                                    <td>{{ $row->jumlahp }}</td>
+                                    <td>{{ $row->totalp }}</td>
+                                    @if($row->statusp == 'Disetujui')
+                                    <td class="text-success">{{ $row->statusp }}</td>
+                                    @else
+                                    <td class="text-danger">{{ $row->statusp }}</td>
+                                    @endif
+
                                 </tr>
+                                @endforeach
+
+                                </tr>
+
                             </tbody>
 
                         </table>
@@ -80,46 +91,7 @@
         });
     });
 </script>
-<script>
-    // var button = document.getElementById('id');
-    $('.delete').click(function() {
-        var databarangid = $(this).attr('data-id');
-        var nama = $(this).attr('data-nama');
 
-        swal({
-                title: "Yakin?",
-                text: "Apa kamu ingin menghapus data ini? " + nama + " ",
-                icon: "warning",
-                buttons: true,
-                dangerMode: true,
-            })
-            .then((willDelete) => {
-                if (willDelete) {
-                    window.location = "/deletedatabarang/" + databarangid + ""
-                    swal("Data berhasil dihapus", {
-                        icon: "success",
-                    });
-                } else {
-                    swal("Data tidak jadi dihapus");
-                }
-            });
-    });
-//
-</script>
-
-<script>
-    //         @if(Session::has('message'))
-    //         toastr.options =
-    //         {
-    //             "closeButton" : true,
-    //             "progressBar" : true
-    //         }
-    //                 toastr.success("{{ session('message') }}");
-    //         @endif
-
-    //
-</script>
-</div>
 
 @endsection
 @push('scripts')
