@@ -26,13 +26,13 @@
                                     @enderror
 
                                     <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Pilih Ruangan</label>
+                                    <label for="exampleInputEmail1" class="form-label">Pilih Kelas/Ruangan</label>
                                     <select class="form-select" name="ruang" aria-label="Default select example">
                                         <option selected>Pilih Ruang</option>
                                         <option value="X">X</option>
                                         <option value="XI">XI</option>
                                         <option value="XII">XII</option>
-                                        <option value="XIV">XIV</option>
+                                        <option value="XIV">XIII</option>
                                         <option value="LAB">LAB</option>
                                     </select>
 

@@ -91,12 +91,25 @@
               <span class="menu-title">Pengajuan</span>
             </a>
           </li>
-
+          <li class="nav-item">
+            <a class="nav-link" href="/daftarp" >
+              <i class="ti-list menu-icon"></i>
+              <span class="menu-title">Daftar Pengajuan</span>
+            </a>
+          </li>
           <!-- Peminjaman Barang Guru -->
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#p" aria-expanded="false" aria-controls="p">
+            <a class="nav-link" href="/tambahg" >
               <i class="ti-clipboard menu-icon"></i>
               <span class="menu-title">Peminjaman</span>
+            </a>
+          </li>
+
+           <!-- Peminjaman Barang Guru -->
+           <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#p" aria-expanded="false" aria-controls="p">
+              <i class="ti-clipboard menu-icon"></i>
+              <span class="menu-title">Peminjaman Meyshi</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="p">
@@ -106,10 +119,9 @@
               </ul>
             </div>
           </li>
-
           <!-- Status Barang Yang Ingin Dipinjam Guru -->
           <li class="nav-item">
-            <a class="nav-link" href="/barangpinjamguru">
+            <a class="nav-link" href="/pinjamguruh">
               <i class="ti-harddrives menu-icon"></i>
               <span class="menu-title">Barang Dipinjam</span>
             </a>
@@ -123,7 +135,7 @@
             <div class="collapse" id="icons">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="/riwayat_pengajuan_guru">Pengajuan</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/riwayatguru">Peminjaman Barang</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/riwayatpinjamgr">Peminjaman Barang</a></li>
               </ul>
             </div>
           </li>

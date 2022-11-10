@@ -20,62 +20,64 @@
                 </div>
             </div>
 
-            <h2 class="text-center text-primary">Pengembalian</h2>
+            <h2 class="text-center text-primary">Daftar Pengajuan</h2>
             <div class="container">
-                    @if ($massage = Session::get('success'))
-                        <div class="alert alert-success" role="alert">
-                            {{ $massage }}
-                        </div>
-                    @endif
+                @if ($massage = Session::get('success'))
+                <div class="alert alert-success" role="alert">
+                    {{ $massage }}
+                </div>
+                @endif
 
 
                 <div class="row mt-3">
                     <div class="row">
                         <table class="table table-bordered" id="gas">
-                            <thead class= table-success>
+                            <thead class=table-success>
                                 <tr>
                                     <th scope="col">#</th>
                                     <th scope="col">Nama</th>
                                     <th scope="col">Nama Barang</th>
+                                    <th scope="col">Alasan</th>
+                                    <th scope="col">Harga</th>
                                     <th scope="col">Jumlah</th>
-                                    <th scope="col">Tanggal Pinjam</th>
-                                    <th scope="col">Tanggal Kembali</th>
+                                    <th scope="col">Total Harga</th>
                                     <th scope="col">Status</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                    @php
-                                    $no = 1;
+                                @php
+                                $no = 1;
                                 @endphp
                                 @foreach ($data as $row)
-                                        <tr>
-                                            <th scope="row">{{ $no++ }}</th>
-                                            <td>{{ $row->namag }}</td>
-                                            <td>{{ $row->barangg }}</td>
-                                            <td>{{ $row->jumlahg }}</td>
-                                            <td>{{ $row->tanggalg }}</td>
-                                            <td>{{ $row->created_at }}</td>
+                                <tr>
+                                    <th scope="row">{{ $no++ }}</th>
+                                    <td>{{ $row->namap }}</td>
+                                    <td>{{ $row->barangp }}</td>
+                                    <td>{{ $row->alasanp }}</td>
+                                    <td>{{ $row->hargap }}</td>
+                                    <td>{{ $row->jumlahp }}</td>
+                                    <td>{{ $row->totalp }}</td>
 
-                                     @if($row->statusk == 'Disetujui')
-                                    <td class="text-success">{{ $row->statusk }}</td>
-                                    @else
-                                    <td class="text-danger">{{ $row->statusk }}</td>
-                                    @endif
+                                    <td>
+                                        <h8 class="text-primary">Menunggu Persetujuan</h8>
                                     </td>
-                                    </tr>
+
+                                </tr>
                                 @endforeach
+
+                                </tr>
+
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
         </script>
         <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
+</body>
 
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
@@ -126,7 +128,6 @@
     @endif
 </script>
 </div>
-</body>
+
 @endsection
 @push('scripts')
-

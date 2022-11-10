@@ -17,14 +17,17 @@
       <div class="container-fluid">
         <div class="row mb-3">
           <div class="col-sm-6">
-          </div></div></div>
-
-
-        <div class="row mt-3">
-
-<section class="content">
-    <div class="container-fluid">
-    <div class="row">
+          
+                <div class="card-body">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <input type="text" class="form-control" placeholder="Masukkan ruangan" aria-label="Masukkan ruangan">
+                      <div class="input-group-append">
+                        <button class="btn btn-sm btn-primary" type="button">Cari</button>
+                      </div>
+                    </div>
+                  </div> 
+                </div>
 
     @foreach ( $ruang as $k )
 
@@ -44,9 +47,9 @@
 </section>
     </div>
 </div>
-
-
-
+</div>
+</div>
+</div>
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
@@ -100,3 +103,4 @@
     </div>
     @endsection
 @push('scripts')
+

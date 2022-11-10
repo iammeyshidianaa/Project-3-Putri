@@ -2,18 +2,19 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\guruController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\merkController;
 use App\Http\Controllers\userController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\nabarController;
+use App\Http\Controllers\RuangController;
+use App\Http\Controllers\SatuanController;
 use App\Http\Controllers\RiwayatController;
 use App\Http\Controllers\RuanganController;
 use App\Http\Controllers\kategoriController;
 use App\Http\Controllers\PengajuanController;
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DaftarguruController;
-use App\Http\Controllers\SatuanController;
 use App\Http\Controllers\databarangController;
 use App\Http\Controllers\MasukadminController;
 use App\Http\Controllers\BaranghabisController;
@@ -21,13 +22,13 @@ use App\Http\Controllers\barangmasukController;
 use App\Http\Controllers\DikembalikanController;
 use App\Http\Controllers\PinjambarangController;
 use App\Http\Controllers\BarangdipinjamController;
+use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\PeminjamanguruController;
 use App\Http\Controllers\SedangdipinjamController;
 use App\Http\Controllers\PeminjamanadminController;
 use App\Http\Controllers\RiwayatpeminjamController;
 use App\Http\Controllers\BarangmasukadminController;
 use App\Http\Controllers\BarangPinjamGuruController;
-use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\PengembalianadminController;
 
 /*
@@ -78,6 +79,19 @@ Route::group(['middleware' => ['auth', 'level:admin']], function () {
     Route::get('/profileadmin', [IndexController::class, 'profileadmin'])->name('profileadmin');
     Route::post('/insertadmin', [IndexController::class, 'insertadmin'])->name('insertadmin');
 
+ //ruangan
+
+ Route::get('/ruang', [RuangController::class, 'ruang'])->name('ruang');
+ Route::get('/ruangan', [RuangController::class, 'ruangan'])->name('ruangan');
+ Route::get('/tambahruang', [RuangController::class, 'tambahruang'])->name('tambahruang');
+ Route::post('/insertruang', [RuangController::class, 'insertruang'])->name('insertruang');
+ Route::get('/tampilkanruang/{p}', [RuangController::class, 'tampilkanruang'])->name('tampilkanruang');
+ Route::post('/updateruang/{p}', [RuangController::class, 'updateruang'])->name('updateruang');
+ Route::get('/deleteruang/{p}', [RuangController::class, 'delete'])->name('deleteruang');
+
+ //detail ruangan
+
+ Route::get('/detailruangan{id}', [RuangController::class, 'detailruangan'])->name('detailruangan');
 
 
     // table data barang(admin)
