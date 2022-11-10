@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\RiwayatPengajuan_guruExport;
 use App\Models\Pengajuan;
 use App\Models\pinjamguru;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
+use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Redirect;
+use App\Exports\RiwayatPinjam_guruExport;
 
 class PengajuanController extends Controller
 {
@@ -121,14 +124,34 @@ class PengajuanController extends Controller
         return redirect('riwayatpinjam');
     }
 
-    // pdf pengembalian guru
+    // pdf & excel pengembalian guru
     public function pdfguru()
     {
         $data = pinjamguru::all();
 
         view()->share('data', $data);
         $pdf = Pdf::loadview('admin.daftar_riwayat.pengembalianguru-pdf');
-        return $pdf->download('pengembalianguru.pdf');
+        return $pdf->download('Riwayat_Peminjaman_Guru.pdf');
+    }
+
+    public function excelguru()
+    {
+        return Excel::download(new RiwayatPinjam_guruExport, 'Riwayat_Peminjaman_Guru.xlsx');
+    }
+
+    // PDF & EXCEL pengajuan guru
+    public function pdfpengajuanguru()
+    {
+        $data = Pengajuan::all();
+
+        view()->share('data', $data);
+        $pdf = Pdf::loadview('admin.daftar_riwayat.pengajuan-pdf');
+        return $pdf->download('Riwayat_Pengajuan_Guru.pdf');
+    }
+
+    public function excelpengajuanguru()
+    {
+        return Excel::download(new RiwayatPengajuan_guruExport, 'Riwayat_Pengajuan_Guru.xlsx');
     }
 
 }

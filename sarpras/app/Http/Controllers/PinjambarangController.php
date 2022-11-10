@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\RiwayatPinjam_siswaExport;
+use App\Models\databarang;
 use App\Models\Pinjambarang;
 use Illuminate\Http\Request;
 use App\Models\peminjamanadmin;
+use Barryvdh\DomPDF\Facade\Pdf;
+use Maatwebsite\Excel\Facades\Excel;
 
 class PinjambarangController extends Controller
 {
@@ -21,7 +25,9 @@ class PinjambarangController extends Controller
     {
         $peminjaman = peminjamanadmin::all();
         $peminjaman = peminjamanadmin::where('status3', 'Dipinjam')->orwhere('status3', null)->get();
-        return view('siswa.barang_dipinjam.barangdipinjam', compact('peminjaman'));
+        $nbs = databarang::all();
+
+        return view('siswa.barang_dipinjam.barangdipinjam', compact('peminjaman','nbs'));
     }
     public function dafsis()
     {
@@ -95,6 +101,19 @@ class PinjambarangController extends Controller
         return redirect('riwayatsw');
     }
 
+    // PDF & EXCEL peminjaman siswa
+    public function pdfsiswa()
+    {
+        $data = peminjamanadmin::all();
 
+        view()->share('data', $data);
+        $pdf = Pdf::loadview('admin.daftar_riwayat.pengembalian_siswa-pdf');
+        return $pdf->download('Riwayat_Peminjaman_Siswa.pdf');
+    }
+
+    public function excelsiswa()
+    {
+        return Excel::download(new RiwayatPinjam_siswaExport, 'Riwayat_Peminjaman_Siswa.xlsx');
+    }
 
 }

@@ -20,8 +20,12 @@
                     </div>
                 </div>
             </div>
-            
             <h2 class="text-center text-primary">Riwayat Pengajuan</h2>
+            <br><br>
+            <div class="container">
+                <a href="/pdfpengajuanguru" class="btn btn-danger">Export PDF</a>
+                <a href="/excelpengajuanguru" class="btn btn-success">Export Excel</a>
+            </div>
             <div class="container">
                 @if ($massage = Session::get('success'))
                 <div class="alert alert-success" role="alert">

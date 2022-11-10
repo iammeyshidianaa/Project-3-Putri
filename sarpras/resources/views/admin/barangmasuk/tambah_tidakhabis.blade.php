@@ -4,6 +4,10 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
          <!-- css untuk select2 -->
         <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+         <!-- Plugin css for this page -->
+        <link rel="stylesheet" href="{{ asset('skydas/vendors/select2/select2.min.css')}}">
+        <link rel="stylesheet" href="{{ asset('skydas/vendors/select2-bootstrap-theme/select2-bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('skydas/css/vertical-layout-light/style.css')}}">
 
 <body>
 <div class="content-wrapper">
@@ -61,6 +65,8 @@
         </script>
         <!-- js untuk select2  -->
         <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js" defer></script>
+        <script src="{{ asset('skydas/vendors/select2/select2.min.js') }}"></script>
+        <script src="{{ asset('skydas/js/select2.js') }}"></script>
 
         <script>
             $(document).ready(function () {
