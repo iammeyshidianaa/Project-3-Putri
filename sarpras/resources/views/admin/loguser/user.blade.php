@@ -37,7 +37,6 @@
       <th scope="col">#</th>
       <th scope="col">Nama</th>
       <th scope="col">Sebagai</th>
-      <th scope="col">Kelas</th>
       <th scope="col">Email</th>
       <th scope="col">Blokir Pengguna</th>
     </tr>
@@ -49,10 +48,9 @@
              @foreach ($data as $row)
                  <tr>
                                 <th scope="row">{{ $no++ }}</th>
-                             
+
                                 <td>{{ $row->name }}</td>
                                 <td>{{ $row->level }}</td>
-                                <td>{{ $row->kelas }}</td>
                                 <td>{{ $row->email }}</td>
 
                                 <td>
@@ -129,7 +127,7 @@
             }
                     toastr.success("{{ session('message') }}");
             @endif
-                
+
     </script>
     </div>
         @endsection
