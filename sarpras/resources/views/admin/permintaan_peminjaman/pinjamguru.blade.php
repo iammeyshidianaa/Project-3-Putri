@@ -20,7 +20,7 @@
                 </div>
             </div>
 
-            <h2 class="text-center text-primary">Permintaan Pengembalian</h2>
+            <h2 class="text-center text-primary">Dipinjam Guru</h2>
             <div class="container">
                     @if ($massage = Session::get('success'))
                         <div class="alert alert-success" role="alert">
@@ -54,9 +54,7 @@
                                             <td>{{ $row->jumlahg }}</td>
                                             <td>{{ $row->tanggalg }}</td>
                                             <td>
-                                        <a href="{{ url('pinjamgru/terimah/'.$row->id) }}" type="button" class="btn btn-sm btn-outline-primary">Setujui</a>
-
-                                        <!-- <a href="{{ url('pinjamsiswa/tolak/'.$row->id) }}" type="button" class="btn btn-sm btn-outline-danger">Tolak</a> -->
+                                        <h8 class="text-primary">Sedang Dipinjam</h8>
                                     </td>
                                      </tr>
 
