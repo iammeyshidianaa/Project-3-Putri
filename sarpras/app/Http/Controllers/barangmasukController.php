@@ -38,7 +38,26 @@ class barangmasukController extends Controller
 
         ], $pesan);
 
-        $data = barangmasuk::create($request->all());
+
+        $baru = barangmasuk::where('nama', '=', $request->nama)->First();
+
+        //  dd($baru);
+        if(is_null($baru)) {
+            $data = barangmasuk::create($request->all());
+            $baruss = Baranghabis::where('nama_barang1', '=', $request->nama)->First();
+            $stok1 = $baruss->stok1;
+            $stokup = $stok1 + $request->stok;
+            $baruss->update(['stok1' => $stokup]);
+
+        } else {
+            $barus = Baranghabis::where('nama_barang1', '=', $request->nama)->First();
+            $stoksekarang = $baru->stok;
+            $stok1 = $barus->stok1;
+            $stokupdate = $stoksekarang + $request->stok;
+            $stokup = $stok1 + $request->stok;
+            $baru->update(['stok' => $stokupdate]);
+            $barus->update(['stok1' => $stokup]);
+        }
 
         return redirect()->route('masukadmin')->with('message','Stok berhasil ditambahkan');
 

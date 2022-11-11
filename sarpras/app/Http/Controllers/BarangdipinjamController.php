@@ -15,7 +15,6 @@ class BarangdipinjamController extends Controller
     public function barangdipinjam()
     {
         $barangdipinjam = Barangdipinjam::all();
-
         return view('siswa.barang_dipinjam.barangdipinjam', compact('barangdipinjam'));
     }
 

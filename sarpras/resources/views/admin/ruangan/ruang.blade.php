@@ -10,6 +10,8 @@
      href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
+
+
 <body>
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -19,13 +21,15 @@
             <section class="content">
                 <div class="container-fluid">
                     <div class="row">
-
-                    <div class="input-group">
-                      <input type="text" class="form-control" placeholder="Cari kelas " aria-label="Cari kelas ">
-                      <div class="input-group-append">
-                        <button class="btn btn-sm btn-primary" type="button">Cari</button>
-                      </div>
-                    </div>
+                    <form action="{{ route('search') }}" method="get">
+                        @csrf
+                        <div class="input-group">
+                          <input type="text" class="form-control" name="search" placeholder="Ketikkan Sesuatu" aria-label="Ketikkan Sesuatu" >
+                          <div class="input-group-append">
+                            <button class="btn btn-sm btn-primary" type="submit">Cari</button>
+                          </div>
+                        </div>
+                    </form>
 
                     <div class="content-wrapper">
     <!-- Content Header (Page header) -->

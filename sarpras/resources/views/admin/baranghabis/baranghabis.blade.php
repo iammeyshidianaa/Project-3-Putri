@@ -53,6 +53,7 @@
                                 @php
                                 $no = 1;
                                 @endphp
+                                
                                 @foreach ($data as $row)
                                 <tr>
                                     <th scope="row">{{ $no++ }}</th>

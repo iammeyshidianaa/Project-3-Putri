@@ -17,16 +17,18 @@
       <div class="container-fluid">
         <div class="row mb-3">
           <div class="col-sm-6">
-          
+
                 <div class="card-body">
                   <div class="form-group">
                     <div class="input-group">
-                      <input type="text" class="form-control" placeholder="Masukkan ruangan" aria-label="Masukkan ruangan">
-                      <div class="input-group-append">
-                        <button class="btn btn-sm btn-primary" type="button">Cari</button>
-                      </div>
+                    <form action="{{ route('search'z) }}" method="post">
+                        <input type="text" name="search" class="form-control" placeholder="Masukkan ruangan" aria-label="Masukkan ruangan">
+                        <div class="input-group-append">
+                          <button class="btn btn-sm btn-primary" type="button">Cari</button>
+                        </div>
+                    </form>
                     </div>
-                  </div> 
+                  </div>
                 </div>
 
     @foreach ( $ruang as $k )

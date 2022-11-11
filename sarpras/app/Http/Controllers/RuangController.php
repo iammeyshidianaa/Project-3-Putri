@@ -17,15 +17,17 @@ class RuangController extends Controller
     public function ruang(Request $request)
 
     {
-        // $search = $request->search;
-        // $ruang = ruang::table('ruang')->where('pegawai_nama','like',"%".$cari."%")
-		// ->paginate();
+
          if($request->has('search')){
-            $ruang = ruang::where('ruang','jurusan','rombel','LIKE','%' .$request->search.'%');
+             $ruang = ruang::where('ruang','LIKE','%' .$request->search.'%')
+             ->orWhere('rombel','LIKE','%' .$request->search.'%')
+             ->orWhere('jurusan','LIKE','%' .$request->search.'%')
+             ->get();
+            //  dd($ruang);
         }else{
             $ruang = ruang::all();
         }
-            $ruang = ruang::all();
+        
     return view('admin.ruangan.ruang', compact('ruang'));
 
     }
@@ -36,8 +38,6 @@ class RuangController extends Controller
         $databarang = databarang::with('ruang')->where('ruang_id','=',$id)->get();
         $judul=ruang::findOrFail($id);
          return view('admin.ruangan.detailruangan', compact('barang','judul', 'databarang'));
-
-
     }
 
     public function ruangan()
@@ -55,7 +55,6 @@ class RuangController extends Controller
         return view('admin.ruangan.ruangan', compact('ruang'));
 
     }
-
 
     public function tambahruang()
     {

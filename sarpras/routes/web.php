@@ -74,13 +74,21 @@ Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::group(['middleware' => ['auth', 'level:admin']], function () {
 
     Route::get('/indexadmin', [IndexController::class, 'indexadmin'])->name('indexadmin');
+
+    // $totalpengajuan = Employee::count();
+    // $menunggupersetujuan = Employee::where('jeniskuetart', 'ultah')->count();
+    // $disetujui = Employee::where('jeniskuetart', 'karakter')->count();
+    // $ditolak = Employee::where('jeniskuetart', 'hari spesial')->count();
+    // return view('welcome', compact('totalpengajuan', 'menunggupersetujuan', 'disetujui', 'ditolak'));
+// })->middleware('auth');
+
     Route::get('/ruangan', [RuanganController::class, 'ruangan'])->name('ruangan');
     Route::get('/editprofileadmin', [IndexController::class, 'editprofileadmin'])->name('editprofileadmin');
     Route::get('/profileadmin', [IndexController::class, 'profileadmin'])->name('profileadmin');
     Route::post('/insertadmin', [IndexController::class, 'insertadmin'])->name('insertadmin');
 
  //ruangan
-
+ Route::get('/search', [RuangController::class, 'ruang'])->name('search');
  Route::get('/ruang', [RuangController::class, 'ruang'])->name('ruang');
  Route::get('/ruangan', [RuangController::class, 'ruangan'])->name('ruangan');
  Route::get('/tambahruang', [RuangController::class, 'tambahruang'])->name('tambahruang');

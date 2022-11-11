@@ -39,7 +39,7 @@
                   <div class="card card-tale">
                     <div class="card-body">
                       <p class="mb-4">Total Pengajuan</p>
-                      <p class="fs-30 mb-2">  </p>
+                      <p class="fs-30 mb-2"></p>
                     </div>
                   </div>
                 </div>
