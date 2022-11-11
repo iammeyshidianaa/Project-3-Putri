@@ -23,7 +23,6 @@
             <h2 class="text-center text-primary">Ajukan Permintaan</h2>
         </div>
         <br><br>
-
         <form action="/insertp" method="POST" enctype="multipart/form-data">
             @csrf
             <div class=" mb-3">
