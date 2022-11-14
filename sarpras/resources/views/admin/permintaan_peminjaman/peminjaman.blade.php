@@ -20,7 +20,7 @@
                 </div>
             </div>
 
-            <h2 class="text-center text-primary">Permintaan Peminjaman Barang</h2>
+            <h2 class="text-center text-primary">Permintaan Peminjaman Siswa</h2>
             <div class="container">
                     @if ($massage = Session::get('success'))
                         <div class="alert alert-success" role="alert">
@@ -57,12 +57,10 @@
                                                 <td>{{ $row->jumlah}}</td>
                                                 <td>{{ $row->tanggalpinjam}}</td>
                                                 <td>
-                                                    <a href="#" type="button"
-                                                    class="btn btn-sm btn-success text-white">Setujui</a>
+                                        <a href="{{ url('pinjamsiswa/terima/'.$row->id) }}" type="button" class="btn btn-sm btn-outline-primary">Setujui</a>
 
-                                                    <a href="#" type="button"
-                                                    class="btn btn-sm btn-danger text-white">Tolak</a>
-                                                </td>
+                                        <a href="{{ url('pinjamsiswa/tolak/'.$row->id) }}" type="button" class="btn btn-sm btn-outline-danger">Tolak</a>
+                                    </td>
                                             </tr>
                                         @endforeach
                             </tbody>
@@ -119,17 +117,15 @@
                 });
             </script>
 
-            <script>
-                    @if(Session::has('message'))
-                    toastr.options =
-                    {
-                        "closeButton" : true,
-                        "progressBar" : true
-                    }
-                            toastr.success("{{ session('message') }}");
-                    @endif
-
-            </script>
+<script>
+    @if(Session::has('message'))
+    toastr.options = {
+        "closeButton": true,
+        "progressBar": true
+    }
+    toastr.success("{{ session('message') }}");
+    @endif
+</script>
     @endsection
 @push('scripts')
 
