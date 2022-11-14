@@ -48,20 +48,15 @@
              @foreach ($data as $row)
                  <tr>
                                 <th scope="row">{{ $no++ }}</th>
-
                                 <td>{{ $row->name }}</td>
                                 <td>{{ $row->level }}</td>
                                 <td>{{ $row->email }}</td>
-
                                 <td>
-
-                                        <a href="#" class="btn btn-sm btn-danger text-white delete" id="delete"
+                                       <a href="#" class="btn btn-sm btn-danger text-white delete" id="delete"
                                         data-id="{{ $row->id }}" data-nama="{{ $row->nama }}"><i class="ti-trash" title="Hapus"></i></a></a>
                                 </td>
-
                             </tr>
                         @endforeach
-
     </tr>
 
   </tbody>
