@@ -27,6 +27,7 @@
                 <form action="/insertpinjamsiswa" method="POST" enctype="multipart/form-data">
                 @csrf
                         <br><br>
+
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Nama Lengkap</label>
                             <input type="text" name="namapeminjam" class="form-control" id="exampleInputPassword1" readonly value="{{ Auth::user()->name }}">
