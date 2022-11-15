@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\{DB, Auth};
 use App\Http\Controllers\Controller;
+use App\Models\Baranghabis;
+use App\Models\barangmasukadmin;
+use App\Models\databarang;
 use App\Models\show_change_password_form;
 use App\Models\User;
 use Hash;
@@ -148,7 +151,23 @@ class IndexController extends Controller
     }
     }
 
+    public function grafik()
+    {
+        $stok = databarang::select(DB::raw("CAST(SUM(jumlah_stok) as int) as stok"))
+        ->GroupBy(DB::raw("Month(created_at)"))
+        ->pluck('stok');
 
+        // dd($stok);
+
+        $bulan = databarang::select(DB::raw("MONTHNAME(created_at) as bulan"))
+        ->GroupBy(DB::raw("MONTHNAME(created_at)"))
+        ->pluck('bulan');
+
+        // dd($bulan);
+
+        return view('admin.grafik', compact('stok','bulan'));
+
+    }
 };
 
 

@@ -133,6 +133,14 @@
               </ul>
             </div>
           </li>
+
+          {{-- grafik --}}
+          <li class="nav-item">
+            <a class="nav-link" href="/grafik" >
+              <i class="ti-thought menu-icon"></i>
+              <span class="menu-title">Grafik</span>
+            </a>
+          </li>
           <!-- Stok Opname/Barang Masuk
 
           <li class="nav-item">
@@ -165,7 +173,7 @@
             </div>
           </li> -->
 
-          
+
           <!-- Permintaan Pengajuan -->
 
           <li class="nav-item">
