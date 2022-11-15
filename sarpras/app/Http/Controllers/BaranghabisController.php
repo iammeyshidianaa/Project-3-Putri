@@ -14,8 +14,7 @@ class BaranghabisController extends Controller
     public function index()
     {
         $data = Baranghabis::all();
-        // $data->stok += $carth->quantity;
-        // $data->save();
+
         return view('admin.baranghabis.baranghabis', compact('data'));
     }
 

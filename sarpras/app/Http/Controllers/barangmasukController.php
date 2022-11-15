@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ruang;
+use App\Models\databarang;
 use App\Models\Baranghabis;
 use App\Models\barangmasuk;
 use Illuminate\Http\Request;
@@ -11,6 +13,10 @@ class barangmasukController extends Controller
     public function masukadmin()
     {
         $masukadmin = barangmasuk::all();
+        // $barang = baranghabis::with('ruang')->where('ruang_id','=',$id)->get();
+        // $databarang = databarang::with('ruang')->where('ruang_id','=',$id)->get();
+        // $ruang = ruang::with('ruang')->where('ruang_id','=',$id)->get();
+
 
         return view('admin.barangmasuk.habis', compact('masukadmin'));
     }
@@ -53,7 +59,7 @@ class barangmasukController extends Controller
             $barus = Baranghabis::where('nama_barang1', '=', $request->nama)->First();
             $stoksekarang = $baru->stok;
             $stok1 = $barus->stok1;
-            $stokupdate = $stoksekarang + $request->stok;
+            $stokupdate= $stoksekarang + $request->stok;
             $stokup = $stok1 + $request->stok;
             $baru->update(['stok' => $stokupdate]);
             $barus->update(['stok1' => $stokup]);

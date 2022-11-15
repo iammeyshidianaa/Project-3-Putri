@@ -16,4 +16,6 @@ class barangmasuk extends Model
     {
         return $this->hasMany(barangmasuk::class);
     }
+
+    
 }

@@ -29,9 +29,9 @@
                             <label for="exampleInputPassword4">Nama Barang / Merek</label>
                             <select id="awok" name="nama2" class="form-control">
                                 <option value=""></option>
-                                @foreach($barangtdkhabis as $d)
-                                <option value="{{ $d->nama_barang }}">{{ $d->nama_barang }}</option>
-                                @endforeach
+                                    @foreach($barangtdkhabis as $d)
+                                    <option value="{{ $d->nama_barang }}">{{ $d->nama_barang }} - {{ $d->ruang }} {{ $d->jurusan }} {{ $d->rombel }}</option>
+                                    @endforeach
                             </select>
                         </div>
                         <div class="form-group">

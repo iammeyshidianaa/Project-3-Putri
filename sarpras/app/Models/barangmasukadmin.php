@@ -9,4 +9,6 @@ class barangmasukadmin extends Model
 {
     protected $table = 'barangmasukadmins';
     protected $guarded = [];
+
+    
 }

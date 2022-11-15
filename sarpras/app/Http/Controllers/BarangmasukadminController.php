@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ruang;
 use App\Models\databarang;
+use App\Models\baranghabis;
 use Illuminate\Http\Request;
 use App\Models\barangmasukadmin;
 
@@ -12,6 +14,9 @@ class BarangmasukadminController extends Controller
     public function barangmasukadmin()
     {
         $barangmasukadmin =  barangmasukadmin::all();
+        // $barang = baranghabis::with('ruang')->where('ruang_id','=',$id)->get();
+        // $databarang = databarang::with('ruang')->where('ruang_id','=',$id)->get();
+        // $ruang = ruang::with('ruang')->where('ruang_id','=',$id)->get();
 
         return view('admin.barangmasuk.tidakhabis', compact('barangmasukadmin'));
     }
@@ -19,6 +24,7 @@ class BarangmasukadminController extends Controller
     public function tambahstok()
     {
         $barangtdkhabis =  databarang::all();
+
 
         return view('admin.barangmasuk.tambah_tidakhabis', compact('barangtdkhabis'));
     }
