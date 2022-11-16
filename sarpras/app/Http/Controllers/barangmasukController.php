@@ -13,10 +13,6 @@ class barangmasukController extends Controller
     public function masukadmin()
     {
         $masukadmin = barangmasuk::all();
-        // $barang = baranghabis::with('ruang')->where('ruang_id','=',$id)->get();
-        // $databarang = databarang::with('ruang')->where('ruang_id','=',$id)->get();
-        // $ruang = ruang::with('ruang')->where('ruang_id','=',$id)->get();
-
 
         return view('admin.barangmasuk.habis', compact('masukadmin'));
     }

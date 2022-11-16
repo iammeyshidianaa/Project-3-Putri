@@ -7,5 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class detailruangan extends Model
 {
-    use HasFactory;
+    public function ruang()
+    {
+        return $this->belongsTo(ruang::class);
+    }
 }

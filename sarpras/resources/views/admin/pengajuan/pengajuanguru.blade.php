@@ -54,9 +54,9 @@
                                     <td>{{ $row->namap }}</td>
                                     <td>{{ $row->barangp }}</td>
                                     <td>{{ $row->alasanp }}</td>
-                                    <td>{{ $row->hargap }}</td>
+                                    <td>Rp.{{ $row->hargap }}</td>
                                     <td>{{ $row->jumlahp }}</td>
-                                    <td>{{ $row->totalp }}</td>
+                                    <td>Rp.{{ $row->totalp }}</td>
 
                                     <td>
                                         <a href="{{ url('pengajuanguru/terima/'.$row->id) }}" type="button" class="btn btn-sm btn-outline-primary">Setujui</a>

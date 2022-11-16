@@ -9,4 +9,9 @@ class ruang extends Model
 {
     protected $table = 'ruangs';
     protected $guarded = [];
+
+    public function detailruangan()
+    {
+        return $this->belongsTo(detailruangan::class);
+    }
 }
