@@ -33,6 +33,7 @@
                             <label for="exampleInputPassword1" class="form-label">Nama Lengkap</label>
                             <input type="text" name="namapeminjam" class="form-control" id="exampleInputPassword1"  value="{{ Auth::user()->name }}">
                         </div>
+                        
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Kelas</label>
                             <input type="text" name="kelas" class="form-control" id="exampleInputPassword1" value="{{ Auth::user()->level }}">

@@ -20,7 +20,7 @@ class PengajuanController extends Controller
     }
     public function tambahp()
     {
-
+        
         return view('guru.pengajuan.pengajuan');
     }
     public function insertp(Request $request)

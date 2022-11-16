@@ -20,7 +20,7 @@
                     </div>
                 </div>
             </div>
-            <h2 class="text-center text-primary">Pengembalian</h2>
+            <h2 class="text-center text-primary">Riwayat Peminjaman</h2>
             <br><br>
 
             <div class="container">
