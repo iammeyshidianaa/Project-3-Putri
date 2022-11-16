@@ -80,17 +80,37 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/barangdipinjam">
+            <a class="nav-link" href="/datapinjam">
               <i class="ti-harddrives menu-icon"></i>
               <span class="menu-title">Barang Dipinjam</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/riwayatpeminjaman">
-              <i class="ti-time menu-icon"></i>
-              <span class="menu-title">Riwayat Peminjaman</span>
+            <a class="nav-link" href="/pengembalianadmin">
+              <i class="ti-reload menu-icon"></i>
+              <span class="menu-title">Pengembalian</span>
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/tolaks">
+              <i class="ti-time menu-icon"></i>
+              <span class="menu-title">Riwayat</span>
+            </a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
+              <i class="ti-time menu-icon"></i>
+              <span class="menu-title">Riwayat</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="icons">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/riwayatpeminjaman">Riwayat<br> Pengembalian</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/tolaks">Peminjaman <br>Ditolak</a></li>
+              </ul>
+            </div>
+          </li> -->
+
         </ul>
       </nav>
       <!-- partial -->
