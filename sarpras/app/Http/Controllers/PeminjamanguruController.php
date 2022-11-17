@@ -12,7 +12,7 @@ class PeminjamanguruController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    
+
 
 
     /**
@@ -22,7 +22,7 @@ class PeminjamanguruController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**

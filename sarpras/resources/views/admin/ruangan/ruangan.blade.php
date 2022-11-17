@@ -58,12 +58,11 @@
                                     <td>{{ $row->jurusan }}</td>
                                     <td>{{ $row->rombel }}</td>
                                     <td>{{ $row->deskripsi }}</td>
-
                                     <td>
-                                        <a href="/tampilkanruang/{{ $row->id }}" type="button" class="btn btn-outline-warning">Ubah</a>
-                                        <a href="#" class="btn btn-outline-danger delete" id="delete" data-id="{{ $row->id }}" data-nama="{{ $row->nama }}">Hapus</a>
-                                    </td>
+                                        <a href="/tampilkanruang/{{ $row->id }}" type="button" class="btn btn-sm btn-warning text-white"><i class="ti-eraser" title="Ubah"></i></a>
 
+                                        <a href="#" class="btn btn-sm btn-danger text-white delete" id="delete" data-id="{{ $row->id }}" data-nama="{{ $row->nama }}"><i class="ti-trash" title="Hapus"></i></a></a>
+                                    </td>
                                 </tr>
                                 @endforeach
                             </tbody>

@@ -9,9 +9,9 @@
         <link rel="stylesheet" href="{{ asset('skydas/vendors/select2-bootstrap-theme/select2-bootstrap.min.css') }}">
         <link rel="stylesheet" href="{{ asset('skydas/css/vertical-layout-light/style.css')}}">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-<body>
-<div class="content-wrapper">
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+        <body>
+        <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <div class="content-header">
             <div class="container-fluid">
@@ -77,12 +77,12 @@
             });
         </script>
 
-<script>
-    config={
-        minDate:"today",
-    }
-    flatpickr("input[type=date]",config);
-</script>
+        <script>
+            config={
+                minDate:"today",
+            }
+            flatpickr("input[type=date]",config);
+        </script>
 </body>
 @endsection
 @push('scripts')

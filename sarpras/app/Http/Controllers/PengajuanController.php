@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Exports\RiwayatPengajuan_guruExport;
 use App\Models\Pengajuan;
+use App\Models\databarang;
 use App\Models\pinjamguru;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Redirect;
 use App\Exports\RiwayatPinjam_guruExport;
+use App\Exports\RiwayatPengajuan_guruExport;
 
 class PengajuanController extends Controller
 {
@@ -73,6 +74,8 @@ class PengajuanController extends Controller
      }
      public function tambahg()
      {
+        $barang =  databarang::all();
+
          return view('guru.peminjaman.peminjamanguru');
      }
      public function insertgurua(Request $request)

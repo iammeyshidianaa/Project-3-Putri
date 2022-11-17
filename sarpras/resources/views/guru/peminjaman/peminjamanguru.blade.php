@@ -2,25 +2,33 @@
 
 @section('content')
 @push('css')
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<!-- css bootstrap5-->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<!-- css untuk select2 -->
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+ <!-- Plugin css for this page -->
+ <link rel="stylesheet" href="{{ asset('skydas/vendors/select2/select2.min.css')}}">
+ <link rel="stylesheet" href="{{ asset('skydas/vendors/select2-bootstrap-theme/select2-bootstrap.min.css') }}">
+ <link rel="stylesheet" href="{{ asset('skydas/css/vertical-layout-light/style.css')}}">
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />@endpush
-    <body>
+<body>
     <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-3">
-          <div class="col-sm-6"></div><!-- /.row -->
-        </div><!-- /.container-fluid -->
-      </div>
-      <h2 class="text-center text-primary">Ajukan Peminjaman Guru</h2>
-</div>
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-3">
+                    <div class="col-sm-6"></div>
+                </div>
+            </div>
+            <div class="col-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title text-center">Ajukan Peminjaman Guru </h4>
+                        <form action="/insertgurua" method="POST" enctype="multipart/form-data">
+                            <br>
+                            @csrf
 
-                <form action="/insertgurua" method="POST" enctype="multipart/form-data">
-                @csrf
-                        <br><br>
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Nama Lengkap</label>
                             <input type="text" name="namag" class="form-control" id="exampleInputPassword1" readonly value="{{ Auth::user()->name }}">
@@ -29,6 +37,15 @@
                             <label for="exampleInputPassword1" class="form-label">Nama Barang</label>
                             <input type="text" name="barangg" class="form-control" id="exampleInputPassword1">
                         </div>
+                        <!-- <div class="form-group">
+                            <label for="exampleInputPassword4">Nama Barang </label>
+                            <select id="awok" name="barangg" class="form-control">
+                                <option value=""></option>
+                                    @foreach($barang as $d)
+                                    <option value="{{ $d->nama_barang }}">{{ $d->nama_barang }} - {{ $d->ruang }} {{ $d->jurusan }} {{ $d->rombel }}</option>
+                                    @endforeach
+                            </select>
+                        </div> -->
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Jumlah</label>
                             <input type="number" name="jumlahg" class="form-control" id="exampleInputPassword1">
@@ -38,13 +55,13 @@
                             <input type="date" name="tanggalg" class="form-control" id="tanggal">
                         </div>
                         <button type="submit" class="btn btn-outline-primary">Pinjam</button>
-                </form>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-        </div>
     </div>
-    </div>
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"

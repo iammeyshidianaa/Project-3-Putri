@@ -14,10 +14,7 @@ class peminjamanguru extends Model
     {
         return $this->belongsTo(ruang::class);
     }
-    
-    public function id_barang()
-    {
-        return $this->hasMany(barangmasuk::class);
-    }
+
+  
 
 }
