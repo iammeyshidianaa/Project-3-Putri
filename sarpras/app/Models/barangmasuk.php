@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Carbon;
 
 class barangmasuk extends Model
 {
@@ -11,11 +12,27 @@ class barangmasuk extends Model
     protected $guarded = [];
 
 
-
-    public function id_barang()
+    public function ruang()
     {
-        return $this->hasMany(barangmasuk::class);
+        return $this->belongsTo(ruang::class);
     }
 
-    
+    public function Baranghabis()
+    {
+        return $this->belongsTo(Baranghabis::class);
+    }
+
+    public function getCreatedAtAttribute()
+    {
+        return Carbon::parse($this->attributes['tanggal_pembelian'])
+        ->translatedFormat('l, d F Y');
+    }
+
+
+    // public function masuk()
+    // {
+    //     return $this->belongsTo('App\Models\Baranghabis');
+    // }
+
+
 }

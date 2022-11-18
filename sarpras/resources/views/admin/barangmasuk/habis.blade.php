@@ -112,7 +112,7 @@
                 });
             </script>
 
-            <script>
+            <!-- <script>
                     @if(Session::has('message'))
                     toastr.options =
                     {
@@ -122,7 +122,7 @@
                             toastr.success("{{ session('message') }}");
                     @endif
 
-            </script>
+            </script> -->
     @endsection
 @push('scripts')
 

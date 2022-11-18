@@ -86,22 +86,7 @@
                                     </td>
                                 </tr>
                             </tbody>
-                            <!-- <tbody>
-                                    @php
-                                    $no = 1;
-                                @endphp
-                                @foreach ($barangdipinjam as $row)
-                                        <tr>
-                                            <th scope="row">{{ $no++ }}</th>
-                                            <td>{{ $row->namabarang }}</td>
-                                            <td>{{ $row->jumlahpinjam }}</td>
-                                            <td>{{ $row->tglpinjam}}</td>
-                                            <td>{{ $row->tglpengembalian }}</td>
-                                            <td>{{ $row->status }}</td>
-                                            <td>{{ $row->kembalikan }}</td>
-                                        </tr>
-                                @endforeach
-                            </tbody> -->
+                            
 
                         </table>
                     </div>

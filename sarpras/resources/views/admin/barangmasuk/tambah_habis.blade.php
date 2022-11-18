@@ -32,7 +32,7 @@
                                 <select id="nabar" name="nama" class="form-control">
                                     <option value=""></option>
                                     @foreach($baranghabis as $d)
-                                    <option value="{{ $d->nama_barang1 }} - ">{{ $d->nama_barang1 }} - {{$d->ruang}}</option>
+                                    <option value="{{ $d->nama_barang1 }}">{{ $d->nama_barang1 }} </option>
                                     @endforeach
                                 </select>
 

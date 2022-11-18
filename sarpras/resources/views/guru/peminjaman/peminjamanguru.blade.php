@@ -37,15 +37,7 @@
                             <label for="exampleInputPassword1" class="form-label">Nama Barang</label>
                             <input type="text" name="barangg" class="form-control" id="exampleInputPassword1">
                         </div>
-                        <!-- <div class="form-group">
-                            <label for="exampleInputPassword4">Nama Barang </label>
-                            <select id="awok" name="barangg" class="form-control">
-                                <option value=""></option>
-                                    @foreach($barang as $d)
-                                    <option value="{{ $d->nama_barang }}">{{ $d->nama_barang }} - {{ $d->ruang }} {{ $d->jurusan }} {{ $d->rombel }}</option>
-                                    @endforeach
-                            </select>
-                        </div> -->
+                       
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Jumlah</label>
                             <input type="number" name="jumlahg" class="form-control" id="exampleInputPassword1">
@@ -62,18 +54,23 @@
         </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
-        </script>
-        <script>
+            </script>
+            <!-- js untuk select2  -->
+            <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js" defer></script>
+            <script src="{{ asset('skydas/vendors/select2/select2.min.js') }}"></script>
+            <script src="{{ asset('skydas/js/select2.js') }}"></script>
+
+    <script>
     config={
         minDate:"today",
     }
     flatpickr("input[type=date]",config);
-</script>
-</body>
+    </script>
+    </body>
 
 @endsection
    @push('scripts')

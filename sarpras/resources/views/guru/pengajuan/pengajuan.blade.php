@@ -37,13 +37,7 @@
                                 <label for="exampleInputPassword1" class="form-label">Nama Barang</label>
                                 <input type="text" name="barangp" class="form-control" id="exampleInputPassword1">
                             </div>
-                            <!-- <div class="form-group">
-                                <label for="exampleInputCity1">Nama Barang</label>
-                                    <input type="text" name="barangp" class="form-control" id="exampleInputCity1" placeholder="">
-                                        @error('barangp')
-                                        <div class="alert alert-danger">{{ $message }}</div>
-                                        @enderror
-                            </div> -->
+                           
                             <div class="form-group">
                                 <label for="exampleInputPassword1" class="form-label">Alasan Pengajuan</label>
                                 <input type="text" name="alasanp" class="form-control" id="exampleInputPassword1">
