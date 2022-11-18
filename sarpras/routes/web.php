@@ -21,6 +21,7 @@ use App\Http\Controllers\BaranghabisController;
 use App\Http\Controllers\barangmasukController;
 use App\Http\Controllers\DikembalikanController;
 use App\Http\Controllers\PinjambarangController;
+use App\Http\Controllers\PinjambarangmController;
 use App\Http\Controllers\BarangdipinjamController;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\PeminjamanguruController;
@@ -296,6 +297,9 @@ Route::get('/pinjamgru/{status}/{id}', [PengajuanController::class, 'updateStatu
 Route::get('/riwayatpinjam', [PengajuanController::class, 'riwayatpinjam'])->name('riwayatpinjam');
 Route::get('/riwayatpinjamgr', [PengajuanController::class, 'riwayatpinjamgr']);
 
+//peminjaman barang guru
+Route::get('/pinjam_baranghabis',[PinjambarangController::class,'pinjam_baranghabis'])->name('pinjam_baranghabis');
+Route::get('/barang_tdkhabis',[PinjambarangController::class,'barang_tdkhabis'])->name('barang_tdkhabis');
 
 //peminjaman barang siswa
 Route::get('/pinjambarang',[PinjambarangController::class,'pinjambarang'])->name('pinjambarang');
