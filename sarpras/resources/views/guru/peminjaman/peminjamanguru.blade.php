@@ -37,7 +37,6 @@
                             <label for="exampleInputPassword1" class="form-label">Nama Barang</label>
                             <input type="text" name="barangg" class="form-control" id="exampleInputPassword1">
                         </div>
-                       
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Jumlah</label>
                             <input type="number" name="jumlahg" class="form-control" id="exampleInputPassword1">
