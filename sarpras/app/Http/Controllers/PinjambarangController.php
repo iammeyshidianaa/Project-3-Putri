@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Exports\RiwayatPinjam_siswaExport;
-use App\Models\Baranghabis;
 use App\Models\databarang;
 use App\Models\Pinjambarang;
 use Illuminate\Http\Request;
@@ -74,13 +73,12 @@ class PinjambarangController extends Controller
         return view('admin.permintaan_pengembalian.kembali_siswa', compact('pinjambarang'));
     }
 
-    //siswa pinjam barang
+    //siswa
     public function pinjambarang()
     {
         $pinjambarang = Pinjambarang::all();
-        $nabar =  databarang::all();
 
-        return view('siswa.pinjambarang.pinjam', compact('pinjambarang','nabar'));
+        return view('siswa.pinjambarang.pinjam', compact('pinjambarang'));
     }
 
     public function insertpinjamsiswa(Request $request)
@@ -102,40 +100,6 @@ class PinjambarangController extends Controller
 
         return redirect('riwayatsw');
     }
-
-    //guru barang habis
-    public function pinjam_baranghabis()
-    {
-        $pinjambarang = Pinjambarang::all();
-        //nama barang
-        $namabarang = Baranghabis::all();
-
-        return view('guru.peminjaman.pinjam_habis', compact('pinjambarang','namabarang'));
-    }
-
-    public function insertpinjam_guru2(Request $request)
-    {
-        $peminjaman = Pinjambarang::create($request->all());
-        return redirect('pinjamhabis')->with('success','Data Terkirim Ke Admin');
-    }
-
-   //guru barang tdk habis
-   public function barang_tdkhabis()
-   {
-       $pinjambarang = Pinjambarang::all();
-       //nama barang
-       $namabarangs = databarang::all();
-
-       return view('guru.peminjaman.pinjam_tdkhabis', compact('pinjambarang','namabarangs'));
-   }
-
-   public function insertpinjam_guru(Request $request)
-   {
-       $peminjaman = Pinjambarang::create($request->all());
-       return redirect('pinjambarang_guru')->with('success','Data Terkirim Ke Admin');
-   }
-
-
 
     // PDF & EXCEL peminjaman siswa
     public function pdfsiswa()

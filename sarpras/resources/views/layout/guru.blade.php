@@ -114,8 +114,9 @@
             </a>
             <div class="collapse" id="p">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="/pinjam_baranghabis">Barang Habis</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/barang_tdkhabis">Barang Tidak Habis</a></li>
+              <li class="nav-item"> <a class="nav-link" href="/tambahg">Peminjaman Awal</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/barang_habis">Barang Habis</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/pinjambarang_guru">Barang Tidak Habis</a></li>
               </ul>
             </div>
           </li>

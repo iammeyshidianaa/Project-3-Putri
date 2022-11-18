@@ -24,7 +24,7 @@
             <div class="col-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title text-center">Peminjaman Barang Habis</h4>
+                        <h4 class="card-title text-center">Ajukan Peminjaman Barang </h4>
                         <form action="/insertpinjamsiswa" method="POST" enctype="multipart/form-data">
                             <br>
                             @csrf
@@ -38,17 +38,18 @@
                             <input type="text" name="kelas" class="form-control" id="exampleInputPassword1">
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Nama Barang / Merek</label>
-                                <select id="nama" name="namabarang3" class="form-control">
-                                    <option value=""></option>
-                                    @foreach($nabar as $n)
-                                    <option value="{{ $n->nama_barang }} - ">{{ $n->nama_barang }} - {{$n->ruang}}</option>
-                                    @endforeach
-                                </select>
-                                @error('nama')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                                @enderror
+                            <label for="exampleInputPassword1" class="form-label">Nama Barang</label>
+                            <input type="text" name="namabarang3" class="form-control" id="exampleInputPassword1">
                         </div>
+
+                        <!-- <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Nama Barang</label>
+                            <select id="hallo" name="namabarang3" class="form-control">
+                                @foreach( $pinjambarang as $nbs )
+                                <option value="{{ $nbs->nama_barang }}">{{ $nbs->nama_barang }}</option>
+                                @endforeach
+                            </select>
+                        </div> -->
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Jumlah</label>
                             <input type="number" name="jumlah" class="form-control" id="exampleInputPassword1">
@@ -60,7 +61,7 @@
                         <button type="submit" class="btn btn-outline-primary">Ajukan</button>
                 </form>
     </div>
-
+   
             <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -72,10 +73,9 @@
         <script src="{{ asset('skydas/js/select2.js') }}"></script>
 
         <script>
-            $(document).ready(function() {
-                $("#nama").select2({
-                    placeholder: "--Pilih Barang--",
-                    containerCssClass: 'wrap'
+            $(document).ready(function () {
+                $("#awok").select2({
+                    placeholder: "Pilih Barang"
                 });
             });
         </script>
