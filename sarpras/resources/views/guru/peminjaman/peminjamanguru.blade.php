@@ -37,15 +37,6 @@
                             <label for="exampleInputPassword1" class="form-label">Nama Barang</label>
                             <input type="text" name="barangg" class="form-control" id="exampleInputPassword1">
                         </div>
-                        <!-- <div class="form-group">
-                            <label for="exampleInputPassword4">Nama Barang </label>
-                            <select id="awok" name="barangg" class="form-control">
-                                <option value=""></option>
-                                    @foreach($barang as $d)
-                                    <option value="{{ $d->nama_barang }}">{{ $d->nama_barang }} - {{ $d->ruang }} {{ $d->jurusan }} {{ $d->rombel }}</option>
-                                    @endforeach
-                            </select>
-                        </div> -->
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Jumlah</label>
                             <input type="number" name="jumlahg" class="form-control" id="exampleInputPassword1">
