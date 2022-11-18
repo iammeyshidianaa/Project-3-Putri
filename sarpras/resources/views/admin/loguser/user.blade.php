@@ -88,32 +88,31 @@
     </script>
     </body>
     <script>
-        // var button = document.getElementById('id');
-        $('.delete').click(function() {
-            var databarangid = $(this).attr('data-id');
-            var nama = $(this).attr('data-nama');
+    // var button = document.getElementById('id');
+    $('.delete').click(function() {
+        var databarangid = $(this).attr('data-id');
+        var nama = $(this).attr('data-nama');
 
-            swal({
-                    title: "Yakin?",
-                    text: "Kamu akan menghapus akses dari user ini? " + nama + " ",
-                    icon: "warning",
-                    buttons: true,
-                    dangerMode: true,
-                })
-                .then((willDelete) => {
-                    if (willDelete) {
-                        window.location = "/deleteuser/" + databarangid + ""
-                        swal("Data berhasil dihapus", {
-                            icon: "success",
-                        });
-                    } else {
-                        swal("User tidak jadi dihapus");
-                    }
-                });
-        });
-    </script>
-
-            <script>
+        swal({
+                title: "Yakin?",
+                text: "Kamu akan menghapus akses dari user ini? " + nama + " ",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+            .then((willDelete) => {
+                if (willDelete) {
+                    window.location = "/deleteuser/" + databarangid + ""
+                    swal("Data berhasil dihapus", {
+                        icon: "success",
+                    });
+                } else {
+                    swal("User tidak jadi dihapus");
+                }
+            });
+    });
+</script>
+<script>
             @if(Session::has('message'))
             toastr.options =
             {
