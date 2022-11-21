@@ -287,10 +287,11 @@ Route::get('/data2', [guruController::class, 'data2'])->name('data2');
 
 //peminjaman barang guru
 Route::get('/pinjamguruh',[PengajuanController::class,'pinjamguruh'])->name('pinjamguruh');
-Route::get('/tambahg', [PengajuanController::class, 'tambahg'])->name('tambahg');
-Route::post('/insertgurua',[PengajuanController::class,'insertgurua'])->name('insertgurua');
+Route::get('/pinjam_baranghabis',[PengajuanController::class,'pinjam_baranghabis'])->name('pinjam_baranghabis');
+Route::post('/insertpinjam_guru2',[PengajuanController::class,'insertpinjam_guru2'])->name('insertpinjam_guru2');
+Route::get('/barang_tdkhabis',[PengajuanController::class,'barang_tdkhabis'])->name('barang_tdkhabis');
+Route::post('/insertpinjam_guru',[PengajuanController::class,'insertpinjam_guru'])->name('insertpinjam_guru');
 Route::get('/balik/{id}', [PengajuanController::class, 'balik']);
-Route::get('/pinjamgr', [PengajuanController::class, 'pinjamgr']);
 Route::get('/kembalig', [PengajuanController::class, 'kembalig']);
 Route::get('/pinjamgru/{status}/{id}', [PengajuanController::class, 'updateStatusk'])->middleware('auth');
 Route::get('/riwayatpinjam', [PengajuanController::class, 'riwayatpinjam'])->name('riwayatpinjam');

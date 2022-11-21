@@ -2,14 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Exports\RiwayatPengajuan_guruExport;
 use App\Models\Pengajuan;
+use App\Models\databarang;
 use App\Models\pinjamguru;
+use App\Models\Baranghabis;
+use App\Models\Pinjambarang;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Redirect;
 use App\Exports\RiwayatPinjam_guruExport;
+use App\Exports\RiwayatPengajuan_guruExport;
 
 class PengajuanController extends Controller
 {
@@ -65,26 +68,42 @@ class PengajuanController extends Controller
     }
 
 
-     //guru
+     // barang di pinjam(status) guru
      public function pinjamguruh()
      {
          $data = pinjamguru::where('statusk', null)->orwhere('statusk', 'Menunggu Persetujuan')->get();
          return view('guru.pinjam.barangpinjam', compact('data'));
      }
-     public function tambahg()
-     {
-         return view('guru.peminjaman.peminjamanguru');
-     }
-     public function insertgurua(Request $request)
-     {
-         $data = pinjamguru::create($request->all());
-         return redirect('pinjamguruh')->with('success','Data Terkirim Ke Admin');
-     }
-     public function pinjamgr()
-     {
-         $data = pinjamguru::where('statusk', null)->get();
-         return view('admin.permintaan_peminjaman.pinjamguru', compact('data'));
-     }
+
+     // peminjaman guru barang habis
+    public function pinjam_baranghabis()
+    {
+        //nama barang
+        $namabarang = Baranghabis::all();
+
+        return view('guru.peminjaman.pinjam_habis', compact('namabarang'));
+    }
+
+    public function insertpinjam_guru2(Request $request)
+    {
+        $peminjaman = Pinjambarang::create($request->all());
+        return redirect('pinjamhabis')->with('success','Data Terkirim Ke Admin');
+    }
+
+      // peminjaman guru barang tidak habis
+     public function barang_tdkhabis()
+    {
+       //nama barang
+       $namabarangs = databarang::all();
+
+       return view('guru.peminjaman.pinjam_tdkhabis', compact('namabarangs'));
+    }
+
+    public function insertpinjam_guru(Request $request)
+   {
+       $peminjaman = Pinjambarang::create($request->all());
+       return redirect('pinjambarang_guru')->with('success','Data Terkirim Ke Admin');
+   }
 
      public function balik($id)
     {

@@ -26,8 +26,8 @@
             <div class="col-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title text-center">Peminjaman Barang Tidak Habis </h4>
-                        <form action="/insertpinjam_guru" method="POST" enctype="multipart/form-data">
+                        <h4 class="card-title text-center">Peminjaman Barang Habis </h4>
+                        <form action="/insertpinjam_guru2" method="POST" enctype="multipart/form-data">
                             <br>
                             @csrf
                             <div class="mb-3">
@@ -37,10 +37,10 @@
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Nama Barang</label>
-                                <select id="oke" name="barangg" class="form-control">
+                                <select id="ww" name="barangg" class="form-control">
                                     <option value=""></option>
-                                    @foreach($namabarangs as $nabar)
-                                    <option value="{{ $nabar->nama_barang }} - ">{{ $nabar->nama_barang }} -
+                                    @foreach($namabarang as $nabar)
+                                    <option value="{{ $nabar->nama_barang1 }} - ">{{ $nabar->nama_barang1 }} -
                                         {{$nabar->ruang}}</option>
                                     @endforeach
                                 </select>
@@ -75,7 +75,7 @@
 </body>
 <script>
     $(document).ready(function() {
-            $("#oke").select2({
+            $("#ww").select2({
                 placeholder: "-- Pilih Barang --",
                 containerCssClass: 'wrap'
             });
