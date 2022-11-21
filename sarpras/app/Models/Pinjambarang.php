@@ -9,4 +9,8 @@ class Pinjambarang extends Model
 {
     protected $table = 'peminjamanadmins';
     protected $guarded = [];
+
+    public function ruang(){
+        return $this->belongsTo(ruang::class);
+    }
 }

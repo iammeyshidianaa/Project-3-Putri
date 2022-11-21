@@ -33,10 +33,10 @@ class PengajuanController extends Controller
     public function insertp(Request $request)
     {
         $data = Pengajuan::create($request->all());
-        return redirect('daftarp')->with('message','Data berhasil ditambahkan');
+        return redirect('daftarp')->with('message', 'Data berhasil ditambahkan');
     }
 
-//Riwayat Pengajuan Admin
+    //Riwayat Pengajuan Admin
 
     public function riwayatpengajuan()
     {
@@ -44,7 +44,7 @@ class PengajuanController extends Controller
         return view('admin.daftar_riwayat.pengajuan')->with(compact('data'));
     }
 
-     //Riwayat Pengajuan Guru
+    //Riwayat Pengajuan Guru
 
     public function riwayat_pengajuan_guru()
     {
@@ -53,14 +53,15 @@ class PengajuanController extends Controller
         return view('guru.riwayat_guru.pengajuan')->with(compact('data'));
     }
 
-    public function updateStatus($status, $id){
+    public function updateStatus($status, $id)
+    {
         $data = Pengajuan::where('id', $id)->first();
 
-        if($status == 'terima'){
+        if ($status == 'terima') {
             $data->update(['statusp' => 'Disetujui']);
-        }elseif($status == 'tolak'){
+        } elseif ($status == 'tolak') {
             $data->update(['statusp' => 'Ditolak']);
-        }else{
+        } else {
             return redirect()->back();
         }
 
@@ -68,47 +69,46 @@ class PengajuanController extends Controller
     }
 
 
-     // barang di pinjam(status) guru
-     public function pinjamguruh()
-     {
-         $data = pinjamguru::where('statusk', null)->orwhere('statusk', 'Menunggu Persetujuan')->get();
-         return view('guru.pinjam.barangpinjam', compact('data'));
-     }
+    // barang di pinjam(status) guru
+    public function pinjamguruh()
+    {
+        $data = pinjamguru::where('statusk', null)->orwhere('statusk', 'Menunggu Persetujuan')->get();
+        return view('guru.pinjam.barangpinjam', compact('data'));
+    }
 
-     // peminjaman guru barang habis
+    // peminjaman guru barang habis
     public function pinjam_baranghabis()
     {
         //nama barang
-        $namabarang = Baranghabis::all();
-
+        $namabarang = Baranghabis::with('ruang')->get();
         return view('guru.peminjaman.pinjam_habis', compact('namabarang'));
     }
 
     public function insertpinjam_guru2(Request $request)
     {
         $peminjaman = Pinjambarang::create($request->all());
-        return redirect('pinjamhabis')->with('success','Data Terkirim Ke Admin');
+        return redirect('pinjamhabis')->with('success', 'Data Terkirim Ke Admin');
     }
 
-      // peminjaman guru barang tidak habis
-     public function barang_tdkhabis()
+    // peminjaman guru barang tidak habis
+    public function barang_tdkhabis()
     {
-       //nama barang
-       $namabarangs = databarang::all();
+        //nama barang
+        $namabarangs = databarang::with('ruang')->get();
 
-       return view('guru.peminjaman.pinjam_tdkhabis', compact('namabarangs'));
+        return view('guru.peminjaman.pinjam_tdkhabis', compact('namabarangs'));
     }
 
     public function insertpinjam_guru(Request $request)
-   {
-       $peminjaman = Pinjambarang::create($request->all());
-       return redirect('pinjambarang_guru')->with('success','Data Terkirim Ke Admin');
-   }
-
-     public function balik($id)
     {
-        $data = pinjamguru::where('id',$id)->update(['statusk' => 'Menunggu Persetujuan']);
-        return redirect('pinjamguruh')->with('message','Pesan berhasil dikirimkan');
+        $peminjaman = Pinjambarang::create($request->all());
+        return redirect('pinjambarang_guru')->with('success', 'Data Terkirim Ke Admin');
+    }
+
+    public function balik($id)
+    {
+        $data = pinjamguru::where('id', $id)->update(['statusk' => 'Menunggu Persetujuan']);
+        return redirect('pinjamguruh')->with('message', 'Pesan berhasil dikirimkan');
     }
     public function kembalig()
     {
@@ -129,14 +129,15 @@ class PengajuanController extends Controller
     }
 
 
-    public function updateStatusk($status, $id){
+    public function updateStatusk($status, $id)
+    {
         $data = pinjamguru::where('id', $id)->first();
 
-        if($status == 'terimah'){
+        if ($status == 'terimah') {
             $data->update(['statusk' => 'Disetujui']);
-        }elseif($status == 'tolakh'){
+        } elseif ($status == 'tolakh') {
             $data->update(['statusk' => 'Ditolak']);
-        }else{
+        } else {
             return redirect()->back();
         }
 
@@ -172,5 +173,4 @@ class PengajuanController extends Controller
     {
         return Excel::download(new RiwayatPengajuan_guruExport, 'Riwayat_Pengajuan_Guru.xlsx');
     }
-
 }

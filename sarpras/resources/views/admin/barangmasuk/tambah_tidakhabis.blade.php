@@ -31,7 +31,7 @@
                             <select id="awok" name="nama2" class="form-control">
                                 <option value=""></option>
                                     @foreach($barangtdkhabis as $d)
-                                    <option value="{{ $d->nama_barang }}">{{ $d->nama_barang }} - {{ $d->ruang }} {{ $d->jurusan }} {{ $d->rombel }}</option>
+                                    <option value="{{ $d->nama_barang }}">{{ $d->nama_barang }} - {{ $d->ruang->ruang }} {{ $d->ruang->jurusan }} {{ $d->ruang->rombel }}</option>
                                     @endforeach
                             </select>
                         </div>

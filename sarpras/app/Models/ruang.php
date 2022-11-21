@@ -14,4 +14,8 @@ class ruang extends Model
     {
         return $this->belongsTo(detailruangan::class);
     }
+    public function pinjambarang()
+    {
+        return $this->hasMany(Pinjambarang::class);
+    }
 }

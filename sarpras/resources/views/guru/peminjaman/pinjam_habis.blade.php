@@ -40,8 +40,7 @@
                                 <select id="ww" name="barangg" class="form-control">
                                     <option value=""></option>
                                     @foreach($namabarang as $nabar)
-                                    <option value="{{ $nabar->nama_barang1 }} - ">{{ $nabar->nama_barang1 }} -
-                                        {{$nabar->ruang}}</option>
+                                    <option value="{{ $nabar->nama_barang1 }} - ">{{ $nabar->nama_barang1 }} - {{$nabar->ruang->ruang}} - {{$nabar->ruang->jurusan}} - {{$nabar->ruang->rombel}}</option>
                                     @endforeach
                                 </select>
                             </div>

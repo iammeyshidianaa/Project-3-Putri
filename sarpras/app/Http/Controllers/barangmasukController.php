@@ -12,21 +12,21 @@ class barangmasukController extends Controller
 {
     public function masukadmin()
     {
-        $masukadmin = barangmasuk::all();
+        $masukadmin = barangmasuk::with('ruang')->get();
 
         return view('admin.barangmasuk.habis', compact('masukadmin'));
     }
 
     public function tambah_stok()
     {
-        $baranghabis =  Baranghabis::all();
+        $baranghabis =  Baranghabis::with('ruang')->get();
 
         return view('admin.barangmasuk.tambah_habis', compact('baranghabis'));
     }
 
     public function insert_stok_baranghabis(Request $request)
     {
-        
+
         $pesan = [
             'required' => ':attribute wajib di isi!',
             'min' => ':attribute harus diisi minimal :3 min karakter',

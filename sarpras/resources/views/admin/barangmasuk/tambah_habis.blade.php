@@ -32,10 +32,9 @@
                                 <select id="nabar" name="nama" class="form-control">
                                     <option value=""></option>
                                     @foreach($baranghabis as $d)
-                                    <option value="{{ $d->nama_barang1 }}">{{ $d->nama_barang1 }} </option>
+                                    <option value="{{ $d->nama_barang1 }}">{{ $d->nama_barang1 }} - {{ $d->ruang->ruang}} - {{ $d->ruang->jurusan}} - {{ $d->ruang->rombel}}  </option>
                                     @endforeach
                                 </select>
-
                                 @error('nama')
                                 <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Exports\RiwayatPinjam_siswaExport;
 use App\Models\databarang;
+use App\Models\ruang;
 use App\Models\Pinjambarang;
 use Illuminate\Http\Request;
 use App\Models\peminjamanadmin;
@@ -76,9 +77,10 @@ class PinjambarangController extends Controller
     //siswa
     public function pinjambarang()
     {
-        $pinjambarang = Pinjambarang::all();
+        $ruang=ruang::all();
+        $databarang=databarang::with('ruang')->get();
 
-        return view('siswa.pinjambarang.pinjam', compact('pinjambarang'));
+        return view('siswa.pinjambarang.pinjam', compact('ruang','databarang'));
     }
 
     public function insertpinjamsiswa(Request $request)
