@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Exports\RiwayatPinjam_siswaExport;
-use App\Models\databarang;
 use App\Models\ruang;
+use App\Models\databarang;
 use App\Models\Pinjambarang;
 use Illuminate\Http\Request;
 use App\Models\peminjamanadmin;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\RiwayatPinjam_siswaExport;
 
 class PinjambarangController extends Controller
 {
@@ -77,10 +77,11 @@ class PinjambarangController extends Controller
     //siswa
     public function pinjambarang()
     {
+        $pinjambarang = Pinjambarang::with('ruang')->get();
+        $namabarangs = databarang::all();
         $ruang=ruang::all();
-        $databarang=databarang::with('ruang')->get();
 
-        return view('siswa.pinjambarang.pinjam', compact('ruang','databarang'));
+        return view('siswa.pinjambarang.pinjam', compact('pinjambarang','namabarangs','ruang'));
     }
 
     public function insertpinjamsiswa(Request $request)

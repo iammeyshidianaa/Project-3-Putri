@@ -287,6 +287,7 @@ Route::get('/data2', [guruController::class, 'data2'])->name('data2');
 
 //peminjaman barang guru
 Route::get('/pinjamguruh',[PengajuanController::class,'pinjamguruh'])->name('pinjamguruh');
+Route::get('/pinjamgr',[PengajuanController::class,'pinjamgr'])->name('pinjamgr');
 Route::get('/pinjam_baranghabis',[PengajuanController::class,'pinjam_baranghabis'])->name('pinjam_baranghabis');
 Route::post('/insertpinjam_guru2',[PengajuanController::class,'insertpinjam_guru2'])->name('insertpinjam_guru2');
 Route::get('/barang_tdkhabis',[PengajuanController::class,'barang_tdkhabis'])->name('barang_tdkhabis');
