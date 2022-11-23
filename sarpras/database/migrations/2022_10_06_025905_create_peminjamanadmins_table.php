@@ -20,6 +20,7 @@ class CreatePeminjamanadminsTable extends Migration
             $table->string('namabarang3');
             $table->integer('jumlah');
             $table->date('tanggalpinjam');
+            $table->date('tanggalkembali');
             $table->timestamps();
         });
     }

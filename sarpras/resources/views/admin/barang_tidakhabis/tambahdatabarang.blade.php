@@ -72,7 +72,7 @@
                                 @error('ruang_id')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
-
+                        </div>
                         <div class="form-group">
                             <label for="exampleTextarea1">Deskripsi</label>
                             <textarea name="deskripsi" class="form-control" id="exampleTextarea1" rows="4"></textarea>

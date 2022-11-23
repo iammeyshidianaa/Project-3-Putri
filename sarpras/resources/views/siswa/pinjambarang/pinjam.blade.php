@@ -47,10 +47,10 @@
                                 <div class="form-group">
                                 <label for="exampleInputCity1">Nama Barang</label>
                                 <select id="namabarang3" name="namabarang3" class="form-control">
-                                    @foreach ($databarang as $data)
+                                    @foreach ($namabarangs as $data)
                                     <option value="{{$data->nama_barang}}">{{$data->nama_barang}} - {{$data->ruang->ruang}} - {{$data->ruang->jurusan}} - {{$data->ruang->rombel}} </option>
                                     @endforeach
-                                    
+
                                 </select>
 
                                 <div class="mb-3">
@@ -60,6 +60,10 @@
                                 <div class="mb-3">
                                     <label for="exampleInputPassword1" class="form-label">Tanggal Peminjaman</label>
                                     <input type="date" name="tanggalpinjam" class="form-control" id="tanggal">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputPassword1" class="form-label">Tanggal Pengembalian</label>
+                                    <input type="date" name="tanggalkembali" class="form-control" id="tanggal">
                                 </div>
                                 <button type="submit" class="btn btn-outline-primary">Ajukan</button>
                         </form>

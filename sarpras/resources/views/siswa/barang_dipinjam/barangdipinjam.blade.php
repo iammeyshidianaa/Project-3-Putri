@@ -41,6 +41,7 @@
                                     <th scope="col">Nama Barang</th>
                                     <th scope="col">Jumlah </th>
                                     <th scope="col">Tanggal Pinjam</th>
+                                    <th scope="col">Tanggal Pengembalian</th>
                                     <th scope="col">Status</th>
 
                                 </tr>
@@ -57,6 +58,7 @@
                                                 <td>{{ $row->namabarang3 }}</td>
                                                 <td>{{ $row->jumlah}}</td>
                                                 <td>{{ $row->tanggalpinjam}}</td>
+                                                <td>{{ $row->tanggalkembali}}</td>
                                                 @if($row->status3 == null)
                                                 <td class = "text-secondary">Menunggu Persetujuan...
                                 </td>
