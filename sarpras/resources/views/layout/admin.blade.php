@@ -319,8 +319,10 @@
   <!-- endinject -->
   <!-- Custom js for this page-->
   <script src="{{ asset('skydas/js/dashboard.js')}}"></script>
-  <script src="{{ asset('skydas/js/Chart.roundedBarCharts.js')}}"></script>
+  {{-- <script src="{{ asset('skydas/js/Chart.roundedBarCharts.js')}}"></script> --}}
   <!-- End custom js for this page-->
+  {{-- <script src="https://code.highcharts.com/modules/accessibility.js"></script> --}}
+    {{-- <script src="https://code.highcharts.com/highcharts.js"></script> --}}
 </body>
 
 

@@ -122,8 +122,8 @@
           <!-- Status Barang Yang Ingin Dipinjam Guru -->
           <li class="nav-item">
             <a class="nav-link" href="/pinjamguruh">
-              <i class="ti-harddrives menu-icon"></i>
-              <span class="menu-title">Barang Dipinjam</span>
+              <i class="ti-timer menu-icon"></i>
+              <span class="menu-title">Status Peminjaman</span>
             </a>
           </li>
           <li class="nav-item">

@@ -46,14 +46,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/indexadmin', function () {
-//     $jumlahpengajuan = Pengajuan::count();
-
-//     return view('admin.index', compact('jumlahpengajuan'));
-// });
-
-//login
-
 Route::get('/masuk', [LoginController::class, 'login'])->name('masuk');
 Route::post('/loginproses', [LoginController::class, 'loginproses'])->name('loginproses');
 
@@ -74,13 +66,6 @@ Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::group(['middleware' => ['auth', 'level:admin']], function () {
 
     Route::get('/indexadmin', [IndexController::class, 'indexadmin'])->name('indexadmin');
-
-    // $totalpengajuan = Employee::count();
-    // $menunggupersetujuan = Employee::where('jeniskuetart', 'ultah')->count();
-    // $disetujui = Employee::where('jeniskuetart', 'karakter')->count();
-    // $ditolak = Employee::where('jeniskuetart', 'hari spesial')->count();
-    // return view('welcome', compact('totalpengajuan', 'menunggupersetujuan', 'disetujui', 'ditolak'));
-// })->middleware('auth');
 
     Route::get('/ruangan', [RuanganController::class, 'ruangan'])->name('ruangan');
     Route::get('/editprofileadmin', [IndexController::class, 'editprofileadmin'])->name('editprofileadmin');
@@ -128,6 +113,10 @@ Route::group(['middleware' => ['auth', 'level:admin']], function () {
     Route::get('/tampilkandatabarang/{p}', [databarangController::class, 'tampilkandatabarang'])->name('tampilkandatabarang');
     Route::post('/updatedatabarang/{p}', [databarangController::class, 'updatedatabarang'])->name('updatedatabarang');
     Route::get('/deletedatabarang/{p}', [databarangController::class, 'delete'])->name('deletedatabarang');
+    //pdf
+    Route::get('/exportpdf2', [databarangController::class, 'exportpdf2'])->name('exportpdf2');
+    //excel
+    Route::get('/exportexcel2', [databarangController::class, 'exportexcel2'])->name('exportexcel2');
 
     // Barang Habis
     Route::get('/baranghabis', [BaranghabisController::class, 'index'])->name('baranghabis')->middleware('auth');
@@ -136,6 +125,10 @@ Route::group(['middleware' => ['auth', 'level:admin']], function () {
     Route::get('/tampilkanbaranghabis/{p}', [BaranghabisController::class, 'tampilkanbaranghabis'])->name('tampilkanbaranghabis');
     Route::post('/updatebaranghabis/{p}', [BaranghabisController::class, 'updatebaranghabis'])->name('updatebaranghabis');
     Route::get('/deletebaranghabis/{p}', [BaranghabisController::class, 'delete'])->name('deletebaranghabis');
+    //pdf
+    Route::get('/exportpdf', [BaranghabisController::class, 'exportpdf'])->name('exportpdf');
+    //excel
+    Route::get('/exportexcel', [BaranghabisController::class, 'exportexcel'])->name('exportexcel');
 
 
     // table barang masuk(admin)
@@ -189,6 +182,16 @@ Route::group(['middleware' => ['auth', 'level:admin']], function () {
     Route::get('/dikembalikan', [DikembalikanController::class, 'dikembalikan'])->name('dikembalikan');
     Route::get('/sedangdipinjam', [SedangdipinjamController::class, 'sedangdipinjam'])->name('sedangdipinjam');
     Route::get('/riwayatpengajuan', [PengajuanController::class, 'riwayatpengajuan'])->name('riwayatpengajuan');
+
+    // pdf & excel riwayat pengajuan guru
+    Route::get('/pdfpengajuanguru', [PengajuanController::class, 'pdfpengajuanguru'])->name('pdfpengajuanguru');
+     Route::get('/excelpengajuanguru', [PengajuanController::class, 'excelpengajuanguru'])->name('excelpengajuanguru');
+    // pdf & excel riwayat peminjaman guru
+    Route::get('/pdfguru', [PengajuanController::class, 'pdfguru'])->name('pdfguru');
+    Route::get('/excelguru', [PengajuanController::class, 'excelguru'])->name('excelguru');
+    // pdf & excel riwayat peminjaman siswa
+    Route::get('/pdfsiswa', [PinjambarangController::class, 'pdfsiswa'])->name('pdfsiswa');
+    Route::get('/excelsiswa', [PinjambarangController::class, 'excelsiswa'])->name('excelsiswa');
 
 
     //pengajuan guru

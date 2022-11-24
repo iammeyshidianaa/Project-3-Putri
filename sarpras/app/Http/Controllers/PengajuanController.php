@@ -84,7 +84,7 @@ class PengajuanController extends Controller
 
     public function insertpinjam_guru2(Request $request)
     {
-        $peminjaman = Pinjambarang::create($request->all());
+        $peminjaman = pinjamguru::create($request->all());
         return redirect('pinjamguruh')->with('success','Data Terkirim Ke Admin');
     }
 
@@ -99,7 +99,7 @@ class PengajuanController extends Controller
 
     public function insertpinjam_guru(Request $request)
    {
-       $peminjaman = Pinjambarang::create($request->all());
+       $peminjaman = pinjamguru::create($request->all());
        return redirect('pinjamguruh')->with('success','Data Terkirim Ke Admin');
    }
 

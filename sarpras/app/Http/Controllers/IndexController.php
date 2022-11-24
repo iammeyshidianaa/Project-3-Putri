@@ -2,15 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\{DB, Auth};
-use App\Http\Controllers\Controller;
-use App\Models\Baranghabis;
-use App\Models\barangmasukadmin;
-use App\Models\databarang;
-use App\Models\show_change_password_form;
-use App\Models\User;
 use Hash;
+use App\Models\User;
+use App\Models\pengajuan;
+use App\Models\databarang;
+use App\Models\pinjamguru;
+use App\Models\Baranghabis;
+use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
+use App\Models\peminjamanadmin;
+use App\Models\barangmasukadmin;
+use App\Http\Controllers\Controller;
+use App\Models\show_change_password_form;
+use Illuminate\Support\Facades\{DB, Auth};
 // use Auth;
 
 class IndexController extends Controller
@@ -45,7 +49,10 @@ class IndexController extends Controller
 
     public function indexadmin()
     {
-        return view('admin.index');
+        $permintaan_pengajuan = pengajuan::count();
+        $permintaan_pinjam_siswa = peminjamanadmin::count();
+        $permintaan_pengembalian_guru = pinjamguru::count();
+        return view('admin.index',compact('permintaan_pengajuan','permintaan_pinjam_siswa','permintaan_pengembalian_guru'));
     }
 
     public function indexguru()
@@ -151,22 +158,71 @@ class IndexController extends Controller
     }
     }
 
-    public function grafik()
-    {
-        $stok = databarang::select(DB::raw("CAST(SUM(jumlah_stok) as int) as stok"))
-        ->GroupBy(DB::raw("Month(created_at)"))
-        ->pluck('stok');
+    // public function grafik()
+    // {
+    //     $stok = databarang::select(DB::raw("CAST(SUM(jumlah_stok) as int) as stok"))
+    //     ->GroupBy(DB::raw("Month(created_at)"))
+    //     ->pluck('stok');
 
-        // dd($stok);
+    //     // dd($stok);
 
-        $bulan = databarang::select(DB::raw("MONTHNAME(created_at) as bulan"))
-        ->GroupBy(DB::raw("MONTHNAME(created_at)"))
-        ->pluck('bulan');
+    //     $bulan = databarang::select(DB::raw("MONTHNAME(created_at) as bulan"))
+    //     ->GroupBy(DB::raw("MONTHNAME(created_at)"))
+    //     ->pluck('bulan');
 
-        // dd($bulan);
+    //     // dd($bulan);
 
-        return view('admin.grafik', compact('stok','bulan'));
+    //     return view('admin.grafik', compact('stok','bulan'));
 
+    // }
+
+    public function grafik(){
+
+        $denda = barangmasukadmin::select(DB::raw(" created_at, SUM(stok) as stok"))
+            ->whereYear('created_at', date('Y'))
+            ->groupBy(DB::raw("MONTH(created_at)"))
+            ->get();
+            // $denda = Denda::query()
+            //     ->selectRaw("SUM(denda) denda")
+            //     ->groupBy(DB::raw('MONTH(created_at)'))
+            //     ->get();
+        // dd($denda);
+
+        $previousMonths = [];
+
+        $currentDate = now()->startOfMonth();
+        while ($currentDate->year == Carbon::now()->year) {
+            $previousMonths[] = $currentDate->format('M,Y');
+            $currentDate->subMonth();
+        }
+
+        $previousMonths = array_reverse($previousMonths);
+        // dd($previousMonths);
+
+        $array_pengeluaran = array();
+        foreach($previousMonths as $key => $val){
+            $array_pengeluaran[$key] = 0;
+            foreach ($denda as $mp) {
+                $waktu = Carbon::parse($mp->created_at)->format('M,Y');
+
+                if($val == $waktu){
+                    $array_pengeluaran[$key] = (int) $mp->stok;
+                }
+            }
+        }
+        // dd($array_pengeluaran);
+        $harga = barangmasukadmin::select(
+                            DB::raw("(sum(stok)) as stok"),
+                            DB::raw("(DATE_FORMAT(created_at, '%M')) as month"),
+                            DB::raw("(DATE_FORMAT(created_at, '%Y')) as year")
+                            )
+                            ->orderBy('created_at')
+                            ->groupBy(DB::raw("DATE_FORMAT(created_at, '%M')"))
+                            ->groupBy(DB::raw("DATE_FORMAT(created_at, '%Y')"))
+                            ->get();
+
+
+        return view('admin.grafik',compact('harga','array_pengeluaran','previousMonths'));
     }
 };
 
