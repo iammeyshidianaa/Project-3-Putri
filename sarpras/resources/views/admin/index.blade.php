@@ -130,30 +130,3 @@
 
 
 
-<script src="https://code.highcharts.com/highcharts.js"></script>
-<script type="text/javascript">
-     Highcharts.chart('grafik', {
-        title: {
-            text: 'Grafik Stok Bulanan'
-        },
-        xAxis : {
-            categories : {!! json_encode($previousMonths) !!},
-        },
-        yAxis : {
-            title: {
-                text : 'Nominal Stok Bulanan'
-            }
-        },
-        plotOptions: {
-            series: {
-                allowPointSelect: true
-            }
-        },
-        series: [
-            {
-                name: 'Nominal Stok'
-                data: {!! json_encode($array_pengeluaran) !!},
-            }
-        ]
-     })
-</script>
