@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\ruang;
 use App\Models\databarang;
+use App\Models\Pinjambarang;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Maatwebsite\Excel\Facades\Excel;
@@ -42,7 +43,25 @@ class databarangController extends Controller
             'deskripsi' => 'required',
         ], $pesan);
 
-        $data = databarang::create($request->all());
+        // $new = Pinjambarang::where('namabarangg2', '=', $request->namabarangg2)->First();
+
+        // //  dd($baru);
+        // if(is_null($new)) {
+        //     $datas = Pinjambarang::create($request->all());
+        //     $newnew = databarang::where('nama_barang', '=', $request->namabarangg2)->First();
+        //     $stokk2 = $newnew->stokk2;
+        //     $stokup = $stokk2 - $request->jumlah_stok;
+        //     $newnew->update(['stokk2' => $stokup]);
+
+        // } else {
+        //     $neww = databarang::where('nama_barang', '=', $request->namabarangg2)->First();
+        //     $stoksekarang = $new->stok;
+        //     $stokk2 = $neww->stokk2;
+        //     $stokupdate = $stoksekarang - $request->stok;
+        //     $stokup = $stokk2 - $request->jumlah_stok;
+        //     $new->update(['stok' => $stokupdate]);
+        //     $neww->update(['stokk2' => $stokup]);
+        // }
 
         return redirect()->route('databarang')->with('message','Data berhasil ditambahkan');
 

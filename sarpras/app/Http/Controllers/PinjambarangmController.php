@@ -61,8 +61,10 @@ class PinjambarangController extends Controller
     }
 
     public function insertpinjamsiswa(Request $request)
+
     {
-        $peminjaman = Pinjambarang::create($request->all());
+        
+
         return redirect('pinjambarang')->with('success','Data Terkirim Ke Admin');
     }
 
