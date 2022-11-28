@@ -323,7 +323,6 @@ Route::post('forget-password', [ForgotPasswordController::class, 'ForgetPassword
 Route::get('reset-password/{token}', [ForgotPasswordController::class, 'ResetPassword'])->name('ResetPasswordGet');
 Route::post('reset-password', [ForgotPasswordController::class, 'ResetPasswordStore'])->name('ResetPasswordPost');
 
-// Grafik
-Route::get('/grafik', [IndexController::class, 'grafik'])->name('grafik');
+
 
 
