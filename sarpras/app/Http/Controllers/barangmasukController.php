@@ -36,7 +36,6 @@ class barangmasukController extends Controller
         ];
         $this->validate($request, [
             'nama' => 'required',
-            'tanggal_pembelian' => 'required',
             'stok' => 'numeric',
 
         ], $pesan);

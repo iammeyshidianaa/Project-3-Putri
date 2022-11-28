@@ -39,13 +39,13 @@
                                 <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                             </div>
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label for="exampleInputCity1">Tanggal Masuk</label>
                                 <input type="date" name="tanggal_pembelian" class="form-control" id="exampleInputCity1" placeholder="">
                                 @error('tanggal_pembelian')
                                 <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
-                            </div>
+                            </div> -->
                             <div class="form-group">
                                 <label for="exampleInputCity1">Stok</label>
                                 <input type="number" name="stok" class="form-control" id="exampleInputCity1" placeholder="">

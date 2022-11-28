@@ -14,9 +14,6 @@ class BarangmasukadminController extends Controller
     public function barangmasukadmin()
     {
         $barangmasukadmin =  barangmasukadmin::all();
-        // $barang = baranghabis::with('ruang')->where('ruang_id','=',$id)->get();
-        // $databarang = databarang::with('ruang')->where('ruang_id','=',$id)->get();
-        // $ruang = ruang::with('ruang')->where('ruang_id','=',$id)->get();
 
         return view('admin.barangmasuk.tidakhabis', compact('barangmasukadmin'));
     }
@@ -41,7 +38,6 @@ class BarangmasukadminController extends Controller
         // dd($request->all());
         $this->validate($request, [
             'nama2' => 'required',
-            'tanggal_pembelian' => 'required',
             'stok' => 'numeric',
 
         ], $pesan);

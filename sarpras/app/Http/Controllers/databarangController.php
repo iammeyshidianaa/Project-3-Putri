@@ -34,34 +34,16 @@ class databarangController extends Controller
             'max' => ':attribute harus diisi maksimal : max karakter',
             'numeric' => 'harus di isi angka!',
 
-
         ];
         $this->validate($request, [
             'nama_barang' => 'required|min:3|max:100',
             'jumlah_stok' => 'numeric',
             'satuan' => 'required',
             'deskripsi' => 'required',
+
         ], $pesan);
 
-        // $new = Pinjambarang::where('namabarangg2', '=', $request->namabarangg2)->First();
-
-        // //  dd($baru);
-        // if(is_null($new)) {
-        //     $datas = Pinjambarang::create($request->all());
-        //     $newnew = databarang::where('nama_barang', '=', $request->namabarangg2)->First();
-        //     $stokk2 = $newnew->stokk2;
-        //     $stokup = $stokk2 - $request->jumlah_stok;
-        //     $newnew->update(['stokk2' => $stokup]);
-
-        // } else {
-        //     $neww = databarang::where('nama_barang', '=', $request->namabarangg2)->First();
-        //     $stoksekarang = $new->stok;
-        //     $stokk2 = $neww->stokk2;
-        //     $stokupdate = $stoksekarang - $request->stok;
-        //     $stokup = $stokk2 - $request->jumlah_stok;
-        //     $new->update(['stok' => $stokupdate]);
-        //     $neww->update(['stokk2' => $stokup]);
-        // }
+        $data = databarang::create($request->all());
 
         return redirect()->route('databarang')->with('message','Data berhasil ditambahkan');
 

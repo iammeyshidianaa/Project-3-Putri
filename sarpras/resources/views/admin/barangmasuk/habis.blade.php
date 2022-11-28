@@ -37,8 +37,8 @@
                             <tr>
                                 <th scope="col">No.</th>
                                 <th scope="col">Nama Barang / Merek</th>
-                                <th scope="col">Tanggal Masuk</th>
                                 <th scope="col">Stok</th>
+                                <th scope="col">Tanggal Masuk</th>
                                 <th scope="col">Aksi</th>
                             </tr>
                         </thead>
@@ -50,8 +50,9 @@
                                 <tr>
                                     <th scope="row">{{ $no++ }}</th>
                                     <td>{{ $row->nama }}</td>
-                                    <td>{{ $row->tanggal_pembelian }}</td>
+                                    <!-- <td>{{ $row->tanggal_pembelian }}</td> -->
                                     <td>{{ $row->stok }}</td>
+                                    <td>{{ $row->created_at}}</td>
                                     <td>
                                        <a href="#" class="btn btn-sm btn-danger text-white delete" id="delete"
                                           data-id="{{ $row->id }}" data-nama="{{ $row->nama }}"><i class="ti-trash" title="Hapus"></i></a>
