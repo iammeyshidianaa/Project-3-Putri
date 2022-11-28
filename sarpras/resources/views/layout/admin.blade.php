@@ -134,15 +134,14 @@
             </div>
           </li>
 
-          {{-- grafik --}}
+          <!-- {{-- grafik --}}
           <li class="nav-item">
             <a class="nav-link" href="/grafik" >
               <i class="ti-thought menu-icon"></i>
               <span class="menu-title">Grafik</span>
             </a>
-          </li>
+          </li> -->
           <!-- Stok Opname/Barang Masuk
-
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#oke" aria-expanded="false" aria-controls="oke">
             <i class="ti-import menu-icon"></i>
@@ -156,9 +155,6 @@
               </ul>
             </div>
           </li>
-
-
-
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#aman" aria-expanded="false" aria-controls="aman">
             <i class="icon-paper menu-icon"></i>

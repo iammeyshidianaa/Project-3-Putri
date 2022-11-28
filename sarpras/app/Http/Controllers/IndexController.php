@@ -52,7 +52,50 @@ class IndexController extends Controller
         $permintaan_pengajuan = pengajuan::count();
         $permintaan_pinjam_siswa = peminjamanadmin::count();
         $permintaan_pengembalian_guru = pinjamguru::count();
-        return view('admin.index',compact('permintaan_pengajuan','permintaan_pinjam_siswa','permintaan_pengembalian_guru'));
+        $denda = barangmasukadmin::select(DB::raw(" created_at, SUM(stok) as stok"))
+        ->whereYear('created_at', date('Y'))
+        ->groupBy(DB::raw("MONTH(created_at)"))
+        ->get();
+        // $denda = Denda::query()
+        //     ->selectRaw("SUM(denda) denda")
+        //     ->groupBy(DB::raw('MONTH(created_at)'))
+        //     ->get();
+    // dd($denda);
+
+    $previousMonths = [];
+
+    $currentDate = now()->startOfMonth();
+    while ($currentDate->year == Carbon::now()->year) {
+        $previousMonths[] = $currentDate->format('M,Y');
+        $currentDate->subMonth();
+    }
+
+    $previousMonths = array_reverse($previousMonths);
+    // dd($previousMonths);
+
+    $array_pengeluaran = array();
+    foreach($previousMonths as $key => $val){
+        $array_pengeluaran[$key] = 0;
+        foreach ($denda as $mp) {
+            $waktu = Carbon::parse($mp->created_at)->format('M,Y');
+
+            if($val == $waktu){
+                $array_pengeluaran[$key] = (int) $mp->stok;
+            }
+        }
+    }
+    // dd($array_pengeluaran);
+    $harga = barangmasukadmin::select(
+                        DB::raw("(sum(stok)) as stok"),
+                        DB::raw("(DATE_FORMAT(created_at, '%M')) as month"),
+                        DB::raw("(DATE_FORMAT(created_at, '%Y')) as year")
+                        )
+                        ->orderBy('created_at')
+                        ->groupBy(DB::raw("DATE_FORMAT(created_at, '%M')"))
+                        ->groupBy(DB::raw("DATE_FORMAT(created_at, '%Y')"))
+                        ->get();
+
+        return view('admin.index',compact('permintaan_pengajuan','permintaan_pinjam_siswa','permintaan_pengembalian_guru','harga','array_pengeluaran','previousMonths'));
     }
 
     public function indexguru()
@@ -176,54 +219,54 @@ class IndexController extends Controller
 
     // }
 
-    public function grafik(){
+    // public function grafik(){
 
-        $denda = barangmasukadmin::select(DB::raw(" created_at, SUM(stok) as stok"))
-            ->whereYear('created_at', date('Y'))
-            ->groupBy(DB::raw("MONTH(created_at)"))
-            ->get();
-            // $denda = Denda::query()
-            //     ->selectRaw("SUM(denda) denda")
-            //     ->groupBy(DB::raw('MONTH(created_at)'))
-            //     ->get();
-        // dd($denda);
+        // $denda = barangmasukadmin::select(DB::raw(" created_at, SUM(stok) as stok"))
+        //     ->whereYear('created_at', date('Y'))
+        //     ->groupBy(DB::raw("MONTH(created_at)"))
+        //     ->get();
+        //     // $denda = Denda::query()
+        //     //     ->selectRaw("SUM(denda) denda")
+        //     //     ->groupBy(DB::raw('MONTH(created_at)'))
+        //     //     ->get();
+        // // dd($denda);
 
-        $previousMonths = [];
+    //     $previousMonths = [];
 
-        $currentDate = now()->startOfMonth();
-        while ($currentDate->year == Carbon::now()->year) {
-            $previousMonths[] = $currentDate->format('M,Y');
-            $currentDate->subMonth();
-        }
+    //     $currentDate = now()->startOfMonth();
+    //     while ($currentDate->year == Carbon::now()->year) {
+    //         $previousMonths[] = $currentDate->format('M,Y');
+    //         $currentDate->subMonth();
+    //     }
 
-        $previousMonths = array_reverse($previousMonths);
-        // dd($previousMonths);
+    //     $previousMonths = array_reverse($previousMonths);
+    //     // dd($previousMonths);
 
-        $array_pengeluaran = array();
-        foreach($previousMonths as $key => $val){
-            $array_pengeluaran[$key] = 0;
-            foreach ($denda as $mp) {
-                $waktu = Carbon::parse($mp->created_at)->format('M,Y');
+    //     $array_pengeluaran = array();
+    //     foreach($previousMonths as $key => $val){
+    //         $array_pengeluaran[$key] = 0;
+    //         foreach ($denda as $mp) {
+    //             $waktu = Carbon::parse($mp->created_at)->format('M,Y');
 
-                if($val == $waktu){
-                    $array_pengeluaran[$key] = (int) $mp->stok;
-                }
-            }
-        }
-        // dd($array_pengeluaran);
-        $harga = barangmasukadmin::select(
-                            DB::raw("(sum(stok)) as stok"),
-                            DB::raw("(DATE_FORMAT(created_at, '%M')) as month"),
-                            DB::raw("(DATE_FORMAT(created_at, '%Y')) as year")
-                            )
-                            ->orderBy('created_at')
-                            ->groupBy(DB::raw("DATE_FORMAT(created_at, '%M')"))
-                            ->groupBy(DB::raw("DATE_FORMAT(created_at, '%Y')"))
-                            ->get();
+    //             if($val == $waktu){
+    //                 $array_pengeluaran[$key] = (int) $mp->stok;
+    //             }
+    //         }
+    //     }
+    //     // dd($array_pengeluaran);
+    //     $harga = barangmasukadmin::select(
+    //                         DB::raw("(sum(stok)) as stok"),
+    //                         DB::raw("(DATE_FORMAT(created_at, '%M')) as month"),
+    //                         DB::raw("(DATE_FORMAT(created_at, '%Y')) as year")
+    //                         )
+    //                         ->orderBy('created_at')
+    //                         ->groupBy(DB::raw("DATE_FORMAT(created_at, '%M')"))
+    //                         ->groupBy(DB::raw("DATE_FORMAT(created_at, '%Y')"))
+    //                         ->get();
 
 
-        return view('admin.grafik',compact('harga','array_pengeluaran','previousMonths'));
-    }
+    //     return view('admin.index',compact('harga','array_pengeluaran','previousMonths'));
+    // }
 };
 
 

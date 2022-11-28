@@ -1,7 +1,9 @@
 @extends('layout.admin')
 
 @section('content')
+@push('css')
 <!-- partial -->
+
 <div class="main-panel">
     <div class="content-wrapper">
         <div class="row">
@@ -16,7 +18,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6 grid-margin stretch-card">
+            <div class="col-md-6  grid-margin stretch-card">
                 <div class="card tale-bg">
                     <div class="card-people mt-auto">
                         <img src="{{ asset('skydas/images/dashboard/people.svg')}}" alt="people">
@@ -33,8 +35,37 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="card">
+                            <div class="card-body">
+                                <div id="grafik"></div>
+                                {{-- <canvas id="grafik" style="display: block; height: 210px; width: 421px;" width="631"
+                                    height="315" class="chartjs-render-monitor"></canvas> --}}
+                            </div>
+                        </div><!-- /.row -->
+                </div>
+
+    <!-- <div class="content-wrapper">
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-3">
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div id="grafik"></div>
+                                {{-- <canvas id="grafik" style="display: block; height: 210px; width: 421px;" width="631"
+                                    height="315" class="chartjs-render-monitor"></canvas> --}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-6 grid-margin transparent">
+        </div> -->
+
+
+
+
+         <!-- <div class="col-md-6 grid-margin transparent">
                 <div class="row">
                     <div class="col-md-6 mb-4 stretch-card transparent">
                         <div class="card card-tale">
@@ -74,10 +105,6 @@
             </div>
         </div>
     </div>
-
-
-
-    <!--charts -->
     <div class="card-body">
         <div id="grafik" style="display: block; height: 210px; width: 421px;" width="631" height="315"
             class="chartjs-render-monitor"></div>
@@ -87,7 +114,7 @@
             <div class="card">
                 <div class="card-body">
                     <p class="card-title">Detail Pemasukan Stok</p>
-                    <!-- <p class="font-weight-500">The total number of sessions within the date range. It is the period time a user is actively engaged with your website, page or app, etc</p> -->
+                    <p class="font-weight-500">The total number of sessions within the date range. It is the period time a user is actively engaged with your website, page or app, etc</p>
                     <div class="d-flex flex-wrap mb-2">
                         <div class="mr-5 mt-2">
                             <p class="text-muted">Order value</p>
@@ -108,7 +135,7 @@
                     </div>
                     <canvas id="order-chart"></canvas>
                 </div>
-            </div>
+            </div>-->
         </div>
     </div>
 
@@ -126,7 +153,27 @@
     <!-- partial -->
 </div>
 <!-- main-panel ends -->
-@endsection
+<script src="https://code.highcharts.com/highcharts.js"></script>
+                <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
+                <script>
+                    const chart = Highcharts.chart('grafik', {
+                        title: {
+                            text: 'Laporan Stok Opname Bulanan'
+                        },
+                        xAxis: {
+                            categories: {!! json_encode($previousMonths) !!},
+                        },
+                        series: [{
+                            type: 'column',
+                            name: 'Total Stok',
+                            colorByPoint: true,
+                            data: {!! json_encode($array_pengeluaran) !!},
+                            showInLegend: false
+                        }]
+                    });
+                </script>
+@endsection
+@push('scripts')
 
 
