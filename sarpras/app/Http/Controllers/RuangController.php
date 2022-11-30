@@ -22,12 +22,13 @@ class RuangController extends Controller
              $ruang = ruang::where('ruang','LIKE','%' .$request->search.'%')
              ->orWhere('rombel','LIKE','%' .$request->search.'%')
              ->orWhere('jurusan','LIKE','%' .$request->search.'%')
+             ->orWhere('deskripsi','LIKE','%' .$request->search.'%')
              ->get();
             //  dd($ruang);
         }else{
             $ruang = ruang::all();
         }
-        
+
     return view('admin.ruangan.ruang', compact('ruang'));
 
     }
