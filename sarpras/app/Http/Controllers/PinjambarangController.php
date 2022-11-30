@@ -45,7 +45,7 @@ class PinjambarangController extends Controller
         $peminjaman = peminjamanadmin::where('status3', 'Ditolak')->orwhere('status3', 'Telah Dikembalikan')->get();
         return view('admin.daftar_riwayat.sedangpinjam', compact('peminjaman'));
     }
-    public function updateStatus3(Request $request, $status, $id)
+    public function updateStatus3($status, $id)
     {
         $data = peminjamanadmin::where('id', $id)->first();
         $barus = databarang::where('nama_barang', '=', $data->namabarang3)->First();
@@ -102,9 +102,14 @@ class PinjambarangController extends Controller
     public function updateStatus2($status, $id)
     {
         $data = peminjamanadmin::where('id', $id)->first();
+        $new = databarang::where('nama_barang', '=', $data->namabarang3)->First();
 
         if ($status == 'terima') {
             $data->update(['status3' => 'Telah Dikembalikan']);
+            $stok1 = $new->jumlah_stok;
+
+            $datas = $stok1 + $data->jumlah;
+            $new->update(['jumlah_stok' => $datas]);
         } elseif ($status == 'tolak') {
             $data->update(['status3' => 'Ditolak']);
         } else {
