@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use Hash;
 use App\Models\User;
 use App\Models\pengajuan;
+use App\Models\Barangdipinjam;
 use App\Models\databarang;
 use App\Models\pinjamguru;
+use App\Models\ruang;
 use App\Models\Baranghabis;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
@@ -49,6 +51,7 @@ class IndexController extends Controller
 
     public function indexadmin()
     {
+        $Jumlah_pengguna = User::count();
         $permintaan_pengajuan = pengajuan::count();
         $permintaan_pinjam_siswa = peminjamanadmin::count();
         $permintaan_pengembalian_guru = pinjamguru::count();
@@ -95,7 +98,7 @@ class IndexController extends Controller
                         ->groupBy(DB::raw("DATE_FORMAT(created_at, '%Y')"))
                         ->get();
 
-        return view('admin.index',compact('permintaan_pengajuan','permintaan_pinjam_siswa','permintaan_pengembalian_guru','harga','array_pengeluaran','previousMonths'));
+        return view('admin.index',compact('permintaan_pengajuan','Jumlah_pengguna','permintaan_pinjam_siswa','permintaan_pengembalian_guru','harga','array_pengeluaran','previousMonths'));
     }
 
     public function indexguru()

@@ -41,8 +41,8 @@
                 <div class="col-md-6 mb-4 stretch-card transparent">
                   <div class="card card-tale">
                     <div class="card-body">
-                      <p class="mb-4">Pengajuan Guru</p>
-                      <p class="fs-30 mb-2">{{ $permintaan_pengajuan }}</p>
+                      <p class="mb-4">Jumlah Pengguna</p>
+                      <p class="fs-30 mb-2">{{  $Jumlah_pengguna  }}</p>
                       <p>semua data</p>
                     </div>
                   </div>
@@ -50,8 +50,8 @@
                 <div class="col-md-6 mb-4 stretch-card transparent">
                   <div class="card card-dark-blue">
                     <div class="card-body">
-                      <p class="mb-4">Peminjaman Guru</p>
-                      <p class="fs-30 mb-2">{{ $permintaan_pengembalian_guru }}</p>
+                    <p class="mb-4">Pengajuan Guru</p>
+                      <p class="fs-30 mb-2">{{ $permintaan_pengajuan }}</p>
                       <p>semua data</p>
                     </div>
                   </div>
@@ -61,12 +61,23 @@
                 <div class="col-md-6 mb-4 mb-lg-0 stretch-card transparent">
                   <div class="card card-light-blue">
                     <div class="card-body">
-                      <p class="mb-4">Peminjaman Siswa</p>
+                    <p class="mb-4">Peminjaman Guru</p>
+                      <p class="fs-30 mb-2">{{ $permintaan_pengembalian_guru }}</p>
+                      <p>semua data</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 stretch-card transparent">
+                  <div class="card card-light-danger">
+                    <div class="card-body">
+                    <p class="mb-4">Peminjaman Siswa</p>
                       <p class="fs-30 mb-2">{{ $permintaan_pinjam_siswa }}</p>
                       <p>semua data</p>
                     </div>
                   </div>
                 </div>
+
+
 </div>
             </div>
                 </div>
