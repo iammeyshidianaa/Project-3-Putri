@@ -19,6 +19,7 @@ class CreatePinjamguruTable extends Migration
             $table->string('barangg');
             $table->integer('jumlahg');
             $table->date('tanggalg');
+            $table->string('statusk')->nullable();
             $table->timestamps();
         });
     }

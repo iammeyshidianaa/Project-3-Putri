@@ -21,6 +21,7 @@ class CreatePeminjamanadminsTable extends Migration
             $table->integer('jumlah');
             $table->date('tanggalpinjam');
             $table->date('tanggalkembali');
+            $table->string('status3')->nullable();
             $table->timestamps();
         });
     }

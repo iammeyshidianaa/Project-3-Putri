@@ -21,6 +21,7 @@ class CreatePengajuanguruTable extends Migration
             $table->bigInteger('hargap');
             $table->integer('jumlahp');
             $table->bigInteger('totalp');
+            $table->string('statusp')->nullable();
             $table->timestamps();
         });
     }
