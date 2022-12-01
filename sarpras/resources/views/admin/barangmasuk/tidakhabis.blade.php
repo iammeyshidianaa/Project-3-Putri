@@ -52,7 +52,7 @@
                                         <td>{{ $row->nama2 }}</td>
                                         <!-- <td>{{ $row->tanggal_pembelian}}</td> -->
                                         <td>{{ $row->stok }}</td>
-                                        <td>{{ $row->created_at}}</td>
+                                        <td>{{ $row->created_at->format('d/m/Y')}}</td>
 
                                         <td>
                                             <a href="#" class="btn btn-sm btn-danger text-white delete" id="delete"
