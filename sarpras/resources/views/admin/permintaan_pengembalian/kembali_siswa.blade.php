@@ -41,6 +41,8 @@
                                     <th scope="col">Jumlah </th>
                                     <th scope="col">Tanggal Pinjam</th>
                                     <th scope="col">Tanggal Pengembalian</th>
+                                    <th scope="col">Keterlambatan</th>
+                                    <th scope="col">Denda</th>
                                     <th scope="col">Status</th>
 
                                 </tr>
@@ -58,6 +60,8 @@
                                     <td>{{ $row->jumlah}}</td>
                                     <td>{{ $row->tanggalpinjam}}</td>
                                     <td>{{ $row->tanggalkembali}}</td>
+                                    <td>{{ $row->created_at }}</td>
+                                    <td>{{ $row->created_at }}</td>
 
                                     <td>
                                     <a href="{{ url('kembalis/terima/'.$row->id) }}" type="button" class="btn btn-sm btn-outline-primary">Setujui</a>

@@ -101,13 +101,12 @@
                         });
                     </script>
 
-                    <script>
-                        config = {
-                            minDate: "today",
-                        }
-                        flatpickr("input[type=date]", config);
-                    </script>
-
+<script>
+    config={
+        minDate:"today",
+    }
+    flatpickr("input[type=date]",config);
+    </script>
                     <script>
                         @if(Session::has('message'))
                         toastr.options = {

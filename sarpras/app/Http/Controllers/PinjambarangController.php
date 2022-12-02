@@ -6,6 +6,7 @@ use App\Models\ruang;
 use App\Models\databarang;
 use App\Models\Pinjambarang;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use App\Models\peminjamanadmin;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Maatwebsite\Excel\Facades\Excel;
@@ -80,6 +81,12 @@ class PinjambarangController extends Controller
     public function kembalisis()
     {
         $pinjambarang = Pinjambarang::where('status3', 'Menunggu Persetujuan')->get();
+
+        // if (Carbon::create($pinjambarang->tanggalkembali)->lessThan(today())) {
+        //     $denda = Carbon::create($pinjambarang->tanggalkembali)->diffInDays(today());
+        //     $denda *= 5000;
+        //     $data['denda'] = $denda;
+        // }
         return view('admin.permintaan_pengembalian.kembali_siswa', compact('pinjambarang'));
     }
 
