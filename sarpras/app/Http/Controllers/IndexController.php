@@ -51,10 +51,10 @@ class IndexController extends Controller
 
     public function indexadmin()
     {
-        $Jumlah_pengguna = User::count();
-        $permintaan_pengajuan = pengajuan::count();
-        $permintaan_pinjam_siswa = peminjamanadmin::count();
-        $permintaan_pengembalian_guru = pinjamguru::count();
+        $permintaan_pengajuan = pengajuan::where('statusp', null)->get()->count();
+        $peminjaman_siswa  = peminjamanadmin::where('status3', null)->get()->count();
+        $pengembalian_siswa = peminjamanadmin::where('status3', 'Menunggu Persetujuan')->get()->count();
+        $pengembalian_guru = pinjamguru::where('statusk', 'Menunggu Persetujuan')->get()->count();
         $denda = barangmasukadmin::select(DB::raw(" created_at, SUM(stok) as stok"))
         ->whereYear('created_at', date('Y'))
         ->groupBy(DB::raw("MONTH(created_at)"))
@@ -98,7 +98,7 @@ class IndexController extends Controller
                         ->groupBy(DB::raw("DATE_FORMAT(created_at, '%Y')"))
                         ->get();
 
-        return view('admin.index',compact('permintaan_pengajuan','Jumlah_pengguna','permintaan_pinjam_siswa','permintaan_pengembalian_guru','harga','array_pengeluaran','previousMonths'));
+        return view('admin.index',compact('permintaan_pengajuan','peminjaman_siswa','pengembalian_siswa','pengembalian_guru','harga','array_pengeluaran','previousMonths'));
     }
 
     public function indexguru()
