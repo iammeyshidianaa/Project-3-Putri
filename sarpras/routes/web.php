@@ -22,7 +22,6 @@ use App\Http\Controllers\barangmasukController;
 use App\Http\Controllers\DikembalikanController;
 use App\Http\Controllers\PinjambarangController;
 use App\Http\Controllers\BarangdipinjamController;
-use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\PeminjamanguruController;
 use App\Http\Controllers\SedangdipinjamController;
 use App\Http\Controllers\PeminjamanadminController;
@@ -30,6 +29,7 @@ use App\Http\Controllers\RiwayatpeminjamController;
 use App\Http\Controllers\BarangmasukadminController;
 use App\Http\Controllers\BarangPinjamGuruController;
 use App\Http\Controllers\PengembalianadminController;
+use App\Http\Controllers\Auth\ForgotPasswordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,6 +41,14 @@ use App\Http\Controllers\PengembalianadminController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
+
+
+Route::get('forget-password', [ForgotPasswordController::class, 'ForgetPassword'])->name('ForgetPasswordGet');
+Route::post('forget-password', [ForgotPasswordController::class, 'ForgetPasswordStore'])->name('ForgetPasswordPost');
+Route::get('reset-password/{token}', [ForgotPasswordController::class, 'ResetPassword'])->name('ResetPasswordGet');
+Route::post('reset-password', [ForgotPasswordController::class, 'ResetPasswordStore'])->name('ResetPasswordPost');
 
 Route::get('/', function () {
     return view('welcome');
@@ -316,12 +324,6 @@ Route::get('/pengembalianadmin', [PinjambarangController::class, 'pengembalianad
 Route::get('/kembalis/{status}/{id}', [PinjambarangController::class, 'updateStatus2'])->middleware('auth');
 Route::get('/kembalisis', [PinjambarangController::class, 'kembalisis']);
 
-
-//reset password
-Route::get('forget-password', [ForgotPasswordController::class, 'ForgetPassword'])->name('ForgetPasswordGet');
-Route::post('forget-password', [ForgotPasswordController::class, 'ForgetPasswordStore'])->name('ForgetPasswordPost');
-Route::get('reset-password/{token}', [ForgotPasswordController::class, 'ResetPassword'])->name('ResetPasswordGet');
-Route::post('reset-password', [ForgotPasswordController::class, 'ResetPasswordStore'])->name('ResetPasswordPost');
 
 
 

@@ -56,6 +56,11 @@
                         <i class="ti-power-off text-primary"></i>
                             Keluar
                     </a>
+                    <!-- <a class="dropdown-item" href="{{ route('ForgetPasswordGet') }}">
+                        <i class="ti-power-off text-primary"></i>
+                            email
+                    </a> -->
+
                 </div>
             </li>
         </ul>

@@ -1,3 +1,4 @@
+@push ('css')
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,6 +14,12 @@
 	<!-- Mobile Specific Metas -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
+ <!-- css bootstrap5-->
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+         <!-- css untuk select2 -->
+        <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet"/>
+<!-- css bootstrap5-->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 	<!-- Google Font -->
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
 	<!-- CSS -->
@@ -54,12 +61,18 @@
                         <form action="/loginproses" method="post" enctype="multipart/form-data">
                                 @csrf
 							<div class="input-group custom">
+                                @error('email')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
 								<input type="text" class="form-control form-control-lg" name="email" placeholder="Email">
 								<div class="input-group-append custom">
 									<span class="input-group-text"><i class="icon-copy dw dw-user1"></i></span>
 								</div>
 							</div>
 							<div class="input-group custom">
+                            @error('password')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
 								<input type="password" class="form-control form-control-lg" name="password" placeholder="Kata Sandi">
 								<div class="input-group-append custom">
 									<span class="input-group-text"><i class="dw dw-padlock1"></i></span>
@@ -67,8 +80,9 @@
 							</div>
                             <div class="col-sm-12">
                                 <div class="input-group mb-0">
-                                    <button type="submit" class="btn btn-primary btn-lg btn-block">Masuk</button>
-                                </div>
+                                    <button type="submit" class="btn btn-primary btn-lg btn-block">Masuk</button></div>
+                                <!-- </div>  <a class="btn btn-link" href="{{ route('ForgetPasswordGet') }}">
+                                        {{ __('Lupa Kata Sandi?') }}</a> -->
                         </form>
 							<div class="font-16 weight-600 pt-10 pb-10 text-center" data-color="#707373" style="color: rgb(112, 115, 115);">Atau</div>
 								<div class="input-group mb-10">
@@ -90,3 +104,12 @@
 
 </body>
 </html>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
+        </script>
+
+@push('scripts')
+
+
