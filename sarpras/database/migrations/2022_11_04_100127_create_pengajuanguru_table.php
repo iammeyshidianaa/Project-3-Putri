@@ -17,11 +17,8 @@ class CreatePengajuanguruTable extends Migration
             $table->id();
             $table->string('namap');
             $table->string('barangp');
-            $table->string('alasanp');
-            $table->bigInteger('hargap');
             $table->integer('jumlahp');
-            $table->bigInteger('totalp');
-            $table->string('statusp')->nullable();
+            $table->date('tanggalp');
             $table->timestamps();
         });
     }

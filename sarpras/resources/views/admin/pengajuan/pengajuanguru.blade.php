@@ -20,7 +20,7 @@
                 </div>
             </div>
 
-            <h2 class="text-center text-primary">Daftar Pengajuan</h2>
+            <h2 class="text-center text-primary">Riwayat Permintaan</h2>
             <div class="container">
                 @if ($massage = Session::get('success'))
                 <div class="alert alert-success" role="alert">
@@ -37,10 +37,8 @@
                                     <th scope="col">#</th>
                                     <th scope="col">Nama</th>
                                     <th scope="col">Nama Barang</th>
-                                    <th scope="col">Alasan</th>
-                                    <th scope="col">Harga</th>
                                     <th scope="col">Jumlah</th>
-                                    <th scope="col">Total Harga</th>
+                                    <th scope="col">Tanggal</th>
                                     <th scope="col">Status</th>
                                 </tr>
                             </thead>
@@ -53,17 +51,11 @@
                                     <th scope="row">{{ $no++ }}</th>
                                     <td>{{ $row->namap }}</td>
                                     <td>{{ $row->barangp }}</td>
-                                    <td>{{ $row->alasanp }}</td>
-                                    <td>Rp.{{ $row->hargap }}</td>
                                     <td>{{ $row->jumlahp }}</td>
-                                    <td>Rp.{{ $row->totalp }}</td>
-
+                                    <td>{{ $row->tanggalp }}</td>
                                     <td>
-                                        <a href="{{ url('pengajuanguru/terima/'.$row->id) }}" type="button" class="btn btn-sm btn-outline-primary">Setujui</a>
-
-                                        <a href="{{ url('pengajuanguru/tolak/'.$row->id) }}" type="button" class="btn btn-sm btn-outline-danger">Tolak</a>
+                                    <h8 class="text-primary">Telah Diambil</h8>
                                     </td>
-
                                 </tr>
                                 @endforeach
 

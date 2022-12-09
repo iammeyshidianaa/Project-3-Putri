@@ -172,12 +172,12 @@
 
           <!-- Permintaan Pengajuan -->
 
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" href="/pengajuanguru" >
               <i class="ti-thought menu-icon"></i>
               <span class="menu-title">Permintaan</br>Pengajuan</span>
             </a>
-          </li>
+          </li> -->
 
           <li class="nav-item">
             <a class="nav-link" href="/peminjamanadmin" >
@@ -247,7 +247,7 @@
             </a>
             <div class="collapse" id="ic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="/riwayatpengajuan">Pengajuan</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/pengajuanguru">Permintaan</a></li>
                 <li class="nav-item"> <a class="nav-link" href="/riwayatpinjam">Peminjaman Guru</a></li>
                 <li class="nav-item"> <a class="nav-link" href="/riwayatsw">Peminjaman siswa</a></li>
               </ul>

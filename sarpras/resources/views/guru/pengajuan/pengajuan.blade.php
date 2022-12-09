@@ -37,28 +37,28 @@
                                 <label for="exampleInputPassword1" class="form-label">Nama Barang</label>
                                 <input type="text" name="barangp" class="form-control" id="exampleInputPassword1">
                             </div>
-                           
+
                             <div class="form-group">
-                                <label for="exampleInputPassword1" class="form-label">Alasan Pengajuan</label>
-                                <input type="text" name="alasanp" class="form-control" id="exampleInputPassword1">
+                                <label for="exampleInputPassword1" class="form-label">Jumlah Permintaan</label>
+                                <input type="number" name="jumlahp" class="form-control" id="exampleInputPassword1">
                             </div>
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label for="inputEmail3" class="form-label">Harga</label>
                                     <div class="col-LG-12">
                                         <div class="input-group mb-3">
                                             <span class="input-group-text" id="basic-addon1">Rp.</span>
                                                 <input type="text" name="hargap"  id="hargap" class="form-control" id="inputEmail3">
-                                                    <!-- type-currency="IDR" -->
+                                                    type-currency="IDR"
                                         </div>
                                     </div>
-                                    </div>
+                                    </div> -->
                                     <div class="form-group">
-                                        <label for="inputEmail3" class="form-label">Jumlah Beli</label>
+                                        <label for="inputEmail3" class="form-label">Tanggal</label>
                                         <div class="col-LG-12">
-                                            <input type="number" name="jumlahp" id="jumlahp" class="form-control" id="inputEmail3">
+                                            <input type="date" name="tanggalp" id="tanggal" class="form-control" id="inputEmail3">
                                         </div>
                                     </div>
-                                    <div class="form-group">
+                                    <!-- <div class="form-group">
                                         <label for="inputEmail3" class="form-label">Total</label>
                                             <div class="col-LG-12">
                                                 <div class="input-group mb-3">
@@ -66,7 +66,7 @@
                                                 <input type="text" name="totalp" type-currency="IDR" readonly id="totalp" placeholder="0" class="form-control" id="inputEmail3">
                                         </div>
                                     </div>
-
+                                    </div> -->
                     <button type="submit" class="btn btn-primary">Ajukan</button>
                         </form>
 
@@ -119,6 +119,12 @@
         $("#totalp").val(total);
     });
 </script>
+<script>
+    config={
+        minDate:"today",
+    }
+    flatpickr("input[type=date]",config);
+    </script>
 </body>
 
 

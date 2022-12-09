@@ -51,7 +51,7 @@ class IndexController extends Controller
 
     public function indexadmin()
     {
-        $permintaan_pengajuan = pengajuan::where('statusp', null)->get()->count();
+        $permintaan_pengajuan = pengajuan::count();
         $peminjaman_siswa  = peminjamanadmin::where('status3', null)->get()->count();
         $pengembalian_siswa = peminjamanadmin::where('status3', 'Menunggu Persetujuan')->get()->count();
         $pengembalian_guru = pinjamguru::where('statusk', 'Menunggu Persetujuan')->get()->count();

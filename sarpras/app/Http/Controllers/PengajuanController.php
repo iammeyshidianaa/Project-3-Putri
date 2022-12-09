@@ -16,14 +16,24 @@ use App\Exports\RiwayatPengajuan_guruExport;
 
 class PengajuanController extends Controller
 {
+    // public function index()
+    // {
+    //     $data = Pengajuan::where('statusp', null)->get();
+    //     return view('admin.pengajuan.pengajuanguru', compact('data'));
+    // }
     public function index()
     {
-        $data = Pengajuan::where('statusp', null)->get();
+        $data = Pengajuan::all();
         return view('admin.pengajuan.pengajuanguru', compact('data'));
     }
+    // public function daftarp()
+    // {
+    //     $data = Pengajuan::where('statusp', null)->get();
+    //     return view('guru.pengajuan.daftarp', compact('data'));
+    // }
     public function daftarp()
     {
-        $data = Pengajuan::where('statusp', null)->get();
+        $data = Pengajuan::all();
         return view('guru.pengajuan.daftarp', compact('data'));
     }
     public function tambahp()
@@ -72,7 +82,7 @@ class PengajuanController extends Controller
          $data = pinjamguru::where('statusk', null)->orwhere('statusk', 'Menunggu Persetujuan')->get();
          return view('guru.pinjam.barangpinjam', compact('data'));
      }
-//Peminjaman guru
+//Peminjaman guruzzzz
      // barang habis
     public function pinjam_baranghabis()
     {
@@ -179,6 +189,6 @@ class PengajuanController extends Controller
     }
 
 
-   
+
 
 }

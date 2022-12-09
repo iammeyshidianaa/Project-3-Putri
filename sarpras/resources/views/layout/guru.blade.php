@@ -93,15 +93,15 @@
           <li class="nav-item">
             <a href="/tambahp" class="nav-link">
               <i class="ti-stats-up menu-icon"></i>
-              <span class="menu-title">Pengajuan</span>
+              <span class="menu-title">Permintaan</span>
             </a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" href="/daftarp" >
               <i class="ti-list menu-icon"></i>
               <span class="menu-title">Daftar Pengajuan</span>
             </a>
-          </li>
+          </li> -->
           <!-- Peminjaman Barang Guru
           <li class="nav-item">
             <a class="nav-link" href="/tambahg" >
@@ -119,7 +119,7 @@
             </a>
             <div class="collapse" id="p">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="/pinjam_baranghabis">Barang Habis</a></li>
+                <!-- <li class="nav-item"> <a class="nav-link" href="/pinjam_baranghabis">Barang Habis</a></li> -->
                 <li class="nav-item"> <a class="nav-link" href="/barang_tdkhabis">Barang Tidak Habis</a></li>
               </ul>
             </div>
@@ -139,7 +139,7 @@
             </a>
             <div class="collapse" id="icons">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="/riwayat_pengajuan_guru">Pengajuan</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/daftarp">Permintaan</a></li>
                 <li class="nav-item"> <a class="nav-link" href="/riwayatpinjamgr">Peminjaman Barang</a></li>
               </ul>
             </div>

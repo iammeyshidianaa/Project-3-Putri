@@ -41,9 +41,9 @@
                 <div class="col-md-6 mb-4 stretch-card transparent">
                   <div class="card card-tale">
                     <div class="card-body">
-                      <p class="mb-4">Pengajuan Guru</p>
+                      <p class="mb-4">Permintaan Guru</p>
                       <p class="fs-30 mb-2">{{  $permintaan_pengajuan  }}</p>
-                      <p>belum terbaca</p>
+                      <p>semua data</p>
                     </div>
                   </div>
                 </div>
@@ -114,7 +114,7 @@
 
 
 
-         <!-- 
+         <!--
     <div class="card-body">
         <div id="grafik" style="display: block; height: 210px; width: 421px;" width="631" height="315"
             class="chartjs-render-monitor"></div>
