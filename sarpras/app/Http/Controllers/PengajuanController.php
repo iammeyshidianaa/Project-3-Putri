@@ -38,11 +38,37 @@ class PengajuanController extends Controller
     }
     public function tambahp()
     {
-        return view('guru.pengajuan.pengajuan');
+        $baranghabis =  Baranghabis::with('ruang')->get();
+
+        return view('guru.pengajuan.pengajuan', compact('baranghabis'));
     }
     public function insertp(Request $request)
     {
         $data = Pengajuan::create($request->all());
+        $new = Pengajuan::where('barangp', '=', $request->barangp)->First();
+        $newnew = Baranghabis::where('nama_barang1', '=', $request->barangp)->First();
+
+        //  dd($new);
+        if($newnew->stok1 == 0){
+            return redirect()->back()->with('message','Stok Habis');
+        } else {
+        if (is_null($new)) {
+            $datas = Pengajuan::create($request->all());
+            $newnew = Baranghabis::where('nama_barang1', '=', $request->barangp)->First();
+            $stok1 = $newnew->stok1;
+            $stokup = $stok1 - $request->jumlahp;
+            // dd($stokup);
+            $newnew->update(['stok1' => $stokup]);
+        } else {
+            $neww = Baranghabis::where('nama_barang1', '=', $request->barangp)->First();
+            $stoksekarang = $new->stok;
+            $stok1 = $neww->stok1;
+            $stokupdate = $stoksekarang + $request->jumlahp;
+            $stokup = $stok1 - $request->jumlahp;
+            $new->update(['jumlahp' => $stokupdate]);
+            $neww->update(['stok1' => $stokup]);
+        }
+    }
         return redirect('daftarp')->with('message','Data berhasil ditambahkan');
     }
 

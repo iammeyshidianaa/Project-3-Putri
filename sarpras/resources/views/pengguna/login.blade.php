@@ -61,23 +61,26 @@
                         <form action="/loginproses" method="post" enctype="multipart/form-data">
                                 @csrf
 							<div class="input-group custom">
-                                @error('email')
-                                    <div class="alert alert-danger">{{ $message }}</div>
-                                @enderror
 								<input type="text" class="form-control form-control-lg" name="email" placeholder="Email">
 								<div class="input-group-append custom">
 									<span class="input-group-text"><i class="icon-copy dw dw-user1"></i></span>
 								</div>
 							</div>
+                            @error('email')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
 							<div class="input-group custom">
-                            @error('password')
-                                    <div class="alert alert-danger">{{ $message }}</div>
-                                @enderror
 								<input type="password" class="form-control form-control-lg" name="password" placeholder="Kata Sandi">
 								<div class="input-group-append custom">
 									<span class="input-group-text"><i class="dw dw-padlock1"></i></span>
 								</div>
 							</div>
+                            @error('password')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
+                            @if (Session::has('password'))
+                                    <div class="alert alert-danger">Sandi salah</div>
+                            @endif
                             <div class="col-sm-12">
                                 <div class="input-group mb-0">
                                     <button type="submit" class="btn btn-primary btn-lg btn-block">Masuk</button></div>

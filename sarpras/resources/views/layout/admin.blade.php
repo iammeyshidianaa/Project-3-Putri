@@ -247,9 +247,9 @@
             </a>
             <div class="collapse" id="ic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="/pengajuanguru">Permintaan</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/pengajuanguru">Permintaan Barang</a></li>
                 <li class="nav-item"> <a class="nav-link" href="/riwayatpinjam">Peminjaman Guru</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/riwayatsw">Peminjaman siswa</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/riwayatsw">Peminjaman Siswa</a></li>
               </ul>
             </div>
           </li>

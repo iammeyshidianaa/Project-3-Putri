@@ -32,25 +32,33 @@
                             @csrf
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Nama Lengkap</label>
-                                <input type="text" name="namag" class="form-control" id="exampleInputPassword1" readonly
-                                    value="{{ Auth::user()->name }}">
+                                <input type="text" name="namag" class="form-control" id="exampleInputPassword1" readonly value="{{ Auth::user()->name }}">
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Nama Barang</label>
                                 <select id="ww" name="barangg" class="form-control">
                                     <option value=""></option>
                                     @foreach($namabarang as $nabar)
-                                    <option value="{{ $nabar->nama_barang1 }} - ">{{ $nabar->nama_barang1 }} - {{$nabar->ruang->ruang}} - {{$nabar->ruang->jurusan}} - {{$nabar->ruang->rombel}}</option>
+                                    <option value="{{ $nabar->nama_barang1 }}">{{ $nabar->nama_barang1 }} - {{$nabar->ruang->ruang}} - {{$nabar->ruang->jurusan}} - {{$nabar->ruang->rombel}}</option>
                                     @endforeach
                                 </select>
+                                @error('barangg')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Jumlah</label>
                                 <input type="number" name="jumlahg" class="form-control" id="exampleInputPassword1">
+                                @error('jumlahg')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Tanggal Peminjaman</label>
                                 <input type="date" name="tanggalg" class="form-control" id="tanggal">
+                                @error('tanggalg')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <button type="submit" class="btn btn-outline-primary">Pinjam</button>
                         </form>

@@ -34,6 +34,9 @@
                                     <option value="{{ $d->nama_barang }}">{{ $d->nama_barang }} - {{ $d->ruang->ruang }} {{ $d->ruang->jurusan }} {{ $d->ruang->rombel }}</option>
                                     @endforeach
                             </select>
+                            @error('nama2')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                         <!-- <div class="form-group">
                             <label for="exampleInputCity1">Tanggal Masuk</label>

@@ -43,28 +43,26 @@ class BarangmasukadminController extends Controller
         ], $pesan);
         //  dd('d');
 
-        $barus = barangmasukadmin::where('nama2', '=', $request->nama2)->First();
+        // $barus = barangmasukadmin::where('nama2', '=', $request->nama2)->First();
 
         //  dd($baru);
-        if(is_null($barus)) {
+        // if (is_null($barus)) {
             $data = barangmasukadmin::create($request->all());
             $barubaru = databarang::where('nama_barang', '=', $request->nama2)->First();
             $jumlah_stok = $barubaru->jumlah_stok;
             $stokup = $jumlah_stok + $request->stok;
             $barubaru->update(['jumlah_stok' => $stokup]);
+        // } else {
+        //     $baruu = databarang::where('nama_barang', '=', $request->nama2)->First();
+        //     $stoksekarang = $barus->stok;
+        //     $jumlah_stok = $baruu->jumlah_stok;
+        //     $stokupdate = $stoksekarang + $request->stok;
+        //     $stokup = $jumlah_stok + $request->stok;
+        //     $barus->update(['stok' => $stokupdate]);
+        //     $baruu->update(['jumlah_stok' => $stokup]);
+        // }
 
-        } else {
-            $baruu = databarang::where('nama_barang', '=', $request->nama2)->First();
-            $stoksekarang = $barus->stok;
-            $jumlah_stok = $baruu->jumlah_stok;
-            $stokupdate = $stoksekarang + $request->stok;
-            $stokup = $jumlah_stok + $request->stok;
-            $barus->update(['stok' => $stokupdate]);
-            $baruu->update(['jumlah_stok' => $stokup]);
-        }
-
-        return redirect()->route('barangmasukadmin')->with('message','Stok berhasil ditambahkan');
-
+        return redirect()->route('barangmasukadmin')->with('message', 'Stok berhasil ditambahkan');
     }
 
     public function delete($id)

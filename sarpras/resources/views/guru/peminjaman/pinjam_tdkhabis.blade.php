@@ -26,7 +26,7 @@
             <div class="col-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title text-center">Peminjaman Barang Tidak Habis </h4>
+                        <h4 class="card-title text-center">Peminjaman Barang</h4>
                         <form action="/insertpinjam_guru" method="POST" enctype="multipart/form-data">
                             <br>
                             @csrf
@@ -40,17 +40,26 @@
                                 <select id="oke" name="barangg" class="form-control">
                                     <option value=""></option>
                                     @foreach($namabarangs as $nabar)
-                                    <option value="{{ $nabar->nama_barang }}">{{ $nabar->nama_barang }} - {{ $nabar->ruang->ruang }} - {{ $nabar->ruang->jurusan }} - {{ $nabar->ruang->rombel }} </option>
+                                        <option value="{{ $nabar->nama_barang }}">{{ $nabar->nama_barang }} - {{ $nabar->ruang->ruang }} - {{ $nabar->ruang->jurusan }} - {{ $nabar->ruang->rombel }} </option>
                                     @endforeach
                                 </select>
+                                @error('barangg')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Jumlah</label>
                                 <input type="number" name="jumlahg" class="form-control" id="exampleInputPassword1">
+                                @error('jumlahg')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Tanggal Peminjaman</label>
                                 <input type="date" name="tanggalg" class="form-control" id="tanggal">
+                                @error('tanggalg')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <button type="submit" class="btn btn-outline-primary">Pinjam</button>
                         </form>
