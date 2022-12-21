@@ -44,7 +44,7 @@
         <div class="container-fluid d-flex justify-content-between align-items-center">
             <div class="brand-logo">
                 <a href="/register">
-                    <img src="{{ asset('login/vendors/images/deskapp-logo.svg')}}" alt="">
+                    <h3>SIN SARPRAS</h3>
                 </a>
             </div>
         </div>
@@ -73,7 +73,7 @@
                                         <div class="select-role">
                                             <div class="btn-group btn-group-toggle" data-toggle="buttons" a
                                                 href="/register">
-                                                <label class="btn active">
+                                                <label class="btn focus active" style="background-color: rgba(27,0,255,.05)!important;border-color: rgba(27,0,255,.5)!important;color: #1b00ff!important;">
                                                     <input type="radio" name="options" id="admin">
                                                     <div class="icon">
                                                         <a href="/register">

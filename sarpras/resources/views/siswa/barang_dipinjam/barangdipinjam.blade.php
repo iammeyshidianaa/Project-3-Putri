@@ -54,7 +54,7 @@
                                 <tr>
                                                 <th scope="row">{{ $no++ }}</th>
                                                 <td>{{ $row->namapeminjam }}</td>
-                                                <td>{{ $row->kelas }}</td>
+                                                <td>{{ $row->kelasku->jurusan }}</td>
                                                 <td>{{ $row->namabarang3 }}</td>
                                                 <td>{{ $row->jumlah}}</td>
                                                 <td>{{ $row->tanggalpinjam}}</td>
@@ -63,7 +63,7 @@
                                                 <td class = "text-secondary">Menunggu Persetujuan...
                                 </td>
                                     @else
-                                    <td class="text-primary">{{ $row->status3 }}     =>    <a href="/peminjamans/{{ $row->id }}"  class="btn btn-sm btn-primary text-white" title="Kembalikan"><i class="ti-share-alt"></i></td>
+                                    <td class="text-primary">    <a href="/peminjamans/{{ $row->id }}"  class="btn btn-sm btn-primary text-white" title="Kembalikan"><i class="ti-share-alt"></i></td>
                                     @endif
 
                                         @endforeach

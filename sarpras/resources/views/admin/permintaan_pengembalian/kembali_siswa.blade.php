@@ -61,7 +61,13 @@
                                     <td>{{ $row->tanggalpinjam}}</td>
                                     <td>{{ $row->tanggalkembali}}</td>
                                     <td>{{ $row->created_at }}</td>
-                                    <td>{{ $row->created_at }}</td>
+                                    <td><?php
+                                        $tglKembali = Carbon\Carbon::parse(date('Y-m-d', strtotime($row->tanggalkembali)));
+                                        $dikembalikan = Carbon\Carbon::parse(date('Y-m-d', strtotime($row->created_at)));
+                                        // dd($tglKembali, $dikembalikan);
+                                        echo $tglKembali->diffInDays($dikembalikan) * 5000;
+                                        // dd($tglKembali->diffInDays($dikembalikan));
+                                    ?></td>
 
                                     <td>
                                     <a href="{{ url('kembalis/terima/'.$row->id) }}" type="button" class="btn btn-sm btn-outline-primary">Setujui</a>

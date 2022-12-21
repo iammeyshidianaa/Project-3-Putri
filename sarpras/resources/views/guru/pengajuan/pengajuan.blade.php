@@ -49,16 +49,6 @@
                                 <label for="exampleInputPassword1" class="form-label">Jumlah Permintaan</label>
                                 <input type="number" name="jumlahp" class="form-control" id="exampleInputPassword1">
                             </div>
-                            <!-- <div class="form-group">
-                                <label for="inputEmail3" class="form-label">Harga</label>
-                                    <div class="col-LG-12">
-                                        <div class="input-group mb-3">
-                                            <span class="input-group-text" id="basic-addon1">Rp.</span>
-                                                <input type="text" name="hargap"  id="hargap" class="form-control" id="inputEmail3">
-                                                    type-currency="IDR"
-                                        </div>
-                                    </div>
-                                    </div> -->
                             <div class="form-group">
                                 <label for="exampleInputPassword1" class="form-label">Tanggal</label>
                                 <div class="col-LG-13">
@@ -66,15 +56,6 @@
                                         id="inputEmail3">
                                 </div>
                             </div>
-                            <!-- <div class="form-group">
-                                        <label for="inputEmail3" class="form-label">Total</label>
-                                            <div class="col-LG-12">
-                                                <div class="input-group mb-3">
-                                                <span class="input-group-text" id="basic-addon1">Rp.</span>
-                                                <input type="text" name="totalp" type-currency="IDR" readonly id="totalp" placeholder="0" class="form-control" id="inputEmail3">
-                                        </div>
-                                    </div>
-                                    </div> -->
                             <button type="submit" class="btn btn-primary">Ajukan</button>
                         </form>
 
@@ -149,7 +130,8 @@ flatpickr("input[type=date]",config);
     $(document).ready(function() {
         $("#666").select2({
             placeholder: "-- Pilih Barang --",
-            containerCssClass: 'wrap'
+            containerCssClass: 'wrap',
+            width: '100%'
         });
     });
 </script>

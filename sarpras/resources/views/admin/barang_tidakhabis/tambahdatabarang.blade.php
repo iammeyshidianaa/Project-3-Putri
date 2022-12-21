@@ -49,7 +49,7 @@
                         <div class="form-group">
                             <label for="exampleInputCity1">Stok</label>
                             <input type="number"  name="jumlah_stok"  class="form-control" id="exampleInputCity1" placeholder="">
-                                @error('stok')
+                                @error('jumlah_stok')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                         </div>
@@ -111,7 +111,8 @@
             $(document).ready(function () {
                 $("#ruang_id").select2({
                     placeholder: "--Pilih Ruang--",
-                    containerCssClass: 'wrap'
+                    containerCssClass: 'wrap',
+                    width: '100%'
                 });
             });
         </script>

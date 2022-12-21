@@ -75,7 +75,9 @@
         <script>
             $(document).ready(function () {
                 $("#awok").select2({
-                    placeholder: "Pilih Barang"
+                    placeholder: "--Pilih Barang--",
+                    width: '100%'
+
                 });
             });
         </script>

@@ -42,10 +42,8 @@
                                     <th scope="col">#</th>
                                     <th scope="col">Nama</th>
                                     <th scope="col">Nama Barang</th>
-                                    <th scope="col">Harga</th>
                                     <th scope="col">Jumlah</th>
-                                    <th scope="col">Total Harga</th>
-                                    <th scope="col">Status</th>
+                                    <th scope="col">Tanggal</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -57,15 +55,8 @@
                                     <th scope="row">{{ $no++ }}</th>
                                     <td>{{ $row->namap }}</td>
                                     <td>{{ $row->barangp }}</td>
-                                    <td>{{ $row->hargap }}</td>
                                     <td>{{ $row->jumlahp }}</td>
-                                    <td>{{ $row->totalp }}</td>
-                                    @if($row->statusp == 'Disetujui')
-                                    <td class="text-success">{{ $row->statusp }}</td>
-                                    @else
-                                    <td class="text-danger">{{ $row->statusp }}</td>
-                                    @endif
-
+                                    <td>{{ $row->tanggalp }}</td>
                                 </tr>
                                 @endforeach
 

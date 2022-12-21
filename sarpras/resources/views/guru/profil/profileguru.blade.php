@@ -3,7 +3,7 @@
 @section('content')
 
 <body>
-<div class="container">
+
 <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <div class="content-header">
@@ -47,7 +47,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    
 </body>
 @endsection
 </html>

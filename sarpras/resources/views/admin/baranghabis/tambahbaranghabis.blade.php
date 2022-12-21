@@ -112,7 +112,8 @@
             $(document).ready(function () {
                 $("#ruang_id").select2({
                     placeholder: "--Pilih Ruang--",
-                    containerCssClass: 'wrap'
+                    containerCssClass: 'wrap',
+                    width: '100%'
                 });
             });
         </script>

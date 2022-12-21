@@ -40,6 +40,8 @@
                                     <th scope="col">Jumlah Pinjam</th>
                                     <th scope="col">Tanggal Pinjam</th>
                                     <th scope="col">Tanggal Kembali</th>
+                                    <th scope="col">Keterlambatan </th>
+                                    <th scope="col">Denda</th>
                                     <th scope="col">Status</th>
                                 </tr>
                             </thead>

@@ -80,7 +80,8 @@
     $(document).ready(function() {
         $("#nabar").select2({
             placeholder: "--Pilih Barang--",
-            containerCssClass: 'wrap'
+            containerCssClass: 'wrap',
+            width: '100%'
         });
     });
 </script>

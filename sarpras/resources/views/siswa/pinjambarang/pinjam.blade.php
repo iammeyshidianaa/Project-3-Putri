@@ -88,7 +88,8 @@
                     <script>
                         $(document).ready(function() {
                             $("#kelas").select2({
-                                placeholder: "--Pilih Kelas--"
+                                placeholder: "--Pilih Kelas--",
+                                width: '100%'
                             });
                         });
                     </script>
@@ -96,7 +97,8 @@
                     <script>
                         $(document).ready(function() {
                             $("#namabarang3").select2({
-                                placeholder: "--Pilih Barang--"
+                                placeholder: "--Pilih Barang--",
+                                width: '100%'
                             });
                         });
                     </script>

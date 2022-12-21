@@ -44,7 +44,7 @@
         <div class="container-fluid d-flex justify-content-between align-items-center">
             <div class="brand-logo">
                 <a href="/register">
-                    <img src="{{ asset('login/vendors/images/deskapp-logo.svg')}}" alt="">
+                    <h3>SIN SARPRAS</h3>
                 </a>
             </div>
         </div>

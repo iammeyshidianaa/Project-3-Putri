@@ -9,36 +9,31 @@ use Illuminate\Http\Request;
 
 class RuangController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function ruang(Request $request)
 
     {
 
-         if($request->has('search')){
-             $ruang = ruang::where('ruang','LIKE','%' .$request->search.'%')
-             ->orWhere('rombel','LIKE','%' .$request->search.'%')
-             ->orWhere('jurusan','LIKE','%' .$request->search.'%')
-             ->orWhere('deskripsi','LIKE','%' .$request->search.'%')
-             ->get();
+        if ($request->has('search')) {
+            $ruang = ruang::where('ruang', 'LIKE', '%' . $request->search . '%')
+                ->orWhere('rombel', 'LIKE', '%' . $request->search . '%')
+                ->orWhere('jurusan', 'LIKE', '%' . $request->search . '%')
+                ->orWhere('deskripsi', 'LIKE', '%' . $request->search . '%')
+                ->get();
             //  dd($ruang);
-        }else{
+        } else {
             $ruang = ruang::all();
         }
 
-    return view('admin.ruangan.ruang', compact('ruang'));
-
+        return view('admin.ruangan.ruang', compact('ruang'));
     }
 
-    public function detailruangan(Request $request,$id)
+    public function detailruangan(Request $request, $id)
     {
-        $barang = baranghabis::with('ruang')->where('ruang_id','=',$id)->get();
-        $databarang = databarang::with('ruang')->where('ruang_id','=',$id)->get();
-        $judul=ruang::findOrFail($id);
-         return view('admin.ruangan.detailruangan', compact('barang','judul', 'databarang'));
+        $barang = baranghabis::with('ruang')->where('ruang_id', '=', $id)->get();
+        $databarang = databarang::with('ruang')->where('ruang_id', '=', $id)->get();
+        $judul = ruang::findOrFail($id);
+        return view('admin.ruangan.detailruangan', compact('barang', 'judul', 'databarang'));
     }
 
     public function ruangan()
@@ -46,15 +41,13 @@ class RuangController extends Controller
         $ruang = ruang::all();
 
         return view('admin.ruangan.ruangan', compact('ruang'));
-
     }
 
     public function detail($id)
     {
-        $ruang = ruang::where('ruang_id','=',$id)->get();
+        $ruang = ruang::where('ruang_id', '=', $id)->get();
 
         return view('admin.ruangan.ruangan', compact('ruang'));
-
     }
 
     public function tambahruang()
@@ -94,8 +87,7 @@ class RuangController extends Controller
             $data->save();
         }
 
-        return redirect()->route('ruangan')->with('message','Data berhasil ditambahkan');
-
+        return redirect()->route('ruangan')->with('message', 'Data berhasil ditambahkan');
     }
 
     public function tampilkanruang($id)
@@ -126,7 +118,18 @@ class RuangController extends Controller
 
         $ruang = ruang::findOrFail($id);
         $ruang = ruang::find($id);
-        $ruang->update($request->all());
+        // $ruang->update($request->all());
+
+        if ($request->hasFile('gambar')) {
+            $request->file('gambar')->move('gambar/', $request->file('gambar')->getClientOriginalName());
+             $ruang->update([
+                'gambar' => $request->file('gambar')->getClientOriginalName(),
+                'ruang' => $request->ruang,
+                'jurusan' => $request->jurusan,
+                'rombel' => $request->rombel,
+                'deskripsi' => $request->deskripsi,
+            ]);
+        }
 
         // $ruang->update([
         //     'gambar' => $request->gambar,

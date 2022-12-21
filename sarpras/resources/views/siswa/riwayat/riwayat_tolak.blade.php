@@ -41,6 +41,8 @@
                                     <th scope="col">Jumlah </th>
                                     <th scope="col">Tanggal Pinjam</th>
                                     <th scope="col">Tanggal Pengembalian</th>
+                                    <th scope="col">Keterlambatan </th>
+                                    <th scope="col">Denda</th>
                                     <th scope="col">Status</th>
 
                                 </tr>
@@ -53,12 +55,19 @@
                                 <tr>
                                                 <th scope="row">{{ $no++ }}</th>
                                                 <td>{{ $row->namapeminjam }}</td>
-                                                <td>{{ $row->kelas }}</td>
+                                                <td>{{ $row->kelasku->jurusan }}</td>
                                                 <td>{{ $row->namabarang3 }}</td>
                                                 <td>{{ $row->jumlah}}</td>
                                                 <td>{{ $row->tanggalpinjam}}</td>
                                                 <td>{{ $row->tanggalkembali}}</td>
-
+                                                <td>{{ $row->created_at }}</td>
+                                                <td><?php
+                                                    $tglKembali = Carbon\Carbon::parse(date('Y-m-d', strtotime($row->tanggalkembali)));
+                                                    $dikembalikan = Carbon\Carbon::parse(date('Y-m-d', strtotime($row->created_at)));
+                                                    // dd($tglKembali, $dikembalikan);
+                                                    echo $tglKembali->diffInDays($dikembalikan) * 5000;
+                                                    // dd($tglKembali->diffInDays($dikembalikan));
+                                                ?></td>
                                     @if($row->status3 == null)
                                 </td>
                                     @else

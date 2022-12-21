@@ -53,7 +53,7 @@
                                 <tr>
                                                 <th scope="row">{{ $no++ }}</th>
                                                 <td>{{ $row->namapeminjam }}</td>
-                                                <td>{{ $row->kelas }}</td>
+                                                <td>{{ $row->kelasku->jurusan }}</td>
                                                 <td>{{ $row->namabarang3 }}</td>
                                                 <td>{{ $row->jumlah}}</td>
                                                 <td>{{ $row->tanggalpinjam}}</td>
