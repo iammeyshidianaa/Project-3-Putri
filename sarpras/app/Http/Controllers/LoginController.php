@@ -26,16 +26,17 @@ class LoginController extends Controller
 
         ]);
 
-
+        // dd('ak');
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password, 'level' => 'guru'])) {
             return redirect('/indexguru');
+        }
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password, 'level' => 'siswa'])) {
+            return redirect('/indexsiswa');
         }
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
             return redirect('/indexadmin');
         }
-        if (Auth::attempt(['email' => $request->email, 'password' => $request->password, 'level' => 'siswa'])) {
-            return redirect('/indexsiswa');
-        }else{
+        else{
             return redirect()->back()->with('password','password salah');
         }
 
