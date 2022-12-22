@@ -54,7 +54,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/masuk', [LoginController::class, 'login'])->name('masuk');
+Route::get('/masuk', [LoginController::class, 'login'])->name('masuk')->middleware('guest');
 Route::post('/loginproses', [LoginController::class, 'loginproses'])->name('loginproses');
 
 Route::get('/select', [LoginController::class, 'select'])->name('select');
@@ -275,7 +275,7 @@ Route::group(['middleware' => ['auth', 'level:guru']], function () {
 
 Route::group(['middleware' => ['auth', 'level:siswa']], function () {
 
-    Route::get('/indexsiswa', [IndexController::class, 'indexsiswa'])->name('indexsiswa');
+    Route::get('/indexsiswa', [IndexController::class, 'indexsiswa'])->name('indexsiswa')->middleware('auth');
     Route::get('/editprofile', [IndexController::class, 'editprofile'])->name('editprofile');
     Route::get('/profile', [IndexController::class, 'profile'])->name('profile');
     Route::get('/barangdipinjam', [BarangdipinjamController::class, 'barangdipinjam'])->name('barangdipinjam');
